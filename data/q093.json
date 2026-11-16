@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q093",
+  "year": 2025,
+  "number": 93,
+  "area": "Ciências da Natureza",
+  "topic": "Vacinas",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 2
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/q093_questao_integral.png",
+      "text": "Questão 93 do ENEM 2025 (2º dia, Caderno 5 Amarelo, página 2), área Ciências da Natureza. Enunciado: a produção de vacinas exige uma sequência de procedimentos, além do cumprimento estrito de verificações de segurança. O esquema demonstra as etapas básicas da fabricação de uma vacina com tecnologia tradicional e seu efeito no organismo: cultura de células infectadas com vírus; (1) isolamento dos vírus; (2) inativação dos vírus pelo calor ou por ação química; (3) aplicação da vacina em uma pessoa; (4) resposta imune com produção de anticorpos. Pergunta: 'O antígeno utilizado na vacina causa um efeito protetor contra o vírus porque'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "mata o vírus pela ligação."
+    },
+    {
+      "label": "B",
+      "text": "aglutina o vírus por associação."
+    },
+    {
+      "label": "C",
+      "text": "contém imunoglobulinas de defesa."
+    },
+    {
+      "label": "D",
+      "text": "induz a produção de proteínas neutralizadoras."
+    },
+    {
+      "label": "E",
+      "text": "mantém a quantidade de anticorpos preexistentes."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
