@@ -563,6 +563,22 @@
       "imagem": "assets/enem2025_d1_cdazul_q004_en_integral.png",
       "alt": "Questão 004 do ENEM 2025 (versão Inglês). Texto-base em inglês sobre a chamada 'snowflake generation' de estudantes universitários, a fragilidade da cultura moderna e a resiliência. Referência: LOTT, T., www.theguardian.com, acesso em 10 dez. 2017 (adaptado). Pergunta em português: 'Nesse texto, a expressão “snowflake generation” é usada para'; alternativas A até E.",
       "legacy": "enem2025-q004-en.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q005-en",
+      "question_id": "enem:2025:regular_nacional:d1:q005:en",
+      "ano": 2025,
+      "numero_oficial": 5,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 3,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "50039FC74F30345F60993C93AFC42FA0C2DBBDFDB916A724878E8BC97091FA1F",
+      "data": "data/enem2025_d1_cdazul_q005_en.json",
+      "imagem": "assets/enem2025_d1_cdazul_q005_en_integral.png",
+      "alt": "Questão 005 do ENEM 2025 (versão Inglês). Fotografia de três copos de papel sobre o balcão de uma cafeteria, com letreiros ao fundo. Textos nas embalagens: '16 ounce WHAT IS SLEEP?', '12 ounce SLEPT 5-7 HOURS', '8 ounce SLEPT 8-10 HOURS'. Referência: Disponível em: https://pt.foursquare.com. Acesso em: 14 maio 2024. Pergunta em português: 'Nesse texto, a pergunta “What is sleep?”, em uma das embalagens do produto, está relacionada ao(à)'; alternativas A até E.",
+      "legacy": "enem2025-q005-en.html"
     }
   ]
 }
