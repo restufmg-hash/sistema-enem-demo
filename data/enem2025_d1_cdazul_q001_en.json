@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q001:en",
+  "year": 2025,
+  "number": 1,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Língua Estrangeira Moderna — Inglês (interpretação de texto)",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 2
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q001_en_integral.png",
+      "text": "Questão 001 do ENEM 2025 (1º dia, Caderno 1 Azul, versão Inglês, página 2), área Linguagens, Códigos e suas Tecnologias — Língua Estrangeira Moderna (Inglês). Texto-base em inglês: 'Glory Ames, from the White Earth reservation, is frustrated that despite the presence of several indigenous reservations near Moorhead, local Halloween stores still feature a western section with costumes such as \"pow wow princess\". Even worse, despite a long-running debate about racism and cultural appropriation, often prompted by backlash against celebrities and politicians for donning offensive costumes, people continue to wear such costumes. Last Halloween, Ames spotted a photo on Instagram of a girl dressed as a Native American with a bullet in her forehead. She immediately reported it to the social media platform and had it removed. \"They blatantly take certain aspects of our culture, race, religion, and use it for their advantage and ignore the people living it\", said Ames.' Referência: LIU, M. C. M. Disponível em: www.washingtonpost.com. Acesso em: 12 maio 2024 (adaptado). Pergunta: 'Ao abordar um aspecto da celebração do Halloween, esse texto tem por objetivo'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "denunciar a violência contra crianças indígenas."
+    },
+    {
+      "label": "B",
+      "text": "descrever costumes tradicionais em celebrações indígenas."
+    },
+    {
+      "label": "C",
+      "text": "valorizar as vestimentas características dos povos originários."
+    },
+    {
+      "label": "D",
+      "text": "criticar a exploração indevida de elementos da identidade indígena."
+    },
+    {
+      "label": "E",
+      "text": "sugerir ações de combate ao preconceito contra os povos originários."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
