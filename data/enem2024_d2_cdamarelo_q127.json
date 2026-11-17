@@ -1,0 +1,44 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q127",
+  "year": 2024,
+  "number": 127,
+  "area": "Ciências da Natureza",
+  "topic": "Biologia; Ecologia; saneamento básico; biodiversidade aquática; arboviroses; controle biológico de mosquitos",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 13
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q127_integral.png",
+      "text": "QUESTÃO 127\n\nAs autoridades sanitárias brasileiras têm se preocupado muito nos últimos anos com o aumento da ocorrência de doenças transmitidas por mosquitos, principalmente arboviroses como chikungunya e zika, que se tornaram epidêmicas ou endêmicas em áreas urbanas. Parte de uma análise da relação entre a urbanização e a incidência dessas doenças está representada no fluxograma.\n\nALMEIDA, L. S.; COTA, A. L. S.; RODRIGUES, D. F. Saneamento, arboviroses e determinantes ambientais: impactos na saúde urbana. Ciência & Saúde Coletiva, v. 25, n. 10, 2020 (adaptado).\n\nNesse contexto, como a urbanização está causando riscos à saúde humana?",
+      "alt": "Fluxograma de cinco caixas azuis com setas: Urbanização → Ausência de saneamento básico → Contaminação da água → Redução da biodiversidade aquática → Riscos para a saúde humana."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Disseminando verminoses."
+    },
+    {
+      "label": "B",
+      "text": "Causando a eutrofização de lagoas."
+    },
+    {
+      "label": "C",
+      "text": "Aumentando a chance de contato com coliformes."
+    },
+    {
+      "label": "D",
+      "text": "Diminuindo a população de predadores aquáticos."
+    },
+    {
+      "label": "E",
+      "text": "Aproximando as pessoas das áreas de ocorrência de mosquitos."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}

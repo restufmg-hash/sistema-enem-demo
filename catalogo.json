@@ -582,6 +582,22 @@
       "alt": "Questão 126 do ENEM 2024, Ciências da Natureza. Esquema de aquecedor solar com coletor de tubos a vácuo, reservatório de água com isolamento térmico de poliuretano, fluxo de água fria (seta azul) para os coletores e retorno de água quente (seta vermelha) ao reservatório, sob radiação solar. Pergunta sobre o mecanismo de transferência de calor do coletor ao reservatório; alternativas A a E."
     },
     {
+      "id": "enem2024-d2-cdamarelo-q127",
+      "question_id": "enem:2024:regular_nacional:d2:q127",
+      "ano": 2024,
+      "numero_oficial": 127,
+      "sequencia_colecao": "037",
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2024 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 13,
+      "fonte": "INEP, 2024_PV_impresso_D2_CD5.pdf",
+      "sha256_imagem": "39677427F613AC133E8194BA4F60FACBD9D73F8DEE7CF1033BF087E7DDFC46C8",
+      "data": "data/enem2024_d2_cdamarelo_q127.json",
+      "imagem": "assets/enem2024_d2_cdamarelo_q127_integral.png",
+      "alt": "Questão 127 do ENEM 2024. Fluxograma relacionando urbanização, ausência de saneamento básico, contaminação da água, redução da biodiversidade aquática e riscos à saúde humana. Pergunta sobre o aumento do risco de doenças transmitidas por mosquitos; alternativas A a E."
+    },
+    {
       "id": "q093-2025",
       "question_id": "enem:2025:regular_nacional:d2:q093",
       "ano": 2025,
