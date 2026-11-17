@@ -1075,6 +1075,22 @@
       "alt": "Questão 130 do ENEM 2024. Compostos nitrosos, nitrito de sódio e ácido clorídrico: órgão em que se inicia a reação, com alternativas A a E."
     },
     {
+      "id": "enem2024-d2-cdamarelo-q131",
+      "question_id": "enem:2024:regular_nacional:d2:q131",
+      "ano": 2024,
+      "numero_oficial": 131,
+      "sequencia_colecao": "041",
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2024 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 14,
+      "fonte": "INEP, 2024_PV_impresso_D2_CD5.pdf",
+      "sha256_imagem": "1AB1AEE7C446381D5CF1CB064B2FB29963D0A31A7BDA498D53A816EB1A893A70",
+      "data": "data/enem2024_d2_cdamarelo_q131.json",
+      "imagem": "assets/enem2024_d2_cdamarelo_q131_integral.png",
+      "alt": "Questão 131 do ENEM 2024. Sistemas agroflorestais (SAFs), recuperação de áreas degradadas e mudanças graduais em comunidades vegetais; enunciado e alternativas A–E."
+    },
+    {
       "id": "q093-2025",
       "question_id": "enem:2025:regular_nacional:d2:q093",
       "ano": 2025,
