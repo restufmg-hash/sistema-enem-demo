@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q106",
+  "year": 2024,
+  "number": 106,
+  "area": "Ciências da Natureza",
+  "topic": "Física vetorial",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 6
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q106_integral.png",
+      "text": "Questão 106 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta uma tirinha de Calvin: ele se divert em num balanço antes de soltar-se dele e cair ao chão. Em sua fala, ele demonstra ter imaginado que permaneceria em movimento circular. Pergunta: 'Qual vetor representa a força resultante exercida pelo chão sobre Calvin no exato momento em que ele toca o chão?'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Vetor com sentido para cima e para a direita."
+    },
+    {
+      "label": "B",
+      "text": "Vetor com sentido para a esquerda."
+    },
+    {
+      "label": "C",
+      "text": "Vetor com sentido para cima e para a esquerda."
+    },
+    {
+      "label": "D",
+      "text": "Vetor com sentido vertical para cima."
+    },
+    {
+      "label": "E",
+      "text": "Vetor com sentido horizontal para a direita."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
