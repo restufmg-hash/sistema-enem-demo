@@ -1,0 +1,44 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q132",
+  "year": 2024,
+  "number": 132,
+  "area": "Ciências da Natureza",
+  "topic": "Biologia; fisiologia muscular; fibras musculares esqueléticas; fibras rápidas e lentas; desempenho esportivo",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 14
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q132_integral.png",
+      "text": "QUESTÃO 132\n\nAs fibras musculares esqueléticas não são todas\niguais. As fibras lentas, também conhecidas como fibras\nvermelhas, apresentam muitas mitocôndrias e são bem\nsupridas por vasos sanguíneos. Já as fibras rápidas, ou\nfibras brancas, apresentam poucas mitocôndrias e recebem\nmenor suprimento sanguíneo. Dessa forma, a distribuição\ndas fibras nos músculos esqueléticos do corpo auxilia de\nforma diferenciada no desempenho físico de um atleta.\nSADAVA, D. et al. Vida: a ciência da biologia — volume III:\nplantas e animais. Porto Alegre: Artmed, 2009 (adaptado).\n\nUm atleta que sonha em disputar os Jogos Olímpicos e\ntem uma maior proporção de fibras brancas que fibras\nvermelhas teria mais vantagens na realização da prova de:",
+      "alt": "Questão 132 do ENEM 2024. Fibras musculares vermelhas e brancas, suprimento sanguíneo, mitocôndrias e modalidades esportivas. Texto-base, referência e cinco alternativas A–E."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Triatlo."
+    },
+    {
+      "label": "B",
+      "text": "Salto em altura."
+    },
+    {
+      "label": "C",
+      "text": "Marcha atlética."
+    },
+    {
+      "label": "D",
+      "text": "Maratona aquática."
+    },
+    {
+      "label": "E",
+      "text": "Ciclismo em estrada."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
