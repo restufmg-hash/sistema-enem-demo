@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q102",
+  "year": 2024,
+  "number": 102,
+  "area": "Ciências da Natureza",
+  "topic": "Eletricidade",
+  "status": "annulled",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 5
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q102_integral.png",
+      "text": "Questão 102 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Questão ANULADA PELO INEP. O enunciado informa que um estudante comprou uma cafeteira elétrica de 700 W de potência e com capacidade de 0,5 L de água (500 g). Enquanto o café estava em preparação na capacidade máxima da cafeteira, ele marcou que demorou 3 minutos para a cafeteira ferver toda a água (100 °C) a partir da temperatura ambiente de 20 °C. Pergunta: 'Qual a eficiência energética calculada pelo estudante?'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "100%"
+    },
+    {
+      "label": "B",
+      "text": "75%"
+    },
+    {
+      "label": "C",
+      "text": "60%"
+    },
+    {
+      "label": "D",
+      "text": "7,5%"
+    },
+    {
+      "label": "E",
+      "text": "5,1%"
+    }
+  ]
+}
