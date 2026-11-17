@@ -71,6 +71,29 @@ function falha(mensagem) {
 
 function primeiraChave(questionId) { return "sistema_enem_primeira_" + questionId; }
 
+function sessaoAnonima() {
+  try {
+    let s = localStorage.getItem("sistema_enem_anon_session");
+    if (!s) {
+      s = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(16).slice(2));
+      localStorage.setItem("sistema_enem_anon_session", s);
+    }
+    return s;
+  } catch (_) { return undefined; }
+}
+
+function idTentativa(questionId) {
+  // Um clique = um envio; o mesmo UUID e reutilizado em reenvios da mesma submissao
+  // (falha de rede), garantindo idempotencia no servidor. Liberado apos sucesso.
+  const chave = "sistema_enem_attempt_" + questionId;
+  const novo = () => (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(16).slice(2));
+  try {
+    let s = sessionStorage.getItem(chave);
+    if (!s) { s = novo(); sessionStorage.setItem(chave, s); }
+    return { id: s, chave };
+  } catch (_) { return { id: novo(), chave: null }; }
+}
+
 async function iniciar() {
   const params = new URLSearchParams(location.search);
   const id = (params.get("id") || "").trim();
@@ -150,6 +173,7 @@ async function iniciar() {
       return;
     }
     resultado.textContent = "Enviando ao servidor…";
+    const tentativa = idTentativa(item.question_id);
     try {
       const resposta = await fetch(SILENCIADO.api.replace(/\/$/, "") + "/v1/study/attempts", {
         method: "POST",
@@ -157,7 +181,8 @@ async function iniciar() {
         body: JSON.stringify({
           question_id: item.question_id,
           selected_option: selecionada.value,
-          client_attempt_id: (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(16).slice(2)),
+          client_attempt_id: tentativa.id,
+          anon_session_id: sessaoAnonima(),
         }),
       });
       if (!resposta.ok) {
@@ -165,6 +190,7 @@ async function iniciar() {
         resultado.textContent = "Não foi possível registrar no servidor agora (HTTP " + resposta.status + "). Sua resposta ficou guardada neste navegador.";
         return;
       }
+      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
       const corpo = await resposta.json();
       resultado.className = "ok";
       if (corpo.official_status === "annulled") {
