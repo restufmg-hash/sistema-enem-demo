@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q118",
+  "year": 2024,
+  "number": 118,
+  "area": "Ciências da Natureza",
+  "topic": "Óptica; espelhos côncavos; mirascópio 3D; imagem real; formação de imagem",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 10
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q118_integral.png",
+      "text": "Questão 118 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Mirascópio 3D: produtor de ilusão instantânea. O equipamento ilustrado na figura, de dimensões apresentadas no esquema, é composto por dois espelhos côncavos E1 e E2, apoiados um sobre o outro por suas bordas, de tal forma que o vértice de E1 coincide com o foco de E2 e vice-versa. Na abertura circular de E2, é formada uma imagem tridimensional de um objeto posicionado sobre o vértice de E1. Essa imagem é formada a partir dos raios procedentes do objeto, refletidos por E2 e E1, respectivamente, conforme o esquema. Os observadores julgam visualizar o objeto quando estão, de fato, visualizando sua imagem. O efeito só é possível porque as superfícies de ambos os espelhos são de extrema qualidade. Referência: SALZMANN, W. Disponível em: https://wissenstexte.de. Acesso em: 27 jun. 2024 (adaptado). Pergunta: 'A natureza da imagem formada e a distância vertical entre cada ponto objeto e seu correspondente ponto imagem são'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "real e 5 cm."
+    },
+    {
+      "label": "B",
+      "text": "real e 3,8 cm."
+    },
+    {
+      "label": "C",
+      "text": "real e 7,6 cm."
+    },
+    {
+      "label": "D",
+      "text": "virtual e 7,6 cm."
+    },
+    {
+      "label": "E",
+      "text": "virtual e 3,8 cm."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
