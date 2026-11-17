@@ -633,6 +633,25 @@
       "alt": "Questão 007 do ENEM 2025. Enunciado: 'O elemento que caracteriza esse texto como uma crônica é a'; alternativas A até E.",
       "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
       "legacy": "enem2025-q007.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q008",
+      "question_id": "enem:2025:regular_nacional:d1:q008",
+      "ano": 2025,
+      "numero_oficial": 8,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 7,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "1775F52580DEE6AA7F1C5010DF75E2C836B3E35195B57232D022486067EB0DE8",
+      "data": "data/enem2025_d1_cdazul_q008.json",
+      "imagem": "assets/enem2025_d1_cdazul_q008_enunciado_p07.png",
+      "imagem_texto": "assets/enem2025_d1_cdazul_q006_texto_base_p06.png",
+      "sha256_imagem_texto": "FAB47BB8AE95AC320DFA0C56C7EA714335B602C912CDF2142FE9B66DDDA0D887",
+      "alt": "Questão 008 do ENEM 2025. Enunciado: 'Nesse texto, o que caracteriza a escrita “de próprio punho” é a letra manuscrita, enquanto a escrita digital é ilustrada pelo(a)'; alternativas A até E.",
+      "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
+      "legacy": "enem2025-q008.html"
     }
   ]
 }
