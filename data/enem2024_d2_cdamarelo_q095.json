@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q095",
+  "year": 2024,
+  "number": 95,
+  "area": "Ciências da Natureza",
+  "topic": "Transferência de calor",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 3
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q095_integral.png",
+      "text": "Questão 95 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. A tirinha ilustra esquimós dentro de um iglu: uma pessoa perguntando sobre a geladeira, outro ponto mostrando a retirada do gelo para as crianças brincarem de casinha, e ao final, as crianças brincando de construir casinhas com blocos de gelo. A referência é LAERTE, disponível em artedafisicapibid.blogspot.com, acesso em 4 de dezembro de 2021, adaptada. Pergunta: 'Na tirinha, a geladeira é necessária para fazer gelo porque'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "a temperatura interna do iglu é maior que a de solidificação da água."
+    },
+    {
+      "label": "B",
+      "text": "a umidade dentro do iglu dificulta o processo de mudança de fase da água."
+    },
+    {
+      "label": "C",
+      "text": "o ar dentro do iglu é isolante térmico, dificultando a perda de calor pela água."
+    },
+    {
+      "label": "D",
+      "text": "a temperatura uniforme no interior do iglu impede as correntes de convecção."
+    },
+    {
+      "label": "E",
+      "text": "a pressão do ar no interior do iglu é baixa, dificultando a solidificação da água."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
