@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q003:en",
+  "year": 2025,
+  "number": 3,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Língua Estrangeira Moderna — Inglês (interpretação de poema)",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 2
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q003_en_integral.png",
+      "text": "Questão 003 do ENEM 2025 (1º dia, Caderno 1 Azul, versão Inglês, página 2), área Linguagens, Códigos e suas Tecnologias — Língua Estrangeira Moderna (Inglês). Poema (fragmento) em inglês: 'Remember the sky that you were born under, / know each of the star's stories. / Remember the moon, know who she is. / Remember the sun's birth at dawn. [...] / Remember your birth, how your mother struggled / to give you form and breath [...] / Remember the earth whose skin you are: / red earth, black earth, yellow earth, white earth / brown earth, we are earth. / Remember the plants, trees, animal life who all have their / tribes, their families, their histories, too [...] / Remember you are all people and all people are you. / Remember you are this universe and this universe is you. / Remember all is in motion, is growing, is you.' Referência: HARJO, J. She Had Some Horses. Londres: W. Norton & Company, 1983 (fragmento). Pergunta: 'Nesse poema, de uma autora de ascendência indígena, o eu lírico ressalta a'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "potência dos astros celestes."
+    },
+    {
+      "label": "B",
+      "text": "origem das plantas e dos animais."
+    },
+    {
+      "label": "C",
+      "text": "importância do apego à terra natal."
+    },
+    {
+      "label": "D",
+      "text": "relação entre seres humanos e natureza."
+    },
+    {
+      "label": "E",
+      "text": "conexão entre o tempo real e o tempo imaginário."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
