@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q109",
+  "year": 2024,
+  "number": 109,
+  "area": "Ciências da Natureza",
+  "topic": "LED; circuitos de corrente contínua; associação em série e em paralelo",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 8
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q109_integral.png",
+      "text": "Questão 109 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Enunciado sobre o LED (corrente em um único sentido, tensão e corrente máxima Imáx); símbolo do LED e seta vermelha 'Sentido permitido da corrente'. Materiais: bateria ideal de 4,5 V, dois LEDs de 3,0 V e Imáx = 1,0 mA cada, dois resistores de 1,5 kΩ cada. Pergunta: 'O circuito que o estudante pode montar, para que ambos os LEDs fiquem acesos e cada um seja percorrido por Imáx, é'. As alternativas A-E são circuitos elétricos desenhados na prova, com a polaridade e a orientação dos LEDs conforme a figura."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido direto."
+    },
+    {
+      "label": "B",
+      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido direto."
+    },
+    {
+      "label": "C",
+      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido reverso."
+    },
+    {
+      "label": "D",
+      "text": "Circuito em malha única, com bateria, dois resistores e dois LEDs em série, na mesma orientação."
+    },
+    {
+      "label": "E",
+      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido reverso."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
