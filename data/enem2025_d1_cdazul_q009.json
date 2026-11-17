@@ -1,0 +1,48 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q009",
+  "year": 2025,
+  "number": 9,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Interpretação de crônica (tecnologias de escrita)",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 7
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q006_texto_base_p06.png",
+      "text": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025 (1º dia, Caderno 1 Azul, página 6). Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas. Referência: RIBEIRO, A. E. Disponível em: https://rascunho.com.br. Acesso em: 16 jan. 2024 (adaptado)."
+    },
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q009_enunciado_p07.png",
+      "text": "Questão 009 do ENEM 2025 (página 7). Enunciado: 'A autora conclui que as novas tecnologias de escrita'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "evoluem para facilitar a vida cotidiana."
+    },
+    {
+      "label": "B",
+      "text": "alcançam diferentes realidades sociais."
+    },
+    {
+      "label": "C",
+      "text": "coexistem com outras já estabelecidas."
+    },
+    {
+      "label": "D",
+      "text": "promovem maior agilidade na comunicação."
+    },
+    {
+      "label": "E",
+      "text": "surgem nos contextos em que são necessárias."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
