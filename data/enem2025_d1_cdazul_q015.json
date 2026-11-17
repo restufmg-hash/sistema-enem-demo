@@ -1,0 +1,43 @@
+﻿{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q015",
+  "year": 2025,
+  "number": 15,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Interpretação de texto com imagens de obras de arte (Dalton Paula, MASP)",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 9
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q015_integral_p09.png",
+      "text": "Questão 015 do ENEM 2025 (1º dia, Caderno 1 Azul, página 9, coluna esquerda, parte superior), área Linguagens, Códigos e suas Tecnologias — Língua Portuguesa / Arte. Texto-base: parágrafo sobre o gênero do retrato na pintura ocidental vinculado às elites, e a sua reelaboração na história da arte brasileira (referindo o artista Dalton Paula). Reproduz duas pinturas de Dalton Paula como imagens: Figura 1: PAULA, D. Zeferina. Óleo sobre tela, 59 × 44 cm. Masp, São Paulo, 2018. Figura 2: PAULA, D. João de Deus Nascimento. Óleo sobre tela, 59,5 × 44 cm. Masp, São Paulo, 2018. Referência: Disponível em: www.masp.org.br. Acesso em: 5 maio 2024 (adaptado). Pergunta: 'Ao dar protagonismo a Zeferina e a João de Deus Nascimento, o artista Dalton Paula evidencia que a(s)'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "arte pode promover formas de afirmação de identidade social."
+    },
+    {
+      "label": "B",
+      "text": "comunidades periféricas passam a adquirir o gênero retrato."
+    },
+    {
+      "label": "C",
+      "text": "personagens retratadas simbolizam a sociedade brasileira."
+    },
+    {
+      "label": "D",
+      "text": "pintura funciona como instrumento de ascensão social."
+    },
+    {
+      "label": "E",
+      "text": "imagens tradicionais preservam memórias afetivas."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
