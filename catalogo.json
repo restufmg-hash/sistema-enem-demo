@@ -706,6 +706,22 @@
       "alt": "Questão 010 do ENEM 2025. Enunciado: 'O recurso linguístico usado para marcar a síntese da opinião da autora sobre a temática desenvolvida foi o(a)'; alternativas A até E.",
       "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
       "legacy": "enem2025-q010.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q011",
+      "question_id": "enem:2025:regular_nacional:d1:q011",
+      "ano": 2025,
+      "numero_oficial": 11,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 8,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "704EDC239E9B358F4744661403B92D3BF8305A1D5C30BB7E8BCF4B7606D86617",
+      "data": "data/enem2025_d1_cdazul_q011.json",
+      "imagem": "assets/enem2025_d1_cdazul_q011_integral_p08.png",
+      "alt": "Questão 011 do ENEM 2025. Trecho literário de Inocência, de Visconde de Taunay (diálogo entre Pereira e Cirino sobre Nocência), com referência bibliográfica. Pergunta em português: 'Nesse trecho, ao se referir à sua filha, o pai de Inocência reproduz os ideais românticos, presentes na'; alternativas A até E.",
+      "legacy": "enem2025-q011.html"
     }
   ]
 }
