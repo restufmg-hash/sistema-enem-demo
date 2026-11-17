@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q101",
+  "year": 2024,
+  "number": 101,
+  "area": "Ciências da Natureza",
+  "topic": "Eletricidade",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 5
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q101_integral.png",
+      "text": "Questão 101 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta uma placa solar especial, recoberta de grafeno, que pode gerar eletricidade até com gotas de chuva. Os íons dissociados a partir da água da chuva, identificados como Aᵐ⁺ e Bⁿ⁻, tornam a combinação grafeno e água um par capaz de gerar energia. A ampliação mostra uma camada de água com Bⁿ⁻ na parte superior, uma camada de grafeno com Aᵐ⁺ e e⁻ movendo-se ao longo da superfície, gerando regiões de alto e baixo potencial elétrico. Pergunta: 'Ao produzir eletricidade em dias chuvosos, o grafeno'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "oxida os cátions dissolvidos na água da chuva."
+    },
+    {
+      "label": "B",
+      "text": "impede a difusão da água através das placas solares."
+    },
+    {
+      "label": "C",
+      "text": "diminui a energia de ativação da reação no pseudocapacitor."
+    },
+    {
+      "label": "D",
+      "text": "forma um compósito não metálico com os íons na água da chuva."
+    },
+    {
+      "label": "E",
+      "text": "gera uma diferença de potencial pela interação dos elétrons com os cátions."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
