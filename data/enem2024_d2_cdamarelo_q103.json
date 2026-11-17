@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q103",
+  "year": 2024,
+  "number": 103,
+  "area": "Ciências da Natureza",
+  "topic": "Ciclo termodinâmico",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 5
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q103_integral.png",
+      "text": "Questão 103 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta o diagrama P-V referente ao ciclo de Otto de um motor de combustão interna (gasolina/etanol). O gráfico P-V mostra pontos 0, 1, 2, 3, 4 e a área W. Abaixo, as etapas do ciclo estão descritas numa tabela (I: admissão; II: compressão adiabática; III: introdução de calor; IV: expansão adiabática; V: liberação de calor; VI: liberação dos gases). A referência é Disponível em: www.mspc.eng.br, acesso em 24 fev. 2013, adaptada. Pergunta: 'A transformação da energia térmica em energia útil ocorre na etapa'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "II."
+    },
+    {
+      "label": "B",
+      "text": "III."
+    },
+    {
+      "label": "C",
+      "text": "IV."
+    },
+    {
+      "label": "D",
+      "text": "V."
+    },
+    {
+      "label": "E",
+      "text": "VI."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
