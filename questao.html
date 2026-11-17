@@ -34,7 +34,7 @@
 </style>
 </head>
 <body>
-<header><h1>Sistema ENEM</h1><a href="index.html">â† Índice de questões</a></header>
+<header><h1>Sistema ENEM</h1><a href="index.html">&larr; Índice de questões</a></header>
 <main>
   <div class="card" id="card">
     <p class="meta" id="meta">Carregando…</p>
@@ -46,6 +46,10 @@
       <fieldset>
         <legend>Selecione uma alternativa</legend>
         <div id="alternativas"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Sua confiança</legend>
+        <div id="confianca" style="display:flex; gap:.4rem; flex-wrap:wrap"></div>
       </fieldset>
       <button type="submit">Registrar minha resposta</button>
     </form>
@@ -150,6 +154,21 @@ async function iniciar() {
   }
   mostrar(document.getElementById("form-resposta"), true);
 
+  const confiancaContainer = document.getElementById("confianca");
+  for (let i = 1; i <= 5; i += 1) {
+    const rotulo = document.createElement("label");
+    rotulo.className = "option";
+    rotulo.style.margin = "0";
+    const entrada = document.createElement("input");
+    entrada.type = "radio";
+    entrada.name = "confianca";
+    entrada.value = String(i);
+    entrada.setAttribute("aria-label", "Confiança " + i + " de 5");
+    rotulo.appendChild(entrada);
+    rotulo.appendChild(document.createTextNode(" " + i));
+    confiancaContainer.appendChild(rotulo);
+  }
+
   const chave = primeiraChave(item.question_id);
   let primeira = null;
   try { primeira = localStorage.getItem(chave); } catch (_) { primeira = null; }
@@ -161,6 +180,11 @@ async function iniciar() {
     resultado.className = "";
     if (!selecionada) {
       resultado.textContent = "Selecione uma alternativa antes de registrar.";
+      return;
+    }
+    const confianca = document.querySelector('input[name="confianca"]:checked');
+    if (SILENCIADO.api && !confianca) {
+      resultado.textContent = "Selecione sua confiança de 1 a 5 antes de registrar.";
       return;
     }
     if (primeira === null) {
@@ -181,6 +205,7 @@ async function iniciar() {
         body: JSON.stringify({
           question_id: item.question_id,
           selected_option: selecionada.value,
+          confidence: confianca ? Number(confianca.value) : 3,
           client_attempt_id: tentativa.id,
           anon_session_id: sessaoAnonima(),
         }),
