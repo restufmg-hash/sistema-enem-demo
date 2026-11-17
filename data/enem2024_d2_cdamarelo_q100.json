@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q100",
+  "year": 2024,
+  "number": 100,
+  "area": "Ciências da Natureza",
+  "topic": "Campo elétrico",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 4
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q100_integral.png",
+      "text": "Questão 100 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta um experimento com duas barras metálicas, A e B, carregadas com cargas elétricas opostas e imersas em óleo. Farelo de milho é espalhado sobre o óleo e passa a indicar o formato das linhas de campo elétrico. A figura inicial mostra duas barras verticais paralelas: A com sinais positivos, B com sinais negativos, e linhas horizontais com setas da esquerda para a direita. Pergunta: 'Ao repetir o experimento colocando um cilindro metálico oco entre as placas, qual esquema representa o formato das linhas de campo assumido pelo farelo?'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Esquema gráfico A: linhas horizontais da esquerda para a direita atravessando a região circular."
+    },
+    {
+      "label": "B",
+      "text": "Esquema gráfico B: linhas horizontais da direita para a esquerda; no interior do círculo, o campo se concentra em faixa central."
+    },
+    {
+      "label": "C",
+      "text": "Esquema gráfico C: linhas da direita para a esquerda, com trajetórias que se curvam ao redor do círculo e interior sem linhas."
+    },
+    {
+      "label": "D",
+      "text": "Esquema gráfico D: linhas horizontais da esquerda para a direita, com trajetórias curvas cruzadas no interior do círculo."
+    },
+    {
+      "label": "E",
+      "text": "Esquema gráfico E: linhas da esquerda para a direita; as linhas próximas ao círculo curvam-se ao redor dele e não há linhas no interior do círculo."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
