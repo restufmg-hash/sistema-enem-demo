@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q013",
+  "year": 2025,
+  "number": 13,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Interpretação de texto legal (Lei n. 10 639/2003, art. 26-A)",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 8
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q013_integral_p08.png",
+      "text": "Questão 013 do ENEM 2025 (1º dia, Caderno 1 Azul, página 8, coluna direita), área Linguagens, Códigos e suas Tecnologias — Língua Portuguesa. Texto legal — Art. 26-A: 'Nos estabelecimentos de ensino fundamental e médio, oficiais e particulares, torna-se obrigatório o ensino sobre História e Cultura Afro-Brasileira. § 1º O conteúdo programático a que se refere o caput deste artigo incluirá o estudo da História da África e dos Africanos, a luta dos negros no Brasil, a cultura negra brasileira e o negro na formação da sociedade nacional, resgatando a contribuição do povo negro nas áreas social, econômica e política pertinentes à História do Brasil. § 2º Os conteúdos referentes à História e Cultura Afro-Brasileira serão ministrados no âmbito de todo o currículo escolar, em especial nas áreas de Educação Artística e de Literatura e História Brasileiras.' Referência: BRASIL. Lei n. 10 639/2003. Disponível em: www.gov.br/planalto. Acesso em: 5 maio 2024. Pergunta: 'O emprego da norma-padrão é justificado nesse texto'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "pela especialização de seu público-alvo."
+    },
+    {
+      "label": "B",
+      "text": "pela relevância cultural de seu conteúdo."
+    },
+    {
+      "label": "C",
+      "text": "pelos contextos pedagógicos em que circula."
+    },
+    {
+      "label": "D",
+      "text": "pela importância para os grupos étnico-raciais."
+    },
+    {
+      "label": "E",
+      "text": "pelas características do gênero a que pertence."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
