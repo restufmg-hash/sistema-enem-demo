@@ -501,6 +501,23 @@
       "legacy": "enem2024-q122.html"
     },
     {
+      "id": "enem2024-d2-cdamarelo-q123",
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "ano": 2024,
+      "numero_oficial": 123,
+      "sequencia_colecao": 33,
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2024 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 12,
+      "fonte": "INEP, 2024_PV_impresso_D2_CD5.pdf",
+      "sha256_imagem": "F4915AA9461E4DEB8DF122579746301C517D42B59B0566271A7BAFE0EFC95C95",
+      "data": "data/enem2024_d2_cdamarelo_q123.json",
+      "imagem": "assets/enem2024_d2_cdamarelo_q123_integral.png",
+      "alt": "Questão 123 do ENEM 2024. Texto sobre poluição por motores a combustão e fumaça fotoquímica; gráfico com emissão de CO₂, CO, O₂, NO e HC em função da razão ar/combustível. Na razão 18, observa-se CO próximo de zero e CO₂ relativamente elevado. Pergunta sobre a composição da emissão nessa razão; alternativas A a E.",
+      "legacy": "enem2024-q123.html"
+    },
+    {
       "id": "enem2024-d2-cdamarelo-q121",
       "question_id": "enem:2024:regular_nacional:d2:q121",
       "ano": 2024,

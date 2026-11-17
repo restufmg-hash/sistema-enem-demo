@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q123",
+  "year": 2024,
+  "number": 123,
+  "area": "Ciências da Natureza",
+  "topic": "Química ambiental; poluição atmosférica; motores a combustão; razão ar/combustível; gases de escapamento",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 12
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q123_integral.png",
+      "text": "QUESTÃO 123\n\nUm dos agentes que mais contribui para a poluição do ar é o automóvel a combustão interna. Em áreas urbanas, isso é demonstrado dramaticamente pela fumaça fotoquímica, resultante da interação entre óxidos de nitrogênio, hidrocarbonetos e luz solar, para formar produtos de oxidação, que causam irritação aos olhos, ao aparelho respiratório e danos às plantas. As condições de operação de motores a combustão, como a razão da mistura ar/combustível no cilindro, influenciam na composição dos gases lançados pelo escapamento na atmosfera. O gráfico ilustra a variação nas composições dos principais gases, dióxido de carbono (CO₂), hidrocarbonetos (HC), monóxido de carbono (CO), monóxido de nitrogênio (NO) e oxigênio molecular (O₂), emitidos por um motor a gasolina, em diferentes razões ar/combustível, em massa.\n\n[Gráfico original preservado na imagem do INEP. Descrição acessível]\nEixo horizontal: razão ar/combustível (massa/massa), de 10 a 20, com linha vertical pontilhada em aproximadamente 14,7 marcando a razão estequiométrica; à esquerda, deficiência; à direita, excesso. Eixo vertical esquerdo: O₂, CO, CO₂ (% volume), de 0 a 14. Eixo vertical direito: NO (10³ vppm), HC como C₆ (10² vppm), de 0 a 7. CO₂ (curva azul-escura) cresce até um máximo de aproximadamente 14% na razão 15 e depois diminui; CO (verde-escuro) decresce até quase zero próximo a 15 e permanece muito baixo em 18; O₂ (azul-claro) aumenta na região de excesso; HC (vermelho) decresce fortemente até perto de 18 e depois cresce ligeiramente; NO (laranja) apresenta máximo próximo a 16 e diminui na região de excesso. Na razão 18: CO quase nulo, CO₂ ainda elevado.\n\nRANGEL, M. C.; CARVALHO, M. F. A. Impacto dos catalisadores automotivos no controle da qualidade do ar. Química Nova, v. 26, 2003 (adaptado).\n\nNa condição de razão ar/combustível igual a 18, haverá uma emissão"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "baixa de O₂ e alta de NO."
+    },
+    {
+      "label": "B",
+      "text": "baixa de NO e alta de HC."
+    },
+    {
+      "label": "C",
+      "text": "baixa de CO e alta de CO₂."
+    },
+    {
+      "label": "D",
+      "text": "baixa de HC e alta de CO."
+    },
+    {
+      "label": "E",
+      "text": "baixa de CO₂ e alta de HC."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
