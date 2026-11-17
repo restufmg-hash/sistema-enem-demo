@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q119",
+  "year": 2024,
+  "number": 119,
+  "area": "Ciências da Natureza",
+  "topic": "Mecânica aplicada a colisões; crumple zone; conservação da quantidade de movimento",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 11
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q119_integral.png",
+      "text": "Questão 119 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Muitas pessoas ainda se espantam com o fato de um passageiro sair ileso de um acidente de carro enquanto o veículo onde estava teve perda total. Essas pessoas talvez considerem, equivocadamente, que os carros mais seguros são os que têm as estruturas mais rígidas, ou seja, estruturas, que durante uma colisão, apresentam menor deformação. Na verdade, o que ocorre é o contrário. Por isso, a partir de 1958, passaram a ser produzidos carros com partes que se deformam facilmente. Referência: DAY, C. Crumple Zones. Disponível em: https://pubs.aip.org. Acesso em: 2 jul. 2024 (adaptado). Assim, além dos cintos de segurança e dos airbags, os carros modernos passaram a contar com o dispositivo de segurança conhecido como crumple zone (região deformável, em inglês), conforme a figura. Referência da figura: Momentum and Car safety. GCSE Physics Revision. Disponível em: www.shalom-education.com. Acesso em: 5 jul. 2024 (adaptado). Pergunta: 'Considerando o carro, seus ocupantes e o muro da figura como um sistema isolado, o crumple zone aumenta a segurança dos passageiros porque, durante uma colisão, a deformação da estrutura do carro'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "aciona os airbags do veículo."
+    },
+    {
+      "label": "B",
+      "text": "absorve a energia cinética do sistema."
+    },
+    {
+      "label": "C",
+      "text": "consome a quantidade de movimento do sistema."
+    },
+    {
+      "label": "D",
+      "text": "cria uma barreira de proteção para seus ocupantes."
+    },
+    {
+      "label": "E",
+      "text": "diminui a velocidade do centro de massa do sistema."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
