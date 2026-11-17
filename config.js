@@ -1,12 +1,12 @@
 // Configuracao publica de runtime da pagina de questao.
-// window.SISTEMA_ENEM_API aponta para a API de tentativas publicada.
+// window.SISTEMA_ENEM_API e a URL COMPLETA do endpoint de tentativas.
 //
-// ATENCAO: host ATUAL e um codespace publico de DEMONSTRACAO
-// (anonimo, sem PII, tentativas em sqlite efemero no codespace; some junto
-// com o ambiente). Pendente de hospedagem gratuita duradoura (Supabase/
-// Apps Script/Vercel). Ao ficar indisponivel, a pagina informa honestamente
-// que o envio ao servidor falhou e guarda a resposta no navegador.
-// Backend: backend/api.py do repo sistema-enem (endpoints /v1/study/*),
-// com ENEM_ATTEMPT_STORE para persistencia SQLite e idempotencia por
-// client_attempt_id. Never set any secret here.
-window.SISTEMA_ENEM_API = "https://fluffy-space-zebra-gxpvq5pg97v93pwg-8000.app.github.dev";
+// Atual: Apps Script web app gratuito (Google, conta Marcos Machado de Oliveira),
+// /exec publico; tentativas em Google Sheets "Sistema ENEM — tentativas (demo)",
+// sem PII (anon_session_id e UUID v4 do navegador); idempotente por client_attempt_id;
+// feedback so apos o envio; questao anulada sem alternativa correta.
+// Codigo: Apps Script "Sistema ENEM — tentativas (demo)" (projeto guardado no Drive).
+//
+// Para apontar para o backend FastAPI (backend/api.py): usar a URL COMPLETA
+// ".../v1/study/attempts" e trocar o header para application/json nesta pagina.
+window.SISTEMA_ENEM_API = "https://script.google.com/macros/s/AKfycby7sGPc83KD0rLQ5b__mdTJQzJRsEIs6nbXq8Aw_2tzeUp9OzBabM6IMXVZvV1nb_Kc/exec";
