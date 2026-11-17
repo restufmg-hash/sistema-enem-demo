@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sistema ENEM — questão pública do ENEM (INEP), sem gabarito exposto">
+<title>Sistema ENEM — Questão</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; background: #f4f5f7; color: #17181c; line-height: 1.5; }
+  header { background: #0d2b45; color: #fff; padding: 1rem 1.25rem; }
+  header h1 { margin: 0; font-size: 1.1rem; font-weight: 650; letter-spacing: .02em; }
+  header a { color: #bcd3e8; text-decoration: none; font-size: .85rem; }
+  main { max-width: 880px; margin: 1.25rem auto; padding: 0 1rem; }
+  .card { background: #fff; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .meta { color: #4a5568; font-size: .85rem; margin: 0 0 .75rem; }
+  .meta strong { color: #0d2b45; }
+  .badge { display: inline-block; background: #8b5200; color: #fff; border-radius: 6px; padding: .1rem .5rem; font-size: .75rem; font-weight: 700; margin-left: .4rem; vertical-align: middle; }
+  figure { margin: 1rem 0; }
+  figure img { max-width: 100%; height: auto; border: 1px solid #e2e5ea; border-radius: 8px; }
+  figcaption { font-size: .8rem; color: #4a5568; margin-top: .4rem; }
+  fieldset { border: 0; padding: 0; margin: 1rem 0 0; }
+  legend { font-weight: 600; margin-bottom: .5rem; }
+  label.option { display: block; border: 1px solid #d6dbe3; border-radius: 10px; padding: .65rem .8rem; margin: .45rem 0; cursor: pointer; transition: border-color .15s, background .15s; }
+  label.option:hover { border-color: #0d2b45; background: #f7fafd; }
+  label.option input { margin-right: .6rem; }
+  button { background: #0d2b45; color: #fff; border: 0; border-radius: 10px; padding: .7rem 1.4rem; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: .5rem; }
+  button:hover { background: #14405f; }
+  #resultado { margin-top: 1rem; padding: .75rem .9rem; border-radius: 10px; font-weight: 600; display: none; background: #eef2f7; color: #2d3748; border: 1px solid #cbd5e0; }
+  #resultado.ok { background: #ecf8ef; color: #1e5b2a; border-color: #b6dfc2; }
+  #resultado.erro { background: #fdf0ee; color: #7a2415; border-color: #f2c0b3; }
+  footer { max-width: 880px; margin: 1rem auto 2rem; padding: 0 1rem; font-size: .72rem; color: #718096; }
+</style>
+</head>
+<body>
+<header><h1>Sistema ENEM</h1><a href="index.html">â† Índice de questões</a></header>
+<main>
+  <div class="card" id="card">
+    <p class="meta" id="meta">Carregando…</p>
+    <figure id="figura" hidden>
+      <img id="enunciado" alt="">
+      <figcaption>Imagem oficial integral da questão (autoria INEP), exibida sem qualquer alteração.</figcaption>
+    </figure>
+    <form id="form-resposta" aria-label="Registrar resposta" hidden>
+      <fieldset>
+        <legend>Selecione uma alternativa</legend>
+        <div id="alternativas"></div>
+      </fieldset>
+      <button type="submit">Registrar minha resposta</button>
+    </form>
+    <div id="resultado" role="status" aria-live="polite"></div>
+  </div>
+</main>
+<footer>
+  <p id="fonte">Fonte oficial: INEP.</p>
+  <p>A alternativa correta não é exibida nem conferida nesta página; a conferência acontece no sistema, no servidor.</p>
+</footer>
+<script src="config.js"></script>
+<script>
+const SILENCIADO = { api: (window.SISTEMA_ENEM_API || "").trim() };
+
+function mostrar(el, visivel) { el.hidden = !visivel; }
+
+function falha(mensagem) {
+  const meta = document.getElementById("meta");
+  meta.textContent = mensagem;
+  mostrar(document.getElementById("figura"), false);
+  mostrar(document.getElementById("form-resposta"), false);
+}
+
+function primeiraChave(questionId) { return "sistema_enem_primeira_" + questionId; }
+
+function sessaoAnonima() {
+  try {
+    let s = localStorage.getItem("sistema_enem_anon_session");
+    if (!s) {
+      s = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(16).slice(2));
+      localStorage.setItem("sistema_enem_anon_session", s);
+    }
+    return s;
+  } catch (_) { return undefined; }
+}
+
+function idTentativa(questionId) {
+  // Um clique = um envio; o mesmo UUID e reutilizado em reenvios da mesma submissao
+  // (falha de rede), garantindo idempotencia no servidor. Liberado apos sucesso.
+  const chave = "sistema_enem_attempt_" + questionId;
+  const novo = () => (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(16).slice(2));
+  try {
+    let s = sessionStorage.getItem(chave);
+    if (!s) { s = novo(); sessionStorage.setItem(chave, s); }
+    return { id: s, chave };
+  } catch (_) { return { id: novo(), chave: null }; }
+}
+
+async function iniciar() {
+  const params = new URLSearchParams(location.search);
+  const id = (params.get("id") || "").trim();
+  const resultado = document.getElementById("resultado");
+  if (!id) { falha("Questão não informada. Use o índice."); return; }
+
+  let catalogo;
+  try {
+    catalogo = await (await fetch("catalogo.json", { cache: "no-store" })).json();
+  } catch (_) {
+    falha("Não foi possível carregar o catálogo público.");
+    return;
+  }
+  const item = (catalogo.items || []).find((i) => i.id === id || i.question_id === id)
+    || (catalogo.items || []).find((i) => params.get("n") && String(i.numero_oficial) === params.get("n") && String(i.ano) === (params.get("ano") || "2024"));
+  if (!item) { falha("Questão não encontrada no catálogo público."); return; }
+
+  document.title = "Sistema ENEM — Questão " + item.numero_oficial + " (" + item.ano + ")";
+  const meta = document.getElementById("meta");
+  meta.innerHTML = "<strong>Questão " + item.numero_oficial + "</strong> · " + item.prova +
+    ", página " + item.pagina + " · " + item.area +
+    (item.anulada ? '<span class="badge">ANULADA pelo INEP</span>' : "");
+
+  const img = document.getElementById("enunciado");
+  img.src = item.imagem;
+  img.alt = item.alt || ("Questão " + item.numero_oficial + " do ENEM " + item.ano + ".");
+  mostrar(document.getElementById("figura"), true);
+
+  document.getElementById("fonte").textContent =
+    "Fonte oficial: " + item.fonte + ", página " + item.pagina +
+    ". SHA-256 do ativo de imagem: " + (item.sha256_imagem || "não informado") + ".";
+
+  let dados;
+  try {
+    dados = await (await fetch(item.data, { cache: "no-store" })).json();
+  } catch (_) {
+    falha("Não foi possível carregar as alternativas.");
+    return;
+  }
+
+  const container = document.getElementById("alternativas");
+  container.textContent = "";
+  for (const opcao of dados.options || []) {
+    const label = document.createElement("label");
+    label.className = "option";
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "alternativa";
+    input.value = opcao.label;
+    input.setAttribute("aria-label", "Alternativa " + opcao.label + ": " + opcao.text);
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(" " + opcao.label + " — " + opcao.text));
+    container.appendChild(label);
+  }
+  mostrar(document.getElementById("form-resposta"), true);
+
+  const chave = primeiraChave(item.question_id);
+  let primeira = null;
+  try { primeira = localStorage.getItem(chave); } catch (_) { primeira = null; }
+
+  document.getElementById("form-resposta").addEventListener("submit", async (evento) => {
+    evento.preventDefault();
+    const selecionada = document.querySelector('input[name="alternativa"]:checked');
+    resultado.style.display = "block";
+    resultado.className = "";
+    if (!selecionada) {
+      resultado.textContent = "Selecione uma alternativa antes de registrar.";
+      return;
+    }
+    if (primeira === null) {
+      try { localStorage.setItem(chave, selecionada.value); } catch (_) { /* sem armazenamento local */ }
+      primeira = selecionada.value;
+    }
+
+    if (!SILENCIADO.api) {
+      resultado.textContent = "Resposta registrada neste navegador. A conferência e o feedback acontecem no servidor; o feedback ainda não está disponível nesta página.";
+      return;
+    }
+    resultado.textContent = "Enviando ao servidor…";
+    const tentativa = idTentativa(item.question_id);
+    try {
+      const resposta = await fetch(SILENCIADO.api.replace(/\/$/, "") + "/v1/study/attempts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question_id: item.question_id,
+          selected_option: selecionada.value,
+          client_attempt_id: tentativa.id,
+          anon_session_id: sessaoAnonima(),
+        }),
+      });
+      if (!resposta.ok) {
+        resultado.className = "erro";
+        resultado.textContent = "Não foi possível registrar no servidor agora (HTTP " + resposta.status + "). Sua resposta ficou guardada neste navegador.";
+        return;
+      }
+      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
+      const corpo = await resposta.json();
+      resultado.className = "ok";
+      if (corpo.official_status === "annulled") {
+        resultado.textContent = "Questão anulada pelo INEP: não há alternativa correta. Sua tentativa foi registrada no servidor.";
+      } else if (corpo.correct === true) {
+        resultado.textContent = "Resposta registrada no servidor. Correta!";
+      } else if (corpo.correct === false) {
+        resultado.textContent = "Resposta registrada no servidor. Incorreta.";
+      } else {
+        resultado.textContent = "Resposta registrada no servidor.";
+      }
+    } catch (_) {
+      resultado.className = "erro";
+      resultado.textContent = "Falha de conexão com o servidor. Sua resposta ficou guardada neste navegador.";
+    }
+  });
+}
+
+iniciar();
+</script>
+</body>
+</html>
