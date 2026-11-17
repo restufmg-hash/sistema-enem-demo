@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q114",
+  "year": 2024,
+  "number": 114,
+  "area": "Ciências da Natureza",
+  "topic": "Mecânica; centro de massa; balanceamento de roda/pneu; máquina de medição de oscilações",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 9
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q114_integral.png",
+      "text": "Questão 114 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Nos automóveis, é importante garantir que o centro de massa (CM) de cada conjunto roda/pneu coincida com o seu centro geométrico. Esse processo é realizado em uma máquina de balanceamento, na qual o conjunto roda e pneu é colocado para girar a uma velocidade de valor constante. Com base nas oscilações medidas, a máquina indica a posição do centro de massa do conjunto, e pequenas peças de chumbo são fixadas em lugares específicos da roda até que as vibrações diminuam. Durante o treinamento de sua equipe, a fim de corrigir a posição do centro de massa indicada pela máquina, um mecânico apresenta o esquema a seguir, com cinco possíveis pontos da roda para posicionar uma peça de chumbo. Pergunta: 'Em qual ponto deve ser fixada a peça de chumbo para corrigir a posição do centro de massa desse conjunto roda/pneu?'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "1"
+    },
+    {
+      "label": "B",
+      "text": "2"
+    },
+    {
+      "label": "C",
+      "text": "3"
+    },
+    {
+      "label": "D",
+      "text": "4"
+    },
+    {
+      "label": "E",
+      "text": "5"
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
