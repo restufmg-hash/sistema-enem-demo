@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q002:en",
+  "year": 2025,
+  "number": 2,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Língua Estrangeira Moderna — Inglês (interpretação de texto)",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 2
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q002_en_integral.png",
+      "text": "Questão 002 do ENEM 2025 (1º dia, Caderno 1 Azul, versão Inglês, página 2), área Linguagens, Códigos e suas Tecnologias — Língua Estrangeira Moderna (Inglês). Texto-base em inglês: 'My idea of philosophy is that if it is not relevant to human problems, if it does not tell us how we can go about eradicating some of the misery in this world, then it is not worth the name of philosophy. I think Socrates made a very profound statement when he asserted that philosophy is to teach us proper living. In this day and age “proper living” means liberation from the urgent problems of poverty, economic necessity and indoctrination, mental oppression.' Referência: DAVIS, A. Lectures on Liberation. Washington: Smithsonian Libraries, 1971 (adaptado). Pergunta: 'Nesse texto, ao discorrer sobre a relevância da filosofia, a escritora Angela Davis tem por objetivo'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "criticá-la pela restrição temática."
+    },
+    {
+      "label": "B",
+      "text": "vinculá-la ao universo acadêmico."
+    },
+    {
+      "label": "C",
+      "text": "afastá-la da abordagem socrática."
+    },
+    {
+      "label": "D",
+      "text": "aproximá-la dos problemas sociais."
+    },
+    {
+      "label": "E",
+      "text": "responsabilizá-la pela pobreza humana."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
