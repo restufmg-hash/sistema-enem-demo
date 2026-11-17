@@ -787,6 +787,22 @@
       "imagem": "assets/enem2025_d1_cdazul_q013_integral_p08.png",
       "alt": "Questão 013 do ENEM 2025. Texto legal — Art. 26-A da Lei n. 10 639/2003 (ensino sobre História e Cultura Afro-Brasileira), com §§ 1º e 2º. Referência: BRASIL. Lei n. 10 639/2003. Disponível em: www.gov.br/planalto. Acesso em: 5 maio 2024. Pergunta em português: 'O emprego da norma-padrão é justificado nesse texto'; alternativas A até E.",
       "legacy": "enem2025-q013.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q014",
+      "question_id": "enem:2025:regular_nacional:d1:q014",
+      "ano": 2025,
+      "numero_oficial": 14,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 8,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "7C26576BA3209E316FCEF7F1E8554E132F80E9C1DF447D0DA7AEE02D9933483D",
+      "data": "data/enem2025_d1_cdazul_q014.json",
+      "imagem": "assets/enem2025_d1_cdazul_q014_integral_p08.png",
+      "alt": "Questão 014 do ENEM 2025. Cartaz publicitário da 26ª BIENAL INTERNACIONAL DO LIVRO DE SÃO PAULO: homem de óculos com colagem ilustrada na cabeça, textos 'Você entra Fernando.' e 'E sai Pessoa.', banner azul com datas e local. Referência: Disponível em: www.publishnews.com.br. Acesso em: 19 set. 2024. Pergunta em português: 'Nesse cartaz publicitário, os recursos verbais e não verbais constroem um argumento que objetiva'; alternativas A até E.",
+      "legacy": "enem2025-q014.html"
     }
   ]
 }
