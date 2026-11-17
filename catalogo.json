@@ -687,6 +687,25 @@
       "alt": "Questão 009 do ENEM 2025. Enunciado: 'A autora conclui que as novas tecnologias de escrita'; alternativas A até E.",
       "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
       "legacy": "enem2025-q009.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q010",
+      "question_id": "enem:2025:regular_nacional:d1:q010",
+      "ano": 2025,
+      "numero_oficial": 10,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 7,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "053C14E8E765D2937B5EA140BE6377ABD7BD806630BFC03DDCF5F8B08193F74F",
+      "data": "data/enem2025_d1_cdazul_q010.json",
+      "imagem": "assets/enem2025_d1_cdazul_q010_enunciado_p07.png",
+      "imagem_texto": "assets/enem2025_d1_cdazul_q006_texto_base_p06.png",
+      "sha256_imagem_texto": "FAB47BB8AE95AC320DFA0C56C7EA714335B602C912CDF2142FE9B66DDDA0D887",
+      "alt": "Questão 010 do ENEM 2025. Enunciado: 'O recurso linguístico usado para marcar a síntese da opinião da autora sobre a temática desenvolvida foi o(a)'; alternativas A até E.",
+      "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
+      "legacy": "enem2025-q010.html"
     }
   ]
 }
