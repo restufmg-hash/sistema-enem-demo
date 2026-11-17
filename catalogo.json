@@ -1,8 +1,8 @@
 {
   "kind": "sistema-enem.catalogo_publico.v1",
-  "version": 1,
+  "version": 2,
   "gerado_em": "2026-11-17",
-  "nota": "Catálogo público de itens liberados para leitura. Sem gabarito, sem resolução, sem IDs privados. A conferência acontece no servidor.",
+  "nota": "Catálogo público de itens liberados para leitura. Sem gabarito, sem resolução, sem IDs privados. A conferência acontece no servidor.; ocorrências (ano/dia/caderno/idioma/numero_oficial) e aliases de idioma english↔en, espanol↔es reversíveis; seleção por ocorrência com fallback unívoco.",
   "items": [
     {
       "id": "enem2024-d2-cdamarelo-q91",
@@ -18,7 +18,18 @@
       "data": "data/enem2024_d2_cdamarelo_q091.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q091_integral.png",
       "alt": "Questão 91 do ENEM 2024. O enunciado informa que o esquema representa um experimento feito com células do protozoário Amoeba proteus: um grupo foi tratado com a droga citocalasina B e outro permaneceu sem tratamento, servindo como controle. O esquema mostra dois grupos lado a lado. À esquerda, o grupo controle mostra uma ameba inicialmente irregular, com prolongamentos celulares, e uma seta apontando para outra ameba que mantém formato irregular. À direita, a ameba tratada com citocalasina B aparece inicialmente com prolongamentos e, após uma seta, formato arredondado. As legendas são 'Grupo controle' e 'Ameba tratada com citocalasina B'. Pergunta: 'Qual componente celular foi afetado pela droga utilizada no experimento?'.",
-      "legacy": "enem2024-q091.html"
+      "legacy": "enem2024-q091.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 91,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q92",
@@ -34,7 +45,18 @@
       "data": "data/enem2024_d2_cdamarelo_q092.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q092_integral.png",
       "alt": "Questão 92 do ENEM 2024. O enunciado informa que o magnésio metálico utilizado em ligas leves é produzido por um processo com várias etapas que utiliza água do mar como matéria-prima. A primeira etapa consiste na reação entre íons magnésio e hidróxido de cálcio, resultando em uma mistura contendo hidróxido de magnésio, pouco solúvel, e íons cálcio. A equação química apresenta Mg²⁺ (aq) + Ca(OH)₂ (aq) → Mg(OH)₂ (s) + Ca²⁺ (aq). Pergunta: 'O método adequado para separar o Mg(OH)₂ dessa mistura é a'.",
-      "legacy": "enem2024-q092.html"
+      "legacy": "enem2024-q092.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 92,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q93",
@@ -50,7 +72,18 @@
       "data": "data/enem2024_d2_cdamarelo_q093.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q093_integral.png",
       "alt": "Questão 93 do ENEM 2024. O enunciado relata que moradores do Brooklin, bairro de São Paulo, perdem o sono devido a um som alto, constante e estridente. O som é provocado por anfíbios anuros trazidos do Caribe, da espécie Eleutherodactylus jahnstonei, que possuem tamanho pouco maior que um grão de feijão. Esses animais encontraram na capital paulista ambiente favorável. Pergunta: 'Ao emitirem o som estridente, esses anfíbios'.",
-      "legacy": "enem2024-q093.html"
+      "legacy": "enem2024-q093.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 93,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q94",
@@ -66,7 +99,18 @@
       "data": "data/enem2024_d2_cdamarelo_q094.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q094_integral.png",
       "alt": "Questão 94 do ENEM 2024. A hidroxiapatita, Ca₅(PO₄)₃OH, mineral constituinte do esmalte do dente, em equilíbrio com sua desmineralização e mineralização. A figura com dois quadros mostra: à esquerda, Ca₅(PO₄)₃OH (s) e H⁺ (aq); à direita, 5 Ca²⁺ (aq), 3 PO₄³⁻ (aq) e H₂O (l); setas entre os quadros identificadas como 'Desmineralização' (da esquerda para a direita) e 'Mineralização' (da direita para a esquerda). Abaixo, um quadro lista 5 cremes dentais com agente de polimento e pH: I — bicarbonato de sódio, 9,5; II — carbonato de cálcio, 11,0; III — citrato de potássio, 7,7; IV — dióxido de silício, 6,9; V — fosfato de cálcio, 7,3. Pergunta: 'Considerando o equilíbrio químico envolvido, qual creme dental promove a maior desmineralização do esmalte do dente?'.",
-      "legacy": "enem2024-q094.html"
+      "legacy": "enem2024-q094.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 94,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q95",
@@ -82,7 +126,18 @@
       "data": "data/enem2024_d2_cdamarelo_q095.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q095_integral.png",
       "alt": "Questão 95 do ENEM 2024. A tirinha de Laerte ilustra esquimós dentro de um iglu, uma geladeira no centro da casa e crianças brincando com blocos de gelo. Falas: Ué, você comprou uma geladeira?!; É; Pra quê?!; É para as crianças.; Elas adoram brincar de casinha. Pergunta: 'Na tirinha, a geladeira é necessária para fazer gelo porque'.",
-      "legacy": "enem2024-q095.html"
+      "legacy": "enem2024-q095.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 95,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q96",
@@ -98,7 +153,18 @@
       "data": "data/enem2024_d2_cdamarelo_q096.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q096_integral.png",
       "alt": "Questão 96 do ENEM 2024. O enunciado informa que pesticidas naturais vêm sendo utilizados no controle de pragas e doenças agrícolas. A figura apresenta duas fórmulas estruturais identificadas como Composto 1 e Composto 2. Pergunta: 'Qual é a função orgânica correspondente ao grupo funcional comum presente nesses dois compostos?'.",
-      "legacy": "enem2024-q096.html"
+      "legacy": "enem2024-q096.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 96,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q97",
@@ -114,7 +180,18 @@
       "data": "data/enem2024_d2_cdamarelo_q097.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q097_integral.png",
       "alt": "Questão 97 do ENEM 2024. Um mesmo meio nutritivo foi utilizado para o cultivo de três gêneros bacterianos em tubos de ensaio indicados por 1, 2 e 3. As células estão pintadas como pontos. No tubo 1, pontos concentram-se no topo do tubo; no tubo 2, os pontos concentram-se no fundo; no tubo 3, os pontos distribuem-se por toda a coluna. Pergunta: 'Em relação ao metabolismo energético, os microrganismos presentes nos tubos 1, 2 e 3 são classificados, respectivamente, como'.",
-      "legacy": "enem2024-q097.html"
+      "legacy": "enem2024-q097.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 97,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q98",
@@ -130,7 +207,18 @@
       "data": "data/enem2024_d2_cdamarelo_q098.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q098_integral.png",
       "alt": "Questão 98 do ENEM 2024. Uma placa de saída de emergência com moldura e pictograma verdes sobre fundo amarelo-claro brilha no escuro. A placa contém sulfeto de zinco (ZnS) dopado com prata ou cobre, na superfície da placa; o fenômeno ocorre após exposição à luz do ambiente. Pergunta: 'O aparecimento do brilho nessas condições ocorre como consequência de'.",
-      "legacy": "enem2024-q098.html"
+      "legacy": "enem2024-q098.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 98,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q99",
@@ -146,7 +234,18 @@
       "data": "data/enem2024_d2_cdamarelo_q099.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q099_integral.png",
       "alt": "Questão 99 do ENEM 2024. O enunciado informa que indústrias farmacêuticas e instituições científicas trabalham no desenvolvimento de diferentes vacinas contra a covid-19. Em algumas dessas vacinas, a principal estrutura antigênica é uma proteína da superfície viral denominada espícula (spike, em inglês). Pergunta: 'Nessas vacinas, essa proteína viral induz a'.",
-      "legacy": "enem2024-q099.html"
+      "legacy": "enem2024-q099.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 99,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q100",
@@ -162,7 +261,18 @@
       "data": "data/enem2024_d2_cdamarelo_q100.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q100_integral.png",
       "alt": "Questão 100 do ENEM 2024. O enunciado apresenta um experimento com duas barras metálicas, A e B, carregadas com cargas opostas e imersas em óleo, e farelo de milho indicando o formato das linhas de campo elétrico. Pergunta: 'Ao repetir o experimento colocando um cilindro metálico oco entre as placas, qual esquema representa o formato das linhas de campo assumido pelo farelo?'.",
-      "legacy": "enem2024-q100.html"
+      "legacy": "enem2024-q100.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 100,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q101",
@@ -178,7 +288,18 @@
       "data": "data/enem2024_d2_cdamarelo_q101.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q101_integral.png",
       "alt": "Questão 101 do ENEM 2024. Placas solares comuns dependem de dias ensolarados; o enunciado apresenta uma placa solar especial recoberta de grafeno, capaz de gerar eletricidade até com gotas de chuva. Pergunta: 'Ao produzir eletricidade em dias chuvosos, o grafeno'.",
-      "legacy": "enem2024-q101.html"
+      "legacy": "enem2024-q101.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 101,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q102",
@@ -194,7 +315,18 @@
       "data": "data/enem2024_d2_cdamarelo_q102.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q102_integral.png",
       "alt": "Questão 102 do ENEM 2024, ANULADA pelo INEP. Um estudante comprou uma cafeteira elétrica de 700 W de potência e com capacidade de 0,5 L de água (500 g). Enquanto o café estava em preparação na capacidade máxima, ele marcou que demorou 3 minutos para ferver toda a água (100 °C) a partir da temperatura ambiente de 20 °C. Pergunta: 'Qual a eficiência energética calculada pelo estudante?'.",
-      "legacy": "enem2024-q102.html"
+      "legacy": "enem2024-q102.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 102,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q103",
@@ -210,7 +342,18 @@
       "data": "data/enem2024_d2_cdamarelo_q103.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q103_integral.png",
       "alt": "Questão 103 do ENEM 2024. O enunciado apresenta o diagrama P-V referente ao ciclo de Otto de um motor a gasolina/etanol, incluindo gráfico, área W e lista de etapas na tabela. Pergunta: 'A transformação da energia térmica em energia útil ocorre na etapa'.",
-      "legacy": "enem2024-q103.html"
+      "legacy": "enem2024-q103.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 103,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q104",
@@ -226,7 +369,18 @@
       "data": "data/enem2024_d2_cdamarelo_q104.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q104_integral.png",
       "alt": "Questão 104 do ENEM 2024. Circuito quadrado montado com quatro boias (1 a 4) em mar calmo; corrente marinha paralela à praia, velocidade constante. Pergunta: 'Em quantos minutos o nadador completará a prova?'.",
-      "legacy": "enem2024-q104.html"
+      "legacy": "enem2024-q104.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 104,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q105",
@@ -242,7 +396,18 @@
       "data": "data/enem2024_d2_cdamarelo_q105.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q105_integral.png",
       "alt": "Questão 105 do ENEM 2024. O enunciado apresenta o vírus linfotrópico de células T humanas tipo 1 (HTLV-1), um retrovírus do mesmo grupo do vírus da imunodeficiência humana (HIV). Pergunta: 'Uma possível consequência da infecção por HTLV-1 é o desenvolvimento de'.",
-      "legacy": "enem2024-q105.html"
+      "legacy": "enem2024-q105.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 105,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q106",
@@ -258,7 +423,18 @@
       "data": "data/enem2024_d2_cdamarelo_q106.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q106_integral.png",
       "alt": "Questão 106 do ENEM 2024. O enunciado apresenta uma tirinha de Calvin: ele se diverte em um balanço antes de soltar-se dele e cair ao chão. Pergunta: 'Qual vetor representa a força resultante exercida pelo chão sobre Calvin no exato momento em que ele toca o chão?'.",
-      "legacy": "enem2024-q106.html"
+      "legacy": "enem2024-q106.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 106,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q107",
@@ -274,7 +450,18 @@
       "data": "data/enem2024_d2_cdamarelo_q107.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q107_integral.png",
       "alt": "Questão 107 do ENEM 2024. A enunciada apresenta a fitorremediação como técnica de recuperação ambiental, com a figura da árvore (esquerda) com os processos e o quadro com cinco definições (direita). Pergunta: 'O método que retira o mercúrio de uma área contaminada, impedindo sua entrada na cadeia alimentar, é a'.",
-      "legacy": "enem2024-q107.html"
+      "legacy": "enem2024-q107.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 107,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q108",
@@ -290,7 +477,18 @@
       "data": "data/enem2024_d2_cdamarelo_q108.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q108_integral.png",
       "alt": "Questão 108 do ENEM 2024. A notícia 'Brasil fecha 2020 entre os maiores recicladores de latas de alumínio' apresenta dados sobre bauxita, alumina (Al2O3), produção de alumínio (Al), índice de reciclagem de 97,4% e 4,0 × 10^5 toneladas de latas. Pergunta: 'Levando em conta apenas a reciclagem de latas, qual é o valor mais próximo da massa de bauxita, em tonelada, que deixou de ser extraída da natureza em 2020 no Brasil?'.",
-      "legacy": "enem2024-q108.html"
+      "legacy": "enem2024-q108.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 108,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q109",
@@ -306,7 +504,18 @@
       "data": "data/enem2024_d2_cdamarelo_q109.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q109_integral.png",
       "alt": "Questão 109 do ENEM 2024. Enunciado sobre o LED, símbolo do LED, seta vermelha 'Sentido permitido da corrente'. Materiais: bateria ideal de 4,5 V, dois LEDs de 3,0 V e Imáx = 1,0 mA cada, dois resistores de 1,5 kΩ cada. Pergunta: 'O circuito que o estudante pode montar, para que ambos os LEDs fiquem acesos e cada um seja percorrido por Imáx, é'. Alternativas A-E desenhadas na prova.",
-      "legacy": "enem2024-q109.html"
+      "legacy": "enem2024-q109.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 109,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q110",
@@ -322,7 +531,18 @@
       "data": "data/enem2024_d2_cdamarelo_q110.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q110_integral.png",
       "alt": "Questão 110 do ENEM 2024. Circuito com duas pequenas lâmpadas L1 (6 V – 9 W) e L2 (12 V – 18 W) em série com uma bateria V_QR; fio resistivo QR (48 cm) em paralelo à bateria com pontos A, B, C, D e E; amperímetro com terminais P e S. Pergunta: 'Em qual desses pontos o amperímetro deve ser conectado para que as lâmpadas acendam exatamente segundo as especificações de tensão e potência elétricas fornecidas?'.",
-      "legacy": "enem2024-q110.html"
+      "legacy": "enem2024-q110.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 110,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q111",
@@ -338,7 +558,18 @@
       "data": "data/enem2024_d2_cdamarelo_q111.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q111_integral.png",
       "alt": "Questão 111 do ENEM 2024. Texto sobre biogás produzido em empreendimento de suinocultura contendo 70% em volume de metano (16 g/mol; volume molar 22 L/mol), utilizado em substituição ao etanol (46 g/mol) em um gerador no qual 1 m3 de biogás suíno substitui 0,59 L de etanol anidro (densidade 0,78 g/mL). Pergunta: 'Nessas condições, a massa de metano necessária para substituir 10 mol de etanol na produção de energia é mais próxima de'. Alternativas: 300 g., 400 g., 510 g., 590 g., 720 g.",
-      "legacy": "enem2024-q111.html"
+      "legacy": "enem2024-q111.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 111,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q112",
@@ -354,7 +585,18 @@
       "data": "data/enem2024_d2_cdamarelo_q112.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q112_integral.png",
       "alt": "Questão 112 do ENEM 2024. Enunciado sobre a nimesulida (anti-inflamatório, analgésico e antitérmico) e sua conversão, por tratamento com uma base de Brönsted-Lowry, em espécie eletricamente carregada de maior solubilidade em água. A figura apresenta os grupamentos presentes na estrutura química da nimesulida. Pergunta: 'Na estrutura desse fármaco, o grupamento capaz de reagir com a base de Brönsted-Lowry é o grupo'.",
-      "legacy": "enem2024-q112.html"
+      "legacy": "enem2024-q112.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 112,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q113",
@@ -370,7 +612,18 @@
       "data": "data/enem2024_d2_cdamarelo_q113.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q113_integral.png",
       "alt": "Questão 113 do ENEM 2024. Enunciado sobre biotecnologia e clonagem gênica em procariotos; RT-PCR (transcriptase reversa) sintetiza DNA complementar a partir de fitas de RNA; técnica importante para detectar genes. Pergunta: 'Nesse contexto, essa técnica é importante para detectar genes'. Alternativas: expressos., plasmidiais., bacterianos., dominantes., autossômicos.",
-      "legacy": "enem2024-q113.html"
+      "legacy": "enem2024-q113.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 113,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q114",
@@ -386,7 +639,18 @@
       "data": "data/enem2024_d2_cdamarelo_q114.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q114_integral.png",
       "alt": "Questão 114 do ENEM 2024. Enunciado sobre balanceamento roda/pneu em automóveis; máquina de balanceamento detecta oscilações; mecânico identifica a posição do centro de massa; cinco pontos numerados (1-5) na roda e no esquema. Pergunta: 'Em qual ponto deve ser fixada a peça de chumbo para corrigir a posição do centro de massa desse conjunto roda/pneu?'.",
-      "legacy": "enem2024-q114.html"
+      "legacy": "enem2024-q114.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 114,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q115",
@@ -402,7 +666,18 @@
       "data": "data/enem2024_d2_cdamarelo_q115.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q115_integral.png",
       "alt": "Questão 115 do ENEM 2024. Texto sobre soro caseiro contra desidratação (diarreia); receita: duas colheres grandes de açúcar e duas colheres pequenas de sal de cozinha em 2 L de água fervida, resultando em solução com concentração de íon sódio de 1,4 mg/mL. Considere as massas molares: NaCl = 58,5 g/mol; Na = 23 g/mol. Pergunta: 'Qual é o valor mais próximo da massa, em grama, de cloreto de sódio presente em uma única colher pequena?'.",
-      "legacy": "enem2024-q115.html"
+      "legacy": "enem2024-q115.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 115,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q116",
@@ -418,7 +693,18 @@
       "data": "data/enem2024_d2_cdamarelo_q116.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q116_integral.png",
       "alt": "Questão 116 do ENEM 2024. Enunciado sobre cladograma de mamíferos (Mammalia) com padrões de reprodução ou nutrição dos embriões e descendentes; ilustrações do ornitorrinco (Monotremata), canguru (Marsupialia) e elefante (Placentalia); árvores mostrando Prototheria, Theria, Metatheria e Eutheria. Pergunta: 'Ao longo do processo evolutivo, percebem-se, entre esses animais, perdas e ganhos nos padrões citados que envolvem o(a)'.",
-      "legacy": "enem2024-q116.html"
+      "legacy": "enem2024-q116.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 116,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q117",
@@ -434,7 +720,18 @@
       "data": "data/enem2024_d2_cdamarelo_q117.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q117_integral.png",
       "alt": "Questão 117 do ENEM 2024. Texto: ambulância em alta velocidade com sirene ligada desloca-se em direção a um radar operado por uma pessoa; o radar emite ondas de rádio com frequência f0 que são refletidas pela dianteira da ambulância, retornando para o detector com frequência fr. A percepção do operador, em relação ao som emitido pela sirene, é de que este se altera à medida que a ambulância se aproxima ou se afasta. Pergunta: 'Durante a aproximação, como o operador percebe o som da sirene e qual é a relação entre as frequências fr e f0 medidas pelo radar?'.",
-      "legacy": "enem2024-q117.html"
+      "legacy": "enem2024-q117.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 117,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q118",
@@ -450,7 +747,18 @@
       "data": "data/enem2024_d2_cdamarelo_q118.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q118_integral.png",
       "alt": "Questão 118 do ENEM 2024. Mirascópio 3D: dois espelhos côncavos E1 e E2 apoiados por suas bordas, vértice de E1 coincide com o foco de E2 e vice-versa; imagem tridimensional de objeto sobre o vértice de E1; diagrama com medidas 5 cm de abertura, 3,8 cm, 3,8 cm, 23 cm de base. Referência: SALZMANN, W. Disponível em: https://wissenstexte.de. Acesso em: 27 jun. 2024 (adaptado). Pergunta: 'A natureza da imagem formada e a distância vertical entre cada ponto objeto e seu correspondente ponto imagem são'.",
-      "legacy": "enem2024-q118.html"
+      "legacy": "enem2024-q118.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 118,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q119",
@@ -466,7 +774,18 @@
       "data": "data/enem2024_d2_cdamarelo_q119.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q119_integral.png",
       "alt": "Questão 119 do ENEM 2024. Enunciado sobre crumple zones nos automóveis; atitude de considerar carros mais seguros como os de estruturas mais rígidas é equivocada — na verdade os carros seguros têm partes que se deformam facilmente; referência: DAY, C. Crumple Zones. Disponível em: https://pubs.aip.org. Acesso em: 2 jul. 2024 (adaptado). Figura do acidente de carro com etiquetas 'Crumple zone (Região deformável)', 'Air bag' e 'Seat belts (Cintos de segurança)'. Pergunta: 'Considerando o carro, seus ocupantes e o muro da figura como um sistema isolado, o crumple zone aumenta a segurança dos passageiros porque, durante uma colisão, a deformação da estrutura do carro'.",
-      "legacy": "enem2024-q119.html"
+      "legacy": "enem2024-q119.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 119,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q120",
@@ -482,7 +801,18 @@
       "data": "data/enem2024_d2_cdamarelo_q120.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q120_integral.png",
       "alt": "Questão 120 do ENEM 2024. Enunciado sobre células a combustível microbianas, duas câmaras, biofilme de bactérias eletrogênicas e geração de corrente elétrica. Figura: ânodo, cátodo, membrana; setas de elétrons e prótons; espécies CH₃COO⁻, CO₂, H⁺, O₂ e H₂O; duas semirreações. Referência: QUINTO, A. C., Biobaterias geram eletricidade a partir de esgoto sanitário e efluentes agroindustriais, jornal.usp.br, 2021. Pergunta sobre reação global da CCM; alternativas A até E.",
-      "legacy": "enem2024-q120.html"
+      "legacy": "enem2024-q120.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 120,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q122",
@@ -498,7 +828,18 @@
       "data": "data/enem2024_d2_cdamarelo_q122.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q122_integral.png",
       "alt": "Questão 122 do ENEM 2024. Metabolismo de procariontes. O esquema ilustra duas partes: ciclo do nitrogênio com fixadores de N₂, nitrificantes convertendo NH₃ em NO₂⁻ e NO₃⁻ e desnitrificantes; ciclo do carbono com procariontes fotossintetizantes, plantas fixando CO₂ e decompositores. Etapas numeradas 1 a 5. Pergunta qual etapa apresenta transformação redox análoga à nitrificação. Alternativas A: 1; B: 2; C: 3; D: 4; E: 5.",
-      "legacy": "enem2024-q122.html"
+      "legacy": "enem2024-q122.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 122,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q123",
@@ -515,7 +856,18 @@
       "data": "data/enem2024_d2_cdamarelo_q123.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q123_integral.png",
       "alt": "Questão 123 do ENEM 2024. Texto sobre poluição por motores a combustão e fumaça fotoquímica; gráfico com emissão de CO₂, CO, O₂, NO e HC em função da razão ar/combustível. Na razão 18, observa-se CO próximo de zero e CO₂ relativamente elevado. Pergunta sobre a composição da emissão nessa razão; alternativas A a E.",
-      "legacy": "enem2024-q123.html"
+      "legacy": "enem2024-q123.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 123,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q121",
@@ -531,7 +883,18 @@
       "data": "data/enem2024_d2_cdamarelo_q121.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q121_integral.png",
       "alt": "Questão 121 do ENEM 2024. Texto sobre a mudança histórica do conceito de compostos orgânicos e a concepção científica atual. Apresenta cinco alternativas A a E sobre a definição de substâncias orgânicas; não contém figuras ou fórmulas químicas.",
-      "legacy": "enem2024-q121.html"
+      "legacy": "enem2024-q121.html",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 121,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q124",
@@ -547,7 +910,18 @@
       "sha256_imagem": "9069587CB88D79C34A85AE87AF4DE0BDAFF745A97F40B2EE207C230543157FB7",
       "data": "data/enem2024_d2_cdamarelo_q124.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q124_integral.png",
-      "alt": "Questão 124 do ENEM 2024, Ciências da Natureza. Texto sobre ruído de fundo de 45 dB, fala de professor com 60 dB a 1 m e exigência de 5 dB acima do ruído. Gráfico do nível sonoro (dB) por distância (m), com curva decrescente de 60 dB a 1 m até aproximadamente 38 dB a 10 m, acompanhado por ilustração de sala de aula. Pergunta: maior distância para compreender a fala; alternativas A até E."
+      "alt": "Questão 124 do ENEM 2024, Ciências da Natureza. Texto sobre ruído de fundo de 45 dB, fala de professor com 60 dB a 1 m e exigência de 5 dB acima do ruído. Gráfico do nível sonoro (dB) por distância (m), com curva decrescente de 60 dB a 1 m até aproximadamente 38 dB a 10 m, acompanhado por ilustração de sala de aula. Pergunta: maior distância para compreender a fala; alternativas A até E.",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 124,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q125",
@@ -563,7 +937,18 @@
       "sha256_imagem": "5E028D5FF367FA0746DED6FC327E044D45BB64D881FE9334A3B80FFB7F1F0C2E",
       "data": "data/enem2024_d2_cdamarelo_q125.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q125_integral.png",
-      "alt": "Questão 125 do ENEM 2024, Ciências da Natureza. Agricultora mergulha espigas de milho em água fervente e depois em água gelada para preservar o sabor adocicado e evitar a conversão de glicose em amido. Pergunta sobre o fenômeno responsável; alternativas A a E."
+      "alt": "Questão 125 do ENEM 2024, Ciências da Natureza. Agricultora mergulha espigas de milho em água fervente e depois em água gelada para preservar o sabor adocicado e evitar a conversão de glicose em amido. Pergunta sobre o fenômeno responsável; alternativas A a E.",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 125,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q126",
@@ -579,7 +964,18 @@
       "sha256_imagem": "780F2AC986ED26BE4166FE5B5AB92B424E905BDA61612BC0F0CF008103FD5A51",
       "data": "data/enem2024_d2_cdamarelo_q126.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q126_integral.png",
-      "alt": "Questão 126 do ENEM 2024, Ciências da Natureza. Esquema de aquecedor solar com coletor de tubos a vácuo, reservatório de água com isolamento térmico de poliuretano, fluxo de água fria (seta azul) para os coletores e retorno de água quente (seta vermelha) ao reservatório, sob radiação solar. Pergunta sobre o mecanismo de transferência de calor do coletor ao reservatório; alternativas A a E."
+      "alt": "Questão 126 do ENEM 2024, Ciências da Natureza. Esquema de aquecedor solar com coletor de tubos a vácuo, reservatório de água com isolamento térmico de poliuretano, fluxo de água fria (seta azul) para os coletores e retorno de água quente (seta vermelha) ao reservatório, sob radiação solar. Pergunta sobre o mecanismo de transferência de calor do coletor ao reservatório; alternativas A a E.",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 126,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q127",
@@ -595,7 +991,18 @@
       "sha256_imagem": "39677427F613AC133E8194BA4F60FACBD9D73F8DEE7CF1033BF087E7DDFC46C8",
       "data": "data/enem2024_d2_cdamarelo_q127.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q127_integral.png",
-      "alt": "Questão 127 do ENEM 2024. Fluxograma relacionando urbanização, ausência de saneamento básico, contaminação da água, redução da biodiversidade aquática e riscos à saúde humana. Pergunta sobre o aumento do risco de doenças transmitidas por mosquitos; alternativas A a E."
+      "alt": "Questão 127 do ENEM 2024. Fluxograma relacionando urbanização, ausência de saneamento básico, contaminação da água, redução da biodiversidade aquática e riscos à saúde humana. Pergunta sobre o aumento do risco de doenças transmitidas por mosquitos; alternativas A a E.",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 127,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q128",
@@ -611,7 +1018,18 @@
       "sha256_imagem": "1D75C2E6F039F7ADCD18E4DBCEDC2397BCE9B449FAAD70942735D950FA7C69B1",
       "data": "data/enem2024_d2_cdamarelo_q128.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q128_integral.png",
-      "alt": "Questão 128 do ENEM 2024. Texto Impactos do microplástico, com enunciado sobre poluentes apolares lipossolúveis, bioacumulação em vertebrados e alternativas A a E."
+      "alt": "Questão 128 do ENEM 2024. Texto Impactos do microplástico, com enunciado sobre poluentes apolares lipossolúveis, bioacumulação em vertebrados e alternativas A a E.",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 128,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2024-d2-cdamarelo-q129",
@@ -627,7 +1045,18 @@
       "sha256_imagem": "4A873CA9333A727AE27E91425502A3600802C7F5D41CAB7961467A117BC7B75E",
       "data": "data/enem2024_d2_cdamarelo_q129.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q129_integral.png",
-      "alt": "Questão 129 do ENEM 2024. Inspeção de bagagens em aeroportos por raios X e justificativa física para retirar notebooks, com alternativas A a E."
+      "alt": "Questão 129 do ENEM 2024. Inspeção de bagagens em aeroportos por raios X e justificativa física para retirar notebooks, com alternativas A a E.",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 129,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "q093-2025",
@@ -643,7 +1072,18 @@
       "data": "data/q093.json",
       "imagem": "assets/q093_questao_integral.png",
       "alt": "Questão 93 do ENEM 2025. O enunciado informa que a produção de vacinas exige uma sequência de procedimentos, além do cumprimento estrito de verificações de segurança. O esquema mostra: cultura de células infectadas com vírus; (1) isolamento dos vírus; (2) inativação dos vírus pelo calor ou por ação química; (3) aplicação da vacina em uma pessoa; (4) resposta imune com produção de anticorpos. Pergunta: 'O antígeno utilizado na vacina causa um efeito protetor contra o vírus porque'.",
-      "legacy": null
+      "legacy": null,
+      "occurrence": {
+        "ano": 2025,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 93,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q001-en",
@@ -659,7 +1099,20 @@
       "data": "data/enem2025_d1_cdazul_q001_en.json",
       "imagem": "assets/enem2025_d1_cdazul_q001_en_integral.png",
       "alt": "Questão 001 do ENEM 2025 (versão Inglês). Texto-base em inglês sobre Glory Ames, da reserva White Earth, frustrada com fantasias de Halloween que exploram a identidade indígena, como 'pow wow princess'; debate sobre racismo e apropriação cultural; foto de uma menina vestida como nativa americana com um tiro na testa, removida após denúncia; fala de Ames sobre o uso de aspectos da cultura e religião indígenas. Referência: LIU, M. C. M., Washington Post, 12 maio 2024 (adaptado). Pergunta em português: 'Ao abordar um aspecto da celebração do Halloween, esse texto tem por objetivo'; alternativas A até E.",
-      "legacy": "enem2025-q001-en.html"
+      "legacy": "enem2025-q001-en.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "en",
+        "numero_oficial": 1,
+        "revisao": "p0a-visual-editorial-approved.r2",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q001:english"
+      ]
     },
     {
       "id": "enem2025-d1-cdazul-q002-en",
@@ -675,7 +1128,20 @@
       "data": "data/enem2025_d1_cdazul_q002_en.json",
       "imagem": "assets/enem2025_d1_cdazul_q002_en_integral.png",
       "alt": "Questão 002 do ENEM 2025 (versão Inglês). Texto-base em inglês sobre a relevância da filosofia para os problemas humanos, a fala de Socrates sobre o 'proper living' como libertação dos problemas urgentes da pobreza, da necessidade econômica, da doutrinação e da opressão mental. Referência: DAVIS, A., Lectures on Liberation, Washington: Smithsonian Libraries, 1971 (adaptado). Pergunta em português: 'Nesse texto, ao discorrer sobre a relevância da filosofia, a escritora Angela Davis tem por objetivo'; alternativas A até E.",
-      "legacy": "enem2025-q002-en.html"
+      "legacy": "enem2025-q002-en.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "en",
+        "numero_oficial": 2,
+        "revisao": "p0a-visual-editorial-approved.r2",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q002:english"
+      ]
     },
     {
       "id": "enem2025-d1-cdazul-q003-en",
@@ -691,7 +1157,20 @@
       "data": "data/enem2025_d1_cdazul_q003_en.json",
       "imagem": "assets/enem2025_d1_cdazul_q003_en_integral.png",
       "alt": "Questão 003 do ENEM 2025 (versão Inglês). Poema-fragmento em inglês de Joy Harjo, 'She Had Some Horses': 'Remember the sky that you were born under...'; a autora de ascendência indígena relaciona ser humano, terra, plantas, animais e universo. Referência: HARJO, J., She Had Some Horses, Londres: W. Norton &amp; Company, 1983 (fragmento). Pergunta em português: 'Nesse poema, de uma autora de ascendência indígena, o eu lírico ressalta a'; alternativas A até E.",
-      "legacy": "enem2025-q003-en.html"
+      "legacy": "enem2025-q003-en.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "en",
+        "numero_oficial": 3,
+        "revisao": "p0a-visual-editorial-approved.r2",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q003:english"
+      ]
     },
     {
       "id": "enem2025-d1-cdazul-q004-en",
@@ -707,7 +1186,20 @@
       "data": "data/enem2025_d1_cdazul_q004_en.json",
       "imagem": "assets/enem2025_d1_cdazul_q004_en_integral.png",
       "alt": "Questão 004 do ENEM 2025 (versão Inglês). Texto-base em inglês sobre a chamada 'snowflake generation' de estudantes universitários, a fragilidade da cultura moderna e a resiliência. Referência: LOTT, T., www.theguardian.com, acesso em 10 dez. 2017 (adaptado). Pergunta em português: 'Nesse texto, a expressão “snowflake generation” é usada para'; alternativas A até E.",
-      "legacy": "enem2025-q004-en.html"
+      "legacy": "enem2025-q004-en.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "en",
+        "numero_oficial": 4,
+        "revisao": "p0a-visual-editorial-approved.r2",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q004:english"
+      ]
     },
     {
       "id": "enem2025-d1-cdazul-q005-en",
@@ -723,7 +1215,20 @@
       "data": "data/enem2025_d1_cdazul_q005_en.json",
       "imagem": "assets/enem2025_d1_cdazul_q005_en_integral.png",
       "alt": "Questão 005 do ENEM 2025 (versão Inglês). Fotografia de três copos de papel sobre o balcão de uma cafeteria, com letreiros ao fundo. Textos nas embalagens: '16 ounce WHAT IS SLEEP?', '12 ounce SLEPT 5-7 HOURS', '8 ounce SLEPT 8-10 HOURS'. Referência: Disponível em: https://pt.foursquare.com. Acesso em: 14 maio 2024. Pergunta em português: 'Nesse texto, a pergunta “What is sleep?”, em uma das embalagens do produto, está relacionada ao(à)'; alternativas A até E.",
-      "legacy": "enem2025-q005-en.html"
+      "legacy": "enem2025-q005-en.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "en",
+        "numero_oficial": 5,
+        "revisao": "p0a-visual-editorial-approved.r2",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q005:english"
+      ]
     },
     {
       "id": "enem2025-d1-cdazul-q006",
@@ -742,7 +1247,18 @@
       "sha256_imagem_texto": "FAB47BB8AE95AC320DFA0C56C7EA714335B602C912CDF2142FE9B66DDDA0D887",
       "alt": "Questão 006 do ENEM 2025. Enunciado: 'No que diz respeito ao gênero bilhete, a autora dessa crônica'; alternativas A até E.",
       "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
-      "legacy": "enem2025-q006.html"
+      "legacy": "enem2025-q006.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 6,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q007",
@@ -761,7 +1277,18 @@
       "sha256_imagem_texto": "FAB47BB8AE95AC320DFA0C56C7EA714335B602C912CDF2142FE9B66DDDA0D887",
       "alt": "Questão 007 do ENEM 2025. Enunciado: 'O elemento que caracteriza esse texto como uma crônica é a'; alternativas A até E.",
       "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
-      "legacy": "enem2025-q007.html"
+      "legacy": "enem2025-q007.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 7,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q008",
@@ -780,7 +1307,18 @@
       "sha256_imagem_texto": "FAB47BB8AE95AC320DFA0C56C7EA714335B602C912CDF2142FE9B66DDDA0D887",
       "alt": "Questão 008 do ENEM 2025. Enunciado: 'Nesse texto, o que caracteriza a escrita “de próprio punho” é a letra manuscrita, enquanto a escrita digital é ilustrada pelo(a)'; alternativas A até E.",
       "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
-      "legacy": "enem2025-q008.html"
+      "legacy": "enem2025-q008.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 8,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q009",
@@ -799,7 +1337,18 @@
       "sha256_imagem_texto": "FAB47BB8AE95AC320DFA0C56C7EA714335B602C912CDF2142FE9B66DDDA0D887",
       "alt": "Questão 009 do ENEM 2025. Enunciado: 'A autora conclui que as novas tecnologias de escrita'; alternativas A até E.",
       "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
-      "legacy": "enem2025-q009.html"
+      "legacy": "enem2025-q009.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 9,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q010",
@@ -818,7 +1367,18 @@
       "sha256_imagem_texto": "FAB47BB8AE95AC320DFA0C56C7EA714335B602C912CDF2142FE9B66DDDA0D887",
       "alt": "Questão 010 do ENEM 2025. Enunciado: 'O recurso linguístico usado para marcar a síntese da opinião da autora sobre a temática desenvolvida foi o(a)'; alternativas A até E.",
       "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
-      "legacy": "enem2025-q010.html"
+      "legacy": "enem2025-q010.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 10,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q011",
@@ -834,7 +1394,18 @@
       "data": "data/enem2025_d1_cdazul_q011.json",
       "imagem": "assets/enem2025_d1_cdazul_q011_integral_p08.png",
       "alt": "Questão 011 do ENEM 2025. Trecho literário de Inocência, de Visconde de Taunay (diálogo entre Pereira e Cirino sobre Nocência), com referência bibliográfica. Pergunta em português: 'Nesse trecho, ao se referir à sua filha, o pai de Inocência reproduz os ideais românticos, presentes na'; alternativas A até E.",
-      "legacy": "enem2025-q011.html"
+      "legacy": "enem2025-q011.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 11,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q012",
@@ -850,7 +1421,18 @@
       "data": "data/enem2025_d1_cdazul_q012.json",
       "imagem": "assets/enem2025_d1_cdazul_q012_integral_p08.png",
       "alt": "Questão 012 do ENEM 2025. Texto-base sobre o programa Maré Inclusiva (Ministério do Esporte, 2024, Jogos Paralímpicos de Paris), parasurf como prática adaptada de surf. Referência: Disponível em: www.gov.br/esporte. Acesso em: 6 set. 2024 (adaptado). Pergunta em português: 'De acordo com esse texto, o programa voltado ao estímulo da prática do parasurf evidencia a'; alternativas A até E.",
-      "legacy": "enem2025-q012.html"
+      "legacy": "enem2025-q012.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 12,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q013",
@@ -866,7 +1448,18 @@
       "data": "data/enem2025_d1_cdazul_q013.json",
       "imagem": "assets/enem2025_d1_cdazul_q013_integral_p08.png",
       "alt": "Questão 013 do ENEM 2025. Texto legal — Art. 26-A da Lei n. 10 639/2003 (ensino sobre História e Cultura Afro-Brasileira), com §§ 1º e 2º. Referência: BRASIL. Lei n. 10 639/2003. Disponível em: www.gov.br/planalto. Acesso em: 5 maio 2024. Pergunta em português: 'O emprego da norma-padrão é justificado nesse texto'; alternativas A até E.",
-      "legacy": "enem2025-q013.html"
+      "legacy": "enem2025-q013.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 13,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q014",
@@ -882,7 +1475,18 @@
       "data": "data/enem2025_d1_cdazul_q014.json",
       "imagem": "assets/enem2025_d1_cdazul_q014_integral_p08.png",
       "alt": "Questão 014 do ENEM 2025. Cartaz publicitário da 26ª BIENAL INTERNACIONAL DO LIVRO DE SÃO PAULO: homem de óculos com colagem ilustrada na cabeça, textos 'Você entra Fernando.' e 'E sai Pessoa.', banner azul com datas e local. Referência: Disponível em: www.publishnews.com.br. Acesso em: 19 set. 2024. Pergunta em português: 'Nesse cartaz publicitário, os recursos verbais e não verbais constroem um argumento que objetiva'; alternativas A até E.",
-      "legacy": "enem2025-q014.html"
+      "legacy": "enem2025-q014.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 14,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q015",
@@ -898,7 +1502,18 @@
       "data": "data/enem2025_d1_cdazul_q015.json",
       "imagem": "assets/enem2025_d1_cdazul_q015_integral_p09.png",
       "alt": "Questão 015 do ENEM 2025. Pinturas 'Zeferina' e 'João de Deus Nascimento', de Dalton Paula (óleo sobre tela, Masp, São Paulo, 2018), com texto-base sobre o retrato como gênero da pintura ocidental vinculado às elites. Referência: Disponível em: www.masp.org.br. Acesso em: 5 maio 2024 (adaptado). Pergunta em português: 'Ao dar protagonismo a Zeferina e a João de Deus Nascimento, o artista Dalton Paula evidencia que a(s)'; alternativas A até E.",
-      "legacy": "enem2025-q015.html"
+      "legacy": "enem2025-q015.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 15,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q016",
@@ -917,7 +1532,18 @@
       "sha256_imagem_texto": "D96048CDF7F3A38BDAF88427224327B3EF9A7BB6983EBA59C27AC865841852C4",
       "alt_texto": "Texto-base da Questão 016: soneto 'Símbolos' (MACHADO, G.) — versos sobre eu e tu, mar e rocha; referência: MACHADO, G. Poesia completa. Rio de Janeiro: Cátedra/MEC, 1978. Coluna esquerda da página 9.",
       "alt": "Continuação da Questão 016 (coluna direita da página 9): pergunta sobre como os traços da estética simbolista são resgatados pelo eu lírico; alternativas A até E.",
-      "legacy": "enem2025-q016.html"
+      "legacy": "enem2025-q016.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 16,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q017",
@@ -933,7 +1559,18 @@
       "data": "data/enem2025_d1_cdazul_q017.json",
       "imagem": "assets/enem2025_d1_cdazul_q017_integral_p09.png",
       "alt": "Questão 017 do ENEM 2025. Excerto de 'Borboletas no estômago' (C. R. Person, 2021) sobre 'antes do inverno chegar', memórias da vida da avó; pergunta sobre a locução 'antes de' na progressão temática; alternativas A até E.",
-      "legacy": "enem2025-q017.html"
+      "legacy": "enem2025-q017.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 17,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     },
     {
       "id": "enem2025-d1-cdazul-q018",
@@ -949,7 +1586,18 @@
       "data": "data/enem2025_d1_cdazul_q018.json",
       "imagem": "assets/enem2025_d1_cdazul_q018_integral_p10.png",
       "alt": "Questão 018 do ENEM 2025. Texto-base sobre a representação midiática do futebol de alto rendimento, com declarações da ex-jogadora Marina (ROSOLEN, N. Disponível em: www.uninter.com. Acesso em: 10 maio 2024 (adaptado)); pergunta sobre a visão crítica de uma ex-atleta; alternativas A até E.",
-      "legacy": "enem2025-q018.html"
+      "legacy": "enem2025-q018.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 18,
+        "revisao": null,
+        "sequencia_colecao": null
+      },
+      "aliases": []
     }
   ]
 }

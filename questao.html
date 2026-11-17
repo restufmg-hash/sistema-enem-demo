@@ -70,6 +70,62 @@ const SILENCIADO = { api: (window.SISTEMA_ENEM_API || "").trim() };
 
 function mostrar(el, visivel) { el.hidden = !visivel; }
 
+function intOrUndef(v) {
+  if (v === null || v === undefined) return undefined;
+  const s = String(v).trim();
+  if (!s) return undefined;
+  const n = Number(s);
+  return Number.isFinite(n) ? n : undefined;
+}
+
+const IDIOMA_ALIASES = {
+  "english": "en",
+  "en": "en",
+  "espanol": "es",
+  "español": "es",
+  "es": "es",
+  "portugues": "pt",
+  "português": "pt",
+  "pt-br": "pt",
+  "pt": "pt"
+};
+
+function normIdioma(v) {
+  const s = String(v || "").trim().toLowerCase();
+  if (!s) return "";
+  return IDIOMA_ALIASES[s] || s;
+}
+
+function acharItemPorId(items, id) {
+  if (!id) return { item: null, matches: [] };
+  const direct = items.find((i) => i.id === id || i.question_id === id);
+  if (direct) return { item: direct, matches: [direct] };
+  const byAlias = items.filter((i) => (i.aliases || []).includes(id));
+  if (byAlias.length === 1) return { item: byAlias[0], matches: byAlias };
+  return { item: null, matches: byAlias };
+}
+
+function filtrarPorOcorrencia(items, occ) {
+  const matches = items.filter((i) => {
+    const o = i.occurrence || {};
+    const campos = [];
+    if (occ.ano) campos.push(() => String(o.ano) === String(occ.ano));
+    if (occ.dia) campos.push(() => String(o.dia) === String(occ.dia));
+    if (occ.caderno) campos.push(() => String(o.caderno || "") === String(occ.caderno));
+    if (occ.cor) campos.push(() => String(o.cor || "") === String(occ.cor));
+    if (occ.idioma) campos.push(() => String(o.idioma || "") === String(occ.idioma));
+    if (occ.numero) campos.push(() => String(o.numero_oficial) === String(occ.numero));
+    return campos.every((c) => c());
+  });
+  return matches;
+}
+
+function descreverItem(i) {
+  const o = i.occurrence || {};
+  const idioma = o.idioma ? " (" + o.idioma + ")" : "";
+  return "Questão " + (o.numero_oficial != null ? o.numero_oficial : i.numero_oficial) + idioma + " · " + (i.prova || "");
+}
+
 function falha(mensagem) {
   const meta = document.getElementById("meta");
   meta.textContent = mensagem;
@@ -106,8 +162,15 @@ function idTentativa(questionId) {
 async function iniciar() {
   const params = new URLSearchParams(location.search);
   const id = (params.get("id") || "").trim();
+  const occ = {
+    ano: intOrUndef(params.get("ano")),
+    dia: intOrUndef(params.get("dia")),
+    caderno: (params.get("caderno") || "").trim().toLowerCase(),
+    cor: (params.get("cor") || "").trim().toLowerCase(),
+    idioma: normIdioma(params.get("idioma")) || undefined,
+    numero: intOrUndef(params.get("numero") || params.get("n")),
+  };
   const resultado = document.getElementById("resultado");
-  if (!id) { falha("Questão não informada. Use o índice."); return; }
 
   let catalogo;
   try {
@@ -116,8 +179,40 @@ async function iniciar() {
     falha("Não foi possível carregar o catálogo público.");
     return;
   }
-  const item = (catalogo.items || []).find((i) => i.id === id || i.question_id === id)
-    || (catalogo.items || []).find((i) => params.get("n") && String(i.numero_oficial) === params.get("n") && String(i.ano) === (params.get("ano") || "2024"));
+  const items = catalogo.items || [];
+
+  const porId = acharItemPorId(items, id);
+  let item = porId.item;
+  let candidatos = porId.matches;
+
+  if (!item) {
+    const porOcc = filtrarPorOcorrencia(items, occ);
+    if (porOcc.length === 1) {
+      item = porOcc[0];
+      candidatos = porOcc;
+    } else if (porOcc.length > 1) {
+      const meta = document.getElementById("meta");
+      meta.innerHTML = "";
+      const p = document.createElement("p");
+      p.textContent = "Mais de uma questão coincide com essa combinação. Escolha:";
+      p.style.margin = "0 0 .4rem";
+      meta.appendChild(p);
+      const ul = document.createElement("ul");
+      for (const i2 of porOcc) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "questao.html?id=" + encodeURIComponent(i2.id);
+        a.textContent = descreverItem(i2);
+        li.appendChild(a);
+        ul.appendChild(li);
+      }
+      meta.appendChild(ul);
+      mostrar(document.getElementById("figura"), false);
+      mostrar(document.getElementById("figura_texto"), false);
+      mostrar(document.getElementById("form-resposta"), false);
+      return;
+    }
+  }
   if (!item) { falha("Questão não encontrada no catálogo público."); return; }
 
   document.title = "Sistema ENEM — Questão " + item.numero_oficial + " (" + item.ano + ")";
