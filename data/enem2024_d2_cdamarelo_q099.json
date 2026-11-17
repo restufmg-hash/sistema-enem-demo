@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q099",
+  "year": 2024,
+  "number": 99,
+  "area": "Ciências da Natureza",
+  "topic": "Vacinas e imunidade",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 4
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q099_integral.png",
+      "text": "Questão 99 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado informa que indústrias farmacêuticas e instituições científicas trabalham no desenvolvimento de diferentes vacinas contra a covid-19. Em algumas dessas vacinas, a principal estrutura antigênica é uma proteína da superfície viral denominada espícula (spike, em inglês). A proteína existe em coronavírus, incluindo o SARS-CoV-2. Pergunta: 'Nessas vacinas, essa proteína viral induz a'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "produção de anticorpos específicos contra os vírus."
+    },
+    {
+      "label": "B",
+      "text": "imunidade passiva contra o desenvolvimento da doença."
+    },
+    {
+      "label": "C",
+      "text": "alteração genômica para formação da memória imunológica."
+    },
+    {
+      "label": "D",
+      "text": "neutralização direta dos vírus presentes na circulação sanguínea."
+    },
+    {
+      "label": "E",
+      "text": "modificação dos receptores de membrana específicos para o vírus."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
