@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q125",
+  "year": 2024,
+  "number": 125,
+  "area": "Ciências da Natureza",
+  "topic": "Biologia; Bioquímica; enzimas; desnaturação térmica; conservação de alimentos",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 13
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q125_integral.png",
+      "text": "QUESTÃO 125\n\nUma agricultora, com a intenção de comercializar o milho recém-colhido, testou uma forma de preservar o sabor adocicado do seu produto. O melhor resultado foi obtido quando ela imergiu as espigas em água fervente durante alguns minutos e, em seguida, em água gelada. Com esse procedimento, parte da glicose do milho não foi transformada em amido, mantendo o seu sabor adocicado.\n\nUtilizando esse procedimento, o sabor foi conservado porque houve"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "desnaturação enzimática pela alta temperatura."
+    },
+    {
+      "label": "B",
+      "text": "conversão de nutrientes pela redução de temperatura."
+    },
+    {
+      "label": "C",
+      "text": "degradação das reservas nutritivas pelo choque térmico."
+    },
+    {
+      "label": "D",
+      "text": "impedimento da entrada de oxigênio pela fervura da água."
+    },
+    {
+      "label": "E",
+      "text": "desidratação dos grãos por causa da alteração da temperatura."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
