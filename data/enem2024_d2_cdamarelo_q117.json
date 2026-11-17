@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q117",
+  "year": 2024,
+  "number": 117,
+  "area": "Ciências da Natureza",
+  "topic": "Acústica; efeito Doppler; radar de frequência aplicado a ambulância em aproximação",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 10
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q117_integral.png",
+      "text": "Questão 117 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Uma ambulância em alta velocidade com a sirene ligada desloca-se em direção a um radar operado por uma pessoa. O radar emite ondas de rádio com frequência f0 que são refletidas pela dianteira da ambulância, retornando para o detector com frequência fr. A percepção do operador do radar, em relação ao som emitido pela sirene, é de que este se altera à medida que a ambulância se aproxima ou se afasta. Pergunta: 'Durante a aproximação, como o operador percebe o som da sirene e qual é a relação entre as frequências fr e f0 medidas pelo radar?'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Mais grave do que o som emitido e fr < f0."
+    },
+    {
+      "label": "B",
+      "text": "Mais agudo do que o som emitido e fr < f0."
+    },
+    {
+      "label": "C",
+      "text": "Mais agudo do que o som emitido e fr = f0."
+    },
+    {
+      "label": "D",
+      "text": "Mais agudo do que o som emitido e fr > f0."
+    },
+    {
+      "label": "E",
+      "text": "Mais grave do que o som emitido e fr > f0."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
