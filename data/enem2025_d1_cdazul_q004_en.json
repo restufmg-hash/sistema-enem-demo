@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q004:en",
+  "year": 2025,
+  "number": 4,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Língua Estrangeira Moderna — Inglês (interpretação de texto)",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 3
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q004_en_integral.png",
+      "text": "Questão 004 do ENEM 2025 (1º dia, Caderno 1 Azul, versão Inglês, página 3), área Linguagens, Códigos e suas Tecnologias — Língua Estrangeira Moderna (Inglês). Texto-base em inglês: 'It is true that all children are special, simply because they are children. But most adults are not special, and children end up as adults pretty quickly. Life then can be difficult and even disappointing. The shock of this may account for the emergence of the “snowflake generation” of university students, who are so delicate they can’t handle controversial ideas being put forward in their lectures. The roots of this fragility run deep in modern culture. So, an approach of the world that states: “Life is wonderful, you’re special and, if you are a good boy/girl, life will be amazing forever” is not a message designed to aid bouncing back from failure or confronting catastrophe. Resilience is not about feeding ego — telling your children how wonderful they are — but strengthening it.' Referência: LOTT, T. Disponível em: www.theguardian.com. Acesso em: 10 dez. 2017 (adaptado). Pergunta: 'Nesse texto, a expressão “snowflake generation” é usada para'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "abordar obstáculos impostos a universitários."
+    },
+    {
+      "label": "B",
+      "text": "destacar mensagens de incentivo a estudantes."
+    },
+    {
+      "label": "C",
+      "text": "estimular ações proativas em situações de emergência."
+    },
+    {
+      "label": "D",
+      "text": "retratar relações conflituosas em ambiente universitário."
+    },
+    {
+      "label": "E",
+      "text": "apontar posturas de uma juventude avessa a contrariedades."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
