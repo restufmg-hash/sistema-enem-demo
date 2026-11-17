@@ -566,6 +566,22 @@
       "alt": "Questão 125 do ENEM 2024, Ciências da Natureza. Agricultora mergulha espigas de milho em água fervente e depois em água gelada para preservar o sabor adocicado e evitar a conversão de glicose em amido. Pergunta sobre o fenômeno responsável; alternativas A a E."
     },
     {
+      "id": "enem2024-d2-cdamarelo-q126",
+      "question_id": "enem:2024:regular_nacional:d2:q126",
+      "ano": 2024,
+      "numero_oficial": 126,
+      "sequencia_colecao": "036",
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2024 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 13,
+      "fonte": "INEP, 2024_PV_impresso_D2_CD5.pdf",
+      "sha256_imagem": "780F2AC986ED26BE4166FE5B5AB92B424E905BDA61612BC0F0CF008103FD5A51",
+      "data": "data/enem2024_d2_cdamarelo_q126.json",
+      "imagem": "assets/enem2024_d2_cdamarelo_q126_integral.png",
+      "alt": "Questão 126 do ENEM 2024, Ciências da Natureza. Esquema de aquecedor solar com coletor de tubos a vácuo, reservatório de água com isolamento térmico de poliuretano, fluxo de água fria (seta azul) para os coletores e retorno de água quente (seta vermelha) ao reservatório, sob radiação solar. Pergunta sobre o mecanismo de transferência de calor do coletor ao reservatório; alternativas A a E."
+    },
+    {
       "id": "q093-2025",
       "question_id": "enem:2025:regular_nacional:d2:q093",
       "ano": 2025,
