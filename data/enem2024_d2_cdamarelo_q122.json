@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q122",
+  "year": 2024,
+  "number": 122,
+  "area": "Ciências da Natureza",
+  "topic": "Biologia; metabolismo de procariontes; ciclos biogeoquímicos; nitrogênio e carbono; oxirredução",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 12
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q122_integral.png",
+      "text": "QUESTÃO 122\nMetabolismo de procariontes\n\nO esquema representa a ação de organismos no ciclo do nitrogênio e no ciclo do carbono. Os números correspondem a algumas etapas dos dois ciclos distintos.\n\nEsquema — Procariontes no ciclo do nitrogênio:\nNitrogênio atmosférico (N₂). 1. Procariontes fixadores de nitrogênio: convertem N₂ em amônia (NH₃). Procariontes nitrificantes: convertem NH₃ em nitritos (NO₂⁻) e nitratos (NO₃⁻). 2. Procariontes desnitrificantes: convertem nitratos em N₂. As setas representam a passagem do nitrogênio atmosférico aos fixadores, a transferência para plantas e para procariontes nitrificantes, e o retorno à atmosfera após desnitrificação.\n\nEsquema — Procariontes no ciclo do carbono:\nCarbono atmosférico (CO₂). 3. Procariontes fotossintetizantes: fixam CO₂. 4. Plantas: fixam CO₂. 5. Procariontes decompositores: convertem o carbono fixado em CO₂. As setas indicam a fixação do carbono atmosférico por plantas e procariontes e o retorno ao CO₂ por decomposição.\n\nDisponível em: https://pt.khanacademy.org. Acesso em: 27 jun. 2024 (adaptado).\n\nEm qual etapa numerada ocorre uma transformação redox como a que ocorre nos procariontes nitrificantes?"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "1"
+    },
+    {
+      "label": "B",
+      "text": "2"
+    },
+    {
+      "label": "C",
+      "text": "3"
+    },
+    {
+      "label": "D",
+      "text": "4"
+    },
+    {
+      "label": "E",
+      "text": "5"
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
