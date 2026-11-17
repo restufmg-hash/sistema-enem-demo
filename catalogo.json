@@ -886,6 +886,22 @@
       "imagem": "assets/enem2025_d1_cdazul_q017_integral_p09.png",
       "alt": "Questão 017 do ENEM 2025. Excerto de 'Borboletas no estômago' (C. R. Person, 2021) sobre 'antes do inverno chegar', memórias da vida da avó; pergunta sobre a locução 'antes de' na progressão temática; alternativas A até E.",
       "legacy": "enem2025-q017.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q018",
+      "question_id": "enem:2025:regular_nacional:d1:q018",
+      "ano": 2025,
+      "numero_oficial": 18,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 10,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "010DF12BD9D582C479F0CCD53B68F95889CF0C5672F57C363FC7657B4BBADBB1",
+      "data": "data/enem2025_d1_cdazul_q018.json",
+      "imagem": "assets/enem2025_d1_cdazul_q018_integral_p10.png",
+      "alt": "Questão 018 do ENEM 2025. Texto-base sobre a representação midiática do futebol de alto rendimento, com declarações da ex-jogadora Marina (ROSOLEN, N. Disponível em: www.uninter.com. Acesso em: 10 maio 2024 (adaptado)); pergunta sobre a visão crítica de uma ex-atleta; alternativas A até E.",
+      "legacy": "enem2025-q018.html"
     }
   ]
 }
