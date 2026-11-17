@@ -579,6 +579,25 @@
       "imagem": "assets/enem2025_d1_cdazul_q005_en_integral.png",
       "alt": "Questão 005 do ENEM 2025 (versão Inglês). Fotografia de três copos de papel sobre o balcão de uma cafeteria, com letreiros ao fundo. Textos nas embalagens: '16 ounce WHAT IS SLEEP?', '12 ounce SLEPT 5-7 HOURS', '8 ounce SLEPT 8-10 HOURS'. Referência: Disponível em: https://pt.foursquare.com. Acesso em: 14 maio 2024. Pergunta em português: 'Nesse texto, a pergunta “What is sleep?”, em uma das embalagens do produto, está relacionada ao(à)'; alternativas A até E.",
       "legacy": "enem2025-q005-en.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q006",
+      "question_id": "enem:2025:regular_nacional:d1:q006",
+      "ano": 2025,
+      "numero_oficial": 6,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 7,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "A54EA0B3A17901937F84C4B8B7387655E12F6B8CE2FBC757D18FDA6C4EABE8F7",
+      "data": "data/enem2025_d1_cdazul_q006.json",
+      "imagem": "assets/enem2025_d1_cdazul_q006_enunciado_p07.png",
+      "imagem_texto": "assets/enem2025_d1_cdazul_q006_texto_base_p06.png",
+      "sha256_imagem_texto": "FAB47BB8AE95AC320DFA0C56C7EA714335B602C912CDF2142FE9B66DDDA0D887",
+      "alt": "Questão 006 do ENEM 2025. Enunciado: 'No que diz respeito ao gênero bilhete, a autora dessa crônica'; alternativas A até E.",
+      "alt_texto": "Texto-base compartilhado das questões 006 a 010 do ENEM 2025. Crônica 'De próprio punho', de Ana Elisa Ribeiro: texto integral em 45 linhas numeradas sobre a escrita e suas tecnologias, com faixa azul 'Texto para as Questões de 06 a 10.' Referência: RIBEIRO, A. E., Disponível em: https://rascunho.com.br, acesso em 16 jan. 2024 (adaptado).",
+      "legacy": "enem2025-q006.html"
     }
   ]
 }

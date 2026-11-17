@@ -38,6 +38,10 @@
 <main>
   <div class="card" id="card">
     <p class="meta" id="meta">Carregando…</p>
+    <figure id="figura_texto" hidden>
+      <img id="enunciado_texto" alt="">
+      <figcaption>Texto-base compartilhado (autoria INEP), exibido sem qualquer alteração.</figcaption>
+    </figure>
     <figure id="figura" hidden>
       <img id="enunciado" alt="">
       <figcaption>Imagem oficial integral da questão (autoria INEP), exibida sem qualquer alteração.</figcaption>
@@ -70,6 +74,7 @@ function falha(mensagem) {
   const meta = document.getElementById("meta");
   meta.textContent = mensagem;
   mostrar(document.getElementById("figura"), false);
+  mostrar(document.getElementById("figura_texto"), false);
   mostrar(document.getElementById("form-resposta"), false);
 }
 
@@ -120,6 +125,13 @@ async function iniciar() {
   meta.innerHTML = "<strong>Questão " + item.numero_oficial + "</strong> · " + item.prova +
     ", página " + item.pagina + " · " + item.area +
     (item.anulada ? '<span class="badge">ANULADA pelo INEP</span>' : "");
+
+  const imgTexto = document.getElementById("enunciado_texto");
+  if (item.imagem_texto) {
+    imgTexto.src = item.imagem_texto;
+    imgTexto.alt = item.alt_texto || ("Texto-base da questão " + item.numero_oficial + " do ENEM " + item.ano + ".");
+    mostrar(document.getElementById("figura_texto"), true);
+  }
 
   const img = document.getElementById("enunciado");
   img.src = item.imagem;
