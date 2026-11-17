@@ -819,6 +819,22 @@
       "imagem": "assets/enem2025_d1_cdazul_q014_integral_p08.png",
       "alt": "Questão 014 do ENEM 2025. Cartaz publicitário da 26ª BIENAL INTERNACIONAL DO LIVRO DE SÃO PAULO: homem de óculos com colagem ilustrada na cabeça, textos 'Você entra Fernando.' e 'E sai Pessoa.', banner azul com datas e local. Referência: Disponível em: www.publishnews.com.br. Acesso em: 19 set. 2024. Pergunta em português: 'Nesse cartaz publicitário, os recursos verbais e não verbais constroem um argumento que objetiva'; alternativas A até E.",
       "legacy": "enem2025-q014.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q015",
+      "question_id": "enem:2025:regular_nacional:d1:q015",
+      "ano": 2025,
+      "numero_oficial": 15,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 9,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "8AB387A8B7C2D072A6CFFCF2A50C5BD2661FC55B13AAA70B1D9F549EB7CA0885",
+      "data": "data/enem2025_d1_cdazul_q015.json",
+      "imagem": "assets/enem2025_d1_cdazul_q015_integral_p09.png",
+      "alt": "Questão 015 do ENEM 2025. Pinturas 'Zeferina' e 'João de Deus Nascimento', de Dalton Paula (óleo sobre tela, Masp, São Paulo, 2018), com texto-base sobre o retrato como gênero da pintura ocidental vinculado às elites. Referência: Disponível em: www.masp.org.br. Acesso em: 5 maio 2024 (adaptado). Pergunta em português: 'Ao dar protagonismo a Zeferina e a João de Deus Nascimento, o artista Dalton Paula evidencia que a(s)'; alternativas A até E.",
+      "legacy": "enem2025-q015.html"
     }
   ]
 }
