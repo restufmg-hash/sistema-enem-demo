@@ -547,6 +547,22 @@
       "imagem": "assets/enem2025_d1_cdazul_q003_en_integral.png",
       "alt": "Questão 003 do ENEM 2025 (versão Inglês). Poema-fragmento em inglês de Joy Harjo, 'She Had Some Horses': 'Remember the sky that you were born under...'; a autora de ascendência indígena relaciona ser humano, terra, plantas, animais e universo. Referência: HARJO, J., She Had Some Horses, Londres: W. Norton &amp; Company, 1983 (fragmento). Pergunta em português: 'Nesse poema, de uma autora de ascendência indígena, o eu lírico ressalta a'; alternativas A até E.",
       "legacy": "enem2025-q003-en.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q004-en",
+      "question_id": "enem:2025:regular_nacional:d1:q004:en",
+      "ano": 2025,
+      "numero_oficial": 4,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 3,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "77FA0AC32A599BA5B034F659C7353650E9B98EDE7C89AD3DECDE9B3DEB8A2CF1",
+      "data": "data/enem2025_d1_cdazul_q004_en.json",
+      "imagem": "assets/enem2025_d1_cdazul_q004_en_integral.png",
+      "alt": "Questão 004 do ENEM 2025 (versão Inglês). Texto-base em inglês sobre a chamada 'snowflake generation' de estudantes universitários, a fragilidade da cultura moderna e a resiliência. Referência: LOTT, T., www.theguardian.com, acesso em 10 dez. 2017 (adaptado). Pergunta em português: 'Nesse texto, a expressão “snowflake generation” é usada para'; alternativas A até E.",
+      "legacy": "enem2025-q004-en.html"
     }
   ]
 }
