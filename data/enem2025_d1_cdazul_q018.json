@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q018",
+  "year": 2025,
+  "number": 18,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Interpretação de texto; representação midiática do esporte",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 10
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q018_integral_p10.png",
+      "text": "Questão 018 do ENEM 2025 (1º dia, Caderno 1 Azul, página 10, coluna esquerda, parte superior), área Linguagens, Códigos e suas Tecnologias — Língua Portuguesa. Texto-base: análise crítica da representação midiática do futebol de alto rendimento, com declarações da ex-jogadora Marina (ex-jogadora da seleção brasileira de futebol). Referência: ROSOLEN, N. Disponível em: www.uninter.com. Acesso em: 10 maio 2024 (adaptado). Pergunta: 'Nesse texto, a visão crítica de uma ex-atleta de futebol revela que'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "os meios de comunicação invisibilizam as dificuldades presentes no esporte."
+    },
+    {
+      "label": "B",
+      "text": "o treinamento atlético de alto nível é desestimulante para os indivíduos."
+    },
+    {
+      "label": "C",
+      "text": "o trabalho contínuo é desvalorizado no contexto esportivo profissional."
+    },
+    {
+      "label": "D",
+      "text": "as ações de incentivo financeiro a jovens atletas são precárias."
+    },
+    {
+      "label": "E",
+      "text": "as publicações da mídia esportiva rotulam atletas iniciantes."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
