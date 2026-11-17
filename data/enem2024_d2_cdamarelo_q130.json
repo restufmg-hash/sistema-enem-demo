@@ -1,0 +1,44 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q130",
+  "year": 2024,
+  "number": 130,
+  "area": "Ciências da Natureza",
+  "topic": "Biologia; saúde; compostos nitrosos; nitrito de sódio; ácido clorídrico; mutagênese",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 14
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q130_integral.png",
+      "text": "QUESTÃO 130\n\nCom base em testes realizados em ratos, concluiu-se que os compostos nitrosos são substâncias mutagênicas, ou seja, produzem mutações nas células e possivelmente câncer. Esses compostos podem ser obtidos pela reação entre o nitrito de sódio, que é um conservante adicionado às carnes, e o ácido clorídrico. O ácido nitroso produzido irá reagir com compostos nitrogenados, como as aminas, dando origem aos compostos nitrosos.\n\nEm qual órgão esse processo será iniciado?",
+      "alt": "Questão 130 do ENEM 2024: reação de nitritos com ácido clorídrico e aminas, com cinco alternativas A a E."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Rim."
+    },
+    {
+      "label": "B",
+      "text": "Fígado."
+    },
+    {
+      "label": "C",
+      "text": "Intestino."
+    },
+    {
+      "label": "D",
+      "text": "Pâncreas."
+    },
+    {
+      "label": "E",
+      "text": "Estômago."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
