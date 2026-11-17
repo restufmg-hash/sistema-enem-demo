@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sistema ENEM — Questão 94 do ENEM 2024 (Ciências da Natureza)">
+<title>Sistema ENEM — Questão 94 (2024)</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; background: #f4f5f7; color: #17181c; line-height: 1.5; }
+  header { background: #0d2b45; color: #fff; padding: 1rem 1.25rem; }
+  header h1 { margin: 0; font-size: 1.1rem; font-weight: 650; letter-spacing: .02em; }
+  main { max-width: 880px; margin: 1.25rem auto; padding: 0 1rem; }
+  .card { background: #fff; border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .meta { color: #4a5568; font-size: .85rem; margin: 0 0 .75rem; }
+  .meta strong { color: #0d2b45; }
+  figure { margin: 1rem 0; }
+  figure img { max-width: 100%; height: auto; border: 1px solid #e2e5ea; border-radius: 8px; }
+  figcaption { font-size: .8rem; color: #4a5568; margin-top: .4rem; }
+  fieldset { border: 0; padding: 0; margin: 1rem 0 0; }
+  legend { font-weight: 600; margin-bottom: .5rem; }
+  label.option { display: block; border: 1px solid #d6dbe3; border-radius: 10px; padding: .65rem .8rem; margin: .45rem 0; cursor: pointer; transition: border-color .15s, background .15s; }
+  label.option:hover { border-color: #0d2b45; background: #f7fafd; }
+  label.option input { margin-right: .6rem; }
+  button { background: #0d2b45; color: #fff; border: 0; border-radius: 10px; padding: .7rem 1.4rem; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: .5rem; }
+  button:hover { background: #14405f; }
+  #resultado { margin-top: 1rem; padding: .75rem .9rem; border-radius: 10px; font-weight: 600; display: none; background: #eef2f7; color: #2d3748; border: 1px solid #cbd5e0; }
+  footer { max-width: 880px; margin: 1rem auto 2rem; padding: 0 1rem; font-size: .72rem; color: #718096; }
+</style>
+</head>
+<body>
+<header><h1>Sistema ENEM</h1></header>
+<main>
+  <div class="card">
+    <p class="meta"><strong>Questão 94</strong> · ENEM 2024 · 2º dia · Caderno 5 Amarelo (CD5), página 2 · Ciências da Natureza</p>
+    <figure>
+      <img id="enunciado" alt="Questão 94 do ENEM 2024. A hidroxiapatita, Ca₅(PO₄)₃OH, mineral constituinte do esmalte do dente, em equilíbrio com sua desmineralização e mineralização. A figura com dois quadros mostra: à esquerda, Ca₅(PO₄)₃OH (s) e H⁺ (aq); à direita, 5 Ca²⁺ (aq), 3 PO₄³⁻ (aq) e H₂O (l); setas entre os quadros identificadas como 'Desmineralização' (da esquerda para a direita) e 'Mineralização' (da direita para a esquerda). Abaixo, um quadro lista 5 cremes dentais com agente de polimento e pH: I — bicarbonato de sódio, 9,5; II — carbonato de cálcio, 11,0; III — citrato de potássio, 7,7; IV — dióxido de silício, 6,9; V — fosfato de cálcio, 7,3. Pergunta: 'Considerando o equilíbrio químico envolvido, qual creme dental promove a maior desmineralização do esmalte do dente?'." src="assets/enem2024_d2_cdamarelo_q094_integral.png">
+      <figcaption>Imagem oficial integral da questão (autoria INEP), exibida sem qualquer alteração.</figcaption>
+    </figure>
+    <form id="form-resposta" aria-label="Registrar resposta da questão 94">
+      <fieldset>
+        <legend>Selecione uma alternativa</legend>
+        <div id="alternativas"></div>
+      </fieldset>
+      <button type="submit">Registrar minha resposta</button>
+    </form>
+    <div id="resultado" role="status" aria-live="polite"></div>
+  </div>
+</main>
+<footer>
+  <p>Questão 94 do ENEM 2024 (INEP). A alternativa correta não é exibida nem conferida nesta página; a conferência acontece no sistema, no servidor.</p>
+  <p>Fonte oficial: INEP, 2024_PV_impresso_D2_CD5.pdf, página 2. SHA-256 do ativo de imagem: E717A15F38545FA2B439260E1962E02920AE2B2C9246302955B2CB04B1B54548.</p>
+</footer>
+<script>
+function renderOpcoes(dado) {
+  const container = document.getElementById("alternativas");
+  for (const opcao of dado.options) {
+    const label = document.createElement("label");
+    label.className = "option";
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "alternativa";
+    input.value = opcao.label;
+    input.setAttribute("aria-label", "Alternativa " + opcao.label + ": " + opcao.text);
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(" " + opcao.label + " — " + opcao.text));
+    container.appendChild(label);
+  }
+}
+
+document.getElementById("form-resposta").addEventListener("submit", (evento) => {
+  evento.preventDefault();
+  const selecionada = document.querySelector('input[name="alternativa"]:checked');
+  const resultado = document.getElementById("resultado");
+  if (!selecionada) {
+    resultado.style.display = "block";
+    resultado.textContent = "Selecione uma alternativa antes de registrar.";
+    return;
+  }
+  try {
+    localStorage.setItem("sistema_enem_q094_resposta", selecionada.value);
+  } catch (_) { /* armazenamento indisponível */ }
+  resultado.style.display = "block";
+  resultado.textContent = "Resposta registrada neste navegador. A conferência acontece no sistema.";
+});
+
+fetch("data/enem2024_d2_cdamarelo_q094.json", { cache: "no-store" })
+  .then((resposta) => resposta.json())
+  .then(renderOpcoes)
+  .catch(() => {
+    const resultado = document.getElementById("resultado");
+    resultado.style.display = "block";
+    resultado.textContent = "Não foi possível carregar as alternativas.";
+  });
+</script>
+</body>
+</html>

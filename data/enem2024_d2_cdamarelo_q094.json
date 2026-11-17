@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q094",
+  "year": 2024,
+  "number": 94,
+  "area": "Ciências da Natureza",
+  "topic": "Equilíbrio químico",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 2
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q094_integral.png",
+      "text": "Questão 94 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta a hidroxiapatita, Ca₅(PO₄)₃OH, como mineral constituinte do esmalte dos dentes e descreve o equilíbrio entre desmineralização e mineralização em meio aquoso. A figura apresenta dois quadros ligados por setas em sentidos opostos. No quadro esquerdo aparecem Ca₅(PO₄)₃OH (s) e H⁺ (aq). No quadro direito aparecem 5 Ca²⁺ (aq), 3 PO₄³⁻ (aq) e H₂O (l). A seta superior, orientada da esquerda para a direita, é identificada como 'Desmineralização'. A seta inferior, orientada da direita para a esquerda, é identificada como 'Mineralização'. A referência é STORGATTO, G. A.; BRAIBANTE, M. E. F.; BRAIBANTE, H. T. S., A química na odontologia, Química Nova na Escola, v. 39, fev. 2017, adaptado. Pergunta: 'Considerando o equilíbrio químico envolvido, qual creme dental promove a maior desmineralização do esmalte do dente?'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "I"
+    },
+    {
+      "label": "B",
+      "text": "II"
+    },
+    {
+      "label": "C",
+      "text": "III"
+    },
+    {
+      "label": "D",
+      "text": "IV"
+    },
+    {
+      "label": "E",
+      "text": "V"
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
