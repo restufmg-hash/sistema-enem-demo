@@ -1,0 +1,44 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q131",
+  "year": 2024,
+  "number": 131,
+  "area": "Ciências da Natureza",
+  "topic": "Biologia; Ecologia; sistemas agroflorestais; recuperação de áreas degradadas; comunidades vegetais",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 14
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q131_integral.png",
+      "text": "QUESTÃO 131\n\nSistemas agroflorestais (SAFs)\nOs sistemas agroflorestais alinham os interesses \neconômicos aos ecológicos. Esses sistemas podem ser \nusados na recuperação ambiental de áreas degradadas que \nse tornaram pouco produtivas, como as utilizadas por muito \ntempo para pastagem. Para isso, num primeiro momento, \nas árvores nativas são plantadas em conjunto com culturas \nagrícolas anuais, como feijão, mandioca, milho e abóbora, \nque geram renda para os proprietários da terra e incentivam \na manutenção do sistema. Em um segundo momento, são \nintroduzidas outras espécies, como trepadeiras e arbustos, de \nacordo com um arranjo espacial e temporal preestabelecido. \nNesse processo, ocorrerão mudanças graduais na estrutura \ne composição das comunidades vegetais ao longo do tempo, \nque culminarão no aumento da diversidade do ambiente.\nDisponível em: www.embrapa.br. Acesso em: 9 dez. 2021 (adaptado).\n\nO conjunto dessas mudanças graduais é análogo ao \nprocesso natural denominado",
+      "alt": "Questão 131 do ENEM 2024. Sistemas agroflorestais e mudanças graduais nas comunidades vegetais; contém o texto-base, a fonte Embrapa, o enunciado e cinco alternativas A–E."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "rotação de culturas."
+    },
+    {
+      "label": "B",
+      "text": "sucessão ecológica."
+    },
+    {
+      "label": "C",
+      "text": "coevolução específica."
+    },
+    {
+      "label": "D",
+      "text": "adaptação por seleção."
+    },
+    {
+      "label": "E",
+      "text": "convergência adaptativa."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
