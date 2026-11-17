@@ -485,6 +485,22 @@
       "legacy": "enem2024-q120.html"
     },
     {
+      "id": "enem2024-d2-cdamarelo-q121",
+      "question_id": "enem:2024:regular_nacional:d2:q121",
+      "ano": 2024,
+      "numero_oficial": 121,
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2024 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 11,
+      "fonte": "INEP, 2024_PV_impresso_D2_CD5.pdf",
+      "sha256_imagem": "DE47D9BDE92B0F3E1D2B47362D07DD46E8382BB0291FF92DFCDBBE1FA635C9C4",
+      "data": "data/enem2024_d2_cdamarelo_q121.json",
+      "imagem": "assets/enem2024_d2_cdamarelo_q121_integral.png",
+      "alt": "Questão 121 do ENEM 2024. Texto sobre a mudança histórica do conceito de compostos orgânicos e a concepção científica atual. Apresenta cinco alternativas A a E sobre a definição de substâncias orgânicas; não contém figuras ou fórmulas químicas.",
+      "legacy": "enem2024-q121.html"
+    },
+    {
       "id": "q093-2025",
       "question_id": "enem:2025:regular_nacional:d2:q093",
       "ano": 2025,
