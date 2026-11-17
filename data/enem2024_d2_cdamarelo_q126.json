@@ -1,0 +1,44 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q126",
+  "year": 2024,
+  "number": 126,
+  "area": "Ciências da Natureza",
+  "topic": "Física; Termologia; transferência de calor; convecção; aquecedor solar de água",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 13
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q126_integral.png",
+      "text": "QUESTÃO 126\n\nAquecedores solares são equipamentos utilizados para o aquecimento de água pelo calor do Sol. São compostos por coletores solares, nos quais ocorre o aquecimento da água, e por um reservatório térmico, em que é armazenada a água quente para ser utilizada posteriormente. A figura ilustra esquematicamente como funciona esse equipamento.\n\n5 dicas de instalação de aquecedor solar. Disponível em: https://instaline.com.br. Acesso em: 3 nov. 2023 (adaptado).\n\nO processo pelo qual ocorre transferência de calor dos coletores solares para o reservatório térmico é a",
+      "alt": "Esquema do aquecedor solar: radiação solar atinge o coletor de tubos a vácuo; água fria (azul) flui para o coletor, água quente (vermelho) retorna ao reservatório envolto em isolamento térmico de poliuretano. A circulação entre coletor e reservatório transporta calor."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "difusão."
+    },
+    {
+      "label": "B",
+      "text": "absorção."
+    },
+    {
+      "label": "C",
+      "text": "condução."
+    },
+    {
+      "label": "D",
+      "text": "irradiação."
+    },
+    {
+      "label": "E",
+      "text": "convecção."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
