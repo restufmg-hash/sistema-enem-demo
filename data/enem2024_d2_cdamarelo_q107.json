@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q107",
+  "year": 2024,
+  "number": 107,
+  "area": "Ciências da Natureza",
+  "topic": "Fitorremediação",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 7
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q107_integral.png",
+      "text": "Questão 107 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta a fitorremediação como técnica que utiliza plantas para a remediação de ambientes contaminados. A figura apresenta a árvore e o quadro das cinco definições à direita. Pergunta: 'O método que retira o mercúrio de uma área contaminada, impedindo sua entrada na cadeia alimentar, é a'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "fitoestabilização, deixando o mercúrio disponível sob a superfície das raízes das plantas."
+    },
+    {
+      "label": "B",
+      "text": "fitovolatilização, permitindo a retirada do mercúrio por plantas e a sua transferência para uma forma volátil."
+    },
+    {
+      "label": "C",
+      "text": "fitodegradação, com a degradação do mercúrio promovida por enzimas, contidas nas raízes, formando espécies menos tóxicas."
+    },
+    {
+      "label": "D",
+      "text": "fitoestimulação, com a remoção do mercúrio pela ação de microrganismos presentes nas raízes que absorvem e imobilizam o metal."
+    },
+    {
+      "label": "E",
+      "text": "fitoextração, em que as plantas que acumulam o mercúrio são cultivadas nesses locais, e a biomassa rica no metal é retirada após o crescimento."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
