@@ -598,6 +598,22 @@
       "alt": "Questão 127 do ENEM 2024. Fluxograma relacionando urbanização, ausência de saneamento básico, contaminação da água, redução da biodiversidade aquática e riscos à saúde humana. Pergunta sobre o aumento do risco de doenças transmitidas por mosquitos; alternativas A a E."
     },
     {
+      "id": "enem2024-d2-cdamarelo-q128",
+      "question_id": "enem:2024:regular_nacional:d2:q128",
+      "ano": 2024,
+      "numero_oficial": 128,
+      "sequencia_colecao": "038",
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2024 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 14,
+      "fonte": "INEP, 2024_PV_impresso_D2_CD5.pdf",
+      "sha256_imagem": "1D75C2E6F039F7ADCD18E4DBCEDC2397BCE9B449FAAD70942735D950FA7C69B1",
+      "data": "data/enem2024_d2_cdamarelo_q128.json",
+      "imagem": "assets/enem2024_d2_cdamarelo_q128_integral.png",
+      "alt": "Questão 128 do ENEM 2024. Texto Impactos do microplástico, com enunciado sobre poluentes apolares lipossolúveis, bioacumulação em vertebrados e alternativas A a E."
+    },
+    {
       "id": "q093-2025",
       "question_id": "enem:2025:regular_nacional:d2:q093",
       "ano": 2025,
