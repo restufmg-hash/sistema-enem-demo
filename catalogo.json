@@ -870,6 +870,22 @@
       "alt_texto": "Texto-base da Questão 016: soneto 'Símbolos' (MACHADO, G.) — versos sobre eu e tu, mar e rocha; referência: MACHADO, G. Poesia completa. Rio de Janeiro: Cátedra/MEC, 1978. Coluna esquerda da página 9.",
       "alt": "Continuação da Questão 016 (coluna direita da página 9): pergunta sobre como os traços da estética simbolista são resgatados pelo eu lírico; alternativas A até E.",
       "legacy": "enem2025-q016.html"
+    },
+    {
+      "id": "enem2025-d1-cdazul-q017",
+      "question_id": "enem:2025:regular_nacional:d1:q017",
+      "ano": 2025,
+      "numero_oficial": 17,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 9,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "5C601AFA2128E05CFCCEEEF729651A2D217BCCD6CDDCC83D7A3BB10CFD07C21C",
+      "data": "data/enem2025_d1_cdazul_q017.json",
+      "imagem": "assets/enem2025_d1_cdazul_q017_integral_p09.png",
+      "alt": "Questão 017 do ENEM 2025. Excerto de 'Borboletas no estômago' (C. R. Person, 2021) sobre 'antes do inverno chegar', memórias da vida da avó; pergunta sobre a locução 'antes de' na progressão temática; alternativas A até E.",
+      "legacy": "enem2025-q017.html"
     }
   ]
 }
