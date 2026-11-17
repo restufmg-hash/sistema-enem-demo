@@ -1,0 +1,44 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q128",
+  "year": 2024,
+  "number": 128,
+  "area": "Ciências da Natureza",
+  "topic": "Biologia; Ecologia; poluição por microplásticos; poluentes orgânicos persistentes; lipossolubilidade; bioacumulação",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 14
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q128_integral.png",
+      "text": "QUESTÃO 128\n\nImpactos do microplástico\n\nA ação de fatores abióticos aliada à biodeterioração contribuem para a formação de microplásticos, os quais se aderem a outros poluentes orgânicos apolares persistentes, como os derivados de pesticidas lipossolúveis. Há uma proporcionalidade direta entre a solubilidade desses tipos de poluentes e sua concentração nos tecidos dos organismos expostos a eles.\n\nDisponível em: www.ecycle.com.br. Acesso em: 9 dez. 2021 (adaptado).\n\nEm animais vertebrados, essa associação de poluentes será preferencialmente acumulada no tecido",
+      "alt": "Recorte original da Questão 128 do ENEM 2024. Texto intitulado Impactos do microplástico sobre associação de microplásticos a poluentes orgânicos apolares e sua acumulação em tecidos de vertebrados."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "ósseo."
+    },
+    {
+      "label": "B",
+      "text": "nervoso."
+    },
+    {
+      "label": "C",
+      "text": "epitelial."
+    },
+    {
+      "label": "D",
+      "text": "adiposo."
+    },
+    {
+      "label": "E",
+      "text": "sanguíneo."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
