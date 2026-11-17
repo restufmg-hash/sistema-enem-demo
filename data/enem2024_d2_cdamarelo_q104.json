@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q104",
+  "year": 2024,
+  "number": 104,
+  "area": "Ciências da Natureza",
+  "topic": "Cinemática",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 6
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q104_integral.png",
+      "text": "Questão 104 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado informa que os circuitos de maratonas aquáticas são montados com boias numeradas de 1 a 4, que determinam o trajeto a ser seguido. Existe uma corrente marinha de velocidade ν_c, cujo módulo é 30 metros por minuto, paralela à praia. O nadador percorre no sentido anti-horário, e a velocidade dele em relação à água é 50 metros por minuto. Pergunta: 'Nessa situação, em quantos minutos o nadador completará a prova?'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "42"
+    },
+    {
+      "label": "B",
+      "text": "65"
+    },
+    {
+      "label": "C",
+      "text": "72"
+    },
+    {
+      "label": "D",
+      "text": "105"
+    },
+    {
+      "label": "E",
+      "text": "120"
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
