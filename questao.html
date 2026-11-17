@@ -198,10 +198,13 @@ async function iniciar() {
     }
     resultado.textContent = "Enviando ao servidor…";
     const tentativa = idTentativa(item.question_id);
+    const endpoint = SILENCIADO.api.replace(/\/$/, "");
     try {
-      const resposta = await fetch(SILENCIADO.api.replace(/\/$/, "") + "/v1/study/attempts", {
+      // Application/json exigiria preflight CORS que o endpoint gratuito nao responde;
+      // text/plain (simple request) e lido pelo servidor como JSON.
+      const resposta = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({
           question_id: item.question_id,
           selected_option: selecionada.value,
