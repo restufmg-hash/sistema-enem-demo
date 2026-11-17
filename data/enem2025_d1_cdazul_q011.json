@@ -1,0 +1,43 @@
+﻿{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q011",
+  "year": 2025,
+  "number": 11,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Interpretação de texto literário (Inocência, de Visconde de Taunay)",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 8
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q011_integral_p08.png",
+      "text": "Questão 011 do ENEM 2025 (1º dia, Caderno 1 Azul, página 8), área Linguagens, Códigos e suas Tecnologias — Língua Portuguesa / Literatura. Trecho do romance Inocência, de Visconde de Taunay: '— Vejo, disse ele com algum acanhamento, que o doutor não é nenhum pé-rapado, mas nunca é bom facilitar… Minha filha Nocência fez 18 anos pelo Natal, e é rapariga que pela feição parece moça de cidade, muito ariscadinha de modos, mas bonita e boa deveras… Coitada, foi criada sem mãe, e aqui nestes fundões. [...] — Ora muito que bem, continuou Pereira caindo aos poucos na habitual garrulice, quando vi a menina tomar corpo, tratei logo de casá-la. — Ah! é casada? perguntou Cirino. — Isto é, é e não é. A coisa está apalavrada. Por aqui costuma labutar no costeio do gado para São Paulo um homem de mão-cheia, que talvez o sr. conheça… o Manecão Doca… — Não, respondeu Cirino abanando a cabeça. — Pois isso é um homem às direitas, desempenado e trabucador como ele só… fura estes sertões todos e vem tangendo pontes de gado que metem pasmo. Também dizem que tem bichado muito e juntado cobre grosso, o que é possível, porque não é gastador nem dado a mulheres. Uma feita que estava aqui de pousada… olhe, mesmo neste lugar onde estava mecê inda agorinha, falei-lhe em casamento… isto é, dei-lhe uns toques… porque os pais devem tomar isso a si para bem de suas famílias; não acha? — Boa dúvida, aprovou Cirino, dou-lhe toda a razão; era do seu dever.' Referência: TAUNAY, A. d'E. Inocência. Disponível em: www.dominiopublico.gov.br. Acesso em: 29 fev. 2024. Pergunta: 'Nesse trecho, ao se referir à sua filha, o pai de Inocência reproduz os ideais românticos, presentes na'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "valorização do ambiente rural na formação moral da mulher."
+    },
+    {
+      "label": "B",
+      "text": "figura decorativa da mulher ante o protagonismo masculino."
+    },
+    {
+      "label": "C",
+      "text": "equivalência de origem social para a harmonia do casal."
+    },
+    {
+      "label": "D",
+      "text": "importância do dote como condição para o casamento."
+    },
+    {
+      "label": "E",
+      "text": "aura de mistério sobre a identidade da jovem."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
