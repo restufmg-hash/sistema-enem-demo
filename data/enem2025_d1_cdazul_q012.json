@@ -1,0 +1,43 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d1:q012",
+  "year": 2025,
+  "number": 12,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Interpretação de texto (política pública de inclusão esportiva)",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D1_CD1.pdf",
+    "page": 8
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2025_d1_cdazul_q012_integral_p08.png",
+      "text": "Questão 012 do ENEM 2025 (1º dia, Caderno 1 Azul, página 8, coluna esquerda), área Linguagens, Códigos e suas Tecnologias — Língua Portuguesa. Texto-base: 'O Ministério do Esporte no Brasil lançou o programa Maré Inclusiva, em 2024, ano dos Jogos Paralímpicos de Paris. Esse programa visa ampliar as oportunidades para pessoas com deficiência que desejam praticar o surf. O parasurf é a prática do surf adaptada para permitir que pessoas com deficiência pratiquem o esporte em todas as suas categorias, modalidades e manifestações. Para a Secretaria Nacional do Paradesporto, a iniciativa é mais do que um programa de esporte, é uma iniciativa que busca transformar vidas e promover a inclusão por meio do parasurf, criando um legado de igualdade e respeito.' Referência: Disponível em: www.gov.br/esporte. Acesso em: 6 set. 2024 (adaptado). Pergunta: 'De acordo com esse texto, o programa voltado ao estímulo da prática do parasurf evidencia a'."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "adesão de diferentes países a programas inclusivos."
+    },
+    {
+      "label": "B",
+      "text": "preocupação política em atender a demandas paralímpicas."
+    },
+    {
+      "label": "C",
+      "text": "importância de uma política pública esportiva para a inclusão."
+    },
+    {
+      "label": "D",
+      "text": "eficiência das iniciativas de inclusão em megaeventos esportivos."
+    },
+    {
+      "label": "E",
+      "text": "escassez de investimento em práticas corporais de aventura na natureza."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
