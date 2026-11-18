@@ -1646,6 +1646,151 @@
         "sequencia_colecao": null
       },
       "aliases": []
+    },
+    {
+      "id": "enem2025-d1-cdazul-q001-es",
+      "question_id": "enem:2025:regular_nacional:d1:q001:es",
+      "ano": 2025,
+      "numero_oficial": 1,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 4,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "F4AC9BDE5DCA0171C2BA399CF89A5EAB6217800547691C6C160FB3802FAC31B5",
+      "data": "data/enem2025_d1_cdazul_q001_es.json",
+      "imagem": "assets/enem2025_d1_cdazul_q001_es_integral.png",
+      "alt": "Questão 001 do ENEM 2025 (versão Espanhol). Poema-trecho da canção Polvorado, de Nacho Vegas; o eu poético questiona o padrão sobre o destino do dinheiro; referência: NACHO VEGAS, www.lahiguera.net, acesso em 12 abr. 2024 (fragmento). Pergunta em português: Na letra da canção Polvorado, ao apresentar as reflexões do eu poético, o cantor espanhol Nacho Vegas; alternativas A até E.",
+      "legacy": "enem2025-q001-es.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "es",
+        "numero_oficial": 1,
+        "revisao": "2026-11-17.enem-r3-espanol-chief-editorial-decision.r3",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q001:espanol"
+      ]
+    },
+    {
+      "id": "enem2025-d1-cdazul-q002-es",
+      "question_id": "enem:2025:regular_nacional:d1:q002:es",
+      "ano": 2025,
+      "numero_oficial": 2,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 4,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "EC16133BD790B6DB70D251DDE931BCE6688B85E008E403B14ED6EBA097764FB5",
+      "data": "data/enem2025_d1_cdazul_q002_es.json",
+      "imagem": "assets/enem2025_d1_cdazul_q002_es_integral.png",
+      "alt": "Questão 002 do ENEM 2025 (versão Espanhol). Texto sobre a palavra guagua (ônibus / bebê) e sua trajetória entre Espanha e América do Sul; comentário sobre o guaguismo em Lanzarote e a Real Academia Española; referência: www.escribirbienyclaro.com, acesso em 13 maio 2024. Pergunta em português: Ao abordar a trajetória da palavra guagua, o texto destaca a; alternativas A até E.",
+      "legacy": "enem2025-q002-es.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "es",
+        "numero_oficial": 2,
+        "revisao": "2026-11-17.enem-r3-espanol-chief-editorial-decision.r3",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q002:espanol"
+      ]
+    },
+    {
+      "id": "enem2025-d1-cdazul-q003-es",
+      "question_id": "enem:2025:regular_nacional:d1:q003:es",
+      "ano": 2025,
+      "numero_oficial": 3,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 4,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "D9E6C26BCE3361E5AAFFA95D9C2B3324C6A8001F50B002086666268F43A18BFA",
+      "data": "data/enem2025_d1_cdazul_q003_es.json",
+      "imagem": "assets/enem2025_d1_cdazul_q003_es_integral.png",
+      "alt": "Questão 003 do ENEM 2025 (versão Espanhol). Letra de canção Cuando yo era chiquito (RODRÍGUEZ, S., Oh Melancolía, Havana, 1988, fragmento); memória do eu poético sobre a infância; refrão Libertad, libertad, libertad para mi niño; referência ao texto como relato de memórias. Pergunta em português: O recurso que caracteriza essa letra de canção como um relato das memórias do eu poético é o uso de; alternativas A até E.",
+      "legacy": "enem2025-q003-es.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "es",
+        "numero_oficial": 3,
+        "revisao": "2026-11-17.enem-r3-espanol-chief-editorial-decision.r3",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q003:espanol"
+      ]
+    },
+    {
+      "id": "enem2025-d1-cdazul-q004-es",
+      "question_id": "enem:2025:regular_nacional:d1:q004:es",
+      "ano": 2025,
+      "numero_oficial": 4,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 5,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "C73FA02685F434A43B0F7D619C450C4DD7FC56A5BA6191DCF3ED7A15993B224A",
+      "data": "data/enem2025_d1_cdazul_q004_es.json",
+      "imagem": "assets/enem2025_d1_cdazul_q004_es_integral.png",
+      "alt": "Questão 004 do ENEM 2025 (versão Espanhol). Charge de Morgan sobre atividade escolar no Día de la Paz; diálogo coloquial entre estudantes sobre como fazer uma pomba; referência: MORGAN, J., www3.gobiernodecanarias.org, acesso em 5 maio 2024. Pergunta em português: Na charge, a diversidade linguística está representada pelo uso de; alternativas A até E.",
+      "legacy": "enem2025-q004-es.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "es",
+        "numero_oficial": 4,
+        "revisao": "2026-11-17.enem-r3-espanol-chief-editorial-decision.r3",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q004:espanol"
+      ]
+    },
+    {
+      "id": "enem2025-d1-cdazul-q005-es",
+      "question_id": "enem:2025:regular_nacional:d1:q005:es",
+      "ano": 2025,
+      "numero_oficial": 5,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 5,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "8BE07CB306EBA4635F87F317B189AA1207C96E1DBB28579C0A2AD85509218060",
+      "data": "data/enem2025_d1_cdazul_q005_es.json",
+      "imagem": "assets/enem2025_d1_cdazul_q005_es_integral.png",
+      "alt": "Questão 005 do ENEM 2025 (versão Espanhol). Texto sobre la generación Alfa (análise do Pew Research Center de 2018; BBC Mundo); geração definida pelo uso de tecnologia e imersa em telas; referência: www.bbc.com, acesso em 9 maio 2024 (adaptado). Pergunta em português: Nesse texto, a expressão a través de una pantalla evidencia que a geração Alfa estabelece com o mundo uma relação marcada pelo(a); alternativas A até E.",
+      "legacy": "enem2025-q005-es.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "es",
+        "numero_oficial": 5,
+        "revisao": "2026-11-17.enem-r3-espanol-chief-editorial-decision.r3",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem:2025:regular_nacional:d1:q005:espanol"
+      ]
     }
   ]
 }

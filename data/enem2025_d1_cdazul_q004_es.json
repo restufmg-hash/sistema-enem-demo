@@ -1,0 +1,43 @@
+{
+    "kind":  "enem.study_question.v1",
+    "question_id":  "enem:2025:regular_nacional:d1:q004:es",
+    "year":  2025,
+    "number":  4,
+    "area":  "Linguagens, Códigos e suas Tecnologias",
+    "topic":  "Língua Estrangeira Moderna (Espanhol); interpretação de texto; variação linguística e oralidade",
+    "source":  {
+                   "provider":  "INEP",
+                   "document":  "2025_PV_impresso_D1_CD1.pdf",
+                   "page":  5
+               },
+    "blocks":  [
+                   {
+                       "type":  "image",
+                       "asset":  "assets/enem2025_d1_cdazul_q004_es_integral.png",
+                       "text":  "[CHARGE em espanhol sobre atividade escolar no Día de la Paz; diálogo coloquial apresentado na imagem anexada.]\nMORGAN, J. Disponível em: www3.gobiernodecanarias.org. Acesso em: 5 maio 2024.\n\nNa charge, a diversidade linguística está representada pelo uso de"
+                   }
+               ],
+    "options":  [
+                    {
+                        "label":  "A",
+                        "text":  "estruturas verbais com valor de futuro próximo."
+                    },
+                    {
+                        "label":  "B",
+                        "text":  "expressões idiomáticas características de uma região."
+                    },
+                    {
+                        "label":  "C",
+                        "text":  "advérbios característicos do repertório vocabular dos jovens."
+                    },
+                    {
+                        "label":  "D",
+                        "text":  "marcas da oralidade expressas na representação escrita da fala."
+                    },
+                    {
+                        "label":  "E",
+                        "text":  "enunciados interrogativos em situação comunicativa com um interlocutor."
+                    }
+                ],
+    "answer_policy":  "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
