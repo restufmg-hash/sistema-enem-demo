@@ -1107,6 +1107,22 @@
       "alt": "Questão 132 do ENEM 2024. Fibras musculares esqueléticas, características das fibras lentas e rápidas e modalidade esportiva; enunciado e alternativas A–E."
     },
     {
+      "id": "enem2024-d2-cdamarelo-q133",
+      "question_id": "enem:2024:regular_nacional:d2:q133",
+      "ano": 2024,
+      "numero_oficial": 133,
+      "sequencia_colecao": "043",
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2024 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 15,
+      "fonte": "INEP, 2024_PV_impresso_D2_CD5.pdf",
+      "sha256_imagem": "A47123C6738258BD02392715163EC418EDDA91F26BA6065570747B67ED154DCB",
+      "data": "data/enem2024_d2_cdamarelo_q133.json",
+      "imagem": "assets/enem2024_d2_cdamarelo_q133_integral.png",
+      "alt": "Questão 133 do ENEM 2024. Serpentes corais-verdadeiras e falsas-corais, mimetismo, duas fotografias com nomes científicos, referências, enunciado e cinco alternativas A–E."
+    },
+    {
       "id": "q093-2025",
       "question_id": "enem:2025:regular_nacional:d2:q093",
       "ano": 2025,
