@@ -1,0 +1,44 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q133",
+  "year": 2024,
+  "number": 133,
+  "area": "Ciências da Natureza",
+  "topic": "Biologia; ecologia; mimetismo batesiano; corais-verdadeiras e falsas-corais; predação",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 15
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q133_integral.png",
+      "text": "QUESTÃO 133\n\nO Cerrado e a Amazônia abrigam grande número de \nserpentes popularmente conhecidas como cobras-corais. \nNa Amazônia predominam as corais-verdadeiras, que \nsão peçonhentas, enquanto no Cerrado prevalecem as \nfalsas-corais, que não possuem peçonha. Essas espécies \napresentam um padrão de coloração muito semelhante. \nEssa similaridade traz uma vantagem tanto para as corais \nfalsas como para as verdadeiras.\n\nFRANÇA, F. G. R. [...] serpentes corais em ambientes\ncampestres, savânicos e florestais da América do Sul.\nBrasília: UnB, 2008 (adaptado).\n\nNas fotografias, são apresentados exemplos dessas \nserpentes: uma coral-verdadeira e uma falsa-coral.\nCoral-verdadeira\n(Micrurus decoratus)\nFalsa-coral\n(Erythrolamprus aesculapii)\n\nSILVA, L. C.; COTTA, G. A.; RESENDE, F. C. Cobra-coral: aplicativo\neducativo para reconhecimento das cobras-corais do estado de\nMinas Gerais, Brasil. Herpetologia Brasileira,\nn. 1, 2021 (adaptado).\n\nQual é a vantagem dessa similaridade para as falsas-corais?",
+      "alt": "Questão 133 do ENEM 2024. Serpentes corais-verdadeiras e falsas-corais, mimetismo, duas fotografias com nomes científicos, referências, enunciado e cinco alternativas A–E."
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Facilita a captura de presas."
+    },
+    {
+      "label": "B",
+      "text": "Diminui a competição por recursos."
+    },
+    {
+      "label": "C",
+      "text": "Possibilita a geração de indivíduos híbridos."
+    },
+    {
+      "label": "D",
+      "text": "Reduz a possibilidade de sofrerem predação."
+    },
+    {
+      "label": "E",
+      "text": "Otimiza o encontro de parceiros reprodutivos."
+    }
+  ],
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+}
