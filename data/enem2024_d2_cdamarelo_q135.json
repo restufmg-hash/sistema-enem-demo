@@ -42,31 +42,36 @@
       "label": "A",
       "text": "Filha sem daltonismo, filha daltônica, filho daltônico e filho sem daltonismo.",
       "asset": "assets/enem2024_d2_cdamarelo_q135_option_A.svg",
-      "alt": "Heredograma da alternativa A: Filha sem daltonismo, filha daltônica, filho daltônico e filho sem daltonismo."
+      "alt": "Heredograma da alternativa A: Filha sem daltonismo, filha daltônica, filho daltônico e filho sem daltonismo.",
+      "image_only": true
     },
     {
       "label": "B",
       "text": "Filha sem daltonismo, filha portadora, filho sem daltonismo e filho daltônico.",
       "asset": "assets/enem2024_d2_cdamarelo_q135_option_B.svg",
-      "alt": "Heredograma da alternativa B: Filha sem daltonismo, filha portadora, filho sem daltonismo e filho daltônico."
+      "alt": "Heredograma da alternativa B: Filha sem daltonismo, filha portadora, filho sem daltonismo e filho daltônico.",
+      "image_only": true
     },
     {
       "label": "C",
       "text": "Duas filhas portadoras e dois filhos sem daltonismo.",
       "asset": "assets/enem2024_d2_cdamarelo_q135_option_C.svg",
-      "alt": "Heredograma da alternativa C: Duas filhas portadoras e dois filhos sem daltonismo."
+      "alt": "Heredograma da alternativa C: Duas filhas portadoras e dois filhos sem daltonismo.",
+      "image_only": true
     },
     {
       "label": "D",
       "text": "Duas filhas sem daltonismo e dois filhos daltônicos.",
       "asset": "assets/enem2024_d2_cdamarelo_q135_option_D.svg",
-      "alt": "Heredograma da alternativa D: Duas filhas sem daltonismo e dois filhos daltônicos."
+      "alt": "Heredograma da alternativa D: Duas filhas sem daltonismo e dois filhos daltônicos.",
+      "image_only": true
     },
     {
       "label": "E",
       "text": "Duas filhas daltônicas e dois filhos sem daltonismo.",
       "asset": "assets/enem2024_d2_cdamarelo_q135_option_E.svg",
-      "alt": "Heredograma da alternativa E: Duas filhas daltônicas e dois filhos sem daltonismo."
+      "alt": "Heredograma da alternativa E: Duas filhas daltônicas e dois filhos sem daltonismo.",
+      "image_only": true
     }
   ],
   "answer_policy": "Gabarito e resolução não estão neste payload. A correção acontece somente no servidor após submissão da tentativa.",
