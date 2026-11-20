@@ -53,19 +53,19 @@
   .page-column + .page-column { border-left: 1px dotted #636b75; padding-left: 12px; }
   .page-question { margin: 0 0 22px; min-width: 0; }
   .page-question h2 { font-size: 21px; font-weight: 750; line-height: 1.1; margin: 0 0 13px; padding: 0 0 3px; border-bottom: 2px solid #fbf4b6; }
-  .page-question p { margin: .45rem 0 .6rem; text-align: justify; white-space: pre-line; overflow-wrap: anywhere; font-size: 17.8px; line-height: 1.13; }
+  .page-question p { margin: .25rem 0 .35rem; text-align: justify; white-space: pre-line; overflow-wrap: anywhere; font-size: 17.8px; line-height: 1.13; }
   .page-question figure { margin: 8px 0; }
   .page-question figure img { display: block; width: auto; max-width: 100%; height: auto; border: 0; border-radius: 0; }
   .page-question figcaption { font-size: 12px; font-style: italic; }
-  .page-q-option { display: flex; align-items: flex-start; gap: 5px; margin: 5px 0; font-size: 17px; cursor: pointer; }
+  .page-q-option { display: flex; align-items: flex-start; gap: 5px; margin: 1px 0; font-size: 17px; line-height: 1.05; cursor: pointer; }
   .page-q-option input { margin: 4px 4px 0 0; accent-color: #154b7c; flex-shrink: 0; }
   .page-q-option span { overflow-wrap: anywhere; }
   .page-q-option.visual { min-height: 113px; align-items: center; }
   .page-q-option.visual img { max-width: 325px; width: 100%; max-height: 110px; object-fit: contain; }
-  .page-question-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 9px; padding-top: 6px; border-top: 1px dotted #b0b9c2; font-size: 13px; }
+  .page-question-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 3px; padding-top: 2px; border-top: 1px dotted #b0b9c2; font-size: 11px; }
   .page-question-controls select { font-size: 13px; margin-left: 3px; }
   .page-question-controls a { color: #0d4f7d; }
-  .page-receipt { min-height: 16px; font-size: 12px; margin-top: 4px; color: #31546c; }
+  .page-receipt { min-height: 11px; font-size: 10.5px; margin-top: 1px; color: #31546c; }
   .page-footer { border-top: 1px solid #aaa; font-size: 12px; color: #46515c; display: flex; justify-content: space-between; gap: 15px; margin-top: 12px; }
 
 </style>
@@ -538,8 +538,13 @@ async function iniciarModoPagina(params, catalogo) {
   document.getElementById("page-zoom-minus").addEventListener("click", () => aplicarZoom(scale / 1.2));
   document.getElementById("page-zoom-plus").addEventListener("click", () => aplicarZoom(scale * 1.2));
   ajustar();
-  await Promise.all(pendingRecovery);
-  // Ajustar a altura após o carregamento de imagens sem alterar o zoom do usuário.
+  const imagesReady = [...sheet.querySelectorAll("img")].map(img => img.complete
+    ? Promise.resolve() : new Promise(resolve => {
+        img.addEventListener("load", resolve, { once: true });
+        img.addEventListener("error", resolve, { once: true });
+      }));
+  await Promise.all([...pendingRecovery, ...imagesReady]);
+  // A mídia pode alterar a altura após o primeiro layout. Nunca cortar o rodapé.
   stage.style.height = Math.ceil(sheet.scrollHeight * scale) + "px";
 }
 
