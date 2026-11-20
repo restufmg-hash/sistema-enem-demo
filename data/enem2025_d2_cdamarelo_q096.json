@@ -1,0 +1,103 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q096",
+  "year": 2025,
+  "number": 96,
+  "area": "Ciências da Natureza",
+  "topic": "Água destilada e remoção de íons dissolvidos",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 3,
+    "sha256": "0A59697676989B55E6F3E40636FAD164C1C26868DDBA37D04E4FFFC101168298",
+    "page_geometry": {
+      "width": 566.927,
+      "height": 779.526,
+      "question_bbox": [
+        20.0,
+        315.653,
+        284.5,
+        506.349
+      ],
+      "reading_order": "coluna_esquerda; fluxo_y_crescente"
+    }
+  },
+  "content_revision": "170162958f11f22818808d52637a8b09e95fab2dcffc41253185640c1c2e16ce",
+  "blocks": [
+    {
+      "type": "text",
+      "role": "paragraph",
+      "text": "Existe um processo de purificação de água em que são \nremovidos os sais dissolvidos. A água que passa por esse processo \né muito utilizada em laboratórios de química, em indústrias \n(como solvente), em baterias de carros etc. Entretanto, esse \ntipo de água não é adequado para ingestão, pois pode causar \nproblemas de saúde, como carência iônica e diarreia.",
+      "source_bbox": [
+        22.676,
+        336.932,
+        276.24,
+        409.6
+      ]
+    },
+    {
+      "type": "text",
+      "role": "prompt",
+      "text": "Essa água é chamada de",
+      "source_bbox": [
+        22.676,
+        416.16,
+        121.046,
+        429.54
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "dura.",
+      "source_bbox": [
+        22.676,
+        434.69,
+        56.536,
+        448.07
+      ]
+    },
+    {
+      "label": "B",
+      "text": "pesada.",
+      "source_bbox": [
+        22.676,
+        448.26,
+        66.926,
+        461.64
+      ]
+    },
+    {
+      "label": "C",
+      "text": "sanitária.",
+      "source_bbox": [
+        22.676,
+        461.83,
+        72.334,
+        475.21
+      ]
+    },
+    {
+      "label": "D",
+      "text": "destilada.",
+      "source_bbox": [
+        22.676,
+        475.4,
+        76.096,
+        488.78
+      ]
+    },
+    {
+      "label": "E",
+      "text": "oxigenada.",
+      "source_bbox": [
+        22.686,
+        488.97,
+        79.35,
+        502.35
+      ]
+    }
+  ],
+  "answer_policy": "Sem gabarito, feedback ou análise de alternativas antes do envio ao servidor."
+}

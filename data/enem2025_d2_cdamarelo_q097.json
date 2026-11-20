@@ -1,0 +1,125 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q097",
+  "year": 2025,
+  "number": 97,
+  "area": "Ciências da Natureza",
+  "topic": "Dilatação da pupila e reflexo vermelho em fotografias",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 3,
+    "sha256": "0A59697676989B55E6F3E40636FAD164C1C26868DDBA37D04E4FFFC101168298",
+    "page_geometry": {
+      "width": 566.927,
+      "height": 779.526,
+      "question_bbox": [
+        20.0,
+        506.349,
+        284.5,
+        742.474
+      ],
+      "reading_order": "coluna_esquerda; fluxo_y_crescente"
+    }
+  },
+  "content_revision": "ea06fd8fefee709527fe3969814dbd19ac87598973eb68fbffea15ae0c116e9c",
+  "blocks": [
+    {
+      "type": "text",
+      "role": "title",
+      "text": "Por que os olhos ficam vermelhos em algumas fotografias?",
+      "source_bbox": [
+        78.552,
+        528.498,
+        222.559,
+        555.238
+      ]
+    },
+    {
+      "type": "text",
+      "role": "paragraph",
+      "text": "Em fotos tiradas com câmeras fotográficas antigas, por \nvezes as pessoas aparecem com os olhos vermelhos. Isso \nocorre porque a luz do flash da câmera incide diretamente \nno globo ocular, sendo refletida por uma região repleta de \nvasos sanguíneos.",
+      "source_bbox": [
+        22.676,
+        557.596,
+        276.226,
+        618.406
+      ]
+    },
+    {
+      "type": "text",
+      "role": "source",
+      "text": "Disponível em: www.uol.com.br. Acesso em: 14 jun. 2017 (adaptado).",
+      "source_bbox": [
+        48.694,
+        620.371,
+        273.909,
+        631.075
+      ]
+    },
+    {
+      "type": "text",
+      "role": "prompt",
+      "text": "Esse efeito é mais comum à noite ou em lugares pouco iluminados \nporque, com a pupila",
+      "source_bbox": [
+        22.676,
+        638.263,
+        276.083,
+        664.501
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "dilatada, chega mais luz à retina.",
+      "source_bbox": [
+        22.676,
+        669.651,
+        167.353,
+        683.031
+      ]
+    },
+    {
+      "label": "B",
+      "text": "retraída, chega mais luz vermelha à retina.",
+      "source_bbox": [
+        22.676,
+        683.921,
+        207.239,
+        697.301
+      ]
+    },
+    {
+      "label": "C",
+      "text": "retraída, chega mais luz vermelha aos bastonetes.",
+      "source_bbox": [
+        22.686,
+        698.191,
+        241.917,
+        711.571
+      ]
+    },
+    {
+      "label": "D",
+      "text": "retraída, chegam menos luzes azul e verde aos cones.",
+      "source_bbox": [
+        22.696,
+        712.471,
+        251.638,
+        725.851
+      ]
+    },
+    {
+      "label": "E",
+      "text": "dilatada, chegam menos luzes azul e verde aos bastonetes.",
+      "source_bbox": [
+        22.706,
+        726.741,
+        270.811,
+        740.121
+      ]
+    }
+  ],
+  "answer_policy": "Sem gabarito, feedback ou análise de alternativas antes do envio ao servidor."
+}

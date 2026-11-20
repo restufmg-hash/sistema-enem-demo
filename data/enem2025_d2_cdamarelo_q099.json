@@ -1,0 +1,114 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q099",
+  "year": 2025,
+  "number": 99,
+  "area": "Ciências da Natureza",
+  "topic": "Deficiência de lipase ácida lisossomal",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 3,
+    "sha256": "0A59697676989B55E6F3E40636FAD164C1C26868DDBA37D04E4FFFC101168298",
+    "page_geometry": {
+      "width": 566.927,
+      "height": 779.526,
+      "question_bbox": [
+        284.5,
+        263.37,
+        544.5,
+        474.613
+      ],
+      "reading_order": "coluna_direita; fluxo_y_crescente"
+    }
+  },
+  "content_revision": "3c802a3fdc72c6282ad2210f74967bfb4da71b9ece7087340dfef63885ad2223",
+  "blocks": [
+    {
+      "type": "text",
+      "role": "paragraph",
+      "text": "A deficiência da enzima lipase ácida causa uma doença em \nque o portador apresenta células que não degradam colesterol \nesterificado nem triglicerídeos, resultando no depósito desses \ncompostos em diversos órgãos, principalmente no fígado.",
+      "source_bbox": [
+        285.92,
+        285.006,
+        539.423,
+        335.036
+      ]
+    },
+    {
+      "type": "text",
+      "role": "source",
+      "text": "ANDERSON, R. A. et al. In Situ Localization of the Genetic Locus Encoding [...]. Genomics, n. 1, jan. 1993 (adaptado).",
+      "source_bbox": [
+        380.231,
+        336.353,
+        538.975,
+        366.689
+      ]
+    },
+    {
+      "type": "text",
+      "role": "prompt",
+      "text": "Essa doença resulta da insuficiência funcional de qual estrutura \ncelular?",
+      "source_bbox": [
+        285.92,
+        373.233,
+        539.417,
+        398.828
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Lisossomos.",
+      "source_bbox": [
+        285.92,
+        403.328,
+        347.14,
+        416.708
+      ]
+    },
+    {
+      "label": "B",
+      "text": "Ribossomos.",
+      "source_bbox": [
+        285.92,
+        416.958,
+        349.71,
+        430.338
+      ]
+    },
+    {
+      "label": "C",
+      "text": "Mitocôndrias.",
+      "source_bbox": [
+        285.93,
+        430.588,
+        354.979,
+        443.968
+      ]
+    },
+    {
+      "label": "D",
+      "text": "Peroxissomos.",
+      "source_bbox": [
+        285.94,
+        444.218,
+        357.648,
+        457.598
+      ]
+    },
+    {
+      "label": "E",
+      "text": "Retículo endoplasmático liso.",
+      "source_bbox": [
+        285.95,
+        457.848,
+        417.139,
+        471.228
+      ]
+    }
+  ],
+  "answer_policy": "Sem gabarito, feedback ou análise de alternativas antes do envio ao servidor."
+}
