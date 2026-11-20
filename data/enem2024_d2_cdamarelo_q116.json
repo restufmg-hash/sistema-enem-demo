@@ -12,9 +12,21 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "Apesar de os animais representados no cladograma compartilharem um mesmo ancestral, eles se caracterizam por distintos padrões de reprodução ou de nutrição dos embriões e descendentes."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q116_integral.png",
-      "text": "Questão 116 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Apesar de os animais representados no cladograma compartilharem um mesmo ancestral, eles se caracterizam por distintos padrões de reprodução ou de nutrição dos embriões e descendentes. Cladograma Mammalia: Monotremata (ornitorrinco), Marsupialia (canguru) e Placentalia (elefante); Prototheria/Theria; Metatheria/Eutheria. Referência: DIXSON, A. F. Mammalian Sexuality: The Act of Mating and the Evolution of Reproduction. Disponível em: www.cambridge.org. Acesso em: 2 jul. 2024 (adaptado). Pergunta: 'Ao longo do processo evolutivo, percebem-se, entre esses animais, perdas e ganhos nos padrões citados que envolvem o(a)'."
+      "asset": "assets/enem2024_d2_cdamarelo_p010_q116_original.jpg",
+      "alt": "Cladograma Mammalia: Monotremata, Marsupialia e Placentalia; divisões Prototheria, Theria, Metatheria e Eutheria."
+    },
+    {
+      "type": "text",
+      "text": "DIXSON, A. F. Mammalian Sexuality: The Act of Mating and the Evolution of Reproduction. Disponível em: www.cambridge.org. Acesso em: 2 jul. 2024 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Ao longo do processo evolutivo, percebem-se, entre esses animais, perdas e ganhos nos padrões citados que envolvem o(a)"
     }
   ],
   "options": [
@@ -39,5 +51,8 @@
       "text": "diminuição da vesícula vitelínica, associada ao desenvolvimento da lactação."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q116-structured-p010-v1",
+  "legacy_integral_crop_retained_in_catalog": true
 }
