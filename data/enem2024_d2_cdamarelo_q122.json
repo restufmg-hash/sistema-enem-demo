@@ -12,9 +12,26 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "Metabolismo de procariontes\n\nO esquema representa a ação de organismos no ciclo do nitrogênio e no ciclo do carbono. Os números correspondem a algumas etapas dos dois ciclos distintos."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q122_integral.png",
-      "text": "QUESTÃO 122\nMetabolismo de procariontes\n\nO esquema representa a ação de organismos no ciclo do nitrogênio e no ciclo do carbono. Os números correspondem a algumas etapas dos dois ciclos distintos.\n\nEsquema — Procariontes no ciclo do nitrogênio:\nNitrogênio atmosférico (N₂). 1. Procariontes fixadores de nitrogênio: convertem N₂ em amônia (NH₃). Procariontes nitrificantes: convertem NH₃ em nitritos (NO₂⁻) e nitratos (NO₃⁻). 2. Procariontes desnitrificantes: convertem nitratos em N₂. As setas representam a passagem do nitrogênio atmosférico aos fixadores, a transferência para plantas e para procariontes nitrificantes, e o retorno à atmosfera após desnitrificação.\n\nEsquema — Procariontes no ciclo do carbono:\nCarbono atmosférico (CO₂). 3. Procariontes fotossintetizantes: fixam CO₂. 4. Plantas: fixam CO₂. 5. Procariontes decompositores: convertem o carbono fixado em CO₂. As setas indicam a fixação do carbono atmosférico por plantas e procariontes e o retorno ao CO₂ por decomposição.\n\nDisponível em: https://pt.khanacademy.org. Acesso em: 27 jun. 2024 (adaptado).\n\nEm qual etapa numerada ocorre uma transformação redox como a que ocorre nos procariontes nitrificantes?"
+      "asset": "assets/enem2024_d2_cdamarelo_p012_q122_nitrogenio.jpg",
+      "alt": "Diagrama original do ciclo de nitrogênio: fixação, nitrificação NH3 a NO2 e NO3 e desnitrificação."
+    },
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_p012_q122_carbono.jpg",
+      "alt": "Diagrama original do ciclo do carbono: fixação fotossintética e decomposição retornando CO2."
+    },
+    {
+      "type": "text",
+      "text": "Disponível em: https://pt.khanacademy.org. Acesso em: 27 jun. 2024 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Em qual etapa numerada ocorre uma transformação redox como a que ocorre nos procariontes nitrificantes?"
     }
   ],
   "options": [
@@ -39,5 +56,8 @@
       "text": "5"
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q122-structured-v2",
+  "legacy_integral_crop_retained_in_catalog": true
 }

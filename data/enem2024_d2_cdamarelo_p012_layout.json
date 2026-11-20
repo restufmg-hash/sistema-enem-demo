@@ -1,0 +1,255 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p012",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "drive_file_id": "1sYv0adwBnb6ZcPTayZW9PR0UWmWcKo-B",
+    "printed_page": 12,
+    "pdf_page_index": 11,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 738,
+        "order": [
+          122
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 745,
+        "order": [
+          122,
+          123
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "number": 122,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        738
+      ],
+      "continuation_column": "right",
+      "continuation_start_block": 4,
+      "continuation_bbox": [
+        290.29,
+        65,
+        539.5,
+        160
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q122.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "number": 123,
+      "column": "right",
+      "order": 1,
+      "bbox": [
+        290.29,
+        166,
+        539.5,
+        745
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q123.json"
+    }
+  ],
+  "media": {
+    "q122-nitrogenio": {
+      "url": "assets/enem2024_d2_cdamarelo_p012_q122_nitrogenio.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "ca051f7fb49d06d1597feb573462ef3cd01ffc8ed2bb16bda46ab6666dc54eef",
+      "source_bbox": [
+        31.9503,
+        140.3426,
+        278.3473,
+        427.913
+      ],
+      "source_pdf_page": 12,
+      "source_role": "Imagem nativa do ciclo do nitrogênio"
+    },
+    "q122-carbono": {
+      "url": "assets/enem2024_d2_cdamarelo_p012_q122_carbono.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "4729176e3420d550145fdc7f652f2d80892285089f14e699a242ad8b9027f51f",
+      "source_bbox": [
+        32.4893,
+        432.6982,
+        276.8038,
+        712.298
+      ],
+      "source_pdf_page": 12,
+      "source_role": "Imagem nativa do ciclo do carbono"
+    },
+    "q123-emissoes": {
+      "url": "assets/enem2024_d2_cdamarelo_p012_q123_emissoes.png",
+      "mime_type": "image/png",
+      "sha256": "897dfc39cf162dc183b500abae2228bc91ca0abab5cefadb6e79c3e13b502eee",
+      "source_bbox": [
+        290.0731,
+        368.2272,
+        536.7931,
+        608.4672
+      ],
+      "source_pdf_page": 12,
+      "source_role": "Gráfico original de emissões por razão ar/combustível"
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "A",
+      "bbox": [
+        290.2914,
+        97.245,
+        302.4794,
+        106.995
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "B",
+      "bbox": [
+        290.2914,
+        109.725,
+        302.4794,
+        119.475
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "C",
+      "bbox": [
+        290.2914,
+        122.205,
+        302.4794,
+        131.95499999999998
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "D",
+      "bbox": [
+        290.2914,
+        134.685,
+        302.4794,
+        144.435
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "E",
+      "bbox": [
+        290.2914,
+        147.165,
+        302.4794,
+        156.915
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "A",
+      "bbox": [
+        290.2914,
+        674.334,
+        302.4794,
+        684.084
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "B",
+      "bbox": [
+        290.2914,
+        688.222,
+        302.4794,
+        697.972
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "C",
+      "bbox": [
+        290.2914,
+        702.116,
+        302.4794,
+        711.866
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "D",
+      "bbox": [
+        290.2914,
+        716.014,
+        302.4794,
+        725.764
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "E",
+      "bbox": [
+        290.2914,
+        729.908,
+        302.4794,
+        739.658
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option label bbox"
+    }
+  ],
+  "presentation": {
+    "student_key_excluded": true,
+    "source_pdf_as_background": false,
+    "source_text_from_question_data": true,
+    "source_options_from_question_data": true,
+    "media_source_native": true,
+    "split_column_continuation": true,
+    "default_zoom": "fit",
+    "responsive_question_mode": true,
+    "interactive_page_mode": true,
+    "publication": "branch_only_validation"
+  }
+}
