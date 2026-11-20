@@ -19,6 +19,10 @@
   .badge { display: inline-block; background: #8b5200; color: #fff; border-radius: 6px; padding: .1rem .5rem; font-size: .75rem; font-weight: 700; margin-left: .4rem; vertical-align: middle; }
   figure { margin: 1rem 0; }
   #conteudo-estruturado p { margin: .85rem 0; white-space: pre-wrap; }
+  #conteudo-estruturado [data-role="title"] { font-size: 1.05rem; font-weight: 700; text-align: center; }
+  #conteudo-estruturado [data-role="verse"] { padding: 0 .65rem; line-height: 1.45; }
+  #conteudo-estruturado [data-role="reference"] { font-size: .83rem; text-align: right; }
+  #conteudo-estruturado [data-role="stem"] { font-weight: 500; }
   #conteudo-estruturado figure { margin: 1rem auto; max-width: 560px; }
   #conteudo-estruturado img { display: block; max-width: 100%; height: auto; margin: auto; }
   #alternar-original { font-size: .85rem; background: #e7edf3; color: #173c59; padding: .45rem .8rem; margin-top: .25rem; }
@@ -281,7 +285,22 @@ async function iniciar() {
         structured.appendChild(figure);
       } else if (["text", "math", "table"].includes(block.type)) {
         const part = document.createElement(block.type === "table" ? "pre" : "p");
-        part.textContent = block.text || "";
+        if (["title", "verse", "reference", "stem"].includes(block.role)) {
+          part.dataset.role = block.role;
+        }
+        // Render validated emphasis as DOM text nodes, never as injected HTML.
+        let remainder = block.text || "";
+        const marks = Array.isArray(block.emphasize) ? block.emphasize : [];
+        for (const phrase of marks) {
+          if (typeof phrase !== "string" || !phrase || !remainder.includes(phrase)) continue;
+          const index = remainder.indexOf(phrase);
+          part.appendChild(document.createTextNode(remainder.slice(0, index)));
+          const emphasis = document.createElement("em");
+          emphasis.textContent = phrase;
+          part.appendChild(emphasis);
+          remainder = remainder.slice(index + phrase.length);
+        }
+        part.appendChild(document.createTextNode(remainder));
         structured.appendChild(part);
       }
     }

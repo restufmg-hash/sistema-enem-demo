@@ -1835,6 +1835,34 @@
       "aliases": [
         "enem:2024:regular_nacional:d1:q001:en"
       ]
+    },
+    {
+      "id": "enem2024-d1-cdazul-q2-en",
+      "question_id": "enem:2024:regular_nacional:d1:q002:english",
+      "ano": 2024,
+      "numero_oficial": 2,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2024 · 1º dia · Caderno 1 Azul (CD1) · Inglês",
+      "pagina": 2,
+      "fonte": "INEP, 2024_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "21AF5FF1826BDAED9125EB9927568E18B9C97A13F1C69A1B050435BCB8B27291",
+      "data": "data/enem2024_d1_cdazul_q002_en.json",
+      "imagem": "assets/enem2024_d1_cdazul_q002_en_integral.png",
+      "alt": "Recorte original fiel da Q002 em inglês, ENEM 2024 Azul",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "en",
+        "numero_oficial": 2,
+        "revisao": "2026-11-20.a2024d1.q002-en.r1",
+        "sequencia_colecao": 2
+      },
+      "aliases": [
+        "enem:2024:regular_nacional:d1:q002:en"
+      ]
     }
   ]
 }

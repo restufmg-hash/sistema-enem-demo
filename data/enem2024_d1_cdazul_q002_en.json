@@ -1,0 +1,63 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q002:english",
+  "content_revision": "2026-11-20.a2024d1.q002-en.r1",
+  "year": 2024,
+  "number": 2,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Função discursiva de expressão contrastiva em texto de canção; mudança de comportamento",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 2
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "role": "title",
+      "text": "Holy War"
+    },
+    {
+      "type": "text",
+      "role": "verse",
+      "text": "Oh, so we can hate each other and fear each other\nWe can build these walls between each other\nBaby, blow by blow and brick by brick\nKeep yourself locked in, yourself locked in\n[…]\nOh, maybe we should love somebody\nOh, maybe we could care a little more\nSo maybe we should love somebody\nInstead of polishing the bombs of holy war"
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "KEYS, A. Here. Estados Unidos: RCA Records, 2016."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "Nessa letra de canção, que aborda um contexto de ódio e intolerância, o marcador “instead of ” introduz a ideia de",
+      "emphasize": [
+        "instead of"
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "mudança de comportamento."
+    },
+    {
+      "label": "B",
+      "text": "panorama de conflitos."
+    },
+    {
+      "label": "C",
+      "text": "rotina de isolamento."
+    },
+    {
+      "label": "D",
+      "text": "perspectiva bélica."
+    },
+    {
+      "label": "E",
+      "text": "cenário religioso."
+    }
+  ],
+  "answer_policy": "Gabarito e resolução não incluídos neste payload; somente feedback do servidor após envio."
+}
