@@ -1,0 +1,269 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p010",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 10,
+    "pdf_page_index": 9,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 744,
+        "order": [
+          116,
+          117
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 652,
+        "order": [
+          118
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q116",
+      "number": 116,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        513
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q116.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q117",
+      "number": 117,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        517,
+        281,
+        742
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q117.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q118",
+      "number": 118,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        652
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q118.json"
+    }
+  ],
+  "media": {
+    "q116-native": {
+      "url": "assets/enem2024_d2_cdamarelo_p010_q116_original.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "243a140ed9a5bc6a5756aa5f1ebd4808814c7dfd1322f01008b2224d913f5804",
+      "source_bbox": [
+        31.9097,
+        136.964,
+        278.3897,
+        322.004
+      ],
+      "source_pdf_page": 10,
+      "source_role": "Cladograma original de mamíferos: Monotremata, Marsupialia, Placentalia e ramos evolutivos"
+    },
+    "q118-native": {
+      "url": "assets/enem2024_d2_cdamarelo_p010_q118_original.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "7f6cefacdfc389a106cb3d20cc17620e2db824e453204c784677842ffee6e5e3",
+      "source_bbox": [
+        293.9131,
+        265.1119,
+        532.9531,
+        515.1919
+      ],
+      "source_pdf_page": 10,
+      "source_role": "Esquemas ópticos originais do mirascópio, dois espelhos e medidas indicadas"
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q116",
+      "label": "A",
+      "bbox": [
+        32.01,
+        406.05,
+        41.76,
+        415.8
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q116",
+      "label": "B",
+      "bbox": [
+        32.01,
+        419.48,
+        41.76,
+        429.23
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q116",
+      "label": "C",
+      "bbox": [
+        32.01,
+        432.92,
+        41.76,
+        442.67
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q116",
+      "label": "D",
+      "bbox": [
+        32.01,
+        458.37,
+        41.76,
+        468.12
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q116",
+      "label": "E",
+      "bbox": [
+        32.01,
+        483.82,
+        41.76,
+        493.57
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q117",
+      "label": "A",
+      "bbox": [
+        32.01,
+        676.18,
+        41.76,
+        685.93
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q117",
+      "label": "B",
+      "bbox": [
+        32.01,
+        689.62,
+        41.76,
+        699.37
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q117",
+      "label": "C",
+      "bbox": [
+        32.01,
+        703.05,
+        41.76,
+        712.8
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q117",
+      "label": "D",
+      "bbox": [
+        32.01,
+        716.48,
+        41.76,
+        726.23
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q117",
+      "label": "E",
+      "bbox": [
+        32.01,
+        729.92,
+        41.76,
+        739.67
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q118",
+      "label": "A",
+      "bbox": [
+        290.29,
+        582.82,
+        300.04,
+        592.57
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q118",
+      "label": "B",
+      "bbox": [
+        290.29,
+        595.94,
+        300.04,
+        605.69
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q118",
+      "label": "C",
+      "bbox": [
+        290.29,
+        609.05,
+        300.04,
+        618.8
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q118",
+      "label": "D",
+      "bbox": [
+        290.29,
+        622.17,
+        300.04,
+        631.92
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q118",
+      "label": "E",
+      "bbox": [
+        290.29,
+        635.28,
+        300.04,
+        645.03
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}

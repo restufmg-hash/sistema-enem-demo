@@ -1911,6 +1911,22 @@
   ],
   "pages": [
     {
+      "id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p010",
+      "ano": 2024,
+      "dia": 2,
+      "caderno": "cdamarelo",
+      "cor": "amarelo",
+      "pagina": 10,
+      "layout": "data/enem2024_d2_cdamarelo_p010_layout.json",
+      "source_sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+      "publication_stage": "branch_only_validation",
+      "question_numbers": [
+        116,
+        117,
+        118
+      ]
+    },
+    {
       "id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p011",
       "ano": 2024,
       "dia": 2,
