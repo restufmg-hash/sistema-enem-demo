@@ -68,6 +68,8 @@
   .page-receipt { min-height: 11px; font-size: 10.5px; margin-top: 1px; color: #31546c; }
   .page-footer { border-top: 1px solid #aaa; font-size: 12px; color: #46515c; display: flex; justify-content: space-between; gap: 15px; margin-top: 12px; }
 
+  .page-question-continued { margin: 0 0 22px; min-width: 0; }
+  .page-question-continued p { margin: .25rem 0 .35rem; text-align: justify; white-space: pre-line; overflow-wrap: anywhere; font-size: 17.8px; line-height: 1.13; }
 </style>
 </head>
 <body>
@@ -418,38 +420,59 @@ async function iniciarModoPagina(params, catalogo) {
     const col = document.createElement("div");
     col.className = "page-column";
     for (const n of columnRef.order) {
-      const obj = questions.find(x => x.ref.number === n && x.ref.column === columnRef.name);
+      const obj = questions.find(x => x.ref.number === n &&
+        (x.ref.column === columnRef.name || x.ref.continuation_column === columnRef.name));
       if (!obj) throw new Error("Ordem de leitura da página inconsistente");
       const qid = obj.item.question_id;
+      const isContinuation = obj.ref.continuation_column === columnRef.name &&
+        obj.ref.column !== columnRef.name;
       const section = document.createElement("section");
-      section.className = "page-question";
+      section.className = isContinuation ? "page-question-continued" : "page-question";
       section.dataset.questionId = qid;
-      const heading = document.createElement("h2");
-      heading.textContent = "QUESTÃO " + n;
-      section.appendChild(heading);
+      if (!isContinuation) {
+        const heading = document.createElement("h2");
+        heading.textContent = "QUESTÃO " + n;
+        section.appendChild(heading);
+      }
       for (let index = 0; index < obj.data.blocks.length; index++) {
         const block = obj.data.blocks[index];
-        const slices = (obj.ref.asset_splices || []).filter(s => s.block_index === index);
-        if (slices.length === 1) {
-          const splice = slices[0], raw = String(block.text || "");
-          if (!(Number.isInteger(splice.start_char) && Number.isInteger(splice.end_char) &&
-                splice.start_char >= 0 && splice.start_char <= splice.end_char &&
-                splice.end_char <= raw.length)) throw new Error("Corte do texto-fonte inválido");
-          const media = page.media[splice.media_id];
-          if (!media) throw new Error("Imagem fonte sem proveniência");
-          paragraph(section, raw.slice(0, splice.start_char));
-          imageBlock(section, media.url, media.source_role);
-          paragraph(section, raw.slice(splice.end_char));
+        const raw = typeof block.text === "string" ? block.text : "";
+        const split = obj.ref.continuation_start_char;
+        if (isContinuation) {
+          if (index === 0 && Number.isInteger(split) && split >= 0 && split <= raw.length) {
+            paragraph(section, raw.slice(split));
+          }
+          continue;
+        }
+        const limit = index === 0 && Number.isInteger(split) ? split : raw.length;
+        if (!(limit >= 0 && limit <= raw.length)) throw new Error("Continuação inválida");
+        const slices = (obj.ref.asset_splices || []).filter(s => s.block_index === index)
+          .sort((a, b) => a.start_char - b.start_char);
+        if (slices.length) {
+          let cursor = 0;
+          for (const splice of slices) {
+            if (!(Number.isInteger(splice.start_char) && Number.isInteger(splice.end_char) &&
+                  cursor <= splice.start_char && splice.start_char <= splice.end_char &&
+                  splice.end_char <= limit)) throw new Error("Corte do texto-fonte inválido");
+            const media = page.media[splice.media_id];
+            if (!media) throw new Error("Imagem fonte sem proveniência");
+            paragraph(section, raw.slice(cursor, splice.start_char));
+            imageBlock(section, media.url, media.source_role);
+            cursor = splice.end_char;
+          }
+          paragraph(section, raw.slice(cursor, limit));
         } else if (block.type === "image" && obj.data.structured !== true &&
-                   typeof block.text === "string" && block.text.trim()) {
-          // Legado contém também um crop integral; no modo página o texto é reconstruído
-          // sem repetir toda a questão como imagem. O modo questão conserva o crop original.
-          paragraph(section, block.text);
+                   raw.trim()) {
+          paragraph(section, raw.slice(0, limit));
         } else if (block.type === "image" && (block.asset || block.asset_url)) {
           imageBlock(section, block.asset || block.asset_url, block.alt || block.text);
-        } else if (typeof block.text === "string") {
-          paragraph(section, block.text);
+        } else if (raw) {
+          paragraph(section, raw.slice(0, limit));
         }
+      }
+      if (obj.ref.continuation_column && !isContinuation) {
+        col.appendChild(section);
+        continue;
       }
       const controls = [];
       const saved = lerRascunho(qid);

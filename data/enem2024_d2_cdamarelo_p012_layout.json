@@ -1,0 +1,250 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p012",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 12,
+    "pdf_page_index": 11,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 743,
+        "order": [
+          122
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 743,
+        "order": [
+          122,
+          123
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "number": 122,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        743
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q122.json",
+      "continuation_column": "right",
+      "continuation_start_char": 1072,
+      "continuation_bbox": [
+        290.29,
+        65,
+        539.5,
+        161
+      ],
+      "asset_splices": [
+        {
+          "block_index": 0,
+          "start_char": 198,
+          "end_char": 669,
+          "media_id": "q122-nitrogen"
+        },
+        {
+          "block_index": 0,
+          "start_char": 669,
+          "end_char": 992,
+          "media_id": "q122-carbon"
+        }
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "number": 123,
+      "column": "right",
+      "order": 1,
+      "bbox": [
+        290.29,
+        162,
+        539.5,
+        743
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q123.json",
+      "asset_splices": [
+        {
+          "block_index": 0,
+          "start_char": 828,
+          "end_char": 1658,
+          "media_id": "q123-graph"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "q122-nitrogen": {
+      "url": "assets/enem2024_d2_cdamarelo_p012_q122_nitrogen.png",
+      "mime_type": "image/png",
+      "sha256": "79d639c115654f3d103020999d007e82fda3101a28bb9af04f494b7a5083f144",
+      "source_bbox": [
+        32,
+        138,
+        280,
+        430
+      ],
+      "source_pdf_page": 12,
+      "source_role": "Diagrama original dos procariontes no ciclo do nitrogênio"
+    },
+    "q122-carbon": {
+      "url": "assets/enem2024_d2_cdamarelo_p012_q122_carbon.png",
+      "mime_type": "image/png",
+      "sha256": "9eb5b93550a12d560fb23dfb8847aee9de58327788f715722a6fc831a00c8184",
+      "source_bbox": [
+        32,
+        430,
+        280,
+        711
+      ],
+      "source_pdf_page": 12,
+      "source_role": "Diagrama original dos procariontes no ciclo do carbono"
+    },
+    "q123-graph": {
+      "url": "assets/enem2024_d2_cdamarelo_p012_q123_graph.png",
+      "mime_type": "image/png",
+      "sha256": "24bb8ea24c6eae4c7fc2d2dc1176d1eb3a8efcb927201abbeda20a2e1bc6573f",
+      "source_bbox": [
+        315,
+        367,
+        538,
+        611
+      ],
+      "source_pdf_page": 12,
+      "source_role": "Gráfico original dos gases de escape e razão ar/combustível"
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "A",
+      "bbox": [
+        290.29,
+        97.25,
+        300.04,
+        107.0
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "B",
+      "bbox": [
+        290.29,
+        109.73,
+        300.04,
+        119.48
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "C",
+      "bbox": [
+        290.29,
+        122.21,
+        300.04,
+        131.95999999999998
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "D",
+      "bbox": [
+        290.29,
+        134.69,
+        300.04,
+        144.44
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q122",
+      "label": "E",
+      "bbox": [
+        290.29,
+        147.17,
+        300.04,
+        156.92
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "A",
+      "bbox": [
+        290.29,
+        674.33,
+        300.04,
+        684.08
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "B",
+      "bbox": [
+        290.29,
+        688.22,
+        300.04,
+        697.97
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "C",
+      "bbox": [
+        290.29,
+        702.12,
+        300.04,
+        711.87
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "D",
+      "bbox": [
+        290.29,
+        716.01,
+        300.04,
+        725.76
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q123",
+      "label": "E",
+      "bbox": [
+        290.29,
+        729.91,
+        300.04,
+        739.66
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation",
+    "cross_column_reading_order": "Q122 left start -> Q122 right continuation -> Q123 right"
+  }
+}
