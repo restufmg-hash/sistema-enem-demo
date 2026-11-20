@@ -17,6 +17,10 @@
   .meta { color: #4a5568; font-size: .85rem; margin: 0 0 .75rem; }
   .meta strong { color: #0d2b45; }
   .badge { display: inline-block; background: #8b5200; color: #fff; border-radius: 6px; padding: .1rem .5rem; font-size: .75rem; font-weight: 700; margin-left: .4rem; vertical-align: middle; }
+  .structured-content { max-width: 100%; overflow-wrap: anywhere; }
+  .structured-content p { margin: .75rem 0; white-space: pre-line; }
+  .structured-content img { display: block; width: auto; max-width: 100%; height: auto; background: #fff; }
+  .structured-content figcaption { font-size: .8rem; color: #4a5568; margin-top: .35rem; }
   figure { margin: 1rem 0; }
   figure img { max-width: 100%; height: auto; border: 1px solid #e2e5ea; border-radius: 8px; }
   figcaption { font-size: .8rem; color: #4a5568; margin-top: .4rem; }
@@ -39,6 +43,7 @@
 <main>
   <div class="card" id="card">
     <p class="meta" id="meta">Carregando…</p>
+    <section id="enunciado-estruturado" class="structured-content" aria-label="Enunciado estruturado" hidden></section>
     <figure id="figura_texto" hidden>
       <img id="enunciado_texto" alt="">
       <figcaption>Texto-base compartilhado (autoria INEP), exibido sem qualquer alteração.</figcaption>
@@ -132,6 +137,7 @@ function falha(mensagem) {
   meta.textContent = mensagem;
   mostrar(document.getElementById("figura"), false);
   mostrar(document.getElementById("figura_texto"), false);
+  mostrar(document.getElementById("enunciado-estruturado"), false);
   mostrar(document.getElementById("form-resposta"), false);
 }
 
@@ -230,9 +236,13 @@ async function iniciar() {
   }
 
   const img = document.getElementById("enunciado");
-  img.src = item.imagem;
-  img.alt = item.alt || ("Questão " + item.numero_oficial + " do ENEM " + item.ano + ".");
-  mostrar(document.getElementById("figura"), true);
+  if (item.imagem) {
+    img.src = item.imagem;
+    img.alt = item.alt || ("Questão " + item.numero_oficial + " do ENEM " + item.ano + ".");
+    mostrar(document.getElementById("figura"), true);
+  } else {
+    mostrar(document.getElementById("figura"), false);
+  }
 
   document.getElementById("fonte").textContent =
     "Fonte oficial: " + item.fonte + ", página " + item.pagina +
@@ -244,6 +254,38 @@ async function iniciar() {
   } catch (_) {
     falha("Não foi possível carregar as alternativas.");
     return;
+  }
+
+  // Conteúdo estruturado é opt-in; questões legadas mantêm a imagem integral.
+  if (dados.structured === true && Array.isArray(dados.blocks)) {
+    const estruturado = document.getElementById("enunciado-estruturado");
+    estruturado.textContent = "";
+    for (const bloco of dados.blocks) {
+      if (!bloco || typeof bloco !== "object") continue;
+      if (["text", "math", "table"].includes(bloco.type) && typeof bloco.text === "string") {
+        const p = document.createElement("p");
+        p.textContent = bloco.text;
+        estruturado.appendChild(p);
+      } else if (bloco.type === "image" && (bloco.asset || bloco.asset_url)) {
+        const fig = document.createElement("figure");
+        const imagem = document.createElement("img");
+        imagem.src = bloco.asset || bloco.asset_url;
+        imagem.alt = bloco.alt || bloco.text || "Imagem do enunciado";
+        imagem.loading = "lazy";
+        fig.appendChild(imagem);
+        if (bloco.caption) {
+          const cap = document.createElement("figcaption");
+          cap.textContent = bloco.caption;
+          fig.appendChild(cap);
+        }
+        estruturado.appendChild(fig);
+      }
+    }
+    mostrar(estruturado, estruturado.childElementCount > 0);
+    if (estruturado.childElementCount > 0) {
+      mostrar(document.getElementById("figura"), false);
+      mostrar(document.getElementById("figura_texto"), false);
+    }
   }
 
   const container = document.getElementById("alternativas");
