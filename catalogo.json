@@ -1809,6 +1809,36 @@
       ]
     },
     {
+      "id": "enem2024-d2-cdamarelo-q134",
+      "question_id": "enem:2024:regular_nacional:d2:q134",
+      "ano": 2024,
+      "numero_oficial": 134,
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2024 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 15,
+      "fonte": "INEP, 2024_PV_impresso_D2_CD5.pdf",
+      "source_sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+      "imagem": null,
+      "sha256_imagem": null,
+      "alt": "Questão 134 — crustáceos, exoesqueleto e ecdise; enunciado e cinco alternativas textuais estruturadas.",
+      "data": "data/enem2024_d2_cdamarelo_q134.json",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 134,
+        "revisao": "2026-11-20-d2-c5-q134-structured-v1",
+        "sequencia_colecao": null
+      },
+      "aliases": [
+        "enem2024-q134"
+      ],
+      "publication_stage": "branch_only_candidate_not_student_released"
+    },
+    {
       "id": "enem2024-d2-cdamarelo-q135",
       "question_id": "enem:2024:regular_nacional:d2:q135",
       "ano": 2024,
