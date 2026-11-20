@@ -394,7 +394,8 @@ async function iniciarModoPagina(params, catalogo) {
   const pendingRecovery = [];
 
   function paragraph(target, text) {
-    const cleaned = String(text || "").replace(/^\s*QUESTÃO\s+\d{3}\s*/u, "").trim();
+    const raw = String(text || "").replace(/^\s*QUESTÃO\s+\d{3}\s*/u, "").trim();
+    const cleaned = raw.split(/\n\s*\n/u).map(part => part.replace(/\s*\n\s*/gu, " ")).join("\n\n");
     if (!cleaned) return;
     const el = document.createElement("p");
     el.textContent = cleaned;
