@@ -1,0 +1,53 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q001:english",
+  "content_revision": "2026-11-20.a2024d1.q001-en.r1",
+  "year": 2024,
+  "number": 1,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Interpretação de texto multimodal; inferência de sentido comum entre citações",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 2
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d1_cdazul_q001_en_stimulus.png",
+      "text": "Ilustração intitulada QUOTES com duas mensagens em inglês. Einstein: em meio à desordem é possível encontrar simplicidade; em meio à discórdia, harmonia; em meio à dificuldade, oportunidade. Bob Marley: algumas pessoas apenas se molham na chuva, enquanto outras a sentem. As imagens trazem os retratos estilizados de Einstein e Marley."
+    },
+    {
+      "type": "text",
+      "text": "Disponível em: http://thumbpress.com. Acesso em: 28 out. 2013."
+    },
+    {
+      "type": "text",
+      "text": "A relação entre as citações atribuídas ao físico Albert Einstein e ao cantor e compositor Bob Marley reside na crença de que é necessário"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "dar oportunidade a pessoas que parecem necessitadas."
+    },
+    {
+      "label": "B",
+      "text": "identificar contextos que podem representar perigo."
+    },
+    {
+      "label": "C",
+      "text": "tirar proveito de situações que podem ser adversas."
+    },
+    {
+      "label": "D",
+      "text": "evitar dificuldades que parecem ser intransponíveis."
+    },
+    {
+      "label": "E",
+      "text": "contestar circunstâncias que parecem ser harmônicas."
+    }
+  ],
+  "answer_policy": "Sem gabarito ou resolução neste payload; correção apenas no servidor após envio."
+}
