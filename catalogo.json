@@ -1120,7 +1120,17 @@
       "sha256_imagem": "A47123C6738258BD02392715163EC418EDDA91F26BA6065570747B67ED154DCB",
       "data": "data/enem2024_d2_cdamarelo_q133.json",
       "imagem": "assets/enem2024_d2_cdamarelo_q133_integral.png",
-      "alt": "Questão 133 do ENEM 2024. Serpentes corais-verdadeiras e falsas-corais, mimetismo, duas fotografias com nomes científicos, referências, enunciado e cinco alternativas A–E."
+      "alt": "Questão 133 do ENEM 2024. Serpentes corais-verdadeiras e falsas-corais, mimetismo, duas fotografias com nomes científicos, referências, enunciado e cinco alternativas A–E.",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 133,
+        "revisao": "preserved_public_q133_source_20261117",
+        "sequencia_colecao": "043"
+      }
     },
     {
       "id": "q093-2025",
