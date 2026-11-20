@@ -1,0 +1,306 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p011",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "drive_file_id": "1sYv0adwBnb6ZcPTayZW9PR0UWmWcKo-B",
+    "printed_page": 11,
+    "pdf_page_index": 10,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 570,
+        "order": [
+          119
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.3,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 742,
+        "order": [
+          120,
+          121
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q119",
+      "number": 119,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        570
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q119.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q120",
+      "number": 120,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.3,
+        65,
+        539.5,
+        551
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q120.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q121",
+      "number": 121,
+      "column": "right",
+      "order": 1,
+      "bbox": [
+        290.3,
+        554,
+        539.5,
+        742
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q121.json"
+    }
+  ],
+  "media": {
+    "q119-crumple": {
+      "url": "assets/enem2024_d2_cdamarelo_p011_q119_original.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "7eedffdc857d53140591337882eb5c6069d2f96536613d8f70114472667014c4",
+      "source_bbox": [
+        34.78965,
+        264.9292,
+        275.50964,
+        401.2492
+      ],
+      "source_pdf_page": 11,
+      "source_role": "Carro com região deformável, airbag e cintos de segurança"
+    },
+    "q120-ccm": {
+      "url": "assets/enem2024_d2_cdamarelo_p011_q120_original.png",
+      "mime_type": "image/png",
+      "sha256": "44c7e2e79b5d3e70e51627b3a47ed1f172ea7538d184eb170093cb1ce8895073",
+      "source_bbox": [
+        291.0331,
+        212.6007,
+        535.8331,
+        347.0007
+      ],
+      "source_pdf_page": 11,
+      "source_role": "Célula a combustível microbiana com duas câmaras"
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q119",
+      "label": "A",
+      "bbox": [
+        32,
+        496,
+        42,
+        505.8
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q119",
+      "label": "B",
+      "bbox": [
+        32,
+        510.3,
+        42,
+        520.1
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q119",
+      "label": "C",
+      "bbox": [
+        32,
+        524.6,
+        42,
+        534.4
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q119",
+      "label": "D",
+      "bbox": [
+        32,
+        538.9,
+        42,
+        548.6999999999999
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q119",
+      "label": "E",
+      "bbox": [
+        32,
+        553.2,
+        42,
+        563
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q120",
+      "label": "A",
+      "bbox": [
+        290.3,
+        463,
+        300.3,
+        472.8
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q120",
+      "label": "B",
+      "bbox": [
+        290.3,
+        481.5,
+        300.3,
+        491.3
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q120",
+      "label": "C",
+      "bbox": [
+        290.3,
+        500,
+        300.3,
+        509.8
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q120",
+      "label": "D",
+      "bbox": [
+        290.3,
+        518.5,
+        300.3,
+        528.3
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q120",
+      "label": "E",
+      "bbox": [
+        290.3,
+        537,
+        300.3,
+        546.8
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q121",
+      "label": "A",
+      "bbox": [
+        290.3,
+        677.5,
+        300.3,
+        687.3
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q121",
+      "label": "B",
+      "bbox": [
+        290.3,
+        690.8,
+        300.3,
+        700.5999999999999
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q121",
+      "label": "C",
+      "bbox": [
+        290.3,
+        704.1,
+        300.3,
+        713.9
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q121",
+      "label": "D",
+      "bbox": [
+        290.3,
+        717.4,
+        300.3,
+        727.1999999999999
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q121",
+      "label": "E",
+      "bbox": [
+        290.3,
+        730.7,
+        300.3,
+        740.5
+      ],
+      "kind": "answer_circle",
+      "source": "INEP native PDF glyph line"
+    }
+  ],
+  "presentation": {
+    "student_key_excluded": true,
+    "source_pdf_as_background": false,
+    "source_text_from_question_data": true,
+    "source_options_from_question_data": true,
+    "media_source_native": true,
+    "default_zoom": "fit",
+    "interactive_page_mode": true,
+    "responsive_question_mode": true,
+    "publication": "branch_only_validation"
+  }
+}
