@@ -68,6 +68,20 @@
   .page-receipt { min-height: 11px; font-size: 10.5px; margin-top: 1px; color: #31546c; }
   .page-footer { border-top: 1px solid #aaa; font-size: 12px; color: #46515c; display: flex; justify-content: space-between; gap: 15px; margin-top: 12px; }
 
+  /* Modo de leitura: legível em telas estreitas, sem reduzir tipografia a 31%. */
+  #page-viewport.read-mode { height: auto; max-height: none; padding: 0; overflow: visible; background: #fff; }
+  #page-viewport.read-mode #page-stage { width: 100% !important; height: auto !important; }
+  #page-viewport.read-mode #page-sheet { position: relative; width: 100%; min-height: 0; transform: none !important; box-shadow: none; padding: 18px; }
+  #page-viewport.read-mode .page-columns { grid-template-columns: minmax(0, 1fr); }
+  #page-viewport.read-mode .page-column + .page-column { border-left: 0; padding-left: 0; }
+  #page-viewport.read-mode .page-question { margin-bottom: 28px; }
+  #page-viewport.read-mode .page-question p { font-size: 16px; line-height: 1.43; text-align: left; overflow-wrap: normal; }
+  #page-viewport.read-mode .page-q-option { min-height: 32px; align-items: center; font-size: 16px; line-height: 1.4; }
+  #page-viewport.read-mode .page-question-controls { font-size: 13px; }
+  #page-viewport.read-mode .page-receipt { font-size: 12px; }
+  #page-viewport.read-mode .page-masthead { flex-wrap: wrap; gap: 4px; }
+  #page-viewport.read-mode .page-masthead strong { font-size: 28px; }
+  @media (max-width: 600px) { #page-viewport.read-mode #page-sheet { padding: 14px; } }
 </style>
 </head>
 <body>
@@ -76,6 +90,7 @@
   <section id="page-shell" hidden aria-label="Página original reconstruída">
     <div id="page-toolbar">
       <strong id="page-title">Página original</strong>
+      <button type="button" id="page-reading-mode" aria-pressed="false">Ler questões</button>
       <button type="button" id="page-zoom-minus" aria-label="Reduzir zoom">Zoom −</button>
       <button type="button" id="page-zoom-fit" aria-label="Ajustar à largura">Ajustar</button>
       <button type="button" id="page-zoom-plus" aria-label="Ampliar zoom">Zoom +</button>
@@ -545,7 +560,27 @@ async function iniciarModoPagina(params, catalogo) {
   document.getElementById("page-zoom-fit").addEventListener("click", ajustar);
   document.getElementById("page-zoom-minus").addEventListener("click", () => aplicarZoom(scale / 1.2));
   document.getElementById("page-zoom-plus").addEventListener("click", () => aplicarZoom(scale * 1.2));
-  ajustar();
+  const readingToggle = document.getElementById("page-reading-mode");
+  const zoomControls = ["page-zoom-minus", "page-zoom-fit", "page-zoom-plus"]
+    .map(id => document.getElementById(id));
+  let readingMode = false;
+  function aplicarModoLeitura(enabled) {
+    readingMode = Boolean(enabled);
+    viewport.classList.toggle("read-mode", readingMode);
+    readingToggle.setAttribute("aria-pressed", String(readingMode));
+    readingToggle.textContent = readingMode ? "Ver página inteira" : "Ler questões";
+    for (const control of zoomControls) control.disabled = readingMode;
+    if (readingMode) {
+      sheet.style.transform = "none";
+      stage.style.width = "100%";
+      stage.style.height = "auto";
+      zoomStatus.textContent = "Leitura responsiva · " + questions.length + " questões";
+    } else {
+      ajustar();
+    }
+  }
+  readingToggle.addEventListener("click", () => aplicarModoLeitura(!readingMode));
+  aplicarModoLeitura(window.matchMedia("(max-width: 600px)").matches);
   const imagesReady = [...sheet.querySelectorAll("img")].map(img => img.complete
     ? Promise.resolve() : new Promise(resolve => {
         img.addEventListener("load", resolve, { once: true });
@@ -553,7 +588,7 @@ async function iniciarModoPagina(params, catalogo) {
       }));
   await Promise.all([...pendingRecovery, ...imagesReady]);
   // A mídia pode alterar a altura após o primeiro layout. Nunca cortar o rodapé.
-  stage.style.height = Math.ceil(sheet.scrollHeight * scale) + "px";
+  if (!readingMode) stage.style.height = Math.ceil(sheet.scrollHeight * scale) + "px";
 }
 
 async function iniciar() {
