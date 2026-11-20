@@ -1,0 +1,417 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p013",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "drive_file_id": "1sYv0adwBnb6ZcPTayZW9PR0UWmWcKo-B",
+    "printed_page": 13,
+    "pdf_page_index": 12,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 743,
+        "order": [
+          124,
+          125
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 743,
+        "order": [
+          126,
+          127
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q124",
+      "number": 124,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        524
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q124.json",
+      "asset_splices": [
+        {
+          "block_index": 0,
+          "start_char": 814,
+          "end_char": 1328,
+          "media_id": "q124-acoustic"
+        }
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q125",
+      "number": 125,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        527,
+        281,
+        743
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q125.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q126",
+      "number": 126,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        400
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q126.json",
+      "asset_splices": [
+        {
+          "block_index": 0,
+          "start_char": 349,
+          "end_char": 349,
+          "media_id": "q126-heater"
+        }
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q127",
+      "number": 127,
+      "column": "right",
+      "order": 1,
+      "bbox": [
+        290.29,
+        405,
+        539.5,
+        743
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q127.json",
+      "asset_splices": [
+        {
+          "block_index": 0,
+          "start_char": 383,
+          "end_char": 383,
+          "media_id": "q127-flow"
+        }
+      ]
+    }
+  ],
+  "media": {
+    "q124-acoustic": {
+      "url": "assets/enem2024_d2_cdamarelo_p013_q124_original.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "4db3456cf0686574a2c1ee941d65c77d1b7b17ee669dc3972f1ab5675cfd74bb",
+      "source_bbox": [
+        36.5896,
+        264.1042,
+        273.7097,
+        392.7442
+      ],
+      "source_pdf_page": 13,
+      "source_role": "Infográfico acústico, ruído em decibéis por distância do professor"
+    },
+    "q126-heater": {
+      "url": "assets/enem2024_d2_cdamarelo_p013_q126_original.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "270b7a360ffe2c47898a1c83178f638f8ba8161a2d3a01e181ae87aff1612c71",
+      "source_bbox": [
+        291.8732,
+        159.1973,
+        534.9932,
+        271.5173
+      ],
+      "source_pdf_page": 13,
+      "source_role": "Diagrama do aquecedor solar com fluido quente e frio"
+    },
+    "q127-flow": {
+      "url": "assets/enem2024_d2_cdamarelo_p013_q127_original.png",
+      "mime_type": "image/png",
+      "sha256": "38d01b3677a33a692a1be726795afe364ff57541aa123922bd4f65d92f9e004d",
+      "source_bbox": [
+        290.5532,
+        510.433,
+        536.3132,
+        592.7531
+      ],
+      "source_pdf_page": 13,
+      "source_role": "Fluxograma de urbanização, saneamento e biodiversidade"
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q124",
+      "label": "A",
+      "bbox": [
+        32.0079,
+        456.27,
+        42.0079,
+        466.02
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q124",
+      "label": "B",
+      "bbox": [
+        32.0079,
+        469.55,
+        42.0079,
+        479.3
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q124",
+      "label": "C",
+      "bbox": [
+        32.0079,
+        482.84,
+        42.0079,
+        492.59
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q124",
+      "label": "D",
+      "bbox": [
+        32.0079,
+        496.13,
+        42.0079,
+        505.88
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q124",
+      "label": "E",
+      "bbox": [
+        32.0079,
+        509.42,
+        42.0079,
+        519.1700000000001
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q125",
+      "label": "A",
+      "bbox": [
+        32.0079,
+        664.88,
+        42.0079,
+        674.63
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q125",
+      "label": "B",
+      "bbox": [
+        32.0079,
+        678.17,
+        42.0079,
+        687.92
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q125",
+      "label": "C",
+      "bbox": [
+        32.0079,
+        691.46,
+        42.0079,
+        701.21
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q125",
+      "label": "D",
+      "bbox": [
+        32.0079,
+        704.75,
+        42.0079,
+        714.5
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q125",
+      "label": "E",
+      "bbox": [
+        32.0079,
+        718.04,
+        42.0079,
+        727.79
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q126",
+      "label": "A",
+      "bbox": [
+        290.2914,
+        333.36,
+        300.2914,
+        343.11
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q126",
+      "label": "B",
+      "bbox": [
+        290.2914,
+        346.74,
+        300.2914,
+        356.49
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q126",
+      "label": "C",
+      "bbox": [
+        290.2914,
+        360.11,
+        300.2914,
+        369.86
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q126",
+      "label": "D",
+      "bbox": [
+        290.2914,
+        373.49,
+        300.2914,
+        383.24
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q126",
+      "label": "E",
+      "bbox": [
+        290.2914,
+        386.87,
+        300.2914,
+        396.62
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q127",
+      "label": "A",
+      "bbox": [
+        290.2914,
+        664.45,
+        300.2914,
+        674.2
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q127",
+      "label": "B",
+      "bbox": [
+        290.2914,
+        677.83,
+        300.2914,
+        687.58
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q127",
+      "label": "C",
+      "bbox": [
+        290.2914,
+        691.21,
+        300.2914,
+        700.96
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q127",
+      "label": "D",
+      "bbox": [
+        290.2914,
+        704.58,
+        300.2914,
+        714.33
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q127",
+      "label": "E",
+      "bbox": [
+        290.2914,
+        717.96,
+        300.2914,
+        727.71
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF option-label bbox; first-line reading order"
+    }
+  ],
+  "presentation": {
+    "student_key_excluded": true,
+    "source_pdf_as_background": false,
+    "source_text_from_question_data": true,
+    "source_options_from_question_data": true,
+    "media_source_native": true,
+    "default_zoom": "fit",
+    "responsive_question_mode": true,
+    "interactive_page_mode": true,
+    "publication": "branch_only_validation"
+  }
+}
