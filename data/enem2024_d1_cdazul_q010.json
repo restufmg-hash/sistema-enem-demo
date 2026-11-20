@@ -1,0 +1,60 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q010",
+  "content_revision": "2026-11-20.a2024d1.q010.r1",
+  "year": 2024,
+  "number": 10,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Argumentação sobre o podcast como meio de difusão de conhecimento",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 6
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "Já ouvi gente falando que o podcast é o renascimento do rádio. O rádio é genial, uma mídia imorredoura, mas podcast não tem nada a ver com ele. O formato está mais próximo do ensaio literário do que de um programa de ondas curtas, médias ou longas."
+    },
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "Podcasts são antípodas das redes sociais. Enquanto elas são dispersivas, levam à evasão e à desinformação, os podcasts são uma possibilidade de imersão, concentração, aprendizado. Depois que eles surgiram, lavar a louça e me locomover pela cidade viraram um programaço. Um pós-almoço de domingo e aprendo tudo sobre bonobos e gorilas. Um táxi pro aeroporto e chego ao embarque PhD em reforma tributária."
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "PRATA, A. Disponível em: www1.folha.uol.com.br. Acesso em: 7 jan. 2024 (adaptado)."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "Segundo a argumentação construída nesse texto, o podcast"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "provoca dispersão da atenção em seu público."
+    },
+    {
+      "label": "B",
+      "text": "funciona por meio de uma frequência de ondas curtas."
+    },
+    {
+      "label": "C",
+      "text": "propicia divulgação de conhecimento para seus usuários."
+    },
+    {
+      "label": "D",
+      "text": "tem um formato de interação semelhante ao das redes sociais."
+    },
+    {
+      "label": "E",
+      "text": "constitui uma evolução na transmissão de informações via rádio."
+    }
+  ],
+  "answer_policy": "Sem gabarito no payload; feedback apenas após persistência no servidor."
+}
