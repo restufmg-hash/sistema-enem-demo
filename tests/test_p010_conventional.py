@@ -1,26 +1,32 @@
 from pathlib import Path
-import hashlib,json,pymupdf
+import hashlib,json,argparse
 from functools import partial
 from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler
 from threading import Thread
 from playwright.sync_api import sync_playwright
 root=Path(__file__).resolve().parent.parent
-source=Path(r"C:\Users\rodri\Projects\enem-item034-evidence-20261117\2024_PV_impresso_D2_CD5.pdf")
+parser=argparse.ArgumentParser()
+parser.add_argument("--pdf",type=Path,help="PDF oficial privado; habilita cotejo geométrico com a fonte")
+args=parser.parse_args()
 layout=json.loads((root/"data/enem2024_d2_cdamarelo_p010_layout.json").read_text(encoding="utf-8"))
-assert hashlib.sha256(source.read_bytes()).hexdigest()==layout["source"]["sha256"]
-doc=pymupdf.open(str(source));assert len(doc)==32
-pg=doc[9]
 assert layout["source"]["pdf_page_index"]==9 and layout["source"]["printed_page"]==10
 assert [q["number"] for q in layout["questions"]]==[116,117,118]
 assert len(layout["response_targets"])==15
 for item in layout["media"].values():
  f=root/item["url"];assert hashlib.sha256(f.read_bytes()).hexdigest()==item["sha256"]
  assert item["source_pdf_page"]==10
-words=pg.get_text("words")
-for target in layout["response_targets"]:
- matches=[w for w in words if w[4]==target["label"] and abs(w[0]-target["bbox"][0])<.07 and abs(w[1]-target["bbox"][1])<.07]
- assert len(matches)==1,(target,matches)
-print("SOURCE_PASS PDF_SHA, 15_TARGETS, 2_NATIVE_IMAGES")
+if args.pdf:
+ source=args.pdf
+ assert hashlib.sha256(source.read_bytes()).hexdigest()==layout["source"]["sha256"]
+ import pymupdf`n doc=pymupdf.open(str(source));assert len(doc)==32
+ pg=doc[9]
+ words=pg.get_text("words")
+ for target in layout["response_targets"]:
+  matches=[w for w in words if w[4]==target["label"] and abs(w[0]-target["bbox"][0])<.07 and abs(w[1]-target["bbox"][1])<.07]
+  assert len(matches)==1,(target,matches)
+ print("SOURCE_PASS PDF_SHA, 15_TARGETS, 2_NATIVE_IMAGES")
+else:
+ print("SOURCE_SHA_AND_COORDINATES_NOT_CHECKED: pass --pdf to verify original PDF")
 class Handler(SimpleHTTPRequestHandler):
  posts=0
  def log_message(self,*args):pass
