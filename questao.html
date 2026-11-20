@@ -35,7 +35,7 @@
   #resultado { margin-top: 1rem; padding: .75rem .9rem; border-radius: 10px; font-weight: 600; display: none; background: #eef2f7; color: #2d3748; border: 1px solid #cbd5e0; }
   #resultado.ok { background: #ecf8ef; color: #1e5b2a; border-color: #b6dfc2; }
   #resultado.erro { background: #fdf0ee; color: #7a2415; border-color: #f2c0b3; }
-  footer { max-width: 880px; margin: 1rem auto 2rem; padding: 0 1rem; font-size: .72rem; color: #718096; }
+  footer { max-width: 880px; margin: 1rem auto 2rem; padding: 0 1rem; font-size: .72rem; color: #718096; overflow-wrap: anywhere; }
 </style>
 </head>
 <body>
@@ -301,9 +301,12 @@ async function iniciar() {
     mostrar(document.getElementById("figura"), false);
   }
 
+  const origemHash = item.sha256_imagem
+    ? "SHA-256 do ativo de imagem: " + item.sha256_imagem
+    : item.source_sha256 ? "SHA-256 do PDF oficial: " + item.source_sha256
+    : "SHA-256: não informado";
   document.getElementById("fonte").textContent =
-    "Fonte oficial: " + item.fonte + ", página " + item.pagina +
-    ". SHA-256 do ativo de imagem: " + (item.sha256_imagem || "não informado") + ".";
+    "Fonte oficial: " + item.fonte + ", página " + item.pagina + ". " + origemHash + ".";
 
   let dados;
   try {
@@ -356,7 +359,7 @@ async function iniciar() {
     input.value = opcao.label;
     input.setAttribute("aria-label", "Alternativa " + opcao.label + ": " + opcao.text);
     label.appendChild(input);
-    label.appendChild(document.createTextNode(" " + opcao.label + " — " + opcao.text));
+    label.appendChild(document.createTextNode(" " + opcao.label + (opcao.image_only === true ? "" : " — " + opcao.text)));
     // Mídia opcional por alternativa: mantém o contrato textual existente.
     const visual = opcao.asset || opcao.asset_url;
     if (typeof visual === "string" && /^(?:assets\/[a-z0-9_./-]+\.(?:svg|png|jpe?g|webp)|https:\/\/[^\s"<>]+)$/i.test(visual)) {
