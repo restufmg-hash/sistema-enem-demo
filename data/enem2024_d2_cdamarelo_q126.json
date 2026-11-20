@@ -12,10 +12,17 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "Aquecedores solares são equipamentos utilizados para o aquecimento de água pelo calor do Sol. São compostos por coletores solares, nos quais ocorre o aquecimento da água, e por um reservatório térmico, em que é armazenada a água quente para ser utilizada posteriormente. A figura ilustra esquematicamente como funciona esse equipamento."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q126_integral.png",
-      "text": "QUESTÃO 126\n\nAquecedores solares são equipamentos utilizados para o aquecimento de água pelo calor do Sol. São compostos por coletores solares, nos quais ocorre o aquecimento da água, e por um reservatório térmico, em que é armazenada a água quente para ser utilizada posteriormente. A figura ilustra esquematicamente como funciona esse equipamento.\n\n5 dicas de instalação de aquecedor solar. Disponível em: https://instaline.com.br. Acesso em: 3 nov. 2023 (adaptado).\n\nO processo pelo qual ocorre transferência de calor dos coletores solares para o reservatório térmico é a",
-      "alt": "Esquema do aquecedor solar: radiação solar atinge o coletor de tubos a vácuo; água fria (azul) flui para o coletor, água quente (vermelho) retorna ao reservatório envolto em isolamento térmico de poliuretano. A circulação entre coletor e reservatório transporta calor."
+      "asset": "assets/enem2024_d2_cdamarelo_p013_q126_original.jpg",
+      "alt": "Diagrama do aquecedor solar: água fria vai ao coletor e água quente retorna ao reservatório térmico por circulação."
+    },
+    {
+      "type": "text",
+      "text": "5 dicas de instalação de aquecedor solar. Disponível em: https://instaline.com.br. Acesso em: 3 nov. 2023 (adaptado).\n\nO processo pelo qual ocorre transferência de calor dos coletores solares para o reservatório térmico é a"
     }
   ],
   "options": [
@@ -40,5 +47,9 @@
       "text": "convecção."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q126-structured-v2",
+  "source_asset_sha256": "270b7a360ffe2c47898a1c83178f638f8ba8161a2d3a01e181ae87aff1612c71",
+  "legacy_integral_crop_retained_in_catalog": true
 }
