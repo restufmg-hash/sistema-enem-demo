@@ -12,32 +12,46 @@
   },
   "blocks": [
     {
-      "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q108_integral.png",
-      "text": "Questão 108 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. A notícia 'Brasil fecha 2020 entre os maiores recicladores de latas de alumínio' informa que a bauxita contém alumina (Al2O3), matéria-prima para produção do alumínio (Al), sendo necessários 50 kg de bauxita para produzir 10 kg de alumínio. O Brasil fechou 2020 como um dos principais líderes mundiais em reciclagem de latas de alumínio, com índice de reciclagem de 97,4% de um total de 4,0 × 10^5 toneladas de latas vendidas. Considere que a lata é constituída de alumínio puro. Referência: Disponível em: https://agenciabrasil.ebc.com.br. Acesso em: 30 nov. 2021 (adaptado). Pergunta: 'Levando em conta apenas a reciclagem de latas, qual é o valor mais próximo da massa de bauxita, em tonelada, que deixou de ser extraída da natureza em 2020 no Brasil?'."
+      "type": "text",
+      "text": "Brasil fecha 2020 entre os maiores recicladores de latas de alumínio"
+    },
+    {
+      "type": "text",
+      "text": "A bauxita contém alumina (Al₂O₃), que é a matéria-prima para produção do alumínio (Al). De forma geral, são necessários 50 kg de bauxita para produzir 10 kg de alumínio. O Brasil fechou 2020 como um dos principais líderes mundiais em reciclagem de latas de alumínio. De acordo com levantamento da Associação Brasileira dos Fabricantes de Latas de Alumínio (Abralatas), o país obteve um índice de reciclagem de 97,4%, de um total de 4,0 × 10⁵ toneladas de latas vendidas. Considere que a lata é constituída de alumínio puro."
+    },
+    {
+      "type": "text",
+      "text": "Disponível em: https://agenciabrasil.ebc.com.br. Acesso em: 30 nov. 2021 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Levando em conta apenas a reciclagem de latas, qual é o valor mais próximo da massa de bauxita, em tonelada, que deixou de ser extraída da natureza em 2020 no Brasil?"
     }
   ],
   "options": [
     {
       "label": "A",
-      "text": "1,0 × 10^4 ton"
+      "text": "1,0 × 10⁴ ton"
     },
     {
       "label": "B",
-      "text": "3,9 × 10^5 ton"
+      "text": "3,9 × 10⁵ ton"
     },
     {
       "label": "C",
-      "text": "5,0 × 10^5 ton"
+      "text": "5,0 × 10⁵ ton"
     },
     {
       "label": "D",
-      "text": "1,9 × 10^6 ton"
+      "text": "1,9 × 10⁶ ton"
     },
     {
       "label": "E",
-      "text": "2,0 × 10^7 ton"
+      "text": "2,0 × 10⁷ ton"
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q108-structured-p007-v1"
 }

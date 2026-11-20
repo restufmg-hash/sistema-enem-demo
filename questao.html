@@ -51,6 +51,26 @@
   .page-columns { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); column-gap: 20px; }
   .page-column { min-width: 0; }
   .page-column + .page-column { border-left: 1px dotted #636b75; padding-left: 12px; }
+  /* Folhas oficiais com composição de largura total não podem ser forçadas em duas colunas. */
+  .page-columns.single-column { grid-template-columns: minmax(0, 1fr); }
+  .page-columns.single-column .page-column { border-left: 0; padding-left: 0; }
+  .page-columns.single-column .page-question figure img { max-width: 100%; }
+  .page-columns.single-column .page-question figure.wide-original .figure-pan-hint { display: none; }
+  @media (max-width: 600px) {
+    #page-viewport.read-mode .page-columns.single-column .page-question figure.wide-original {
+      max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain;
+      border: 1px solid #c4ccd6; border-radius: 6px; padding: 8px 8px 0;
+    }
+    #page-viewport.read-mode .page-columns.single-column .page-question figure.wide-original img {
+      width: 820px; max-width: none; height: auto;
+    }
+    #page-viewport.read-mode .page-columns.single-column .page-question figure.wide-original .figure-pan-hint {
+      display: block; font-size: 13px; line-height: 1.35; color: #244b6d;
+      margin: 5px 0 8px; position: sticky; left: 0; width: fit-content;
+    }
+  }
+
+
   .page-question { margin: 0 0 22px; min-width: 0; }
   .page-question h2 { font-size: 21px; font-weight: 750; line-height: 1.1; margin: 0 0 13px; padding: 0 0 3px; border-bottom: 2px solid #fbf4b6; }
   .page-question p { margin: .25rem 0 .35rem; text-align: justify; white-space: pre-line; overflow-wrap: anywhere; font-size: 17.8px; line-height: 1.13; }
@@ -393,6 +413,14 @@ async function iniciarModoPagina(params, catalogo) {
   sheet.appendChild(mast);
   const columns = document.createElement("div");
   columns.className = "page-columns";
+  if (page.layout.mode === "single_column") {
+    if (page.layout.columns.length !== 1) throw new Error("Layout de página inteira inválido");
+    columns.classList.add("single-column");
+    document.getElementById("page-viewport").setAttribute(
+      "aria-label", "Página de prova com coluna única, rolável e ampliável");
+  } else if (page.layout.mode !== "two_column") {
+    throw new Error("Modo de layout não reconhecido");
+  }
   const pendingRecovery = [];
 
   function paragraph(target, text) {
@@ -407,11 +435,23 @@ async function iniciarModoPagina(params, catalogo) {
     const src = typeof asset === "string" ? asset : "";
     if (!src) throw new Error("Mídia da página ausente");
     const fig = document.createElement("figure");
+    if (page.layout.mode === "single_column") {
+      fig.classList.add("wide-original");
+      fig.setAttribute("role", "region");
+      fig.setAttribute("aria-label", "Figura ampla do caderno; deslize horizontalmente para ler as legendas");
+      fig.tabIndex = 0;
+    }
     const img = document.createElement("img");
     img.src = src;
     img.alt = alt || "Imagem do caderno oficial";
     img.loading = "eager";
     fig.appendChild(img);
+    if (page.layout.mode === "single_column") {
+      const hint = document.createElement("figcaption");
+      hint.className = "figure-pan-hint";
+      hint.textContent = "Figura ampliada: deslize horizontalmente para ler todas as legendas.";
+      fig.appendChild(hint);
+    }
     target.appendChild(fig);
   }
   for (const columnRef of page.layout.columns) {
