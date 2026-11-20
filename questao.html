@@ -579,8 +579,28 @@ async function iniciarModoPagina(params, catalogo) {
       ajustar();
     }
   }
-  readingToggle.addEventListener("click", () => aplicarModoLeitura(!readingMode));
-  aplicarModoLeitura(window.matchMedia("(max-width: 600px)").matches);
+  const compactViewport = window.matchMedia("(max-width: 600px)");
+  let userSelectedMode = false;
+  let userSelectedZoom = false;
+  readingToggle.addEventListener("click", () => {
+    userSelectedMode = true;
+    aplicarModoLeitura(!readingMode);
+  });
+  compactViewport.addEventListener("change", event => {
+    if (!userSelectedMode) aplicarModoLeitura(event.matches);
+  });
+  document.getElementById("page-zoom-fit").addEventListener("click", () => {
+    userSelectedZoom = false;
+  });
+  for (const id of ["page-zoom-minus", "page-zoom-plus"]) {
+    document.getElementById(id).addEventListener("click", () => {
+      userSelectedZoom = true;
+    });
+  }
+  window.addEventListener("resize", () => {
+    if (!readingMode && !userSelectedZoom) ajustar();
+  });
+  aplicarModoLeitura(compactViewport.matches);
   const imagesReady = [...sheet.querySelectorAll("img")].map(img => img.complete
     ? Promise.resolve() : new Promise(resolve => {
         img.addEventListener("load", resolve, { once: true });
