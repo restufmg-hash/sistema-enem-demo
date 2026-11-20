@@ -1,0 +1,60 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q004:spanish",
+  "content_revision": "2026-11-20.a2024d1.q004-es.r1",
+  "year": 2024,
+  "number": 4,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Envelhecimento ativo, atitude diante da vida, leitura de texto reflexivo em espanhol",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 4
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "role": "title",
+      "text": "Morir muy vivos"
+    },
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "No todo es perder, es cierto. Si te esfuerzas mucho y bien, porque no viene de fábrica, ganas conocimiento del mundo y de ti mismo, empatía, sosiego y, en suma, algo que podríamos denominar sabiduría. Pero creo que para ello hay que mantenerse alerta y no darse nunca por vencido. Pero también es un tiempo para saldar cuentas. No creo que haya que dejarse llevar por el peso de los días como un leño podrido al que las olas arrojan finalmente a la playa. Uno siempre puede intentar sacarse alguna de las piedras que lleva a la espalda, decir las cosas que nunca se atrevió a decir, cumplir en la medida de lo posible los deseos arrumbados, rescatar algún sueño que quedó en la cuneta. No rendirse, esa es la clave. Y sobre todo decirse: ¿y por qué no? Porque la vejez no está reñida con la audacia. Debemos aspirar a morir muy vivos."
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "MONTERO, R. Disponível em: https://elpais.com. Acesso em: 4 dez. 2017."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "Nesse texto, ao utilizar a expressão “morir muy vivos”, a escritora Rosa Montero evidencia a importância de se"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "acumular sabedoria com o passar do tempo."
+    },
+    {
+      "label": "B",
+      "text": "observar o impacto dos anos sobre o corpo."
+    },
+    {
+      "label": "C",
+      "text": "rever os erros e os acertos de sua trajetória."
+    },
+    {
+      "label": "D",
+      "text": "desfrutar de todas as fases da vida."
+    },
+    {
+      "label": "E",
+      "text": "libertar das amarras sociais."
+    }
+  ],
+  "answer_policy": "Gabarito/solução não incluídos, feedback apenas do servidor após envio"
+}
