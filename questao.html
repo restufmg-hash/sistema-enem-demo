@@ -154,6 +154,63 @@ function sessaoAnonima() {
   } catch (_) { return undefined; }
 }
 
+// Guarda somente localizador e seleção; feedback e gabarito vêm exclusivamente do servidor.
+function chaveRecibo(questionId) { return "sistema_enem_recibo_servidor_v1_" + questionId; }
+
+function endpointRecuperacao() {
+  const explicito = String(window.SISTEMA_ENEM_RECOVERY_API || "").trim();
+  if (explicito) return explicito.replace(/\/+$/, "");
+  return /\/v1\/study\/attempts\/?$/.test(SILENCIADO.api)
+    ? SILENCIADO.api.replace(/\/+$/, "") : "";
+}
+
+function bloquearFormulario(form) {
+  for (const controle of form.querySelectorAll("input, button")) controle.disabled = true;
+}
+
+async function recuperarTentativa(questionId, resultado, form) {
+  let recibo;
+  try { recibo = JSON.parse(localStorage.getItem(chaveRecibo(questionId)) || "null"); }
+  catch (_) { return false; }
+  if (!recibo || recibo.question_id !== questionId ||
+      !recibo.client_attempt_id || !recibo.anon_session_id) return false;
+  resultado.style.display = "block";
+  bloquearFormulario(form); // Nunca enviar segundo POST para uma tentativa já confirmada.
+  const endpoint = endpointRecuperacao();
+  if (!endpoint) {
+    resultado.textContent = "Tentativa anterior identificada. A recuperação no servidor não está configurada neste ambiente.";
+    return true;
+  }
+  resultado.textContent = "Recuperando tentativa no servidor…";
+  try {
+    const url = endpoint + "/" + encodeURIComponent(recibo.client_attempt_id) +
+      "?anon_session_id=" + encodeURIComponent(recibo.anon_session_id);
+    const resposta = await fetch(url, { cache: "no-store" });
+    if (!resposta.ok) throw new Error("HTTP " + resposta.status);
+    const corpo = await resposta.json();
+    if (corpo.persisted !== true || corpo.question_id !== questionId ||
+        corpo.client_attempt_id !== recibo.client_attempt_id ||
+        corpo.selected_option !== recibo.selected_option ||
+        corpo.confidence !== recibo.confidence) {
+      throw new Error("Recibo divergente");
+    }
+    for (const campo of form.querySelectorAll('input[name="alternativa"]')) {
+      if (campo.value === corpo.selected_option) campo.checked = true;
+    }
+    for (const campo of form.querySelectorAll('input[name="confianca"]')) {
+      if (Number(campo.value) === corpo.confidence) campo.checked = true;
+    }
+    resultado.className = "ok";
+    resultado.textContent = "Tentativa recuperada do servidor: alternativa " +
+      corpo.selected_option + ", confiança " + corpo.confidence + "/5." +
+      (corpo.correct === true ? " Correta!" : corpo.correct === false ? " Incorreta." : "");
+  } catch (_) {
+    resultado.className = "erro";
+    resultado.textContent = "Há um recibo de tentativa anterior, mas a recuperação no servidor falhou. Nenhum novo envio foi realizado.";
+  }
+  return true;
+}
+
 function idTentativa(questionId) {
   // Um clique = um envio; o mesmo UUID e reutilizado em reenvios da mesma submissao
   // (falha de rede), garantindo idempotencia no servidor. Liberado apos sucesso.
@@ -334,7 +391,10 @@ async function iniciar() {
   let primeira = null;
   try { primeira = localStorage.getItem(chave); } catch (_) { primeira = null; }
 
-  document.getElementById("form-resposta").addEventListener("submit", async (evento) => {
+  const formulario = document.getElementById("form-resposta");
+  if (await recuperarTentativa(item.question_id, resultado, formulario)) return;
+
+  formulario.addEventListener("submit", async (evento) => {
     evento.preventDefault();
     const selecionada = document.querySelector('input[name="alternativa"]:checked');
     resultado.style.display = "block";
@@ -348,39 +408,58 @@ async function iniciar() {
       resultado.textContent = "Selecione sua confiança de 1 a 5 antes de registrar.";
       return;
     }
-    if (primeira === null) {
-      try { localStorage.setItem(chave, selecionada.value); } catch (_) { /* sem armazenamento local */ }
-      primeira = selecionada.value;
-    }
-
     if (!SILENCIADO.api) {
+      if (primeira === null) {
+        try { localStorage.setItem(chave, selecionada.value); } catch (_) { /* sem armazenamento local */ }
+        primeira = selecionada.value;
+      }
       resultado.textContent = "Resposta registrada neste navegador. A conferência e o feedback acontecem no servidor; o feedback ainda não está disponível nesta página.";
       return;
     }
     resultado.textContent = "Enviando ao servidor…";
     const tentativa = idTentativa(item.question_id);
+    const sessao = sessaoAnonima();
     const endpoint = SILENCIADO.api.replace(/\/$/, "");
+    const botao = formulario.querySelector('button[type="submit"]');
+    botao.disabled = true;
     try {
       // Application/json exigiria preflight CORS que o endpoint gratuito nao responde;
       // text/plain (simple request) e lido pelo servidor como JSON.
       const resposta = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        headers: { "Content-Type": /\/v1\/study\/attempts\/?$/.test(endpoint) ? "application/json" : "text/plain;charset=utf-8" },
         body: JSON.stringify({
           question_id: item.question_id,
           selected_option: selecionada.value,
           confidence: confianca ? Number(confianca.value) : 3,
           client_attempt_id: tentativa.id,
-          anon_session_id: sessaoAnonima(),
+          anon_session_id: sessao,
         }),
       });
       if (!resposta.ok) {
         resultado.className = "erro";
-        resultado.textContent = "Não foi possível registrar no servidor agora (HTTP " + resposta.status + "). Sua resposta ficou guardada neste navegador.";
+        resultado.textContent = "Não foi possível registrar no servidor agora (HTTP " + resposta.status + "). Você pode tentar novamente com o mesmo identificador.";
+        botao.disabled = false;
         return;
       }
-      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
       const corpo = await resposta.json();
+      if (corpo.persisted !== true || corpo.question_id !== item.question_id ||
+          corpo.client_attempt_id !== tentativa.id) {
+        resultado.className = "erro";
+        resultado.textContent = "O servidor respondeu, mas não confirmou persistência. Nenhum recibo foi gerado.";
+        botao.disabled = false;
+        return;
+      }
+      try {
+        localStorage.setItem(chaveRecibo(item.question_id), JSON.stringify({
+          question_id: item.question_id, client_attempt_id: tentativa.id,
+          anon_session_id: sessao, selected_option: selecionada.value,
+          confidence: confianca ? Number(confianca.value) : 3
+        }));
+        if (primeira === null) localStorage.setItem(chave, selecionada.value);
+      } catch (_) { /* recuperação local indisponível; POST já foi confirmado */ }
+      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
+      bloquearFormulario(formulario);
       resultado.className = "ok";
       if (corpo.official_status === "annulled") {
         resultado.textContent = "Questão anulada pelo INEP: não há alternativa correta. Sua tentativa foi registrada no servidor.";
@@ -393,7 +472,8 @@ async function iniciar() {
       }
     } catch (_) {
       resultado.className = "erro";
-      resultado.textContent = "Falha de conexão com o servidor. Sua resposta ficou guardada neste navegador.";
+      resultado.textContent = "Falha de conexão com o servidor. A persistência não foi confirmada; o identificador deste envio foi preservado para reconciliação.";
+      botao.disabled = false;
     }
   });
 }
