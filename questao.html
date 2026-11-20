@@ -418,16 +418,30 @@ async function iniciarModoPagina(params, catalogo) {
     const col = document.createElement("div");
     col.className = "page-column";
     for (const n of columnRef.order) {
-      const obj = questions.find(x => x.ref.number === n && x.ref.column === columnRef.name);
+      const obj = questions.find(x => x.ref.number === n &&
+        (x.ref.column === columnRef.name || x.ref.continuation_column === columnRef.name));
       if (!obj) throw new Error("Ordem de leitura da página inconsistente");
       const qid = obj.item.question_id;
+      const continuing = obj.ref.column !== columnRef.name;
+      const splitAt = obj.ref.continuation_column ? obj.ref.continuation_start_block : null;
+      if (splitAt !== null && (!Number.isInteger(splitAt) ||
+          splitAt < 1 || splitAt >= obj.data.blocks.length)) {
+        throw new Error("Blocos de continuação inconsistentes");
+      }
       const section = document.createElement("section");
-      section.className = "page-question";
+      section.className = "page-question" + (continuing ? " page-continuation" : "");
       section.dataset.questionId = qid;
-      const heading = document.createElement("h2");
-      heading.textContent = "QUESTÃO " + n;
-      section.appendChild(heading);
-      for (let index = 0; index < obj.data.blocks.length; index++) {
+      section.dataset.fragment = continuing ? "continuation" : "primary";
+      if (!continuing) {
+        const heading = document.createElement("h2");
+        heading.textContent = "QUESTÃO " + n;
+        section.appendChild(heading);
+      } else {
+        section.setAttribute("aria-label", "Continuação da questão " + n);
+      }
+      const from = continuing ? splitAt : 0;
+      const to = (!continuing && splitAt !== null) ? splitAt : obj.data.blocks.length;
+      for (let index = from; index < to; index++) {
         const block = obj.data.blocks[index];
         const slices = (obj.ref.asset_splices || []).filter(s => s.block_index === index);
         if (slices.length === 1) {
@@ -450,6 +464,12 @@ async function iniciarModoPagina(params, catalogo) {
         } else if (typeof block.text === "string") {
           paragraph(section, block.text);
         }
+      }
+      // A parte inicial de uma questão que atravessa colunas contém apenas
+      // contexto/estímulos; alternativas, confiança e recibo ficam no fragmento final.
+      if (!continuing && splitAt !== null) {
+        col.appendChild(section);
+        continue;
       }
       const controls = [];
       const saved = lerRascunho(qid);
