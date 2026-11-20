@@ -2143,6 +2143,31 @@
         "revisao": "2026-11-20.a2024d1.q007.r1",
         "sequencia_colecao": 7
       }
+    },
+    {
+      "id": "enem2024-d1-cdazul-q8",
+      "question_id": "enem:2024:regular_nacional:d1:q008",
+      "ano": 2024,
+      "numero_oficial": 8,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2024 · 1º dia · Caderno 1 Azul (CD1) · Português",
+      "pagina": 5,
+      "fonte": "INEP, 2024_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "9001744C02A1A5EA2CAA292196DD6D4DAA957189FC783FE9DB2DD03D635B2D9E",
+      "data": "data/enem2024_d1_cdazul_q008.json",
+      "imagem": "assets/enem2024_d1_cdazul_q008_integral.png",
+      "alt": "Recorte original da Q008 do caderno convencional Azul, página 5, coluna direita inferior",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 8,
+        "revisao": "2026-11-20.a2024d1.q008.r1",
+        "sequencia_colecao": 8
+      }
     }
   ]
 }
