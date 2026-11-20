@@ -1,0 +1,55 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q009",
+  "content_revision": "2026-11-20.a2024d1.q009.r1",
+  "year": 2024,
+  "number": 9,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Leitura de reportagem, saúde mental de atletas e pressão da mídia e de eventos",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 6
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "Pressão, depressão, estresse e crise de ansiedade. Os males da sociedade contemporânea também estão no esporte. A tenista Naomi Osaka, do Japão, jogadora mais bem paga do mundo e que já ocupou o número 2 do ranking, retirou-se do torneio de Roland Garros de 2021 porque não estava conseguindo administrar as crises de ansiedade provocadas pelos grandes eventos, por ser uma estrela aos 23 anos, e pelo peso de parte da imprensa. O tenista australiano Nick Kyrgios, de 25 anos, revelou sua “situação triste e solitária” enquanto lutava contra a depressão causada pelo ritmo avassalador do Circuito Mundial de Tênis. O jogador de basquete americano Kevin Love também tornou público seu quadro de ansiedade e depressão. O mundo do atleta é solitário e distante da família. O que vemos numa partida não reflete a rotina desgastante. A imprensa denomina atletas como heróis, como se aquele corpo fosse indestrutível, mas a mente é o ponto fraco da história."
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "Disponível em: www.uol.com.br. Acesso em: 31 out. 2021 (adaptado)."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "As causas do desequilíbrio na saúde mental apontadas no texto estão relacionadas às"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "nacionalidades diversificadas dos praticantes."
+    },
+    {
+      "label": "B",
+      "text": "modalidades esportivas distintas."
+    },
+    {
+      "label": "C",
+      "text": "faixas etárias aproximadas."
+    },
+    {
+      "label": "D",
+      "text": "representações heroicas dos atletas."
+    },
+    {
+      "label": "E",
+      "text": "pressões constantes dos eventos e da mídia."
+    }
+  ],
+  "answer_policy": "Gabarito e resolução não estão no payload; feedback somente após a tentativa persistida no servidor."
+}
