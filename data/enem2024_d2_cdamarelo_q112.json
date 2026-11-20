@@ -12,9 +12,21 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "A nimesulida é um fármaco pouco solúvel em água, utilizado como anti-inflamatório, analgésico e antitérmico. Essa substância pode ser convertida em uma espécie eletricamente carregada, de maior solubilidade em água, mediante o tratamento com uma base de Brønsted-Lowry, isto é, uma espécie química capaz de capturar um próton (H⁺). Na figura são apresentados os grupamentos presentes na estrutura química da nimesulida."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q112_integral.png",
-      "text": "Questão 112 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. A nimesulida é um fármaco pouco solúvel em água, utilizado como anti-inflamatório, analgésico e antitérmico. Essa substância pode ser convertida em uma espécie eletricamente carregada, de maior solubilidade em água, mediante o tratamento com uma base de Brönsted-Lowry, isto é, uma espécie química capaz de capturar um próton (H+). Na figura são apresentados os grupamentos presentes na estrutura química da nimesulida (sulfonamida, metila, éter, fenila, nitro). Referência: GONÇALVES, A. A. et al. Contextualizando reações ácido-base de acordo com a teoria protônica de Brönsted-Lowry usando comprimidos de propranolol e nimesulida. Química Nova, n. 3, 2013 (adaptado). Pergunta: 'Na estrutura desse fármaco, o grupamento capaz de reagir com a base de Brönsted-Lowry é o grupo'."
+      "asset": "assets/enem2024_d2_cdamarelo_p009_q112_original.png",
+      "alt": "Estrutura química original da nimesulida, grupos metila, sulfonamida, éter, fenila e nitro"
+    },
+    {
+      "type": "text",
+      "text": "GONÇALVES, A. A. et al. Contextualizando reações ácido-base de acordo com a teoria protônica de Brønsted-Lowry usando comprimidos de propranolol e nimesulida. Química Nova, n. 3, 2013 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Na estrutura desse fármaco, o grupamento capaz de reagir com a base de Brønsted-Lowry é o grupo"
     }
   ],
   "options": [
@@ -39,5 +51,8 @@
       "text": "éter."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q112-p009-structured-v1",
+  "legacy_integral_crop_retained_in_catalog": true
 }

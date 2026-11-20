@@ -12,9 +12,16 @@
   },
   "blocks": [
     {
-      "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q115_integral.png",
-      "text": "Questão 115 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O soro caseiro serve para combater a desidratação por meio da reposição da água e sais minerais perdidos, por exemplo, por diarreia. Uma receita simples para a sua preparação consiste em utilizar duas colheres grandes (de sopa) de açúcar e duas colheres pequenas (de café) de sal de cozinha, dissolvidos em 2 L de água fervida, obtendo-se uma solução com concentração de íon sódio de 1,4 mg/mL. Considere as massas molares: NaCl = 58,5 g/mol; Na = 23 g/mol. Pergunta: 'Qual é o valor mais próximo da massa, em grama, de cloreto de sódio presente em uma única colher pequena?'."
+      "type": "text",
+      "text": "O soro caseiro serve para combater a desidratação por meio da reposição da água e sais minerais perdidos, por exemplo, por diarreia. Uma receita simples para a sua preparação consiste em utilizar duas colheres grandes (de sopa) de açúcar e duas colheres pequenas (de café) de sal de cozinha, dissolvidos em 2 L de água fervida, obtendo-se uma solução com concentração de íon sódio de 1,4 mg/mL."
+    },
+    {
+      "type": "text",
+      "text": "Considere as massas molares: NaCl = 58,5 g/mol; Na = 23 g/mol."
+    },
+    {
+      "type": "text",
+      "text": "Qual é o valor mais próximo da massa, em grama, de cloreto de sódio presente em uma única colher pequena?"
     }
   ],
   "options": [
@@ -39,5 +46,8 @@
       "text": "7,0 g"
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q115-p009-structured-v1",
+  "legacy_integral_crop_retained_in_catalog": true
 }
