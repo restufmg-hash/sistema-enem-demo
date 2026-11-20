@@ -40,6 +40,38 @@
   #resultado.ok { background: #ecf8ef; color: #1e5b2a; border-color: #b6dfc2; }
   #resultado.erro { background: #fdf0ee; color: #7a2415; border-color: #f2c0b3; }
   footer { max-width: 880px; margin: 1rem auto 2rem; padding: 0 1rem; font-size: .72rem; color: #718096; overflow-wrap: anywhere; }
+  /* A mesma representação semântica é composta na geometria da página original. */
+  .pagina-main { max-width: 1100px; }
+  .pagina-mode { padding: 1rem; }
+  .pagina-tools { display:flex;align-items:center;gap:.7rem;flex-wrap:wrap; }
+  .pagina-tools strong { font-size:1rem; }
+  .pagina-tools p { margin:0;flex-basis:100%;font-size:.88rem;color:#455468; }
+  .pagina-stage { width:100%;overflow-x:auto;overscroll-behavior-x:contain;margin-top:.8rem; }
+  .pagina-zoom-wrap {position:relative;margin:0 auto;}
+  .pagina-folha { position:absolute;top:0;left:0;transform-origin:top left;width:900px;min-height:1130px;margin:0 auto;background:white;border:1px solid #b7bbc5;
+    padding:28px 18px;display:grid;grid-template-columns:1fr 1fr;gap:15px 18px;
+    grid-template-rows:auto 1fr;align-items:start;font-family:Arial,sans-serif; }
+  .pagina-questao { min-width:0; }
+  .pagina-q1 { grid-column:1;grid-row:1 / span 2; }
+  .pagina-q2 { grid-column:2;grid-row:1; }
+  .pagina-q3 { grid-column:2;grid-row:2; }
+  .pagina-questao h2 { font-size:.93rem;display:flex;align-items:center;justify-content:space-between;margin:4px 0 9px; }
+  .pagina-questao-link,.pagina-link { font-size:.78rem;font-weight:500; }
+  .pagina-blocos { font-size:.79rem;line-height:1.35;white-space:pre-wrap; }
+  .pagina-blocos p { margin:.5rem 0; }
+  .pagina-blocos [data-role="reference"] {font-size:.72rem;text-align:right;}
+  .pagina-blocos [data-role="title"] {font-weight:700;text-align:center;}
+  .pagina-blocos figure {margin:5px 0;}
+  .pagina-blocos img {width:100%;height:auto;max-width:100%;}
+  .pagina-tentativa {font-size:.76rem;}
+  .pagina-tentativa fieldset {border:0;padding:0;margin:5px 0;min-width:0;}
+  .pagina-tentativa legend {font-weight:600;}
+  .pagina-tentativa fieldset label {display:block;margin:3px 0;cursor:pointer;}
+  .pagina-tentativa fieldset:nth-child(2) label {display:inline-flex;gap:2px;margin-right:9px;}
+  .pagina-tentativa button {font-size:.78rem;padding:.35rem .6rem;border-radius:5px;}
+  .pagina-tentativa button:disabled {opacity:.55;cursor:default;}
+  .pagina-resultado {font-size:.76rem;font-weight:600;}
+  .pagina-link {display:inline-block;margin-bottom:.5rem;}
 </style>
 </head>
 <body>
@@ -175,6 +207,212 @@ function idTentativa(questionId) {
   } catch (_) { return { id: novo(), chave: null }; }
 }
 
+// Único renderizador de blocos para visão fluida e visão paginada.
+function renderizarBlocosComuns(container, blocks) {
+  container.textContent = "";
+  for (const block of blocks) {
+      if (block.type === "image") {
+        const figure = document.createElement("figure");
+        const source = document.createElement("img");
+        // Only first-party, relative media paths: never arbitrary external URLs.
+        if (!/^assets\/[a-zA-Z0-9_.-]+\.(png|jpg|jpeg|webp)$/i.test(block.asset || "")) {
+          throw new Error("Mídia da questão indisponível ou não autorizada.");
+        }
+        source.src = block.asset;
+        source.alt = block.text || "Ilustração do enunciado";
+        figure.appendChild(source);
+        container.appendChild(figure);
+      } else if (["text", "math", "table"].includes(block.type)) {
+        const part = document.createElement(block.type === "table" ? "pre" : "p");
+        if (["title", "verse", "reference", "stem"].includes(block.role)) {
+          part.dataset.role = block.role;
+        }
+        // Render validated emphasis as DOM text nodes, never as injected HTML.
+        let remainder = block.text || "";
+        const marks = Array.isArray(block.emphasize) ? block.emphasize : [];
+        for (const phrase of marks) {
+          if (typeof phrase !== "string" || !phrase || !remainder.includes(phrase)) continue;
+          const index = remainder.indexOf(phrase);
+          part.appendChild(document.createTextNode(remainder.slice(0, index)));
+          const emphasis = document.createElement("em");
+          emphasis.textContent = phrase;
+          part.appendChild(emphasis);
+          remainder = remainder.slice(index + phrase.length);
+        }
+        part.appendChild(document.createTextNode(remainder));
+        container.appendChild(part);
+      }
+    }
+}
+
+const CONFIG_PAGINA_2024_D1 = {
+  ano: 2024, dia: 1, caderno: "cdazul", idioma: "en", pagina: 2,
+  numeros: [1, 2, 3]
+};
+
+function linkDaPagina(item) {
+  const o = item.occurrence || {};
+  if (Number(o.ano) !== 2024 || Number(o.dia) !== 1 ||
+      o.caderno !== "cdazul" || normIdioma(o.idioma) !== "en" ||
+      Number(item.pagina) !== 2 || !CONFIG_PAGINA_2024_D1.numeros.includes(Number(o.numero_oficial))) {
+    return null;
+  }
+  return "questao.html?pagina=2&ano=2024&dia=1&caderno=cdazul&idioma=en";
+}
+
+async function abrirPaginaEstruturada(items) {
+  const c = CONFIG_PAGINA_2024_D1;
+  const selecionados = c.numeros.map((numero) => {
+    const v = items.filter((item) => {
+      const o = item.occurrence || {};
+      return Number(o.ano) === c.ano && Number(o.dia) === c.dia &&
+        o.caderno === c.caderno && normIdioma(o.idioma) === c.idioma &&
+        Number(item.pagina) === c.pagina && Number(o.numero_oficial) === numero;
+    });
+    if (v.length !== 1) throw new Error("Ocorrência ambígua ou ausente da página " + numero);
+    return v[0];
+  });
+  const response = await Promise.all(selecionados.map(async (item) => {
+    const r = await fetch(item.data, {cache:"no-store"});
+    if (!r.ok) throw new Error("Dados indisponíveis da questão " + item.numero_oficial);
+    const dados = await r.json();
+    if (!Array.isArray(dados.blocks) || !dados.blocks.length ||
+        !Array.isArray(dados.options) || dados.options.length !== 5) {
+      throw new Error("Reconstrução estruturada incompleta");
+    }
+    return {item,dados};
+  }));
+  document.title = "Sistema ENEM — Página 2 · 2024 D1 Azul";
+  const header = document.createElement("div");
+  header.className = "pagina-tools";
+  header.innerHTML = '<strong>Página original 2 · Linguagens · Opção inglês</strong>';
+  const description = document.createElement("p");
+  description.textContent = "Reconstrução interativa da página impressa do INEP. As mesmas questões e mídias do modo individual. A visualização do original serve apenas para conferência.";
+  const zoom = document.createElement("input");
+  zoom.type = "range"; zoom.min = "35"; zoom.max = "160"; zoom.value = window.innerWidth < 650 ? "38" : "100";
+  zoom.id = "zoom-pagina"; zoom.setAttribute("aria-label","Zoom da página em porcentagem");
+  const percent = document.createElement("output"); percent.htmlFor = "zoom-pagina"; percent.textContent = zoom.value + "%";
+  header.append(description, zoom, percent);
+  const stage = document.createElement("div"); stage.className = "pagina-stage";
+  const zoomWrap = document.createElement("div"); zoomWrap.className="pagina-zoom-wrap";
+  const sheet = document.createElement("div"); sheet.className = "pagina-folha";
+  zoomWrap.append(sheet); stage.append(zoomWrap);
+  function atualizarZoom() {
+    const escala = Number(zoom.value) / 100;
+    sheet.style.transform = "scale(" + escala + ")";
+    zoomWrap.style.width = (900 * escala) + "px";
+    zoomWrap.style.height = (sheet.scrollHeight * escala) + "px";
+    percent.textContent = zoom.value + "%";
+  }
+  zoom.addEventListener("input", atualizarZoom);
+  // Layout reproduz a ordem original em duas colunas; sem PDF como background.
+  for (const {item,dados} of response) {
+    const numero = Number(item.numero_oficial);
+    const section = document.createElement("section");
+    section.className = "pagina-questao pagina-q" + numero;
+    section.setAttribute("aria-label", "Questão " + numero);
+    const h = document.createElement("h2");
+    h.textContent = "QUESTÃO " + String(numero).padStart(2,"0");
+    const link = document.createElement("a");
+    link.href = "questao.html?id=" + encodeURIComponent(item.question_id);
+    link.textContent = "Abrir questão";
+    link.className = "pagina-questao-link";
+    h.append(link);
+    const content = document.createElement("div");
+    content.className = "pagina-blocos";
+    renderizarBlocosComuns(content, dados.blocks);
+    const form = document.createElement("form");
+    form.className = "pagina-tentativa";
+    const field = document.createElement("fieldset");
+    const legend = document.createElement("legend");legend.textContent="Alternativa";
+    field.append(legend);
+    for (const opt of dados.options) {
+      const l = document.createElement("label");
+      const input = document.createElement("input");
+      input.type = "radio";input.name = "alternativa";input.value=opt.label;
+      input.setAttribute("aria-label","Questão "+numero+" alternativa "+opt.label);
+      l.append(input,document.createTextNode(opt.label+" — "+opt.text));
+      field.append(l);
+    }
+    const confidenceField = document.createElement("fieldset");
+    const legend2 = document.createElement("legend");legend2.textContent="Confiança";
+    confidenceField.append(legend2);
+    for(let level=1; level<=5; level++) {
+      const l = document.createElement("label");
+      const input = document.createElement("input");
+      input.type="radio"; input.name="confianca"; input.value=String(level);
+      input.setAttribute("aria-label","Questão "+numero+" confiança "+level);
+      l.append(input,document.createTextNode(String(level)));confidenceField.append(l);
+    }
+    const submit = document.createElement("button");
+    submit.type = "submit"; submit.textContent="Registrar resposta";
+    const status = document.createElement("p");status.className="pagina-resultado";status.setAttribute("role","status");
+    form.append(field,confidenceField,submit,status);
+    const key = "sistema_enem_recibo_"+item.question_id;
+    const pending = "sistema_enem_rascunho_"+item.question_id;
+    const old = JSON.parse(localStorage.getItem(pending)||"null");
+    if(old){
+      const v=field.querySelector('input[value="'+old.selected+'"]');
+      const t=confidenceField.querySelector('input[value="'+old.confidence+'"]');
+      if(v)v.checked=true;if(t)t.checked=true;
+    }
+    function persistDraft() {
+      const selected=field.querySelector("input:checked"),conf=confidenceField.querySelector("input:checked");
+      localStorage.setItem(pending,JSON.stringify({selected:selected?.value||null,confidence:conf?.value||null}));
+    }
+    field.addEventListener("change",persistDraft);
+    confidenceField.addEventListener("change",persistDraft);
+    async function recover() {
+      if(!SILENCIADO.readApi)return;
+      const saved=JSON.parse(localStorage.getItem(key)||"null");
+      if(!saved?.id || !saved?.session)return;
+      const u=SILENCIADO.readApi.replace(/\/$/,"")+"/"+encodeURIComponent(saved.id)+"?anon_session_id="+encodeURIComponent(saved.session);
+      const r=await fetch(u,{cache:"no-store"});
+      if(!r.ok)return;
+      const v=await r.json();
+      if(v.question_id!==item.question_id || v.persisted!==true)return;
+      const picked=field.querySelector('input[value="'+v.selected_option+'"]');
+      const conf=confidenceField.querySelector('input[value="'+v.confidence+'"]');
+      if(picked)picked.checked=true;if(conf)conf.checked=true;
+      submit.disabled=true; status.textContent="Tentativa recuperada do servidor: "+v.selected_option+" · confiança "+v.confidence+"/5.";
+    }
+    await recover();
+    form.addEventListener("submit",async (event)=>{
+      event.preventDefault();
+      if(submit.disabled)return;
+      const sel=field.querySelector("input:checked"),conf=confidenceField.querySelector("input:checked");
+      if(!sel||!conf){status.textContent="Selecione alternativa e confiança.";return;}
+      if(!SILENCIADO.api){status.textContent="Servidor de tentativas indisponível.";return;}
+      submit.disabled=true;status.textContent="Enviando ao servidor…";
+      const attempt=idTentativa(item.question_id);
+      try{
+        const endpoint=SILENCIADO.api.replace(/\/$/,"");
+        const session=sessaoAnonima();
+        const r=await fetch(endpoint,{method:"POST",headers:{"Content-Type":/script\.google\.com$/i.test(new URL(endpoint).hostname)?"text/plain;charset=utf-8":"application/json;charset=utf-8"},body:JSON.stringify({question_id:item.question_id,selected_option:sel.value,confidence:Number(conf.value),client_attempt_id:attempt.id,anon_session_id:session})});
+        if(!r.ok)throw new Error("HTTP "+r.status);
+        const result=await r.json();
+        if(result.persisted!==true)throw new Error("Sem confirmação de persistência");
+        localStorage.setItem(key,JSON.stringify({id:attempt.id,session}));
+        if(attempt.chave)sessionStorage.removeItem(attempt.chave);
+        status.textContent="Resposta registrada no servidor. "+(result.correct===true?"Correta.":result.correct===false?"Incorreta.":"");
+      }catch(err){submit.disabled=false;status.textContent="Falha no envio: "+err.message;}
+    });
+    section.append(h,content,form);sheet.append(section);
+  }
+  for (const image of sheet.querySelectorAll("img")) {
+    image.addEventListener("load",atualizarZoom);
+  }
+  atualizarZoom();
+  const card=document.getElementById("card");
+  card.replaceChildren(header,stage);
+  // A folha precisa estar no DOM antes de medir scrollHeight.
+  atualizarZoom();
+  requestAnimationFrame(atualizarZoom);
+  card.classList.add("pagina-mode");
+  document.querySelector("main").classList.add("pagina-main");
+  document.getElementById("fonte").textContent="Fonte: INEP, 2024_PV_impresso_D1_CD1.pdf, página 2. Modo página estruturado sem imagem de fundo.";
+}
+
 async function iniciar() {
   const params = new URLSearchParams(location.search);
   const id = (params.get("id") || "").trim();
@@ -196,6 +434,18 @@ async function iniciar() {
     return;
   }
   const items = catalogo.items || [];
+  const pagina = intOrUndef(params.get("pagina"));
+  if (pagina !== undefined) {
+    const p = CONFIG_PAGINA_2024_D1;
+    if (pagina!==p.pagina || occ.ano!==p.ano || occ.dia!==p.dia ||
+        occ.caderno!==p.caderno || occ.idioma!==p.idioma) {
+      falha("Página ou variante ainda não reconstruída.");
+      return;
+    }
+    try { await abrirPaginaEstruturada(items); }
+    catch(e) { falha("Página estruturada indisponível: "+e.message); }
+    return;
+  }
 
   const porId = acharItemPorId(items, id);
   let item = porId.item;
@@ -231,6 +481,11 @@ async function iniciar() {
   }
   if (!item) { falha("Questão não encontrada no catálogo público."); return; }
 
+  const pageLink=linkDaPagina(item);
+  if(pageLink){
+    const anchor=document.createElement("a");anchor.href=pageLink;anchor.className="pagina-link";anchor.textContent="Ver página 2 interativa";
+    document.getElementById("card").prepend(anchor);
+  }
   document.title = "Sistema ENEM — Questão " + item.numero_oficial + " (" + item.ano + ")";
   const meta = document.getElementById("meta");
   meta.innerHTML = "<strong>Questão " + item.numero_oficial + "</strong> · " + item.prova +
@@ -270,40 +525,7 @@ async function iniciar() {
   );
   if (hasRealBlocks) {
     structured.textContent = "";
-    for (const block of dados.blocks) {
-      if (block.type === "image") {
-        const figure = document.createElement("figure");
-        const source = document.createElement("img");
-        // Only first-party, relative media paths: never arbitrary external URLs.
-        if (!/^assets\/[a-zA-Z0-9_.-]+\.(png|jpg|jpeg|webp)$/i.test(block.asset || "")) {
-          falha("Mídia da questão indisponível ou não autorizada.");
-          return;
-        }
-        source.src = block.asset;
-        source.alt = block.text || "Ilustração do enunciado";
-        figure.appendChild(source);
-        structured.appendChild(figure);
-      } else if (["text", "math", "table"].includes(block.type)) {
-        const part = document.createElement(block.type === "table" ? "pre" : "p");
-        if (["title", "verse", "reference", "stem"].includes(block.role)) {
-          part.dataset.role = block.role;
-        }
-        // Render validated emphasis as DOM text nodes, never as injected HTML.
-        let remainder = block.text || "";
-        const marks = Array.isArray(block.emphasize) ? block.emphasize : [];
-        for (const phrase of marks) {
-          if (typeof phrase !== "string" || !phrase || !remainder.includes(phrase)) continue;
-          const index = remainder.indexOf(phrase);
-          part.appendChild(document.createTextNode(remainder.slice(0, index)));
-          const emphasis = document.createElement("em");
-          emphasis.textContent = phrase;
-          part.appendChild(emphasis);
-          remainder = remainder.slice(index + phrase.length);
-        }
-        part.appendChild(document.createTextNode(remainder));
-        structured.appendChild(part);
-      }
-    }
+    renderizarBlocosComuns(structured,dados.blocks);
     mostrar(structured, true);
     mostrar(document.getElementById("figura"), false);
     mostrar(document.getElementById("figura_texto"), false);
@@ -346,6 +568,29 @@ async function iniciar() {
     rotulo.appendChild(document.createTextNode(" " + i));
     confiancaContainer.appendChild(rotulo);
   }
+
+  // Rascunho compartilhado com o modo página; confirmação sempre vem do servidor.
+  const rascunhoKey = "sistema_enem_rascunho_" + item.question_id;
+  try {
+    const rascunho = JSON.parse(localStorage.getItem(rascunhoKey) || "null");
+    if (rascunho?.selected) {
+      const selected = container.querySelector('input[value="' + rascunho.selected + '"]');
+      if (selected) selected.checked = true;
+    }
+    if (rascunho?.confidence) {
+      const confidence = confiancaContainer.querySelector('input[value="' + rascunho.confidence + '"]');
+      if (confidence) confidence.checked = true;
+    }
+    function salvarRascunho() {
+      const option = container.querySelector("input:checked");
+      const confidence = confiancaContainer.querySelector("input:checked");
+      localStorage.setItem(rascunhoKey, JSON.stringify({
+        selected: option?.value || null, confidence: confidence?.value || null
+      }));
+    }
+    container.addEventListener("change", salvarRascunho);
+    confiancaContainer.addEventListener("change", salvarRascunho);
+  } catch (_) { /* sem armazenamento: formulário ainda funciona */ }
 
   const chave = primeiraChave(item.question_id);
   let primeira = null;
