@@ -1150,6 +1150,33 @@
       "revision": "7f7d216e6624e9ca746f4e18e9e4666cae7ab84ae32048acddf608fd6d930c30"
     },
     {
+      "id": "enem2025-d2-cdamarelo-q92",
+      "question_id": "enem:2025:regular_nacional:d2:q092",
+      "ano": 2025,
+      "numero_oficial": 92,
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2025 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 2,
+      "fonte": "INEP, 2025_PV_impresso_D2_CD5.pdf",
+      "sha256_imagem": null,
+      "data": "data/enem2025_d2_cdamarelo_q092.json",
+      "imagem": null,
+      "alt": null,
+      "occurrence": {
+        "ano": 2025,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 92,
+        "revisao": "bc24fdd4e4672d5127b4830f2c44cd10c917a9e2da1369b8e4804ac843b6a7a8",
+        "sequencia_colecao": null
+      },
+      "aliases": [],
+      "revision": "bc24fdd4e4672d5127b4830f2c44cd10c917a9e2da1369b8e4804ac843b6a7a8"
+    },
+    {
       "id": "q093-2025",
       "question_id": "enem:2025:regular_nacional:d2:q093",
       "ano": 2025,

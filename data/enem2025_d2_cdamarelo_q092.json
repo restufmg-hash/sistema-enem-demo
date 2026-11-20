@@ -1,0 +1,114 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q092",
+  "year": 2025,
+  "number": 92,
+  "area": "Ciências da Natureza",
+  "topic": "Aquisição de toxinas pela dieta de anfíbios",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 2,
+    "sha256": "0A59697676989B55E6F3E40636FAD164C1C26868DDBA37D04E4FFFC101168298",
+    "page_geometry": {
+      "width": 566.927,
+      "height": 779.526,
+      "question_bbox": [
+        20.0,
+        453.971,
+        284.5,
+        742.474
+      ],
+      "reading_order": "coluna_esquerda; fluxo_y_crescente"
+    }
+  },
+  "content_revision": "bc24fdd4e4672d5127b4830f2c44cd10c917a9e2da1369b8e4804ac843b6a7a8",
+  "blocks": [
+    {
+      "type": "text",
+      "role": "paragraph",
+      "text": "Os sapinhos-ponta-de-flecha constituem um grupo de \nespécies encontradas na América Central e do Sul. Seus venenos \nsão obtidos por meio do consumo de algumas formigas e cupins \nque se alimentam de plantas que contêm esses venenos. Esses \nanfíbios são usados para envenenar as flechas das zarabatanas \ndos caçadores nativos. Quando capturados e criados em \ncondições artificiais, ou quando nascidos em cativeiro, não \nsão tóxicos.",
+      "source_bbox": [
+        29.763,
+        475.391,
+        283.313,
+        572.771
+      ]
+    },
+    {
+      "type": "text",
+      "role": "source",
+      "text": "BADIO, B. et al. Epibatidine: Discovery and Definition as a Potent Analgesic and Nicotinic Agonist. Med. Chem. Res., n. 4, 1994 (adaptado).",
+      "source_bbox": [
+        72.472,
+        573.878,
+        282.815,
+        603.782
+      ]
+    },
+    {
+      "type": "text",
+      "role": "prompt",
+      "text": "A perda da capacidade de se obter a toxina nos nascidos em \ncativeiro é causada pela",
+      "source_bbox": [
+        29.763,
+        610.113,
+        283.302,
+        635.493
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "diferença de umidade entre os ambientes.",
+      "source_bbox": [
+        29.763,
+        639.783,
+        213.829,
+        653.163
+      ]
+    },
+    {
+      "label": "B",
+      "text": "ausência de alimentação natural.",
+      "source_bbox": [
+        29.763,
+        653.203,
+        176.195,
+        666.583
+      ]
+    },
+    {
+      "label": "C",
+      "text": "adaptação ao novo ambiente.",
+      "source_bbox": [
+        29.763,
+        666.623,
+        168.197,
+        680.003
+      ]
+    },
+    {
+      "label": "D",
+      "text": "mudança de comportamento.",
+      "source_bbox": [
+        29.763,
+        680.043,
+        163.36,
+        693.423
+      ]
+    },
+    {
+      "label": "E",
+      "text": "variabilidade genética.",
+      "source_bbox": [
+        29.773,
+        693.463,
+        133.816,
+        706.843
+      ]
+    }
+  ],
+  "answer_policy": "Sem gabarito, feedback ou análise de alternativas antes do envio ao servidor."
+}
