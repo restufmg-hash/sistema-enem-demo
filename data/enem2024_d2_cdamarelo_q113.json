@@ -12,9 +12,12 @@
   },
   "blocks": [
     {
-      "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q113_integral.png",
-      "text": "Questão 113 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O desenvolvimento da biotecnologia e da clonagem gênica em procariotos fez com que a produção de proteínas se tornasse mais intensa, rápida e econômica. Para a produção de hormônios, enzimas e proteínas de resistência a drogas, uma variação da técnica de reação em cadeia pela polimerase (PCR, na sigla em inglês) utiliza a enzima transcriptase reversa (RT-PCR), que sintetiza moléculas de DNA complementares a partir de fitas de RNA. Nesse contexto, essa técnica é importante para detectar genes."
+      "type": "text",
+      "text": "O desenvolvimento da biotecnologia e da clonagem gênica em procariotos fez com que a produção de proteínas se tornasse mais intensa, rápida e econômica. Para a produção de hormônios, enzimas e proteínas de resistência a drogas, uma variação da técnica de reação em cadeia pela polimerase (PCR, na sigla em inglês) utiliza a enzima transcriptase reversa (RT-PCR), que sintetiza moléculas de DNA complementares a partir de fitas de RNA."
+    },
+    {
+      "type": "text",
+      "text": "Nesse contexto, essa técnica é importante para detectar genes"
     }
   ],
   "options": [
@@ -39,5 +42,9 @@
       "text": "autossômicos."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "source_pdf_sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+  "source_page": 9,
+  "structure_status": "branch_only_validation_unpublished"
 }

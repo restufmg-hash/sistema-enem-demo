@@ -1,0 +1,380 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p009",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "drive_file_id": "1sYv0adwBnb6ZcPTayZW9PR0UWmWcKo-B",
+    "printed_page": 9,
+    "pdf_page_index": 8,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 745,
+        "order": [
+          112,
+          113
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.3,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 745,
+        "order": [
+          114,
+          115
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q112",
+      "number": 112,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        521
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q112.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q113",
+      "number": 113,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        524,
+        281,
+        746
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q113.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q114",
+      "number": 114,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        501
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q114.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q115",
+      "number": 115,
+      "column": "right",
+      "order": 1,
+      "bbox": [
+        290.29,
+        503,
+        539.5,
+        744
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q115.json"
+    }
+  ],
+  "media": {
+    "q112-nimesulida": {
+      "url": "assets/enem2024_d2_cdamarelo_p009_q112_nimesulida.png",
+      "mime_type": "image/png",
+      "sha256": "e36800882e140bf4d2ecbb87fbe57021c1686cf891d1aedf9fbbea2caa60c745",
+      "source_bbox": [
+        73.3,
+        183.3,
+        237,
+        349.8
+      ],
+      "source_pdf_page": 9,
+      "source_role": "Grupamentos da nimesulida, extração PNG nativa do PDF do Inep"
+    },
+    "q114-balanceamento": {
+      "url": "assets/enem2024_d2_cdamarelo_p009_q114_balanceamento.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "a835b5bf54afdd3f524390fc3fa00f444c3722aee5bf2a4dcde5b3b0ea811fbd",
+      "source_bbox": [
+        335.2,
+        236.8,
+        491.7,
+        394.2
+      ],
+      "source_pdf_page": 9,
+      "source_role": "Roda com cinco pontos e centro de massa deslocado, JPEG nativo extraído do PDF"
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q112",
+      "label": "A",
+      "bbox": [
+        32.01,
+        449.58,
+        41.76,
+        459.33
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q112",
+      "label": "B",
+      "bbox": [
+        32.01,
+        463.13,
+        41.76,
+        472.88
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q112",
+      "label": "C",
+      "bbox": [
+        32.01,
+        476.68,
+        41.76,
+        486.43
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q112",
+      "label": "D",
+      "bbox": [
+        32.01,
+        490.22,
+        41.76,
+        499.97
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q112",
+      "label": "E",
+      "bbox": [
+        32.01,
+        503.76,
+        41.76,
+        513.51
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q113",
+      "label": "A",
+      "bbox": [
+        32.01,
+        673.5,
+        41.76,
+        683.25
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q113",
+      "label": "B",
+      "bbox": [
+        32.01,
+        687.05,
+        41.76,
+        696.8
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q113",
+      "label": "C",
+      "bbox": [
+        32.01,
+        700.59,
+        41.76,
+        710.34
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q113",
+      "label": "D",
+      "bbox": [
+        32.01,
+        714.14,
+        41.76,
+        723.89
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q113",
+      "label": "E",
+      "bbox": [
+        32.01,
+        727.68,
+        41.76,
+        737.43
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q114",
+      "label": "A",
+      "bbox": [
+        290.29,
+        429.61,
+        300.04,
+        439.36
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q114",
+      "label": "B",
+      "bbox": [
+        290.29,
+        442.9,
+        300.04,
+        452.65
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q114",
+      "label": "C",
+      "bbox": [
+        290.29,
+        456.19,
+        300.04,
+        465.94
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q114",
+      "label": "D",
+      "bbox": [
+        290.29,
+        469.48,
+        300.04,
+        479.23
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q114",
+      "label": "E",
+      "bbox": [
+        290.29,
+        482.77,
+        300.04,
+        492.52
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q115",
+      "label": "A",
+      "bbox": [
+        290.29,
+        674.55,
+        300.04,
+        684.3
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q115",
+      "label": "B",
+      "bbox": [
+        290.29,
+        687.84,
+        300.04,
+        697.59
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q115",
+      "label": "C",
+      "bbox": [
+        290.29,
+        701.12,
+        300.04,
+        710.87
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q115",
+      "label": "D",
+      "bbox": [
+        290.29,
+        714.41,
+        300.04,
+        724.16
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q115",
+      "label": "E",
+      "bbox": [
+        290.29,
+        727.7,
+        300.04,
+        737.45
+      ],
+      "kind": "answer_circle",
+      "source": "native PDF text coordinates"
+    }
+  ],
+  "presentation": {
+    "student_key_excluded": true,
+    "source_pdf_as_background": false,
+    "source_text_from_question_data": true,
+    "source_options_from_question_data": true,
+    "media_source_native": true,
+    "default_zoom": "fit",
+    "interactive_page_mode": true,
+    "responsive_question_mode": true,
+    "publication": "branch_only_validation"
+  }
+}

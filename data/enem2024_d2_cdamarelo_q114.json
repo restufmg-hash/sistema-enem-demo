@@ -12,9 +12,17 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "Nos automóveis, é importante garantir que o centro de massa (CM) de cada conjunto roda/pneu coincida com o seu centro geométrico. Esse processo é realizado em uma máquina de balanceamento, na qual o conjunto roda e pneu é colocado para girar a uma velocidade de valor constante. Com base nas oscilações medidas, a máquina indica a posição do centro de massa do conjunto, e pequenas peças de chumbo são fixadas em lugares específicos da roda até que as vibrações diminuam. Durante o treinamento de sua equipe, a fim de corrigir a posição do centro de massa indicada pela máquina, um mecânico apresenta o esquema a seguir, com cinco possíveis pontos da roda para posicionar uma peça de chumbo."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q114_integral.png",
-      "text": "Questão 114 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Nos automóveis, é importante garantir que o centro de massa (CM) de cada conjunto roda/pneu coincida com o seu centro geométrico. Esse processo é realizado em uma máquina de balanceamento, na qual o conjunto roda e pneu é colocado para girar a uma velocidade de valor constante. Com base nas oscilações medidas, a máquina indica a posição do centro de massa do conjunto, e pequenas peças de chumbo são fixadas em lugares específicos da roda até que as vibrações diminuam. Durante o treinamento de sua equipe, a fim de corrigir a posição do centro de massa indicada pela máquina, um mecânico apresenta o esquema a seguir, com cinco possíveis pontos da roda para posicionar uma peça de chumbo. Pergunta: 'Em qual ponto deve ser fixada a peça de chumbo para corrigir a posição do centro de massa desse conjunto roda/pneu?'."
+      "asset": "assets/enem2024_d2_cdamarelo_p009_q114_balanceamento.jpg",
+      "alt": "Roda com centro de massa CM fora do centro geométrico e cinco pontos numerados para fixação de contrapeso."
+    },
+    {
+      "type": "text",
+      "text": "Em qual ponto deve ser fixada a peça de chumbo para corrigir a posição do centro de massa desse conjunto roda/pneu?"
     }
   ],
   "options": [
@@ -39,5 +47,9 @@
       "text": "5"
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "source_pdf_sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+  "source_page": 9,
+  "structure_status": "branch_only_validation_unpublished"
 }
