@@ -1,0 +1,74 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q135",
+  "year": 2024,
+  "number": 135,
+  "area": "Ciências da Natureza",
+  "topic": "Genética mendeliana; herança recessiva ligada ao X; daltonismo; heredograma",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q135-structured-v1",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 15,
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937"
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Um dos exemplos mais conhecidos de herança recessiva ligada ao cromossomo X é o daltonismo. Como em qualquer distúrbio recessivo ligado ao cromossomo X, existem muito mais homens apresentando o fenótipo com esse tipo de daltonismo do que mulheres. Um casal formado por um homem não daltônico e por uma mulher gestante também não daltônica, mas portadora do gene recessivo para esse tipo de daltonismo, está esperando um bebê. Em uma das consultas de pré-natal, o casal recebeu um heredograma que contém todas as possibilidades de genótipo para esse bebê."
+    },
+    {
+      "type": "text",
+      "text": "Considere a legenda:"
+    },
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_q135_legend.svg",
+      "alt": "Símbolos: círculo com ponto vermelho, mulher portadora; círculo branco, mulher não daltônica; círculo vermelho, mulher daltônica; quadrado branco, homem não daltônico; quadrado azul, homem daltônico.",
+      "caption": "Legenda dos símbolos do heredograma da questão 135 (INEP)."
+    },
+    {
+      "type": "text",
+      "text": "GRIFFITHS, A. et al. Introdução à genética. Rio de Janeiro: Guanabara Koogan, 2016 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Qual heredograma foi recebido pelo casal?"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Filha sem daltonismo, filha daltônica, filho daltônico e filho sem daltonismo.",
+      "asset": "assets/enem2024_d2_cdamarelo_q135_option_A.svg",
+      "alt": "Heredograma da alternativa A: Filha sem daltonismo, filha daltônica, filho daltônico e filho sem daltonismo."
+    },
+    {
+      "label": "B",
+      "text": "Filha sem daltonismo, filha portadora, filho sem daltonismo e filho daltônico.",
+      "asset": "assets/enem2024_d2_cdamarelo_q135_option_B.svg",
+      "alt": "Heredograma da alternativa B: Filha sem daltonismo, filha portadora, filho sem daltonismo e filho daltônico."
+    },
+    {
+      "label": "C",
+      "text": "Duas filhas portadoras e dois filhos sem daltonismo.",
+      "asset": "assets/enem2024_d2_cdamarelo_q135_option_C.svg",
+      "alt": "Heredograma da alternativa C: Duas filhas portadoras e dois filhos sem daltonismo."
+    },
+    {
+      "label": "D",
+      "text": "Duas filhas sem daltonismo e dois filhos daltônicos.",
+      "asset": "assets/enem2024_d2_cdamarelo_q135_option_D.svg",
+      "alt": "Heredograma da alternativa D: Duas filhas sem daltonismo e dois filhos daltônicos."
+    },
+    {
+      "label": "E",
+      "text": "Duas filhas daltônicas e dois filhos sem daltonismo.",
+      "asset": "assets/enem2024_d2_cdamarelo_q135_option_E.svg",
+      "alt": "Heredograma da alternativa E: Duas filhas daltônicas e dois filhos sem daltonismo."
+    }
+  ],
+  "answer_policy": "Gabarito e resolução não estão neste payload. A correção acontece somente no servidor após submissão da tentativa.",
+  "publication_stage": "branch_only_candidate_not_student_released"
+}
