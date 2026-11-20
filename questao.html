@@ -101,6 +101,19 @@
   .pagina-p5 .pagina-tentativa button {padding:.28rem .4rem;font-size:.73rem;}
   .pagina-p5 .pagina-q7-continued .pagina-blocos p:first-child {margin-top:0;}
   .pagina-p5 .pagina-questao h2 {margin:3px 0 8px;font-size:.85rem;}
+
+  /* Página 6: Q009 acima de Q010 na esquerda; Q011 integral à direita.
+     Não usa PDF ou screenshot de fundo: blocos dos mesmos student JSON. */
+  .pagina-p6 { min-height:1170px; grid-template-rows:auto 1fr; }
+  .pagina-p6 .pagina-q9 { grid-column:1;grid-row:1; }
+  .pagina-p6 .pagina-q10 { grid-column:1;grid-row:2; }
+  .pagina-p6 .pagina-q11 { grid-column:2;grid-row:1 / span 2; }
+  .pagina-p6 .pagina-blocos { font-size:.78rem;line-height:1.32; }
+  .pagina-p6 .pagina-blocos p { margin:.43rem 0; }
+  .pagina-p6 .pagina-blocos [data-role="passage"] { text-align:justify; }
+  .pagina-p6 .pagina-tentativa {font-size:.72rem;line-height:1.25;}
+  .pagina-p6 .pagina-tentativa fieldset label { margin:2px 0; }
+  .pagina-p6 .pagina-tentativa button {font-size:.72rem;padding:.3rem .45rem;}
 </style>
 </head>
 <body>
@@ -282,7 +295,9 @@ const CONFIG_PAGINAS_2024_D1 = {
   4: {ano:2024,dia:1,caderno:"cdazul",idioma:"es",pagina:4,
       questoes:[{numero:2,idioma:"es"},{numero:3,idioma:"es"},{numero:4,idioma:"es"},{numero:5,idioma:"es"}]},
   5: {ano:2024,dia:1,caderno:"cdazul",idioma:"pt",pagina:5,
-      questoes:[{numero:6,idioma:"pt"},{numero:7,idioma:"pt"},{numero:8,idioma:"pt"}]}
+      questoes:[{numero:6,idioma:"pt"},{numero:7,idioma:"pt"},{numero:8,idioma:"pt"}]},
+  6: {ano:2024,dia:1,caderno:"cdazul",idioma:"pt",pagina:6,
+      questoes:[{numero:9,idioma:"pt"},{numero:10,idioma:"pt"},{numero:11,idioma:"pt"}]}
 };
 
 function linkDaPagina(item) {
@@ -322,7 +337,7 @@ async function abrirPaginaEstruturada(items,c) {
   const header = document.createElement("div");
   header.className = "pagina-tools";
   const title=document.createElement("strong");
-  title.textContent="Página original "+c.pagina+" · Linguagens · "+(c.pagina===2?"Opção inglês":c.pagina===4?"Opção espanhol":c.pagina===5?"Língua portuguesa":"Inglês e espanhol");
+  title.textContent="Página original "+c.pagina+" · Linguagens · "+(c.pagina===2?"Opção inglês":c.pagina===4?"Opção espanhol":(c.pagina===5||c.pagina===6)?"Língua portuguesa":"Inglês e espanhol");
   header.append(title);
   const description = document.createElement("p");
   description.textContent = "Reconstrução interativa da página impressa do INEP. As mesmas questões e mídias do modo individual. A visualização do original serve apenas para conferência.";
