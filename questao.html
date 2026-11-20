@@ -25,6 +25,7 @@
   label.option { display: block; border: 1px solid #d6dbe3; border-radius: 10px; padding: .65rem .8rem; margin: .45rem 0; cursor: pointer; transition: border-color .15s, background .15s; }
   label.option:hover { border-color: #0d2b45; background: #f7fafd; }
   label.option input { margin-right: .6rem; }
+  label.option img.option-media { display: block; width: auto; max-width: 100%; max-height: 240px; height: auto; margin: .55rem 0 .1rem; object-fit: contain; background: #fff; }
   button { background: #0d2b45; color: #fff; border: 0; border-radius: 10px; padding: .7rem 1.4rem; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: .5rem; }
   button:hover { background: #14405f; }
   #resultado { margin-top: 1rem; padding: .75rem .9rem; border-radius: 10px; font-weight: 600; display: none; background: #eef2f7; color: #2d3748; border: 1px solid #cbd5e0; }
@@ -257,6 +258,17 @@ async function iniciar() {
     input.setAttribute("aria-label", "Alternativa " + opcao.label + ": " + opcao.text);
     label.appendChild(input);
     label.appendChild(document.createTextNode(" " + opcao.label + " — " + opcao.text));
+    // Mídia opcional por alternativa: mantém o contrato textual existente.
+    const visual = opcao.asset || opcao.asset_url;
+    if (typeof visual === "string" && /^(?:assets\/[a-z0-9_./-]+\.(?:svg|png|jpe?g|webp)|https:\/\/[^\s"<>]+)$/i.test(visual)) {
+      const imagem = document.createElement("img");
+      imagem.className = "option-media";
+      imagem.src = visual;
+      imagem.alt = opcao.alt || ("Diagrama da alternativa " + opcao.label);
+      imagem.loading = "lazy";
+      imagem.decoding = "async";
+      label.appendChild(imagem);
+    }
     container.appendChild(label);
   }
   mostrar(document.getElementById("form-resposta"), true);
