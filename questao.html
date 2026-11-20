@@ -350,7 +350,9 @@ async function iniciarModoPagina(params, catalogo) {
   if (page.kind !== "enem.original_page_layout.v1" || page.page_id !== paginaRef.id ||
       page.source.sha256 !== paginaRef.source_sha256 ||
       !Array.isArray(page.questions) || !Array.isArray(page.response_targets) ||
-      page.questions.length !== 3 || page.response_targets.length !== 15) {
+      page.questions.length < 1 || page.questions.length > 10 ||
+      new Set(page.questions.map(q => q.question_id)).size !== page.questions.length ||
+      page.response_targets.length !== page.questions.length * 5) {
     falha("Página sem contrato estrutural validado.");
     return;
   }
