@@ -1,0 +1,114 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q094",
+  "year": 2025,
+  "number": 94,
+  "area": "Ciências da Natureza",
+  "topic": "Espécies exóticas invasoras e perda de biodiversidade no Cerrado",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 2,
+    "sha256": "0A59697676989B55E6F3E40636FAD164C1C26868DDBA37D04E4FFFC101168298",
+    "page_geometry": {
+      "width": 566.927,
+      "height": 779.526,
+      "question_bbox": [
+        284.5,
+        474.917,
+        544.5,
+        742.474
+      ],
+      "reading_order": "coluna_direita; fluxo_y_crescente"
+    }
+  },
+  "content_revision": "df6ed837556eb0c842404b5d6b513d7669e791f0c5dfe16753413a59de337465",
+  "blocks": [
+    {
+      "type": "text",
+      "role": "paragraph",
+      "text": "O bioma Cerrado é caracterizado por apresentar ampla e \nnatural diversidade de espécies vegetais. Nos últimos tempos, \no homem vem modificando esse cenário pela inserção de \nplantas exóticas nesse ambiente. Exemplo disso é o cultivo do \ncapim-gordura, nativo do continente africano e utilizado nesse \ntipo de ecossistema como forma de pastagem. É importante \nressaltar que essa espécie vegetal é capaz de se espalhar por \ngrandes áreas, devido à sua agressividade e poder competitivo.",
+      "source_bbox": [
+        293.007,
+        497.024,
+        546.555,
+        599.207
+      ]
+    },
+    {
+      "type": "text",
+      "role": "source",
+      "text": "CARLOS JR., L. A.; BARBOSA, N. P. U.; FERNANDES, G. W. O capim-gordura e as invasões no Cerrado brasileiro. Jornal do Biólogo, mar.-jun. 2008 (adaptado).",
+      "source_bbox": [
+        364.232,
+        600.999,
+        546.055,
+        632.575
+      ]
+    },
+    {
+      "type": "text",
+      "role": "prompt",
+      "text": "Em longo prazo, essa ação do homem pode gerar qual \nconsequência?",
+      "source_bbox": [
+        293.007,
+        639.292,
+        546.525,
+        665.359
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Diversificar nichos ecológicos.",
+      "source_bbox": [
+        293.007,
+        670.339,
+        426.449,
+        683.719
+      ]
+    },
+    {
+      "label": "B",
+      "text": "Assorear as nascentes do bioma.",
+      "source_bbox": [
+        293.017,
+        684.438,
+        438.093,
+        697.818
+      ]
+    },
+    {
+      "label": "C",
+      "text": "Dificultar a infiltração de água na terra.",
+      "source_bbox": [
+        293.017,
+        698.538,
+        455.836,
+        711.918
+      ]
+    },
+    {
+      "label": "D",
+      "text": "Diminuir as espécies nativas do bioma.",
+      "source_bbox": [
+        293.017,
+        712.638,
+        466.286,
+        726.018
+      ]
+    },
+    {
+      "label": "E",
+      "text": "Contribuir com a redução das queimadas.",
+      "source_bbox": [
+        293.017,
+        726.738,
+        474.484,
+        740.118
+      ]
+    }
+  ],
+  "answer_policy": "Sem gabarito, feedback ou análise de alternativas antes do envio ao servidor."
+}
