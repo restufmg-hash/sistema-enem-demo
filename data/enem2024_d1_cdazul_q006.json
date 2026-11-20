@@ -1,0 +1,65 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q006",
+  "content_revision": "2026-11-20.a2024d1.q006.r1",
+  "year": 2024,
+  "number": 6,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Variação linguística regional, identidade amazônica e valorização do léxico",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 5
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "role": "title",
+      "text": "Expressões e termos utilizados no Amazonas são retratados em livro e em camisetas"
+    },
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "“Na linguagem, podemos nos ver da forma mais verdadeira: nossas crenças, nossos valores, nosso lugar no mundo”, afirmou o doutor em linguística e professor da Ufam em seu livro Amazonês: expressões e termos usados no Amazonas. Portanto, o amazonense, com todas as suas “cunhantãs” e “curumins”, acaba por encontrar um lugar no mundo e formar uma unidade linguística, informalmente denominada de português “caboco”, que muito se diferencia do português “mineiro”, “gaúcho”, “carioca” e de tantos outros espalhados pelo Brasil. O livro, que conta com cerca de 1 100 expressões e termos típicos do falar amazonense, levou dez anos para ser construído. Para o autor, o principal objetivo da obra é registrar a linguagem."
+    },
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "Um designer amazonense também acha o amazonês “xibata”, tanto é que criou uma série de camisetas estampadas com o nome de Caboquês Ilustrado, que mistura o bom humor com as expressões típicas da região. A coleção conta com sete modelos já lançados, entre eles: Leseira Baré, Xibata no Balde e Até o Tucupi, e 43 ainda na fila de espera. Para o criador, as camisas têm como objetivo “resgatar o orgulho do povo manauara, do povo do Norte”."
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "Disponível em: https://g1.globo.com. Acesso em: 15 jan. 2024 (adaptado)."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "A reportagem apresenta duas iniciativas: o livro Amazonês e as camisetas do Caboquês Ilustrado. Com temática em comum, essas iniciativas"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "recomendam produtos feitos por empreendedores da região Norte."
+    },
+    {
+      "label": "B",
+      "text": "ressaltam diferenças entre o falar manauara e outros falares."
+    },
+    {
+      "label": "C",
+      "text": "reverenciam o trabalho feito por pesquisadores brasileiros."
+    },
+    {
+      "label": "D",
+      "text": "destacam a descontração no jeito de ser do amazonense."
+    },
+    {
+      "label": "E",
+      "text": "valorizam o repertório linguístico do povo do Amazonas."
+    }
+  ],
+  "answer_policy": "Gabarito e resolução privados; feedback do servidor após tentativa persistida"
+}
