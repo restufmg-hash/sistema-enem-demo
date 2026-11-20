@@ -1868,5 +1868,23 @@
       ],
       "publication_stage": "branch_only_candidate_not_student_released"
     }
+  ],
+  "pages": [
+    {
+      "id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p015",
+      "ano": 2024,
+      "dia": 2,
+      "caderno": "cdamarelo",
+      "cor": "amarelo",
+      "pagina": 15,
+      "layout": "data/enem2024_d2_cdamarelo_p015_layout.json",
+      "source_sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+      "publication_stage": "branch_only_validation",
+      "question_numbers": [
+        133,
+        134,
+        135
+      ]
+    }
   ]
 }
