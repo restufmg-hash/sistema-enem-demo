@@ -51,7 +51,9 @@ try:
    check(mode+"_options",page.locator(".page-question input[type=radio]").count()==15)
    assets=page.locator("#page-sheet img").evaluate_all("(xs)=>xs.map(x=>({src:x.getAttribute('src'),loaded:x.complete&&x.naturalWidth>0}))")
    check(mode+"_native_assets",len(assets)==2 and all(x["loaded"] and "integral" not in x["src"] for x in assets))
-   check(mode+"_reading_mode",page.locator("#page-viewport").evaluate("(e)=>e.classList.contains('read-mode')")==(mode=="mobile"))
+   supports_reading=page.locator("#page-reading-mode").count()==1
+   expected_reading=mode=="mobile" and supports_reading
+   check(mode+"_reading_mode",page.locator("#page-viewport").evaluate("(e)=>e.classList.contains('read-mode')")==expected_reading)
    check(mode+"_no_overflow",page.evaluate("()=>document.documentElement.scrollWidth<=innerWidth"))
    qs=page.locator(".page-question")
    for i,opt in enumerate(("B","C","D")):qs.nth(i).locator(f"input[type=radio][value={opt}]").check()
