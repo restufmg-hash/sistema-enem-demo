@@ -1,0 +1,114 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q095",
+  "year": 2025,
+  "number": 95,
+  "area": "Ciências da Natureza",
+  "topic": "Adaptações de répteis a ambientes semiáridos",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 3,
+    "sha256": "0A59697676989B55E6F3E40636FAD164C1C26868DDBA37D04E4FFFC101168298",
+    "page_geometry": {
+      "width": 566.927,
+      "height": 779.526,
+      "question_bbox": [
+        20.0,
+        72.191,
+        284.5,
+        315.653
+      ],
+      "reading_order": "coluna_esquerda; fluxo_y_crescente"
+    }
+  },
+  "content_revision": "efe17e063486a2398514b96171ead0ff2dc893cdc8740e0141e9b7c941162c20",
+  "blocks": [
+    {
+      "type": "text",
+      "role": "paragraph",
+      "text": "O monstro de gila, um lagarto encontrado em um deserto dos \nEstados Unidos, apresenta adaptações à falta de alimento nesse \nambiente. Esse lagarto possui um hormônio que controla os níveis \nde açúcar em seu próprio sangue. Foi observado que esse hormônio \ntambém controla os níveis de açúcar no sangue de pessoas diabéticas.",
+      "source_bbox": [
+        22.676,
+        94.17,
+        276.204,
+        157.781
+      ]
+    },
+    {
+      "type": "text",
+      "role": "source",
+      "text": "RUSSELL, C. Ozempic e outros remédios inspirados em veneno de animais. Disponível em: www.bbc.com. Acesso em: 6 dez. 2024 (adaptado).",
+      "source_bbox": [
+        43.127,
+        159.641,
+        275.734,
+        180.905
+      ]
+    },
+    {
+      "type": "text",
+      "role": "prompt",
+      "text": "Considerando que animais de um mesmo grupo taxonômico \npodem apresentar características adaptativas semelhantes em \nambientes similares, onde seria mais provável encontrar lagartos \ncom essas características no território brasileiro?",
+      "source_bbox": [
+        22.676,
+        187.795,
+        276.202,
+        238.848
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Cerrado.",
+      "source_bbox": [
+        22.676,
+        243.998,
+        70.337,
+        257.378
+      ]
+    },
+    {
+      "label": "B",
+      "text": "Pampas.",
+      "source_bbox": [
+        22.676,
+        257.568,
+        69.636,
+        270.948
+      ]
+    },
+    {
+      "label": "C",
+      "text": "Caatinga.",
+      "source_bbox": [
+        22.676,
+        271.138,
+        72.986,
+        284.518
+      ]
+    },
+    {
+      "label": "D",
+      "text": "Restinga.",
+      "source_bbox": [
+        22.676,
+        284.708,
+        72.196,
+        298.088
+      ]
+    },
+    {
+      "label": "E",
+      "text": "Pantanal.",
+      "source_bbox": [
+        22.686,
+        298.278,
+        73.214,
+        311.658
+      ]
+    }
+  ],
+  "answer_policy": "Sem gabarito, feedback ou análise de alternativas antes do envio ao servidor."
+}
