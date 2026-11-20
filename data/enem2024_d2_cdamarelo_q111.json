@@ -12,9 +12,12 @@
   },
   "blocks": [
     {
-      "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q111_integral.png",
-      "text": "Questão 111 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O biogás produzido em um empreendimento de suinocultura contém 70% em volume de metano (massa molar 16 g/mol; volume molar 22 L/mol). Ele será utilizado para geração de energia em substituição ao etanol (massa molar 46 g/mol) em um gerador no qual 1 m3 de biogás de origem suína substitui 0,59 L de etanol anidro (densidade 0,78 g/mL). Nessas condições, a massa de metano necessária para substituir 10 mol de etanol na produção de energia é mais próxima de: A 300 g.; B 400 g.; C 510 g.; D 590 g.; E 720 g."
+      "type": "text",
+      "text": "O biogás é uma alternativa energética muito importante, pois, além de reduzir a dependência por combustíveis fósseis, sua obtenção pode ser realizada a partir de resíduos da produção agroindustrial. Considere que o biogás produzido em um empreendimento de suinocultura contém 70% em volume de metano (massa molar 16 g/mol; volume molar 22 L/mol). Ele será utilizado para geração de energia em substituição ao etanol (massa molar 46 g/mol) em um gerador no qual 1 m³ de biogás de origem suína substitui 0,59 L de etanol anidro (densidade 0,78 g/mL)."
+    },
+    {
+      "type": "text",
+      "text": "Nessas condições, a massa de metano necessária para substituir 10 mol de etanol na produção de energia é mais próxima de"
     }
   ],
   "options": [
@@ -39,5 +42,10 @@
       "text": "720 g."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q111-text-native-v1",
+  "source_pdf_sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+  "source_page": 8,
+  "source_status": "native_text_verified_branch_validation"
 }
