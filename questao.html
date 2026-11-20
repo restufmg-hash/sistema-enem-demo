@@ -439,6 +439,11 @@ async function iniciarModoPagina(params, catalogo) {
           paragraph(section, raw.slice(0, splice.start_char));
           imageBlock(section, media.url, media.source_role);
           paragraph(section, raw.slice(splice.end_char));
+        } else if (block.type === "image" && obj.data.structured !== true &&
+                   typeof block.text === "string" && block.text.trim()) {
+          // Legado contém também um crop integral; no modo página o texto é reconstruído
+          // sem repetir toda a questão como imagem. O modo questão conserva o crop original.
+          paragraph(section, block.text);
         } else if (block.type === "image" && (block.asset || block.asset_url)) {
           imageBlock(section, block.asset || block.asset_url, block.alt || block.text);
         } else if (typeof block.text === "string") {
