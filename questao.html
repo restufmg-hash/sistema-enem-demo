@@ -41,7 +41,15 @@
 </style>
 </head>
 <body>
-<header><h1>Sistema ENEM</h1><a href="index.html">&larr; Índice de questões</a></header>
+<header><h1>Sistema ENEM</h1><a id="voltar-pagina-2025d2" href="pagina.html?id=enem2025-d2-cdamarelo-p02" hidden>Ver página 2 completa · </a><a href="index.html">&larr; Índice de questões</a></header>
+<script>
+(function(){
+  const id=new URLSearchParams(location.search).get("id")||"";
+  if(/^enem2025-d2-cdamarelo-q(91|92|94)$/.test(id)||id==="q093-2025"){
+    document.getElementById("voltar-pagina-2025d2").hidden=false;
+  }
+})();
+</script>
 <main>
   <div class="card" id="card">
     <p class="meta" id="meta">Carregando…</p>
