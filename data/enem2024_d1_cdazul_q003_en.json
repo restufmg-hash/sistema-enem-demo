@@ -1,0 +1,55 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q003:english",
+  "content_revision": "2026-11-20.a2024d1.q003-en.r1",
+  "year": 2024,
+  "number": 3,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Leitura de texto multissemiótico; crítica ambiental e metáfora visual de interface computacional",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 2
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d1_cdazul_q003_en_stimulus.png",
+      "text": "Ilustração em forma de janela de programa de computador, com título “70% Deleted”. Mostra o planeta Terra e árvores que se reduzem progressivamente até galhos secos, barra de exclusão e mensagens “Estimated time left: 2 decades”, “Removed by: World:\\Users\\.....” e “Remove rate: 1000/Sec”."
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "Disponível em: www.hongkiat.com. Acesso em: 18 ago. 2017 (adaptado)."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "O texto estabelece uma relação entre elementos da natureza e comandos de um programa de computador para"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "alertar as pessoas sobre a rápida destruição da natureza."
+    },
+    {
+      "label": "B",
+      "text": "conscientizar os indivíduos sobre a passagem acelerada do tempo."
+    },
+    {
+      "label": "C",
+      "text": "apresentar aos leitores os avanços tecnológicos na área da agricultura."
+    },
+    {
+      "label": "D",
+      "text": "orientar os usuários sobre o emprego sustentável das novas tecnologias."
+    },
+    {
+      "label": "E",
+      "text": "informar os interessados sobre o tempo de crescimento de novas árvores."
+    }
+  ],
+  "answer_policy": "Gabarito e resolução não incluídos neste payload; feedback apenas do servidor após envio."
+}
