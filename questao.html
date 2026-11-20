@@ -432,7 +432,8 @@ async function iniciarModoPagina(params, catalogo) {
         const slices = (obj.ref.asset_splices || []).filter(s => s.block_index === index);
         if (slices.length === 1) {
           const splice = slices[0], raw = String(block.text || "");
-          if (!(splice.start_char >= 0 && splice.start_char < splice.end_char &&
+          if (!(Number.isInteger(splice.start_char) && Number.isInteger(splice.end_char) &&
+                splice.start_char >= 0 && splice.start_char <= splice.end_char &&
                 splice.end_char <= raw.length)) throw new Error("Corte do texto-fonte inválido");
           const media = page.media[splice.media_id];
           if (!media) throw new Error("Imagem fonte sem proveniência");
