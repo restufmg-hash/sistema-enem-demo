@@ -268,6 +268,279 @@ function idTentativa(questionId) {
   } catch (_) { return { id: novo(), chave: null }; }
 }
 
+
+function chaveRascunho(questionId) { return "sistema_enem_rascunho_v1_" + questionId; }
+
+function lerRascunho(questionId) {
+  try {
+    const obj = JSON.parse(localStorage.getItem(chaveRascunho(questionId)) || "null");
+    if (!obj || !["A", "B", "C", "D", "E"].includes(obj.selected_option) ||
+        !Number.isInteger(obj.confidence) || obj.confidence < 1 || obj.confidence > 5) return null;
+    return obj;
+  } catch (_) { return null; }
+}
+
+function gravarRascunho(questionId, option, confidence) {
+  if (!["A", "B", "C", "D", "E"].includes(option) || !(confidence >= 1 && confidence <= 5)) return;
+  try {
+    if (!localStorage.getItem(chaveRecibo(questionId))) {
+      localStorage.setItem(chaveRascunho(questionId), JSON.stringify({
+        selected_option: option, confidence: Number(confidence)
+      }));
+    }
+  } catch (_) { /* armazenamento pode estar indisponível */ }
+}
+
+async function recuperarRespostaPagina(questionId, container, controls) {
+  let recibo = null;
+  try { recibo = JSON.parse(localStorage.getItem(chaveRecibo(questionId)) || "null"); }
+  catch (_) { /* sem recibo */ }
+  if (!recibo || recibo.question_id !== questionId) {
+    container.textContent = "Seleção local ainda não enviada.";
+    return;
+  }
+  for (const el of controls) el.disabled = true;
+  const endpoint = endpointRecuperacao();
+  if (!endpoint) {
+    container.textContent = "Tentativa anterior identificada; recuperação do servidor indisponível.";
+    return;
+  }
+  container.textContent = "Consultando tentativa anterior…";
+  try {
+    const url = endpoint + "/" + encodeURIComponent(recibo.client_attempt_id) +
+      "?anon_session_id=" + encodeURIComponent(recibo.anon_session_id);
+    const resposta = await fetch(url, { cache: "no-store" });
+    if (!resposta.ok) throw new Error("HTTP " + resposta.status);
+    const corpo = await resposta.json();
+    if (corpo.persisted !== true || corpo.question_id !== questionId ||
+        corpo.client_attempt_id !== recibo.client_attempt_id ||
+        corpo.selected_option !== recibo.selected_option ||
+        corpo.confidence !== recibo.confidence) {
+      throw new Error("Divergência de recibo");
+    }
+    for (const input of controls) {
+      if (input.type === "radio" && input.value === corpo.selected_option) input.checked = true;
+      if (input.tagName === "SELECT") input.value = String(corpo.confidence);
+    }
+    container.textContent = "Recuperada do servidor: " + corpo.selected_option +
+      ", confiança " + corpo.confidence + "/5." +
+      (corpo.correct === true ? " Correta!" : corpo.correct === false ? " Incorreta." : "");
+  } catch (_) {
+    container.textContent = "Tentativa anterior registrada, mas a leitura do servidor falhou. Nenhum novo envio foi feito.";
+  }
+}
+
+async function iniciarModoPagina(params, catalogo) {
+  const ano = Number(params.get("ano"));
+  const dia = Number(params.get("dia"));
+  const pagina = Number(params.get("pagina"));
+  const caderno = String(params.get("caderno") || "").trim().toLowerCase();
+  const cor = String(params.get("cor") || "").trim().toLowerCase();
+  const matches = (catalogo.pages || []).filter(p =>
+    p.ano === ano && p.dia === dia && p.pagina === pagina &&
+    p.caderno === caderno && (!cor || p.cor === cor));
+  if (matches.length !== 1) { falha("Página não encontrada ou ocorrência ambígua."); return; }
+  const paginaRef = matches[0];
+  let page;
+  try {
+    const response = await fetch(paginaRef.layout, { cache: "no-store" });
+    if (!response.ok) throw new Error("Sem layout");
+    page = await response.json();
+  } catch (_) { falha("Não foi possível carregar a geometria da página."); return; }
+  if (page.kind !== "enem.original_page_layout.v1" || page.page_id !== paginaRef.id ||
+      page.source.sha256 !== paginaRef.source_sha256 ||
+      !Array.isArray(page.questions) || !Array.isArray(page.response_targets) ||
+      page.questions.length !== 3 || page.response_targets.length !== 15) {
+    falha("Página sem contrato estrutural validado.");
+    return;
+  }
+  const all = catalogo.items || [];
+  let questions;
+  try {
+    questions = await Promise.all(page.questions.map(async ref => {
+      const item = all.find(x => x.question_id === ref.question_id &&
+        x.pagina === pagina && x.ano === ano && x.occurrence &&
+        x.occurrence.dia === dia && x.occurrence.caderno === caderno);
+      if (!item || item.data !== ref.source_data) throw new Error("Ocorrência não corresponde à página");
+      const response = await fetch(item.data, { cache: "no-store" });
+      if (!response.ok) throw new Error("Questão indisponível");
+      const data = await response.json();
+      if (data.question_id !== ref.question_id || !Array.isArray(data.options) ||
+          data.options.map(o => o.label).join("") !== "ABCDE" || !Array.isArray(data.blocks)) {
+        throw new Error("Dados da questão inconsistentes");
+      }
+      return { ref, item, data };
+    }));
+  } catch (_) { falha("Questões da página incompletas ou incompatíveis."); return; }
+
+  mostrar(document.getElementById("card"), false);
+  mostrar(document.getElementById("page-shell"), true);
+  document.body.classList.add("modo-pagina");
+  document.title = "Sistema ENEM — Página " + pagina + " (" + ano + ")";
+  document.getElementById("page-title").textContent = "ENEM " + ano + " · Caderno " + caderno + " · Página " + pagina;
+  const sheet = document.getElementById("page-sheet");
+  sheet.textContent = "";
+  const mast = document.createElement("div");
+  mast.className = "page-masthead";
+  const logo = document.createElement("strong");
+  logo.textContent = page.layout.page_title;
+  const pequeno = document.createElement("small");
+  pequeno.textContent = page.layout.header;
+  mast.append(logo, pequeno);
+  sheet.appendChild(mast);
+  const columns = document.createElement("div");
+  columns.className = "page-columns";
+  const pendingRecovery = [];
+
+  function paragraph(target, text) {
+    const cleaned = String(text || "").replace(/^\s*QUESTÃO\s+\d{3}\s*/u, "").trim();
+    if (!cleaned) return;
+    const el = document.createElement("p");
+    el.textContent = cleaned;
+    target.appendChild(el);
+  }
+  function imageBlock(target, asset, alt) {
+    const src = typeof asset === "string" ? asset : "";
+    if (!src) throw new Error("Mídia da página ausente");
+    const fig = document.createElement("figure");
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = alt || "Imagem do caderno oficial";
+    img.loading = "eager";
+    fig.appendChild(img);
+    target.appendChild(fig);
+  }
+  for (const columnRef of page.layout.columns) {
+    const col = document.createElement("div");
+    col.className = "page-column";
+    for (const n of columnRef.order) {
+      const obj = questions.find(x => x.ref.number === n && x.ref.column === columnRef.name);
+      if (!obj) throw new Error("Ordem de leitura da página inconsistente");
+      const qid = obj.item.question_id;
+      const section = document.createElement("section");
+      section.className = "page-question";
+      section.dataset.questionId = qid;
+      const heading = document.createElement("h2");
+      heading.textContent = "QUESTÃO " + n;
+      section.appendChild(heading);
+      for (let index = 0; index < obj.data.blocks.length; index++) {
+        const block = obj.data.blocks[index];
+        const slices = (obj.ref.asset_splices || []).filter(s => s.block_index === index);
+        if (slices.length === 1) {
+          const splice = slices[0], raw = String(block.text || "");
+          if (!(splice.start_char >= 0 && splice.start_char < splice.end_char &&
+                splice.end_char <= raw.length)) throw new Error("Corte do texto-fonte inválido");
+          const media = page.media[splice.media_id];
+          if (!media) throw new Error("Imagem fonte sem proveniência");
+          paragraph(section, raw.slice(0, splice.start_char));
+          imageBlock(section, media.url, media.source_role);
+          paragraph(section, raw.slice(splice.end_char));
+        } else if (block.type === "image" && (block.asset || block.asset_url)) {
+          imageBlock(section, block.asset || block.asset_url, block.alt || block.text);
+        } else if (typeof block.text === "string") {
+          paragraph(section, block.text);
+        }
+      }
+      const controls = [];
+      const saved = lerRascunho(qid);
+      for (const option of obj.data.options) {
+        const label = document.createElement("label");
+        label.className = "page-q-option" + (option.image_only ? " visual" : "");
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "pagina-opcao-" + n;
+        input.value = option.label;
+        input.setAttribute("aria-label", "Questão " + n + ", alternativa " + option.label +
+          ": " + option.text);
+        if (saved && saved.selected_option === option.label) input.checked = true;
+        const cap = document.createElement("span");
+        cap.textContent = option.label + (option.image_only ? "" : " " + option.text);
+        label.append(input, cap);
+        if (option.asset || option.asset_url) {
+          const img = document.createElement("img");
+          img.src = option.asset || option.asset_url;
+          img.alt = option.alt || "Figura da alternativa " + option.label;
+          img.loading = "eager";
+          label.appendChild(img);
+        }
+        section.appendChild(label);
+        controls.push(input);
+      }
+      const meta = document.createElement("div");
+      meta.className = "page-question-controls";
+      const certaintyLabel = document.createElement("label");
+      certaintyLabel.textContent = "Confiança";
+      const certainty = document.createElement("select");
+      certainty.setAttribute("aria-label", "Confiança para questão " + n);
+      for (let v = 1; v <= 5; v++) {
+        const opt = document.createElement("option");
+        opt.value = String(v);
+        opt.textContent = v + "/5";
+        certainty.appendChild(opt);
+      }
+      certainty.value = String(saved ? saved.confidence : 3);
+      certaintyLabel.appendChild(certainty);
+      controls.push(certainty);
+      const link = document.createElement("a");
+      const linkParams = new URLSearchParams({
+        id: obj.item.id, voltar_pagina: String(pagina), ano: String(ano),
+        dia: String(dia), caderno: caderno, cor: cor || paginaRef.cor
+      });
+      link.href = "questao.html?" + linkParams.toString();
+      link.textContent = "Abrir questão " + n;
+      meta.append(certaintyLabel, link);
+      section.appendChild(meta);
+      const status = document.createElement("div");
+      status.className = "page-receipt";
+      status.setAttribute("role", "status");
+      section.appendChild(status);
+      for (const option of controls.filter(el => el.type === "radio")) {
+        option.addEventListener("change", () => {
+          gravarRascunho(qid, option.value, Number(certainty.value));
+          status.textContent = "Seleção preservada para o modo questão; ainda não enviada.";
+        });
+      }
+      certainty.addEventListener("change", () => {
+        const marked = controls.find(x => x.type === "radio" && x.checked);
+        if (marked) gravarRascunho(qid, marked.value, Number(certainty.value));
+      });
+      pendingRecovery.push(recuperarRespostaPagina(qid, status, controls));
+      col.appendChild(section);
+    }
+    columns.appendChild(col);
+  }
+  sheet.appendChild(columns);
+  const footer = document.createElement("div");
+  footer.className = "page-footer";
+  const left = document.createElement("span");
+  left.textContent = page.layout.footer;
+  const right = document.createElement("strong");
+  right.textContent = String(pagina);
+  footer.append(left, right);
+  sheet.appendChild(footer);
+
+  const stage = document.getElementById("page-stage");
+  const viewport = document.getElementById("page-viewport");
+  const zoomStatus = document.getElementById("page-status");
+  let scale = 1;
+  function aplicarZoom(next) {
+    scale = Math.min(2.5, Math.max(.3, next));
+    sheet.style.transform = "scale(" + scale + ")";
+    stage.style.width = Math.ceil(1040 * scale) + "px";
+    stage.style.height = Math.ceil(sheet.scrollHeight * scale) + "px";
+    zoomStatus.textContent = "Zoom " + Math.round(scale * 100) + "% · " +
+      questions.length + " questões com alternativas selecionáveis";
+  }
+  function ajustar() { aplicarZoom((viewport.clientWidth - 30) / 1040); }
+  document.getElementById("page-zoom-fit").addEventListener("click", ajustar);
+  document.getElementById("page-zoom-minus").addEventListener("click", () => aplicarZoom(scale / 1.2));
+  document.getElementById("page-zoom-plus").addEventListener("click", () => aplicarZoom(scale * 1.2));
+  ajustar();
+  await Promise.all(pendingRecovery);
+  // Ajustar a altura após o carregamento de imagens sem alterar o zoom do usuário.
+  stage.style.height = Math.ceil(sheet.scrollHeight * scale) + "px";
+}
+
 async function iniciar() {
   const params = new URLSearchParams(location.search);
   const id = (params.get("id") || "").trim();
@@ -289,6 +562,7 @@ async function iniciar() {
     return;
   }
   const items = catalogo.items || [];
+  if (params.get("pagina")) { await iniciarModoPagina(params, catalogo); return; }
 
   const porId = acharItemPorId(items, id);
   let item = porId.item;
