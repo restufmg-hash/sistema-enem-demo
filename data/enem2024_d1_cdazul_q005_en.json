@@ -1,0 +1,55 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q005:english",
+  "content_revision": "2026-11-20.a2024d1.q005-en.r1",
+  "year": 2024,
+  "number": 5,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Função comunicativa do gênero carta e interpretação da recusa editorial",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 3
+  },
+  "blocks": [
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d1_cdazul_q005_en_stimulus.png",
+      "text": "Carta da editora Stephanie Allen-Nichols para Alice Walker, reproduzida com logotipo da The Viking Press, data March 9th, 1981, saudação Ms. Walker, assinatura manuscrita e nome impresso. Transcrição do corpo: “While your piece ‘The Color Purple’ presents a compelling and thoroughly moving narrative, we were bothered by your decision to end every sentence with an exclamation point. As a reader, this was extremely jarring. I am afraid, for this reason, we are forced to make the difficult decision to pass on your manuscript. Best of luck.”"
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "Disponível em: www.clickhole.com. Acesso em: 26 out. 2015."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "A carta da editora Stephanie Allen-Nichols à escritora Alice Walker tem o propósito de"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "problematizar o enredo de sua obra."
+    },
+    {
+      "label": "B",
+      "text": "acusar o recebimento de seu manuscrito."
+    },
+    {
+      "label": "C",
+      "text": "solicitar a revisão ortográfica de seu texto."
+    },
+    {
+      "label": "D",
+      "text": "informar a transferência de seu livro a outra editora."
+    },
+    {
+      "label": "E",
+      "text": "comunicar a recusa da publicação de seu romance."
+    }
+  ],
+  "answer_policy": "Gabarito e resolução ausentes deste payload; feedback somente depois de tentativa enviada ao servidor."
+}
