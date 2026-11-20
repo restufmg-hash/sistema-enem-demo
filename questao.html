@@ -36,11 +36,56 @@
   #resultado.ok { background: #ecf8ef; color: #1e5b2a; border-color: #b6dfc2; }
   #resultado.erro { background: #fdf0ee; color: #7a2415; border-color: #f2c0b3; }
   footer { max-width: 880px; margin: 1rem auto 2rem; padding: 0 1rem; font-size: .72rem; color: #718096; overflow-wrap: anywhere; }
+
+  body.modo-pagina main { max-width: 1260px; }
+  #page-shell { min-height: 70vh; }
+  #page-toolbar { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; margin: .5rem 0; }
+  #page-toolbar button { margin: 0; padding: .45rem .75rem; font-size: .88rem; }
+  #page-status { color: #3a4756; font-size: .85rem; }
+  #page-viewport { overflow: auto; overscroll-behavior: contain; max-width: 100%; height: min(80vh, 960px); border: 1px solid #c4ccd6; border-radius: 9px; background: #dce1e8; padding: 12px; }
+  #page-stage { position: relative; }
+  #page-sheet { width: 1040px; min-height: 1428px; position: absolute; top: 0; left: 0; background: white; color: #111; box-shadow: 0 1px 9px #7d899b; transform-origin: top left; font-family: Arial, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.16; padding: 36px 55px 24px; }
+  .page-masthead { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #d7d7d7; padding-bottom: 8px; margin-bottom: 14px; }
+  .page-masthead strong { color: #05508a; font-size: 37px; letter-spacing: -.075em; }
+  .page-masthead small { font-size: 14px; color: #767676; }
+  .page-columns { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); column-gap: 20px; }
+  .page-column { min-width: 0; }
+  .page-column + .page-column { border-left: 1px dotted #636b75; padding-left: 12px; }
+  .page-question { margin: 0 0 22px; min-width: 0; }
+  .page-question h2 { font-size: 21px; font-weight: 750; line-height: 1.1; margin: 0 0 13px; padding: 0 0 3px; border-bottom: 2px solid #fbf4b6; }
+  .page-question p { margin: .45rem 0 .6rem; text-align: justify; white-space: pre-line; overflow-wrap: anywhere; font-size: 17.8px; line-height: 1.13; }
+  .page-question figure { margin: 8px 0; }
+  .page-question figure img { display: block; width: auto; max-width: 100%; height: auto; border: 0; border-radius: 0; }
+  .page-question figcaption { font-size: 12px; font-style: italic; }
+  .page-q-option { display: flex; align-items: flex-start; gap: 5px; margin: 5px 0; font-size: 17px; cursor: pointer; }
+  .page-q-option input { margin: 4px 4px 0 0; accent-color: #154b7c; flex-shrink: 0; }
+  .page-q-option span { overflow-wrap: anywhere; }
+  .page-q-option.visual { min-height: 113px; align-items: center; }
+  .page-q-option.visual img { max-width: 325px; width: 100%; max-height: 110px; object-fit: contain; }
+  .page-question-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 9px; padding-top: 6px; border-top: 1px dotted #b0b9c2; font-size: 13px; }
+  .page-question-controls select { font-size: 13px; margin-left: 3px; }
+  .page-question-controls a { color: #0d4f7d; }
+  .page-receipt { min-height: 16px; font-size: 12px; margin-top: 4px; color: #31546c; }
+  .page-footer { border-top: 1px solid #aaa; font-size: 12px; color: #46515c; display: flex; justify-content: space-between; gap: 15px; margin-top: 12px; }
+
 </style>
 </head>
 <body>
 <header><h1>Sistema ENEM</h1><a href="index.html">&larr; Índice de questões</a></header>
 <main>
+  <section id="page-shell" hidden aria-label="Página original reconstruída">
+    <div id="page-toolbar">
+      <strong id="page-title">Página original</strong>
+      <button type="button" id="page-zoom-minus" aria-label="Reduzir zoom">Zoom −</button>
+      <button type="button" id="page-zoom-fit" aria-label="Ajustar à largura">Ajustar</button>
+      <button type="button" id="page-zoom-plus" aria-label="Ampliar zoom">Zoom +</button>
+      <span id="page-status" role="status" aria-live="polite"></span>
+    </div>
+    <div id="page-viewport" tabindex="0" aria-label="Página de prova com duas colunas, rolável e ampliável">
+      <div id="page-stage"><div id="page-sheet"></div></div>
+    </div>
+    <p class="meta">Conteúdo reconstruído por elementos estruturados do PDF do Inep. As marcações são sincronizadas com o modo questão; o gabarito só aparece após envio ao servidor.</p>
+  </section>
   <div class="card" id="card">
     <p class="meta" id="meta">Carregando…</p>
     <section id="enunciado-estruturado" class="structured-content" aria-label="Enunciado estruturado" hidden></section>
