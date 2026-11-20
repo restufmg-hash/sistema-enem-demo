@@ -83,6 +83,24 @@
   .pagina-p4 .pagina-q5 {grid-column:2;grid-row:2;}
   .pagina-p4 .pagina-blocos [data-role="passage"] {text-align:justify;}
   .pagina-p4 .pagina-blocos [data-role="verse"] {white-space:pre-wrap;line-height:1.3;padding-left:1rem;}
+  /* Página 5: segunda coluna começa com a continuação real da Q007.
+     Todos os textos e alternativas vêm dos mesmos dados do modo questão. */
+  .pagina-p5 {position:absolute;display:block;min-height:1260px;}
+  .pagina-p5-head {position:absolute;top:12px;left:20px;width:415px;font-size:.79rem;font-weight:700;}
+  .pagina-p5 .pagina-questao {position:absolute;width:calc(50% - 29px);font-size:.75rem;}
+  .pagina-p5 .pagina-q6 {top:56px;left:20px;}
+  .pagina-p5 .pagina-q7-left {top:742px;left:20px;}
+  .pagina-p5 .pagina-q7-continued {top:34px;right:20px;}
+  .pagina-p5 .pagina-q8 {top:585px;right:20px;}
+  .pagina-p5 .pagina-blocos {font-size:.76rem;line-height:1.31;}
+  .pagina-p5 .pagina-blocos p {margin:.45rem 0;}
+  .pagina-p5 .pagina-blocos [data-role="passage"] {text-align:justify;}
+  .pagina-p5 .pagina-blocos [data-role="title"] {font-size:.84rem;}
+  .pagina-p5 .pagina-tentativa {font-size:.71rem;line-height:1.25;}
+  .pagina-p5 .pagina-tentativa fieldset label {margin:2px 0;}
+  .pagina-p5 .pagina-tentativa button {padding:.28rem .4rem;font-size:.73rem;}
+  .pagina-p5 .pagina-q7-continued .pagina-blocos p:first-child {margin-top:0;}
+  .pagina-p5 .pagina-questao h2 {margin:3px 0 8px;font-size:.85rem;}
 </style>
 </head>
 <body>
@@ -262,7 +280,9 @@ const CONFIG_PAGINAS_2024_D1 = {
   3: {ano:2024,dia:1,caderno:"cdazul",idioma:"mixed",pagina:3,
       questoes:[{numero:4,idioma:"en"},{numero:5,idioma:"en"},{numero:1,idioma:"es"}]},
   4: {ano:2024,dia:1,caderno:"cdazul",idioma:"es",pagina:4,
-      questoes:[{numero:2,idioma:"es"},{numero:3,idioma:"es"},{numero:4,idioma:"es"},{numero:5,idioma:"es"}]}
+      questoes:[{numero:2,idioma:"es"},{numero:3,idioma:"es"},{numero:4,idioma:"es"},{numero:5,idioma:"es"}]},
+  5: {ano:2024,dia:1,caderno:"cdazul",idioma:"pt",pagina:5,
+      questoes:[{numero:6,idioma:"pt"},{numero:7,idioma:"pt"},{numero:8,idioma:"pt"}]}
 };
 
 function linkDaPagina(item) {
@@ -302,7 +322,7 @@ async function abrirPaginaEstruturada(items,c) {
   const header = document.createElement("div");
   header.className = "pagina-tools";
   const title=document.createElement("strong");
-  title.textContent="Página original "+c.pagina+" · Linguagens · "+(c.pagina===2?"Opção inglês":c.pagina===4?"Opção espanhol":"Inglês e espanhol");
+  title.textContent="Página original "+c.pagina+" · Linguagens · "+(c.pagina===2?"Opção inglês":c.pagina===4?"Opção espanhol":c.pagina===5?"Língua portuguesa":"Inglês e espanhol");
   header.append(title);
   const description = document.createElement("p");
   description.textContent = "Reconstrução interativa da página impressa do INEP. As mesmas questões e mídias do modo individual. A visualização do original serve apenas para conferência.";
@@ -417,6 +437,39 @@ async function abrirPaginaEstruturada(items,c) {
       }catch(err){submit.disabled=false;status.textContent="Falha no envio: "+err.message;}
     });
     section.append(h,content,form);sheet.append(section);
+  }
+  if (c.pagina === 5) {
+    const heading=document.createElement("div");
+    heading.className="pagina-p5-head";
+    heading.textContent="LINGUAGENS, CÓDIGOS E SUAS TECNOLOGIAS · Questões de 06 a 45";
+    sheet.prepend(heading);
+    const q7=sheet.querySelector(".pagina-q7");
+    if (!q7) throw new Error("Q007 ausente da página 5");
+    const source=q7.querySelector(".pagina-blocos");
+    const paras=Array.from(source.children);
+    if (paras.length!==6 || !paras[2].textContent.startsWith("Elizabeth Gomes:")) {
+      throw new Error("Contrato de fragmentação de coluna da Q007 não reconhecido");
+    }
+    const marker="até optar pelas provas de campo em 2010.";
+    const full=paras[2].textContent;
+    const split=full.indexOf(marker);
+    if (split<0 || !full.includes("classe F52")) throw new Error("Transição da Q007 entre colunas não conferida");
+    paras[2].textContent=full.slice(0,split).trim();
+    const continuation=document.createElement("section");
+    continuation.className="pagina-questao pagina-q7-continued";
+    continuation.setAttribute("aria-label","Continuação da questão 7");
+    const continuing=document.createElement("div");
+    continuing.className="pagina-blocos";
+    const rest=document.createElement("p");
+    rest.dataset.role="passage";
+    rest.textContent=full.slice(split);
+    continuing.append(rest);
+    for (const node of paras.slice(3)) continuing.append(node);
+    const form=q7.querySelector("form");
+    if (!form) throw new Error("Tentativa Q007 não encontrada");
+    continuation.append(continuing,form);
+    sheet.append(continuation);
+    q7.classList.add("pagina-q7-left");
   }
   for (const image of sheet.querySelectorAll("img")) {
     image.addEventListener("load",atualizarZoom);
