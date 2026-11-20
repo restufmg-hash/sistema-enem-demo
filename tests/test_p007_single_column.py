@@ -62,8 +62,13 @@ try:
    check(mode+"_answer_controls",page.locator(".page-question input[type=radio]").count()==10)
    check(mode+"_original_figure",page.locator("#page-sheet img").count()==1 and
          page.locator("#page-sheet img").first.evaluate("(im)=>im.complete&&im.naturalWidth===1335"))
-   check(mode+"_image_scales_within_content",page.locator("#page-sheet img").first.evaluate(
-       "(im)=>im.getBoundingClientRect().width<=im.parentElement.parentElement.getBoundingClientRect().width+1"))
+   read_mode=page.locator("#page-viewport.read-mode").count()>0
+   if read_mode and mode=="mobile":
+    check("mobile_figure_bounded_by_scrollport",page.locator(".page-question figure.wide-original").evaluate(
+     "(fig)=>fig.getBoundingClientRect().width<=fig.parentElement.getBoundingClientRect().width+1"))
+   else:
+    check(mode+"_image_scales_within_content",page.locator("#page-sheet img").first.evaluate(
+     "(im)=>im.getBoundingClientRect().width<=im.parentElement.parentElement.getBoundingClientRect().width+1"))
    check(mode+"_no_x_overflow",page.evaluate("()=>document.documentElement.scrollWidth<=innerWidth"))
    if mode=="mobile" and page.locator("#page-viewport.read-mode").count():
     fig=page.locator(".page-question figure.wide-original")
