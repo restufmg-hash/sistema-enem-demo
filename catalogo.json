@@ -1198,10 +1198,11 @@
         "cor": "amarelo",
         "idioma": null,
         "numero_oficial": 93,
-        "revisao": null,
+        "revisao": "d9c78e438ec2dfa58f003d6bce36f93a234b0147e4e17bcb25a6e05fd0835d5b",
         "sequencia_colecao": null
       },
-      "aliases": []
+      "aliases": [],
+      "revision": "d9c78e438ec2dfa58f003d6bce36f93a234b0147e4e17bcb25a6e05fd0835d5b"
     },
     {
       "id": "enem2025-d2-cdamarelo-q94",
