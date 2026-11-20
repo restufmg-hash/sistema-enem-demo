@@ -18,7 +18,8 @@ for item in layout["media"].values():
 if args.pdf:
  source=args.pdf
  assert hashlib.sha256(source.read_bytes()).hexdigest()==layout["source"]["sha256"]
- import pymupdf`n doc=pymupdf.open(str(source));assert len(doc)==32
+ import pymupdf
+ doc=pymupdf.open(str(source));assert len(doc)==32
  pg=doc[9]
  words=pg.get_text("words")
  for target in layout["response_targets"]:
