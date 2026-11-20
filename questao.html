@@ -18,6 +18,11 @@
   .meta strong { color: #0d2b45; }
   .badge { display: inline-block; background: #8b5200; color: #fff; border-radius: 6px; padding: .1rem .5rem; font-size: .75rem; font-weight: 700; margin-left: .4rem; vertical-align: middle; }
   figure { margin: 1rem 0; }
+  #conteudo-estruturado p { margin: .85rem 0; white-space: pre-wrap; }
+  #conteudo-estruturado figure { margin: 1rem auto; max-width: 560px; }
+  #conteudo-estruturado img { display: block; max-width: 100%; height: auto; margin: auto; }
+  #alternar-original { font-size: .85rem; background: #e7edf3; color: #173c59; padding: .45rem .8rem; margin-top: .25rem; }
+  @media(max-width: 460px) { main { padding: 0 .55rem; } .card { padding: .85rem; } label.option { padding: .65rem; } }
   figure img { max-width: 100%; height: auto; border: 1px solid #e2e5ea; border-radius: 8px; }
   figcaption { font-size: .8rem; color: #4a5568; margin-top: .4rem; }
   fieldset { border: 0; padding: 0; margin: 1rem 0 0; }
@@ -30,7 +35,7 @@
   #resultado { margin-top: 1rem; padding: .75rem .9rem; border-radius: 10px; font-weight: 600; display: none; background: #eef2f7; color: #2d3748; border: 1px solid #cbd5e0; }
   #resultado.ok { background: #ecf8ef; color: #1e5b2a; border-color: #b6dfc2; }
   #resultado.erro { background: #fdf0ee; color: #7a2415; border-color: #f2c0b3; }
-  footer { max-width: 880px; margin: 1rem auto 2rem; padding: 0 1rem; font-size: .72rem; color: #718096; }
+  footer { max-width: 880px; margin: 1rem auto 2rem; padding: 0 1rem; font-size: .72rem; color: #718096; overflow-wrap: anywhere; }
 </style>
 </head>
 <body>
@@ -38,6 +43,7 @@
 <main>
   <div class="card" id="card">
     <p class="meta" id="meta">Carregando…</p>
+    <div id="conteudo-estruturado" aria-label="Enunciado estruturado" hidden></div>
     <figure id="figura_texto" hidden>
       <img id="enunciado_texto" alt="">
       <figcaption>Texto-base compartilhado (autoria INEP), exibido sem qualquer alteração.</figcaption>
@@ -46,6 +52,7 @@
       <img id="enunciado" alt="">
       <figcaption>Imagem oficial integral da questão (autoria INEP), exibida sem qualquer alteração.</figcaption>
     </figure>
+    <button id="alternar-original" type="button" hidden>Consultar recorte original</button>
     <form id="form-resposta" aria-label="Registrar resposta" hidden>
       <fieldset>
         <legend>Selecione uma alternativa</legend>
@@ -66,7 +73,10 @@
 </footer>
 <script src="config.js"></script>
 <script>
-const SILENCIADO = { api: (window.SISTEMA_ENEM_API || "").trim() };
+const SILENCIADO = {
+  api: (window.SISTEMA_ENEM_API || "").trim(),
+  readApi: (window.SISTEMA_ENEM_ATTEMPTS_READ_API || "").trim()
+};
 
 function mostrar(el, visivel) { el.hidden = !visivel; }
 
@@ -131,6 +141,8 @@ function falha(mensagem) {
   meta.textContent = mensagem;
   mostrar(document.getElementById("figura"), false);
   mostrar(document.getElementById("figura_texto"), false);
+  mostrar(document.getElementById("conteudo-estruturado"), false);
+  mostrar(document.getElementById("alternar-original"), false);
   mostrar(document.getElementById("form-resposta"), false);
 }
 
@@ -245,6 +257,46 @@ async function iniciar() {
     return;
   }
 
+  // Reconstrução em blocos; o recorte da fonte é apenas um fallback consultável.
+  // Questões históricas apenas com screenshot mantêm seu comportamento anterior.
+  const structured = document.getElementById("conteudo-estruturado");
+  const hasRealBlocks = Array.isArray(dados.blocks) && dados.blocks.some((b) =>
+    ["text", "math", "table"].includes(b.type) ||
+    (b.type === "image" && b.asset && b.asset !== item.imagem)
+  );
+  if (hasRealBlocks) {
+    structured.textContent = "";
+    for (const block of dados.blocks) {
+      if (block.type === "image") {
+        const figure = document.createElement("figure");
+        const source = document.createElement("img");
+        // Only first-party, relative media paths: never arbitrary external URLs.
+        if (!/^assets\/[a-zA-Z0-9_.-]+\.(png|jpg|jpeg|webp)$/i.test(block.asset || "")) {
+          falha("Mídia da questão indisponível ou não autorizada.");
+          return;
+        }
+        source.src = block.asset;
+        source.alt = block.text || "Ilustração do enunciado";
+        figure.appendChild(source);
+        structured.appendChild(figure);
+      } else if (["text", "math", "table"].includes(block.type)) {
+        const part = document.createElement(block.type === "table" ? "pre" : "p");
+        part.textContent = block.text || "";
+        structured.appendChild(part);
+      }
+    }
+    mostrar(structured, true);
+    mostrar(document.getElementById("figura"), false);
+    mostrar(document.getElementById("figura_texto"), false);
+    const original = document.getElementById("alternar-original");
+    mostrar(original, true);
+    original.addEventListener("click", () => {
+      const showing = !document.getElementById("figura").hidden;
+      mostrar(document.getElementById("figura"), !showing);
+      original.textContent = showing ? "Consultar recorte original" : "Ocultar recorte original";
+    });
+  }
+
   const container = document.getElementById("alternativas");
   container.textContent = "";
   for (const opcao of dados.options || []) {
@@ -280,6 +332,34 @@ async function iniciar() {
   let primeira = null;
   try { primeira = localStorage.getItem(chave); } catch (_) { primeira = null; }
 
+  // Na validação autorizada, uma tentativa confirmada pode ser recuperada
+  // do servidor após recarregar; localStorage guarda somente IDs, não é prova.
+  const reciboKey = "sistema_enem_recibo_" + item.question_id;
+  if (SILENCIADO.readApi) {
+    try {
+      const saved = JSON.parse(localStorage.getItem(reciboKey) || "null");
+      if (saved && saved.id && saved.session) {
+        const url = SILENCIADO.readApi.replace(/\/$/, "") + "/" +
+          encodeURIComponent(saved.id) + "?anon_session_id=" + encodeURIComponent(saved.session);
+        const retrieved = await fetch(url, {cache: "no-store"});
+        if (retrieved.ok) {
+          const body = await retrieved.json();
+          if (body.question_id === item.question_id && body.persisted === true) {
+            const oldOption = document.querySelector('input[name="alternativa"][value="' + body.selected_option + '"]');
+            const oldConfidence = document.querySelector('input[name="confianca"][value="' + body.confidence + '"]');
+            if (oldOption) oldOption.checked = true;
+            if (oldConfidence) oldConfidence.checked = true;
+            resultado.className = "ok";
+            resultado.style.display = "block";
+            resultado.textContent = "Tentativa anterior recuperada do servidor. Alternativa " +
+              body.selected_option + " (confiança " + body.confidence + "/5). " +
+              (body.correct === true ? "Correta." : body.correct === false ? "Incorreta." : "");
+          }
+        }
+      }
+    } catch (_) { /* tentativa ainda não confirmada ou backend indisponível */ }
+  }
+
   document.getElementById("form-resposta").addEventListener("submit", async (evento) => {
     evento.preventDefault();
     const selecionada = document.querySelector('input[name="alternativa"]:checked');
@@ -311,7 +391,8 @@ async function iniciar() {
       // text/plain (simple request) e lido pelo servidor como JSON.
       const resposta = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        headers: { "Content-Type": /script\.google\.com$/i.test(new URL(endpoint).hostname)
+          ? "text/plain;charset=utf-8" : "application/json;charset=utf-8" },
         body: JSON.stringify({
           question_id: item.question_id,
           selected_option: selecionada.value,
@@ -327,6 +408,11 @@ async function iniciar() {
       }
       try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
       const corpo = await resposta.json();
+      if (corpo.persisted === true) {
+        try { localStorage.setItem(reciboKey, JSON.stringify({
+          id: tentativa.id, session: sessaoAnonima()
+        })); } catch (_) { /* sem armazenamento local: servidor já persistiu */ }
+      }
       resultado.className = "ok";
       if (corpo.official_status === "annulled") {
         resultado.textContent = "Questão anulada pelo INEP: não há alternativa correta. Sua tentativa foi registrada no servidor.";
