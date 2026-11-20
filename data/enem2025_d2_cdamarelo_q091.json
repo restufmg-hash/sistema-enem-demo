@@ -1,0 +1,169 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q091",
+  "year": 2025,
+  "number": 91,
+  "area": "Ciências da Natureza",
+  "topic": "Transferência de calor por irradiação térmica",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 2,
+    "sha256": "0A59697676989B55E6F3E40636FAD164C1C26868DDBA37D04E4FFFC101168298",
+    "page_geometry": {
+      "width": 566.927,
+      "height": 779.526,
+      "question_bbox": [
+        20.0,
+        107.094,
+        284.5,
+        453.971
+      ],
+      "reading_order": "coluna_esquerda; fluxo_y_crescente"
+    }
+  },
+  "content_revision": "7f7d216e6624e9ca746f4e18e9e4666cae7ab84ae32048acddf608fd6d930c30",
+  "blocks": [
+    {
+      "type": "text",
+      "role": "section",
+      "text": "TEXTO I",
+      "source_bbox": [
+        29.958,
+        128.386,
+        63.629,
+        142.266
+      ]
+    },
+    {
+      "type": "text",
+      "role": "title",
+      "text": "As mariposas",
+      "source_bbox": [
+        127.858,
+        144.636,
+        182.918,
+        158.516
+      ]
+    },
+    {
+      "type": "text",
+      "role": "verse",
+      "text": "As mariposa, quando chega o frio\nFica dando volta em volta da lâmpida pra se esquentá. [sic]",
+      "source_bbox": [
+        46.768,
+        161.016,
+        280.971,
+        187.817
+      ]
+    },
+    {
+      "type": "text",
+      "role": "source",
+      "text": "BARBOSA, A. Reviva: Adoniran Barbosa. São Paulo: Som Livre, 2002 (fragmento).",
+      "source_bbox": [
+        147.412,
+        188.82,
+        282.845,
+        209.228
+      ]
+    },
+    {
+      "type": "text",
+      "role": "section",
+      "text": "TEXTO II",
+      "source_bbox": [
+        29.958,
+        212.594,
+        66.689,
+        226.474
+      ]
+    },
+    {
+      "type": "text",
+      "role": "paragraph",
+      "text": "As mariposas se aproximam das lâmpadas atraídas pela luz, \npois, sendo basicamente criaturas noturnas, estão adaptadas \na seguir o brilho da lua, em um processo conhecido como \norientação transversal. Assim, o que o sambista Adoniran \nBarbosa, no Texto I, descreve não é a causa, mas sim uma das \nconsequências possíveis dessa aproximação. De fato, o calor \ngerado pelas lâmpadas, sobretudo as incandescentes, pode \naquecer as mariposas.",
+      "source_bbox": [
+        29.763,
+        228.976,
+        283.314,
+        326.356
+      ]
+    },
+    {
+      "type": "text",
+      "role": "source",
+      "text": "HERTZBERG, R. Por que as mariposas são tão atraídas por luzes fortes? National Geographic, nov. 2020 (adaptado).",
+      "source_bbox": [
+        58.353,
+        327.462,
+        282.762,
+        348.062
+      ]
+    },
+    {
+      "type": "text",
+      "role": "prompt",
+      "text": "Nesse contexto, o processo de transferência de calor para as \nmariposas que independe da presença de fluidos é a",
+      "source_bbox": [
+        29.763,
+        354.097,
+        283.286,
+        379.477
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "reflexão.",
+      "source_bbox": [
+        29.763,
+        383.767,
+        77.652,
+        397.147
+      ]
+    },
+    {
+      "label": "B",
+      "text": "refração.",
+      "source_bbox": [
+        29.753,
+        397.187,
+        78.6,
+        410.567
+      ]
+    },
+    {
+      "label": "C",
+      "text": "irradiação.",
+      "source_bbox": [
+        29.753,
+        410.607,
+        84.433,
+        423.987
+      ]
+    },
+    {
+      "label": "D",
+      "text": "dispersão.",
+      "source_bbox": [
+        29.763,
+        424.027,
+        85.804,
+        437.407
+      ]
+    },
+    {
+      "label": "E",
+      "text": "convecção.",
+      "source_bbox": [
+        29.763,
+        437.447,
+        88.278,
+        450.827
+      ]
+    }
+  ],
+  "answer_policy": "Sem gabarito, feedback ou análise de alternativas antes do envio ao servidor."
+}

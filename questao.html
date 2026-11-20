@@ -17,6 +17,13 @@
   .meta { color: #4a5568; font-size: .85rem; margin: 0 0 .75rem; }
   .meta strong { color: #0d2b45; }
   .badge { display: inline-block; background: #8b5200; color: #fff; border-radius: 6px; padding: .1rem .5rem; font-size: .75rem; font-weight: 700; margin-left: .4rem; vertical-align: middle; }
+  #conteudo-estruturado { margin: 1rem 0 1.25rem; max-width: 72ch; line-height: 1.68; }
+  #conteudo-estruturado .bloco { margin: .65rem 0; overflow-wrap: anywhere; }
+  #conteudo-estruturado .section { font-weight: 800; margin-top: 1.3rem; }
+  #conteudo-estruturado .title { font-weight: 700; text-align: center; }
+  #conteudo-estruturado .verse { white-space: pre-line; margin-left: 1rem; }
+  #conteudo-estruturado .source { font-size: .82rem; text-align: right; color: #4a5568; }
+  #conteudo-estruturado .prompt { font-weight: 650; margin-top: 1.2rem; }
   figure { margin: 1rem 0; }
   figure img { max-width: 100%; height: auto; border: 1px solid #e2e5ea; border-radius: 8px; }
   figcaption { font-size: .8rem; color: #4a5568; margin-top: .4rem; }
@@ -38,6 +45,7 @@
 <main>
   <div class="card" id="card">
     <p class="meta" id="meta">Carregando…</p>
+    <section id="conteudo-estruturado" aria-label="Enunciado estruturado" hidden></section>
     <figure id="figura_texto" hidden>
       <img id="enunciado_texto" alt="">
       <figcaption>Texto-base compartilhado (autoria INEP), exibido sem qualquer alteração.</figcaption>
@@ -131,6 +139,7 @@ function falha(mensagem) {
   meta.textContent = mensagem;
   mostrar(document.getElementById("figura"), false);
   mostrar(document.getElementById("figura_texto"), false);
+  mostrar(document.getElementById("conteudo-estruturado"), false);
   mostrar(document.getElementById("form-resposta"), false);
 }
 
@@ -229,9 +238,13 @@ async function iniciar() {
   }
 
   const img = document.getElementById("enunciado");
-  img.src = item.imagem;
-  img.alt = item.alt || ("Questão " + item.numero_oficial + " do ENEM " + item.ano + ".");
-  mostrar(document.getElementById("figura"), true);
+  if (item.imagem) {
+    img.src = item.imagem;
+    img.alt = item.alt || ("Questão " + item.numero_oficial + " do ENEM " + item.ano + ".");
+    mostrar(document.getElementById("figura"), true);
+  } else {
+    mostrar(document.getElementById("figura"), false);
+  }
 
   document.getElementById("fonte").textContent =
     "Fonte oficial: " + item.fonte + ", página " + item.pagina +
@@ -243,6 +256,25 @@ async function iniciar() {
   } catch (_) {
     falha("Não foi possível carregar as alternativas.");
     return;
+  }
+
+  const conteudo = document.getElementById("conteudo-estruturado");
+  conteudo.replaceChildren();
+  const roles = new Set(["section", "title", "verse", "source", "paragraph", "prompt"]);
+  for (const bloco of dados.blocks || []) {
+    if (bloco.type !== "text" || typeof bloco.text !== "string" || !bloco.text.trim()) continue;
+    const papel = roles.has(bloco.role) ? bloco.role : "paragraph";
+    const texto = document.createElement("p");
+    texto.className = "bloco " + papel;
+    texto.textContent = bloco.text;
+    conteudo.appendChild(texto);
+  }
+  mostrar(conteudo, conteudo.childElementCount > 0);
+
+  if (!item.imagem) {
+    document.getElementById("fonte").textContent =
+      "Fonte oficial: " + item.fonte + ", página " + item.pagina +
+      ". SHA-256 do PDF: " + ((dados.source || {}).sha256 || "não informado") + ".";
   }
 
   const container = document.getElementById("alternativas");
@@ -280,8 +312,46 @@ async function iniciar() {
   let primeira = null;
   try { primeira = localStorage.getItem(chave); } catch (_) { primeira = null; }
 
+  // Backend de validação: a recuperação é uma leitura REAL do armazenamento
+  // pelo recibo, nunca uma resposta salva no navegador.
+  const endpointLeitura = SILENCIADO.api.replace(/\/$/, "");
+  if (endpointLeitura.endsWith("/v1/study/attempts")) {
+    let recibo = null;
+    try { recibo = JSON.parse(localStorage.getItem("sistema_enem_confirmed_" + item.question_id)); }
+    catch (_) { /* nenhum recibo local */ }
+    if (recibo && typeof recibo.attempt_id === "string" && typeof recibo.session_id === "string") {
+      try {
+        const query = new URLSearchParams({anon_session_id: recibo.session_id});
+        const resposta = await fetch(endpointLeitura + "/" + encodeURIComponent(recibo.attempt_id) + "?" + query,
+          {cache:"no-store"});
+        if (resposta.ok) {
+          const salvo = await resposta.json();
+          if (salvo.persisted === true && salvo.question_id === item.question_id) {
+            const radio = document.querySelector('input[name="alternativa"][value="' + salvo.selected_option + '"]');
+            const confiancaSalva = document.querySelector('input[name="confianca"][value="' + salvo.confidence + '"]');
+            if (radio) radio.checked = true;
+            if (confiancaSalva) confiancaSalva.checked = true;
+            resultado.style.display = "block";
+            resultado.className = "ok";
+            resultado.textContent = "Tentativa recuperada do servidor após recarga. " +
+              (salvo.correct === true ? "Correta!" : salvo.correct === false ? "Incorreta." : "Questão anulada.");
+          }
+        }
+      } catch (_) { /* Sem confirmação, não inventar persistência */ }
+    }
+  }
+
+  const formulario = document.getElementById("form-resposta");
+  const travarRespostaConfirmada = () => {
+    for (const controle of formulario.querySelectorAll("input, button")) controle.disabled = true;
+  };
+  if (resultado.textContent.startsWith("Tentativa recuperada do servidor após recarga")) {
+    travarRespostaConfirmada();
+  }
+
   document.getElementById("form-resposta").addEventListener("submit", async (evento) => {
     evento.preventDefault();
+    if (formulario.querySelector("button[type=submit]").disabled) return;
     const selecionada = document.querySelector('input[name="alternativa"]:checked');
     resultado.style.display = "block";
     resultado.className = "";
@@ -294,11 +364,6 @@ async function iniciar() {
       resultado.textContent = "Selecione sua confiança de 1 a 5 antes de registrar.";
       return;
     }
-    if (primeira === null) {
-      try { localStorage.setItem(chave, selecionada.value); } catch (_) { /* sem armazenamento local */ }
-      primeira = selecionada.value;
-    }
-
     if (!SILENCIADO.api) {
       resultado.textContent = "Resposta registrada neste navegador. A conferência e o feedback acontecem no servidor; o feedback ainda não está disponível nesta página.";
       return;
@@ -306,18 +371,20 @@ async function iniciar() {
     resultado.textContent = "Enviando ao servidor…";
     const tentativa = idTentativa(item.question_id);
     const endpoint = SILENCIADO.api.replace(/\/$/, "");
+    const backendApi = endpoint.endsWith("/v1/study/attempts");
+    const sessao = sessaoAnonima();
     try {
       // Application/json exigiria preflight CORS que o endpoint gratuito nao responde;
       // text/plain (simple request) e lido pelo servidor como JSON.
       const resposta = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        headers: { "Content-Type": backendApi ? "application/json" : "text/plain;charset=utf-8" },
         body: JSON.stringify({
           question_id: item.question_id,
           selected_option: selecionada.value,
           confidence: confianca ? Number(confianca.value) : 3,
           client_attempt_id: tentativa.id,
-          anon_session_id: sessaoAnonima(),
+          anon_session_id: sessao,
         }),
       });
       if (!resposta.ok) {
@@ -325,9 +392,21 @@ async function iniciar() {
         resultado.textContent = "Não foi possível registrar no servidor agora (HTTP " + resposta.status + "). Sua resposta ficou guardada neste navegador.";
         return;
       }
-      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
       const corpo = await resposta.json();
+      if (backendApi && corpo.persisted !== true) {
+        resultado.className = "erro";
+        resultado.textContent = "O servidor não confirmou a persistência. Nenhuma tentativa foi considerada concluída.";
+        return;
+      }
+      if (backendApi && corpo.persisted === true && sessao) {
+        try {
+          localStorage.setItem("sistema_enem_confirmed_" + item.question_id,
+            JSON.stringify({ attempt_id: tentativa.id, session_id: sessao }));
+        } catch (_) { /* sem armazenamento local: recibo continua no servidor */ }
+      }
+      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
       resultado.className = "ok";
+      if (backendApi && corpo.persisted === true) travarRespostaConfirmada();
       if (corpo.official_status === "annulled") {
         resultado.textContent = "Questão anulada pelo INEP: não há alternativa correta. Sua tentativa foi registrada no servidor.";
       } else if (corpo.correct === true) {
