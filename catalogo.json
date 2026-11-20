@@ -1947,6 +1947,35 @@
       "aliases": [
         "enem:2024:regular_nacional:d1:q005:en"
       ]
+    },
+    {
+      "id": "enem2024-d1-cdazul-q1-es",
+      "question_id": "enem:2024:regular_nacional:d1:q001:spanish",
+      "ano": 2024,
+      "numero_oficial": 1,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2024 · 1º dia · Caderno 1 Azul (CD1) · Espanhol",
+      "pagina": 3,
+      "fonte": "INEP, 2024_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "CF4C149E9B903D32D4F0D16BAF649E9C1E849EB052D1747294955403C3C652EC",
+      "data": "data/enem2024_d1_cdazul_q001_es.json",
+      "imagem": "assets/enem2024_d1_cdazul_q001_es_integral.png",
+      "alt": "Recorte original da Q001 de espanhol, sobre a cultura do cancelamento, página 3 do ENEM 2024 Caderno 1 Azul.",
+      "occurrence": {
+        "ano": 2024,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "es",
+        "numero_oficial": 1,
+        "revisao": "2026-11-20.a2024d1.q001-es.r1",
+        "sequencia_colecao": 6
+      },
+      "aliases": [
+        "enem:2024:regular_nacional:d1:q001:es",
+        "enem:2024:regular_nacional:d1:q001:espanol"
+      ]
     }
   ]
 }
