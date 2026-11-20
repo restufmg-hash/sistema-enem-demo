@@ -1,0 +1,55 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q004:english",
+  "content_revision": "2026-11-20.a2024d1.q004-en.r1",
+  "year": 2024,
+  "number": 4,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Preconceito linguístico e identidade cultural de imigrantes; compreensão crítica de relato autobiográfico",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 3
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "I remember being caught speaking Spanish at recess\n[...] I remember being sent to the corner of the classroom\nfor “talking back” to the Anglo teacher when all I was trying\nto do was tell her how to pronounce my name. “If you\nwant to be American, speak ‘American’. If you don’t like it,\ngo back to Mexico where you belong”.\n“I want you to speak English […]”, my mother would\nsay, mortified that I spoke English like a Mexican. At Pan\nAmerican University, I and all Chicano students were\nrequired to take two speech classes. Their purpose: to get\nrid of our accents."
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "ANZALDÚA, G. Borderlands/La Frontera: The New Mestiza.\nSan Francisco: Aunt Lute Books, 1987."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "O problema abordado nesse texto sobre imigrantes residentes nos Estados Unidos diz respeito aos prejuízos gerados pelo(a)"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "repúdio ao sotaque espanhol no uso do inglês."
+    },
+    {
+      "label": "B",
+      "text": "resignação diante do apagamento da língua materna."
+    },
+    {
+      "label": "C",
+      "text": "escassez de oportunidades de aprendizado do espanhol."
+    },
+    {
+      "label": "D",
+      "text": "choque entre falantes de línguas distintas de diferentes gerações."
+    },
+    {
+      "label": "E",
+      "text": "concorrência entre as variações linguísticas do inglês e as do espanhol."
+    }
+  ],
+  "answer_policy": "Sem gabarito ou solução no payload; correção somente após tentativa enviada ao servidor."
+}
