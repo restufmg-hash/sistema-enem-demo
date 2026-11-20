@@ -359,8 +359,9 @@ async function iniciarModoPagina(params, catalogo) {
   try {
     questions = await Promise.all(page.questions.map(async ref => {
       const item = all.find(x => x.question_id === ref.question_id &&
-        x.pagina === pagina && x.ano === ano && x.occurrence &&
-        x.occurrence.dia === dia && x.occurrence.caderno === caderno);
+        x.pagina === pagina && x.ano === ano &&
+        String(x.fonte || "").includes(page.source.document) &&
+        (!x.occurrence || (x.occurrence.dia === dia && x.occurrence.caderno === caderno)));
       if (!item || item.data !== ref.source_data) throw new Error("Ocorrência não corresponde à página");
       const response = await fetch(item.data, { cache: "no-store" });
       if (!response.ok) throw new Error("Questão indisponível");
