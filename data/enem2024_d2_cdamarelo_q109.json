@@ -12,32 +12,62 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "O LED é um dispositivo eletrônico que conduz corrente elétrica em um único sentido, sendo caracterizado por uma tensão e uma corrente máxima de funcionamento, Iₘáₓ. Um LED acende apenas se a corrente que o percorre está no sentido permitido e se a diferença de potencial à qual está submetido é igual ou superior à sua tensão de funcionamento. A figura ilustra o símbolo do LED usado na representação de circuitos."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q109_integral.png",
-      "text": "Questão 109 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Enunciado sobre o LED (corrente em um único sentido, tensão e corrente máxima Imáx); símbolo do LED e seta vermelha 'Sentido permitido da corrente'. Materiais: bateria ideal de 4,5 V, dois LEDs de 3,0 V e Imáx = 1,0 mA cada, dois resistores de 1,5 kΩ cada. Pergunta: 'O circuito que o estudante pode montar, para que ambos os LEDs fiquem acesos e cada um seja percorrido por Imáx, é'. As alternativas A-E são circuitos elétricos desenhados na prova, com a polaridade e a orientação dos LEDs conforme a figura."
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109-led.png",
+      "alt": "q109 led"
+    },
+    {
+      "type": "text",
+      "text": "Um estudante de física analisa as propriedades do LED em um circuito simples de corrente contínua. Ele dispõe dos seguintes materiais: uma bateria ideal de 4,5 V; dois LEDs de tensão 3,0 V e Iₘáₓ = 1,0 mA cada; e dois resistores de 1,5 kΩ cada."
+    },
+    {
+      "type": "text",
+      "text": "O circuito que o estudante pode montar, para que ambos os LEDs fiquem acesos e cada um seja percorrido por Iₘáₓ, é"
     }
   ],
   "options": [
     {
       "label": "A",
-      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido direto."
+      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido direto.",
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109-option-A.png",
+      "image_only": true,
+      "alt": "Circuito elétrico original correspondente à alternativa A da questão 109"
     },
     {
       "label": "B",
-      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido direto."
+      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido direto.",
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109-option-B.png",
+      "image_only": true,
+      "alt": "Circuito elétrico original correspondente à alternativa B da questão 109"
     },
     {
       "label": "C",
-      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido reverso."
+      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido reverso.",
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109-option-C.png",
+      "image_only": true,
+      "alt": "Circuito elétrico original correspondente à alternativa C da questão 109"
     },
     {
       "label": "D",
-      "text": "Circuito em malha única, com bateria, dois resistores e dois LEDs em série, na mesma orientação."
+      "text": "Circuito em malha única, com bateria, dois resistores e dois LEDs em série, na mesma orientação.",
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109-option-D.png",
+      "image_only": true,
+      "alt": "Circuito elétrico original correspondente à alternativa D da questão 109"
     },
     {
       "label": "E",
-      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido reverso."
+      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido reverso.",
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109-option-E.png",
+      "image_only": true,
+      "alt": "Circuito elétrico original correspondente à alternativa E da questão 109"
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q109-structured-p008-v1"
 }
