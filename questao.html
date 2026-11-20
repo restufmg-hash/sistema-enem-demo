@@ -597,6 +597,20 @@ async function iniciar() {
     }
   }
   if (!item) { falha("Questão não encontrada no catálogo público."); return; }
+  if (params.get("voltar_pagina")) {
+    const p = Number(params.get("voltar_pagina"));
+    if (Number.isInteger(p) && p > 0 && p < 200) {
+      const back = new URLSearchParams({
+        pagina: String(p), ano: String(item.ano),
+        dia: String(item.occurrence?.dia || 2),
+        caderno: String(item.occurrence?.caderno || "cdamarelo"),
+        cor: String(item.occurrence?.cor || "amarelo")
+      });
+      const anchor = document.querySelector("header a");
+      anchor.href = "questao.html?" + back.toString();
+      anchor.textContent = "← Voltar à página original " + p;
+    }
+  }
 
   document.title = "Sistema ENEM — Questão " + item.numero_oficial + " (" + item.ano + ")";
   const meta = document.getElementById("meta");
@@ -714,6 +728,20 @@ async function iniciar() {
   try { primeira = localStorage.getItem(chave); } catch (_) { primeira = null; }
 
   const formulario = document.getElementById("form-resposta");
+  const draft = lerRascunho(item.question_id);
+  if (draft) {
+    const radio = formulario.querySelector('input[name="alternativa"][value="' + draft.selected_option + '"]');
+    const confidence = formulario.querySelector('input[name="confianca"][value="' + draft.confidence + '"]');
+    if (radio) radio.checked = true;
+    if (confidence) confidence.checked = true;
+  }
+  for (const control of formulario.querySelectorAll('input[name="alternativa"], input[name="confianca"]')) {
+    control.addEventListener("change", () => {
+      const radio = formulario.querySelector('input[name="alternativa"]:checked');
+      const confidence = formulario.querySelector('input[name="confianca"]:checked');
+      if (radio) gravarRascunho(item.question_id, radio.value, confidence ? Number(confidence.value) : 3);
+    });
+  }
   if (await recuperarTentativa(item.question_id, resultado, formulario)) return;
 
   formulario.addEventListener("submit", async (evento) => {
@@ -779,6 +807,7 @@ async function iniciar() {
           confidence: confianca ? Number(confianca.value) : 3
         }));
         if (primeira === null) localStorage.setItem(chave, selecionada.value);
+        localStorage.removeItem(chaveRascunho(item.question_id));
       } catch (_) { /* recuperação local indisponível; POST já foi confirmado */ }
       try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
       bloquearFormulario(formulario);
