@@ -72,6 +72,11 @@
   .pagina-tentativa button:disabled {opacity:.55;cursor:default;}
   .pagina-resultado {font-size:.76rem;font-weight:600;}
   .pagina-link {display:inline-block;margin-bottom:.5rem;}
+  .pagina-p3 .pagina-q4 {grid-column:1;grid-row:1;}
+  .pagina-p3 .pagina-q5 {grid-column:1;grid-row:2;}
+  .pagina-p3 .pagina-q1 {grid-column:2;grid-row:1 / span 2;}
+  .pagina-p3 .pagina-blocos [data-role="passage"] {text-align:justify;}
+  .pagina-p3 .pagina-blocos [data-role="section"] {font-size:.78rem;font-weight:650;}
 </style>
 </head>
 <body>
@@ -245,28 +250,31 @@ function renderizarBlocosComuns(container, blocks) {
     }
 }
 
-const CONFIG_PAGINA_2024_D1 = {
-  ano: 2024, dia: 1, caderno: "cdazul", idioma: "en", pagina: 2,
-  numeros: [1, 2, 3]
+const CONFIG_PAGINAS_2024_D1 = {
+  2: {ano:2024,dia:1,caderno:"cdazul",idioma:"en",pagina:2,
+      questoes:[{numero:1,idioma:"en"},{numero:2,idioma:"en"},{numero:3,idioma:"en"}]},
+  3: {ano:2024,dia:1,caderno:"cdazul",idioma:"mixed",pagina:3,
+      questoes:[{numero:4,idioma:"en"},{numero:5,idioma:"en"},{numero:1,idioma:"es"}]}
 };
 
 function linkDaPagina(item) {
   const o = item.occurrence || {};
-  if (Number(o.ano) !== 2024 || Number(o.dia) !== 1 ||
-      o.caderno !== "cdazul" || normIdioma(o.idioma) !== "en" ||
-      Number(item.pagina) !== 2 || !CONFIG_PAGINA_2024_D1.numeros.includes(Number(o.numero_oficial))) {
-    return null;
+  for(const config of Object.values(CONFIG_PAGINAS_2024_D1)) {
+    if(Number(o.ano)===2024 && Number(o.dia)===1 && o.caderno==="cdazul" &&
+      Number(item.pagina)===config.pagina &&
+      config.questoes.some((q)=>q.numero===Number(o.numero_oficial) && q.idioma===normIdioma(o.idioma))) {
+      return "questao.html?pagina="+config.pagina+"&ano=2024&dia=1&caderno=cdazul&idioma="+config.idioma;
+    }
   }
-  return "questao.html?pagina=2&ano=2024&dia=1&caderno=cdazul&idioma=en";
+  return null;
 }
 
-async function abrirPaginaEstruturada(items) {
-  const c = CONFIG_PAGINA_2024_D1;
-  const selecionados = c.numeros.map((numero) => {
+async function abrirPaginaEstruturada(items,c) {
+  const selecionados = c.questoes.map(({numero,idioma}) => {
     const v = items.filter((item) => {
       const o = item.occurrence || {};
       return Number(o.ano) === c.ano && Number(o.dia) === c.dia &&
-        o.caderno === c.caderno && normIdioma(o.idioma) === c.idioma &&
+        o.caderno === c.caderno && normIdioma(o.idioma) === idioma &&
         Number(item.pagina) === c.pagina && Number(o.numero_oficial) === numero;
     });
     if (v.length !== 1) throw new Error("Ocorrência ambígua ou ausente da página " + numero);
@@ -282,10 +290,12 @@ async function abrirPaginaEstruturada(items) {
     }
     return {item,dados};
   }));
-  document.title = "Sistema ENEM — Página 2 · 2024 D1 Azul";
+  document.title = "Sistema ENEM — Página " + c.pagina + " · 2024 D1 Azul";
   const header = document.createElement("div");
   header.className = "pagina-tools";
-  header.innerHTML = '<strong>Página original 2 · Linguagens · Opção inglês</strong>';
+  const title=document.createElement("strong");
+  title.textContent="Página original "+c.pagina+" · Linguagens · "+(c.pagina===2?"Opção inglês":"Inglês e espanhol");
+  header.append(title);
   const description = document.createElement("p");
   description.textContent = "Reconstrução interativa da página impressa do INEP. As mesmas questões e mídias do modo individual. A visualização do original serve apenas para conferência.";
   const zoom = document.createElement("input");
@@ -297,6 +307,7 @@ async function abrirPaginaEstruturada(items) {
   const zoomWrap = document.createElement("div"); zoomWrap.className="pagina-zoom-wrap";
   const sheet = document.createElement("div"); sheet.className = "pagina-folha";
   zoomWrap.append(sheet); stage.append(zoomWrap);
+  sheet.classList.add("pagina-p"+c.pagina);
   function atualizarZoom() {
     const escala = Number(zoom.value) / 100;
     sheet.style.transform = "scale(" + escala + ")";
@@ -376,7 +387,7 @@ async function abrirPaginaEstruturada(items) {
       if(picked)picked.checked=true;if(conf)conf.checked=true;
       submit.disabled=true; status.textContent="Tentativa recuperada do servidor: "+v.selected_option+" · confiança "+v.confidence+"/5.";
     }
-    await recover();
+    try { await recover(); } catch (_) { status.textContent="Tentativa ainda não recuperada do servidor."; }
     form.addEventListener("submit",async (event)=>{
       event.preventDefault();
       if(submit.disabled)return;
@@ -410,7 +421,7 @@ async function abrirPaginaEstruturada(items) {
   requestAnimationFrame(atualizarZoom);
   card.classList.add("pagina-mode");
   document.querySelector("main").classList.add("pagina-main");
-  document.getElementById("fonte").textContent="Fonte: INEP, 2024_PV_impresso_D1_CD1.pdf, página 2. Modo página estruturado sem imagem de fundo.";
+  document.getElementById("fonte").textContent="Fonte: INEP, 2024_PV_impresso_D1_CD1.pdf, página "+c.pagina+". Modo página estruturado sem imagem de fundo.";
 }
 
 async function iniciar() {
@@ -436,13 +447,13 @@ async function iniciar() {
   const items = catalogo.items || [];
   const pagina = intOrUndef(params.get("pagina"));
   if (pagina !== undefined) {
-    const p = CONFIG_PAGINA_2024_D1;
-    if (pagina!==p.pagina || occ.ano!==p.ano || occ.dia!==p.dia ||
+    const p = CONFIG_PAGINAS_2024_D1[pagina];
+    if (!p || occ.ano!==p.ano || occ.dia!==p.dia ||
         occ.caderno!==p.caderno || occ.idioma!==p.idioma) {
       falha("Página ou variante ainda não reconstruída.");
       return;
     }
-    try { await abrirPaginaEstruturada(items); }
+    try { await abrirPaginaEstruturada(items,p); }
     catch(e) { falha("Página estruturada indisponível: "+e.message); }
     return;
   }
@@ -483,7 +494,7 @@ async function iniciar() {
 
   const pageLink=linkDaPagina(item);
   if(pageLink){
-    const anchor=document.createElement("a");anchor.href=pageLink;anchor.className="pagina-link";anchor.textContent="Ver página 2 interativa";
+    const anchor=document.createElement("a");anchor.href=pageLink;anchor.className="pagina-link";anchor.textContent="Ver página "+item.pagina+" interativa";
     document.getElementById("card").prepend(anchor);
   }
   document.title = "Sistema ENEM — Questão " + item.numero_oficial + " (" + item.ano + ")";
