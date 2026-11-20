@@ -12,32 +12,71 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "O LED é um dispositivo eletrônico que conduz corrente elétrica em um único sentido, sendo caracterizado por uma tensão e uma corrente máxima de funcionamento, Iₘₐₓ. Um LED acende apenas se a corrente que o percorre está no sentido permitido e se a diferença de potencial à qual está submetido é igual ou superior à sua tensão de funcionamento. A figura ilustra o símbolo do LED usado na representação de circuitos."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q109_integral.png",
-      "text": "Questão 109 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Enunciado sobre o LED (corrente em um único sentido, tensão e corrente máxima Imáx); símbolo do LED e seta vermelha 'Sentido permitido da corrente'. Materiais: bateria ideal de 4,5 V, dois LEDs de 3,0 V e Imáx = 1,0 mA cada, dois resistores de 1,5 kΩ cada. Pergunta: 'O circuito que o estudante pode montar, para que ambos os LEDs fiquem acesos e cada um seja percorrido por Imáx, é'. As alternativas A-E são circuitos elétricos desenhados na prova, com a polaridade e a orientação dos LEDs conforme a figura."
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109_symbol.png",
+      "alt": "Símbolo de LED com indicação da orientação permitida da corrente elétrica, conforme o PDF oficial do Inep."
+    },
+    {
+      "type": "text",
+      "text": "Um estudante de física analisa as propriedades do LED em um circuito simples de corrente contínua. Ele dispõe dos seguintes materiais: uma bateria ideal de 4,5 V; dois LEDs de tensão 3,0 V e Iₘₐₓ = 1,0 mA cada; e dois resistores de 1,5 kΩ cada."
+    },
+    {
+      "type": "text",
+      "text": "O circuito que o estudante pode montar, para que ambos os LEDs fiquem acesos e cada um seja percorrido por Iₘₐₓ, é"
     }
   ],
   "options": [
     {
       "label": "A",
-      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido direto."
+      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido direto.",
+      "image_only": true,
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109_option_A.png",
+      "alt": "Circuito da alternativa A. Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido direto."
     },
     {
       "label": "B",
-      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido direto."
+      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido direto.",
+      "image_only": true,
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109_option_B.png",
+      "alt": "Circuito da alternativa B. Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido direto."
     },
     {
       "label": "C",
-      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido reverso."
+      "text": "Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido reverso.",
+      "image_only": true,
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109_option_C.png",
+      "alt": "Circuito da alternativa C. Circuito com bateria e dois ramos em paralelo, cada ramo com um resistor em série com um LED orientado no sentido reverso."
     },
     {
       "label": "D",
-      "text": "Circuito em malha única, com bateria, dois resistores e dois LEDs em série, na mesma orientação."
+      "text": "Circuito em malha única, com bateria, dois resistores e dois LEDs em série, na mesma orientação.",
+      "image_only": true,
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109_option_D.png",
+      "alt": "Circuito da alternativa D. Circuito em malha única, com bateria, dois resistores e dois LEDs em série, na mesma orientação."
     },
     {
       "label": "E",
-      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido reverso."
+      "text": "Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido reverso.",
+      "image_only": true,
+      "asset": "assets/enem2024_d2_cdamarelo_p008_q109_option_E.png",
+      "alt": "Circuito da alternativa E. Circuito com bateria e um resistor em série com dois LEDs em paralelo, ambos orientados no sentido reverso."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q109-graphical-native-v1",
+  "source_pdf_sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+  "source_page": 8,
+  "source_media_sha256": {
+    "symbol": "bceaff38188cbe356722d44aed060eba86e3ab09f915f30bfe75186165f73c5d",
+    "A": "2809652861876965f6bcd6152ad572ffe4cb16fc089988c4bcffc0b1e35e9b04",
+    "B": "61e4225937fd2f7748937127738fc32d3c357e92f4e64f73df625e5881a077d4",
+    "C": "2e8d57a3d5c7ab815e4ce3fd79c742a043ad72f74d80bdd2dbe5e26f28af83c6",
+    "D": "25708123865130295f34cd36a057b5454bec81dfa8fdbcedb06eb272d38164c2",
+    "E": "0789b1c3d187d9e6a784b850ecb21e741115a08b889e63a6988ecbb87ce3a15a"
+  }
 }
