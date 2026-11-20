@@ -2243,6 +2243,33 @@
         "revisao": "2026-11-20.a2024d1.q011.r1",
         "sequencia_colecao": 16
       }
+    },
+    {
+      "id": "enem2024-d1-cdazul-q12",
+      "question_id": "enem:2024:regular_nacional:d1:q012",
+      "ano": 2025,
+      "numero_oficial": 12,
+      "anulada": false,
+      "area": "Linguagens, Códigos e suas Tecnologias",
+      "prova": "ENEM 2025 · 1º dia · Caderno 1 Azul (CD1)",
+      "pagina": 7,
+      "fonte": "INEP, 2025_PV_impresso_D1_CD1.pdf",
+      "sha256_imagem": "917A03E622D70D917C6DEB955088D1E6344ADB5C1C40E70EEADEBAE4B4DEB31F",
+      "data": "data/enem2024_d1_cdazul_q012.json",
+      "imagem": "assets/enem2024_d1_cdazul_q012_integral.png",
+      "alt": "Recorte original da questão 12, coluna esquerda superior da página 7 da prova ENEM 2024 D1 Azul",
+      "legacy": "enem2025-q011.html",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 1,
+        "caderno": "cdazul",
+        "cor": "azul",
+        "idioma": "pt",
+        "numero_oficial": 12,
+        "revisao": "2026-11-20.a2024d1.q012.r1",
+        "sequencia_colecao": 17
+      },
+      "aliases": []
     }
   ]
 }
