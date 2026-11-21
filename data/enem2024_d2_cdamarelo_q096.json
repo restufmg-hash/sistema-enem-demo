@@ -12,9 +12,21 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "Os pesticidas naturais vêm sendo utilizados no controle de pragas e doenças agrícolas como substituintes de pesticidas sintéticos tradicionais, por serem menos nocivos ao ambiente, biodegradáveis e minimizarem custos e riscos relativos à lavoura. Por exemplo, os compostos 1 e 2 estão envolvidos nas respostas de defesa das plantas. Os grupos funcionais presentes nesses compostos são importantes para suas propriedades no controle de pragas."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q096_integral.png",
-      "text": "Questão 96 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado informa que pesticidas naturais vêm sendo utilizados no controle de pragas e doenças agrícolas em substituição a pesticidas sintéticos tradicionais. A figura apresenta duas fórmulas estruturais identificadas como Composto 1 e Composto 2. Pergunta: 'Qual é a função orgânica correspondente ao grupo funcional comum presente nesses dois compostos?'."
+      "asset": "assets/enem2024_d2_cdamarelo_p003_q096-compounds.png",
+      "alt": "Duas estruturas químicas originais identificadas como composto 1 e composto 2, contendo funções oxigenadas."
+    },
+    {
+      "type": "text",
+      "text": "PINTO-ZEVALLOS, D. M.; ZARBIN, P. H. G. A química na agricultura: perspectivas para o desenvolvimento de tecnologias sustentáveis. Química Nova, n. 10, 2013 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Qual é a função orgânica correspondente ao grupo funcional comum presente nesses dois compostos?"
     }
   ],
   "options": [
@@ -39,5 +51,8 @@
       "text": "Fenol."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q096-structured-p003-v1"
 }
