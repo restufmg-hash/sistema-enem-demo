@@ -37,7 +37,7 @@ if args.pdf:
   else:
    raster=page.get_pixmap(matrix=pymupdf.Matrix(item["render_scale"],item["render_scale"]),clip=pymupdf.Rect(item["source_bbox"]),alpha=False).tobytes("png")
    assert hashlib.sha256(raster).hexdigest()==item["sha256"],key
- print("SOURCE_PASS PDF_SHA, 20_OPTION_COORDINATES, FIVE_VECTOR_CROPS_ONE_NATIVE_IMAGE")
+ print("SOURCE_PASS PDF_SHA, 15_OPTION_COORDINATES, FIVE_VECTOR_CROPS_ONE_NATIVE_IMAGE")
 else:print("PDF_ORIGIN_NOT_CHECKED: provide --pdf")
 class H(SimpleHTTPRequestHandler):
  posts=0
@@ -61,7 +61,7 @@ try:
    check(mode+"_columns",pg.locator(".page-columns").count()==1 and pg.locator(".page-column").count()==2)
    check(mode+"_options",pg.locator(".page-question input[type=radio]").count()==15)
    imgs=pg.locator("#page-sheet img").evaluate_all("(xs)=>xs.map(x=>({src:x.getAttribute('src'),loaded:x.complete&&x.naturalWidth>0}))")
-   check(mode+"_three_images",len(imgs)==6 and all(z["loaded"] and "integral" not in z["src"] for z in imgs))
+   check(mode+"_six_images",len(imgs)==6 and all(z["loaded"] and "integral" not in z["src"] for z in imgs))
    check(mode+"_source_figures_in_sections",
      pg.locator(".page-question").nth(0).locator("img").count()==0 and
      pg.locator(".page-question").nth(1).locator(".page-q-option img").count()==5 and
