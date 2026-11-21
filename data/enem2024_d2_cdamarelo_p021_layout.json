@@ -1,0 +1,275 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p021",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 21,
+    "pdf_page_index": 20,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "single_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "MATEMÁTICA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "full",
+        "x0": 32,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 745,
+        "order": [
+          149,
+          150
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q149",
+      "number": 149,
+      "column": "full",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        539.5,
+        530
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q149.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q150",
+      "number": 150,
+      "column": "full",
+      "order": 1,
+      "bbox": [
+        32,
+        530,
+        539.5,
+        745
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q150.json"
+    }
+  ],
+  "media": {
+    "q149-caesar": {
+      "url": "assets/enem2024_d2_cdamarelo_p021_q149-caesar.png",
+      "mime_type": "image/png",
+      "sha256": "27f277fb5db6004cdb918079a1072b9f2bc161374b11df5a2d1c32bcb093c60b",
+      "source_bbox": [
+        33,
+        147,
+        536,
+        225
+      ],
+      "source_kind": "pdf_vector_crop",
+      "source_pdf_page": 21,
+      "render_scale": 3,
+      "source_role": "Diagrama original da Cifra de César: duas faixas com letras do texto codificado e do original ligadas por setas para representar substituição três posições adiante."
+    },
+    "q149-A": {
+      "url": "assets/enem2024_d2_cdamarelo_p021_q149-A.png",
+      "mime_type": "image/png",
+      "sha256": "749e4505f6353c416435a86be4d1bd3b2c41c4837f0ea88a402851c5f957fec6",
+      "source_bbox": [
+        48,
+        349,
+        290,
+        380
+      ],
+      "source_kind": "pdf_vector_crop",
+      "source_pdf_page": 21,
+      "render_scale": 3,
+      "source_role": "Alternativa A, soma de três frações 1/25 + 1/25 + 1/25, diretamente do PDF."
+    },
+    "q149-B": {
+      "url": "assets/enem2024_d2_cdamarelo_p021_q149-B.png",
+      "mime_type": "image/png",
+      "sha256": "924b3f59e8de809c71b1e298e809ed1674f94a298964996a65a71f1c3cc8473a",
+      "source_bbox": [
+        48,
+        384,
+        290,
+        415
+      ],
+      "source_kind": "pdf_vector_crop",
+      "source_pdf_page": 21,
+      "render_scale": 3,
+      "source_role": "Alternativa B, soma 24/25 + 23/24 + 1/23, diretamente do PDF."
+    },
+    "q149-C": {
+      "url": "assets/enem2024_d2_cdamarelo_p021_q149-C.png",
+      "mime_type": "image/png",
+      "sha256": "1d998d94ff7fcf3f12143f749e6bf2f1695fc66a5bd0f1e9f0df9ec6436ecce9",
+      "source_bbox": [
+        48,
+        419,
+        290,
+        450
+      ],
+      "source_kind": "pdf_vector_crop",
+      "source_pdf_page": 21,
+      "render_scale": 3,
+      "source_role": "Alternativa C, produto 1/25 × 1/24 × 1/23, diretamente do PDF."
+    },
+    "q149-D": {
+      "url": "assets/enem2024_d2_cdamarelo_p021_q149-D.png",
+      "mime_type": "image/png",
+      "sha256": "3b7f8052e39de62eb5e254ec8eb85cd68a765faa8ff16fcdf71ef37e099996eb",
+      "source_bbox": [
+        48,
+        454,
+        290,
+        485
+      ],
+      "source_kind": "pdf_vector_crop",
+      "source_pdf_page": 21,
+      "render_scale": 3,
+      "source_role": "Alternativa D, produto 24/25 × 23/25 × 1/25, diretamente do PDF."
+    },
+    "q149-E": {
+      "url": "assets/enem2024_d2_cdamarelo_p021_q149-E.png",
+      "mime_type": "image/png",
+      "sha256": "9ed41de82aa32c57ea1cca968528003a3476a74edccad5471ec57350b7662b01",
+      "source_bbox": [
+        48,
+        489,
+        290,
+        520
+      ],
+      "source_kind": "pdf_vector_crop",
+      "source_pdf_page": 21,
+      "render_scale": 3,
+      "source_role": "Alternativa E, produto 24/25 × 23/24 × 1/23, diretamente do PDF."
+    },
+    "q150-richter": {
+      "url": "assets/enem2024_d2_cdamarelo_p021_q150-richter.png",
+      "mime_type": "image/png",
+      "sha256": "6234129a5313141bc38620b4a33e14a87ac6aefb74571467611403d2f189e986",
+      "source_bbox": [
+        238,
+        588,
+        355,
+        626
+      ],
+      "source_kind": "pdf_vector_crop",
+      "source_pdf_page": 21,
+      "render_scale": 3,
+      "source_role": "Equação original da escala Richter: M₂ − M₁ = (2/3) log(E₂/E₁), com índices inferiores e fração preservados."
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q149",
+      "label": "A",
+      "bbox": [
+        32.01,
+        353.73,
+        41.76,
+        363.48
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q149",
+      "label": "B",
+      "bbox": [
+        32.01,
+        388.85,
+        41.76,
+        398.6
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q149",
+      "label": "C",
+      "bbox": [
+        32.01,
+        423.97,
+        41.76,
+        433.72
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q149",
+      "label": "D",
+      "bbox": [
+        32.01,
+        459.08,
+        41.76,
+        468.83
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q149",
+      "label": "E",
+      "bbox": [
+        32.01,
+        494.19,
+        41.76,
+        503.94
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q150",
+      "label": "A",
+      "bbox": [
+        32.01,
+        676.17,
+        41.76,
+        685.92
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q150",
+      "label": "B",
+      "bbox": [
+        32.01,
+        689.61,
+        41.76,
+        699.36
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q150",
+      "label": "C",
+      "bbox": [
+        32.01,
+        703.05,
+        41.76,
+        712.8
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q150",
+      "label": "D",
+      "bbox": [
+        32.01,
+        716.48,
+        41.76,
+        726.23
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q150",
+      "label": "E",
+      "bbox": [
+        32.01,
+        729.92,
+        41.76,
+        739.67
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}

@@ -56,6 +56,9 @@
   .page-question p { margin: .25rem 0 .35rem; text-align: justify; white-space: pre-line; overflow-wrap: anywhere; font-size: 17.8px; line-height: 1.13; }
   .page-question figure { margin: 8px 0; }
   .page-question figure img { display: block; width: auto; max-width: 100%; height: auto; border: 0; border-radius: 0; }
+  .page-question figure.compact-equation { width: fit-content; max-width: 100%; margin: 12px auto; }
+  .page-question figure.compact-equation img { display: block; width: auto; max-width: 100%; height: auto; }
+
   .page-question figcaption { font-size: 12px; font-style: italic; }
   .page-q-option { display: flex; align-items: flex-start; gap: 5px; margin: 1px 0; font-size: 17px; line-height: 1.05; cursor: pointer; }
   .page-q-option input { margin: 4px 4px 0 0; accent-color: #154b7c; flex-shrink: 0; }
@@ -403,7 +406,7 @@ async function iniciarModoPagina(params, catalogo) {
     el.textContent = cleaned;
     target.appendChild(el);
   }
-  function imageBlock(target, asset, alt) {
+  function imageBlock(target, asset, alt, compactEquation = false) {
     const src = typeof asset === "string" ? asset : "";
     if (!src) throw new Error("Mídia da página ausente");
     const fig = document.createElement("figure");
@@ -412,6 +415,14 @@ async function iniciarModoPagina(params, catalogo) {
     img.alt = alt || "Imagem do caderno oficial";
     img.loading = "eager";
     fig.appendChild(img);
+    if (compactEquation) {
+      fig.classList.remove("wide-original");
+      fig.removeAttribute("role");
+      fig.removeAttribute("aria-label");
+      fig.removeAttribute("tabindex");
+      fig.querySelector(".figure-pan-hint")?.remove();
+      fig.classList.add("compact-equation");
+    }
     target.appendChild(fig);
   }
   for (const columnRef of page.layout.columns) {
@@ -460,7 +471,8 @@ async function iniciarModoPagina(params, catalogo) {
           // sem repetir toda a questão como imagem. O modo questão conserva o crop original.
           paragraph(section, block.text);
         } else if (block.type === "image" && (block.asset || block.asset_url)) {
-          imageBlock(section, block.asset || block.asset_url, block.alt || block.text);
+          imageBlock(section, block.asset || block.asset_url, block.alt || block.text,
+            block.display_mode === "compact_equation");
         } else if (typeof block.text === "string") {
           paragraph(section, block.text);
         }
