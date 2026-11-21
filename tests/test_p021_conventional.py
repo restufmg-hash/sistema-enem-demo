@@ -23,8 +23,8 @@ for key,m in layout["media"].items():
  path=root/m["url"];assert path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest()==m["sha256"],key
  raw=page.get_pixmap(matrix=pymupdf.Matrix(m["render_scale"],m["render_scale"]),clip=pymupdf.Rect(m["source_bbox"]),alpha=False).tobytes("png")
  assert hashlib.sha256(raw).hexdigest()==m["sha256"],key
-q149=json.loads((root/layout["questions"][0]["source_data"]).read_text(encoding="utf8-sig"))
-q150=json.loads((root/layout["questions"][1]["source_data"]).read_text(encoding="utf8-sig"))
+q149=json.loads((root/layout["questions"][0]["source_data"]).read_text(encoding="utf-8-sig"))
+q150=json.loads((root/layout["questions"][1]["source_data"]).read_text(encoding="utf-8-sig"))
 assert q149["question_id"].endswith("q149") and q150["question_id"].endswith("q150")
 assert [a["label"] for a in q149["options"]]==list("ABCDE")
 assert all(x["image_only"] and x["pan_image"] and x["asset"]==layout["media"]["q149-"+x["label"]]["url"] for x in q149["options"])
@@ -57,6 +57,11 @@ try:
    check(mode+"_caesar_diagram",pg.locator(".page-question").first.locator("figure img").count()==1)
    check(mode+"_five_math_options",pg.locator(".page-question").first.locator(".page-q-option img").count()==5)
    check(mode+"_richter_equation",pg.locator(".page-question").nth(1).locator("figure img").count()==1)
+   check(mode+"_richter_is_compact",pg.locator(".page-question").nth(1).locator("figure.compact-equation").count()==1 and
+         pg.locator(".page-question").nth(1).locator("figure.wide-original").count()==0)
+   check(mode+"_richter_fits_without_pan",pg.locator(".page-question").nth(1).locator("figure.compact-equation img").evaluate(
+         "(x)=>{let r=x.getBoundingClientRect(),p=x.closest('.page-question').getBoundingClientRect();return r.width>170&&r.left>=p.left&&r.right<=p.right+1;}"))
+
    check(mode+"_no_external_overflow",pg.evaluate("()=>document.documentElement.scrollWidth<=innerWidth"))
    if mode=="mobile":
     check("mobile_reading_mode",pg.locator("#page-viewport.read-mode").count()==1)

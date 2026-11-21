@@ -21,7 +21,8 @@
     {
       "type": "image",
       "asset": "assets/enem2024_d2_cdamarelo_p021_q150-richter.png",
-      "alt": "Equação original da escala Richter: M₂ − M₁ = (2/3) log(E₂/E₁), com índices inferiores e fração preservados."
+      "alt": "Equação original da escala Richter: M₂ − M₁ = (2/3) log(E₂/E₁), com índices inferiores e fração preservados.",
+      "display_mode": "compact_equation"
     },
     {
       "type": "text",
