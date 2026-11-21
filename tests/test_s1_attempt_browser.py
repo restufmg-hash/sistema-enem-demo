@@ -1,0 +1,149 @@
+"""Smoke de navegador isolado da PR S1. Nunca acessa Apps Script real.
+
+Execute fora do Codespaces, com Playwright Python/Chromium disponíveis:
+    python tests/test_s1_attempt_browser.py
+Todas as chamadas externas são abortadas; o endpoint de tentativas é simulado.
+"""
+import json
+import threading
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+
+from playwright.sync_api import sync_playwright
+
+ROOT = Path(__file__).resolve().parents[1]
+assert (ROOT / "questao.html").is_file(), "questao.html ausente"
+
+
+class QuietHandler(SimpleHTTPRequestHandler):
+    def log_message(self, *args):
+        pass
+
+
+catalog = {"items": [{
+    "id": "q133",
+    "question_id": "enem:2024:regular_nacional:d2:q133",
+    "numero_oficial": 133,
+    "ano": 2024,
+    "prova": "ENEM",
+    "pagina": 15,
+    "area": "CN",
+    "fonte": "INEP",
+    "imagem": "imagem-ficticia.png",
+    "data": "q133.json",
+}]}
+alternativas = {"options": [
+    {"label": letter, "text": "Alternativa ficticia " + letter}
+    for letter in "ABCDE"
+]}
+question_id = catalog["items"][0]["question_id"]
+nonce_key = "sistema_enem_attempt_" + question_id
+first_key = "sistema_enem_primeira_" + question_id
+
+
+def test_viewport(browser, url, viewport):
+    posts, errors, external = [], [], []
+    context = browser.new_context(viewport=viewport)
+    page = context.new_page()
+    page.on("pageerror", lambda exc: errors.append(str(exc)))
+
+    def allow_local(route):
+        external.append(route.request.url)
+        route.abort()
+
+    # Fail closed: no actual external traffic, including the production Apps Script.
+    page.route("**/*", allow_local)
+    page.route("**/config.js", lambda route: route.fulfill(
+        content_type="text/javascript",
+        body='window.SISTEMA_ENEM_API = "https://example.invalid/exec";',
+    ))
+    page.route("**/catalogo.json", lambda route: route.fulfill(json=catalog))
+    page.route("**/q133.json", lambda route: route.fulfill(json=alternativas))
+
+    def fake_post(route):
+        assert route.request.method == "POST"
+        payload = json.loads(route.request.post_data)
+        posts.append(payload)
+        body = (
+            {"error": "not_found"}
+            if len(posts) == 1
+            else {"persisted": True, "correct": False, "official_status": "valid"}
+        )
+        route.fulfill(json=body)
+
+    page.route("https://example.invalid/exec", fake_post)
+
+    # Serve only the reviewed HTML from an ephemeral loopback server.
+    page.route(url + "/**", lambda route: route.continue_())
+    try:
+        page.goto(url + "/questao.html?id=q133", wait_until="networkidle")
+        page.locator('input[name="alternativa"][value="A"]').check()
+        page.locator('input[name="confianca"][value="3"]').check()
+        page.locator('button[type="submit"]').click()
+        page.get_by_text("Não foi possível confirmar a gravação", exact=False).wait_for()
+        assert len(posts) == 1, posts
+        first_nonce = posts[0]["client_attempt_id"]
+        state = page.evaluate(
+            "([nonce, first]) => ({nonce: sessionStorage.getItem(nonce), "
+            "first: localStorage.getItem(first)})", [nonce_key, first_key]
+        )
+        assert state == {"nonce": first_nonce, "first": None}, state
+
+        # Alterar a alternativa não pode repetir o mesmo nonce com conteúdo novo.
+        page.locator('input[name="alternativa"][value="B"]').check()
+        page.locator('button[type="submit"]').click()
+        page.get_by_text("Restaure a seleção anterior", exact=False).wait_for()
+        assert len(posts) == 1, posts
+
+        # Novo carregamento no mesmo contexto mantém nonce, sessão e payload.
+        page.reload(wait_until="networkidle")
+        page.locator('input[name="alternativa"][value="A"]').check()
+        page.locator('input[name="confianca"][value="3"]').check()
+        page.locator('button[type="submit"]').click()
+        page.get_by_text("Resposta registrada no servidor. Incorreta.", exact=True).wait_for()
+        assert len(posts) == 2 and posts[1] == posts[0], posts
+        final = page.evaluate(
+            "([nonce, first]) => ({nonce: sessionStorage.getItem(nonce), "
+            "first: localStorage.getItem(first)})", [nonce_key, first_key]
+        )
+        assert final == {"nonce": None, "first": "A"}, final
+        assert not errors, errors
+        assert not external, external  # No unrecognized / real network calls.
+        print(
+            "S1_BROWSER_PASS",
+            f"viewport={viewport['width']}x{viewport['height']}",
+            "HTTP200_ERROR_BLOCKED",
+            "RETRY_NONCE_STABLE",
+            "FIRST_ANSWER_AFTER_CONFIRMATION",
+            "EXTERNAL_REQUESTS=0",
+            "JS_ERRORS=0",
+        )
+    finally:
+        context.close()
+
+
+def main():
+    server = ThreadingHTTPServer(
+        ("127.0.0.1", 0), partial(QuietHandler, directory=str(ROOT))
+    )
+    worker = threading.Thread(target=server.serve_forever, daemon=True)
+    worker.start()
+    url = "http://127.0.0.1:" + str(server.server_address[1])
+    try:
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.launch(headless=True)
+            try:
+                for viewport in [
+                    {"width": 390, "height": 844},
+                    {"width": 1280, "height": 800},
+                ]:
+                    test_viewport(browser, url, viewport)
+            finally:
+                browser.close()
+    finally:
+        server.shutdown()
+
+
+if __name__ == "__main__":
+    main()
