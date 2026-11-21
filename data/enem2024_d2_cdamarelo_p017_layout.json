@@ -1,0 +1,332 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p017",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 17,
+    "pdf_page_index": 16,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "MATEMÁTICA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 745,
+        "order": [
+          140,
+          141
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 745,
+        "order": [
+          142
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q140",
+      "number": 140,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        368
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q140.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q141",
+      "number": 141,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        370,
+        281,
+        720
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q141.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q142",
+      "number": 142,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        570
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q142.json"
+    }
+  ],
+  "media": {
+    "q141-A": {
+      "url": "assets/enem2024_d2_cdamarelo_p017_q141-A.png",
+      "mime_type": "image/png",
+      "sha256": "68b99e608078a230ad9be1a2f4f077ae1c9f9b57efff5fda3dad2e956c3e6a4d",
+      "source_bbox": [
+        48,
+        535,
+        281,
+        560
+      ],
+      "source_pdf_page": 17,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Expressão fracionária da alternativa A da questão 141, recortada do PDF oficial."
+    },
+    "q141-B": {
+      "url": "assets/enem2024_d2_cdamarelo_p017_q141-B.png",
+      "mime_type": "image/png",
+      "sha256": "b6cb1a96d6c18d21dfef0fb932218bbb7ab9de97b7085841aea8266abae788fd",
+      "source_bbox": [
+        48,
+        567,
+        281,
+        592
+      ],
+      "source_pdf_page": 17,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Expressão fracionária da alternativa B da questão 141, recortada do PDF oficial."
+    },
+    "q141-C": {
+      "url": "assets/enem2024_d2_cdamarelo_p017_q141-C.png",
+      "mime_type": "image/png",
+      "sha256": "4f5b5e3393d209078e25bae2704a81e64268011b341fb05aeece13827e560a37",
+      "source_bbox": [
+        48,
+        600,
+        281,
+        625
+      ],
+      "source_pdf_page": 17,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Expressão fracionária da alternativa C da questão 141, recortada do PDF oficial."
+    },
+    "q141-D": {
+      "url": "assets/enem2024_d2_cdamarelo_p017_q141-D.png",
+      "mime_type": "image/png",
+      "sha256": "0e265da651a05aa3fc29b9b3c3a0b91e6b01a580b67df2001f51706c9465f6ac",
+      "source_bbox": [
+        48,
+        632,
+        281,
+        657
+      ],
+      "source_pdf_page": 17,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Expressão fracionária da alternativa D da questão 141, recortada do PDF oficial."
+    },
+    "q141-E": {
+      "url": "assets/enem2024_d2_cdamarelo_p017_q141-E.png",
+      "mime_type": "image/png",
+      "sha256": "98ba595451fe8dc41895abad10a4cd2b0e4a1bd1ebc046958e261fa25ef9a4a5",
+      "source_bbox": [
+        48,
+        664,
+        281,
+        690
+      ],
+      "source_pdf_page": 17,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Expressão fracionária da alternativa E da questão 141, recortada do PDF oficial."
+    },
+    "q142-phones": {
+      "url": "assets/enem2024_d2_cdamarelo_p017_q142_phones.png",
+      "mime_type": "image/png",
+      "sha256": "8367ffa80f5f61c6bbc3722ebcd364d5ff69c8a4410a048590a44893129df3a7",
+      "source_bbox": [
+        312.6331,
+        202.2252,
+        514.2331,
+        413.1852
+      ],
+      "source_pdf_page": 17,
+      "source_kind": "native_image",
+      "source_role": "Dois telefones celulares: celular 1 com diagonal de 3 e 1/2 polegadas e celular 2 com diagonal de 4 e 5/6 polegadas."
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q140",
+      "label": "A",
+      "bbox": [
+        32.01,
+        294.54,
+        41.76,
+        304.29
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q140",
+      "label": "B",
+      "bbox": [
+        32.01,
+        307.65,
+        41.76,
+        317.4
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q140",
+      "label": "C",
+      "bbox": [
+        32.01,
+        320.76,
+        41.76,
+        330.51
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q140",
+      "label": "D",
+      "bbox": [
+        32.01,
+        333.88,
+        41.76,
+        343.63
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q140",
+      "label": "E",
+      "bbox": [
+        32.01,
+        346.99,
+        41.76,
+        356.74
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q141",
+      "label": "A",
+      "bbox": [
+        32.01,
+        540.94,
+        41.76,
+        550.69
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q141",
+      "label": "B",
+      "bbox": [
+        32.01,
+        572.61,
+        41.76,
+        582.36
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q141",
+      "label": "C",
+      "bbox": [
+        32.01,
+        604.28,
+        41.76,
+        614.03
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q141",
+      "label": "D",
+      "bbox": [
+        32.01,
+        635.95,
+        41.76,
+        645.7
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q141",
+      "label": "E",
+      "bbox": [
+        32.01,
+        667.62,
+        41.76,
+        677.37
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q142",
+      "label": "A",
+      "bbox": [
+        290.29,
+        484.02,
+        300.04,
+        493.77
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q142",
+      "label": "B",
+      "bbox": [
+        290.29,
+        497.13,
+        300.04,
+        506.88
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q142",
+      "label": "C",
+      "bbox": [
+        290.29,
+        510.25,
+        300.04,
+        520.0
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q142",
+      "label": "D",
+      "bbox": [
+        290.29,
+        523.36,
+        300.04,
+        533.11
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q142",
+      "label": "E",
+      "bbox": [
+        290.29,
+        536.47,
+        300.04,
+        546.22
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}
