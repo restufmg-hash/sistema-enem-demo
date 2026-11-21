@@ -10,7 +10,7 @@ const html = readFileSync(resolve(base, "questao.html"), "utf8");
 const code = html.match(/<script>\s*([\s\S]*?)<\/script>/)?.[1];
 assert.ok(code, "script embutido da página deve existir");
 
-function createHarness(responses) {
+function createHarness(responses, options = {}) {
   const questionId = "enem:2024:regular_nacional:d2:q133";
   const key = "sistema_enem_attempt_" + questionId;
   const localData = new Map();
@@ -82,7 +82,13 @@ function createHarness(responses) {
   vm.runInNewContext(code.replace(/iniciar\(\);\s*$/, "iniciar().catch((err) => { window.__bootstrapError = String(err); });"), {
     window,
     document, location: { search: "?id=q133" }, URLSearchParams,
-    fetch, sessionStorage: store(sessionData), localStorage: store(localData),
+    fetch,
+    sessionStorage: options.noSessionStorage
+      ? { getItem() { throw new Error("Indisponível"); },
+          setItem() { throw new Error("Indisponível"); },
+          removeItem() { throw new Error("Indisponível"); } }
+      : store(sessionData),
+    localStorage: store(localData),
     crypto: { randomUUID: () => "nonce-" + ++uuid },
     Date, Math, Number, String,
   }, { filename: "questao.html" });
@@ -98,7 +104,7 @@ function createHarness(responses) {
     return getElement("form-resposta").on_submit({ preventDefault() {} });
   }
   return {
-    key, posts, sessionData, button, submit, ready,
+    key, posts, sessionData, button, option, confidence, submit, ready,
     result: () => getElement("resultado"),
   };
 }
@@ -179,4 +185,39 @@ test("duplo clique enquanto a chamada esta pendente faz apenas um POST", async (
   assert.equal(h.button.disabled, false);
   assert.equal(h.posts.length, 1);
   assert.equal(h.result().className, "ok");
+});
+
+test("reenvio com alternativa ou confianca alterada nao reutiliza nonce com payload diferente", async () => {
+  const h = createHarness([
+    { invalidJson: true },
+    { body: { persisted: true, correct: false, official_status: "valid" } },
+  ]);
+  await h.submit();
+  const nonce = h.posts[0].client_attempt_id;
+  assert.equal(h.sessionData.has(h.key + "_payload"), true);
+  h.option.value = "B";
+  await h.submit();
+  assert.equal(h.posts.length, 1);
+  assert.match(h.result().textContent, /Restaure a seleção anterior/);
+  h.option.value = "A";
+  h.confidence.value = "4";
+  await h.submit();
+  assert.equal(h.posts.length, 1);
+  h.confidence.value = "3";
+  await h.submit();
+  assert.equal(h.posts.length, 2);
+  assert.equal(h.posts[1].client_attempt_id, nonce);
+  assert.equal(h.posts[1].selected_option, "A");
+  assert.equal(h.result().className, "ok");
+  assert.equal(h.sessionData.has(h.key + "_payload"), false);
+});
+
+test("sem armazenamento de sessao nao cria POST com nonce instavel", async () => {
+  const h = createHarness([
+    { body: { persisted: true, correct: true, official_status: "valid" } },
+  ], { noSessionStorage: true });
+  await h.submit();
+  assert.equal(h.posts.length, 0);
+  assert.equal(h.result().className, "erro");
+  assert.match(h.result().textContent, /bloqueado para evitar duplicação/);
 });
