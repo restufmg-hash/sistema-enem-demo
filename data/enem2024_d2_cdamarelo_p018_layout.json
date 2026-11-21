@@ -1,0 +1,271 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p018",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 18,
+    "pdf_page_index": 17,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "MATEMÁTICA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 745,
+        "order": [
+          143,
+          144
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 745,
+        "order": [
+          145
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q143",
+      "number": 143,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        367
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q143.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q144",
+      "number": 144,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        369,
+        281,
+        746
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q144.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q145",
+      "number": 145,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        540
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q145.json"
+    }
+  ],
+  "media": {
+    "q144-pulleys": {
+      "url": "assets/enem2024_d2_cdamarelo_p018_q144-pulleys.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "a1ea508c133607c4ec34d54f5a3ec70ef40f79a66bf11a987a48f6be816c0ac5",
+      "source_bbox": [
+        34.0175,
+        483.0164,
+        276.2819,
+        608.4071
+      ],
+      "source_pdf_page": 18,
+      "source_kind": "native_image",
+      "source_role": "Sistema de duas polias com raios r=4 cm e R=8 cm, dois trechos de correia de 15 cm e ângulo de 150 graus junto à polia menor."
+    },
+    "q145-hospital": {
+      "url": "assets/enem2024_d2_cdamarelo_p018_q145-hospital.png",
+      "mime_type": "image/png",
+      "sha256": "5f794d43ab941f21e7ab9b7114c0f20cc66d7119085f8adbd98a8e0232dd2312",
+      "source_bbox": [
+        309.2731,
+        204.2252,
+        517.5931,
+        411.5852
+      ],
+      "source_pdf_page": 18,
+      "source_kind": "native_image",
+      "source_role": "Triângulo equilátero de postos P₁, P₂ e P₃ distando 10 km entre si e hospital H equidistante dos três."
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q143",
+      "label": "A",
+      "bbox": [
+        32.008,
+        282.633,
+        41.758,
+        292.383
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q143",
+      "label": "B",
+      "bbox": [
+        32.008,
+        295.874,
+        41.758,
+        305.624
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q143",
+      "label": "C",
+      "bbox": [
+        32.008,
+        309.114,
+        41.758,
+        318.864
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q143",
+      "label": "D",
+      "bbox": [
+        32.008,
+        322.355,
+        41.758,
+        332.105
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q143",
+      "label": "E",
+      "bbox": [
+        32.008,
+        335.595,
+        41.758,
+        345.345
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q144",
+      "label": "A",
+      "bbox": [
+        32.008,
+        676.958,
+        41.758,
+        686.708
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q144",
+      "label": "B",
+      "bbox": [
+        32.008,
+        690.198,
+        41.758,
+        699.948
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q144",
+      "label": "C",
+      "bbox": [
+        32.008,
+        703.439,
+        41.758,
+        713.189
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q144",
+      "label": "D",
+      "bbox": [
+        32.008,
+        716.679,
+        41.758,
+        726.429
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q144",
+      "label": "E",
+      "bbox": [
+        32.008,
+        729.92,
+        41.758,
+        739.67
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q145",
+      "label": "A",
+      "bbox": [
+        290.291,
+        447.266,
+        300.041,
+        457.016
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q145",
+      "label": "B",
+      "bbox": [
+        290.291,
+        460.379,
+        300.041,
+        470.129
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q145",
+      "label": "C",
+      "bbox": [
+        290.291,
+        473.493,
+        300.041,
+        483.243
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q145",
+      "label": "D",
+      "bbox": [
+        290.291,
+        486.607,
+        300.041,
+        496.357
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q145",
+      "label": "E",
+      "bbox": [
+        290.291,
+        499.721,
+        300.041,
+        509.471
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}
