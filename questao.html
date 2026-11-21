@@ -143,6 +143,21 @@
   .pagina-p8 .pagina-tentativa {font-size:.69rem;line-height:1.23;}
   .pagina-p8 .pagina-tentativa fieldset label {margin:2px 0;}
   .pagina-p8 .pagina-tentativa button {padding:.26rem .42rem;font-size:.69rem;}
+
+  /* Página 9: Q018 esquerda superior, Q019 fragmentada entre colunas,
+     Q020 à direita abaixo do trecho final de Q019; dados estruturados sem PDF de fundo. */
+  .pagina-p9 {position:absolute;display:block;min-height:1590px;}
+  .pagina-p9 .pagina-questao {position:absolute;width:calc(50% - 29px);font-size:.72rem;}
+  .pagina-p9 .pagina-q18 {top:50px;left:20px;}
+  .pagina-p9 .pagina-q19-left {top:760px;left:20px;}
+  .pagina-p9 .pagina-q19-continued {top:50px;right:20px;}
+  .pagina-p9 .pagina-q20 {top:445px;right:20px;}
+  .pagina-p9 .pagina-blocos {font-size:.72rem;line-height:1.24;}
+  .pagina-p9 .pagina-blocos p {margin:.37rem 0;}
+  .pagina-p9 .pagina-blocos [data-role="passage"] {text-align:justify;}
+  .pagina-p9 .pagina-tentativa {font-size:.67rem;line-height:1.22;}
+  .pagina-p9 .pagina-tentativa fieldset label {margin:1px 0;}
+  .pagina-p9 .pagina-tentativa button {padding:.25rem .42rem;font-size:.67rem;}
 </style>
 </head>
 <body>
@@ -330,7 +345,9 @@ const CONFIG_PAGINAS_2024_D1 = {
   7: {ano:2024,dia:1,caderno:"cdazul",idioma:"pt",pagina:7,
       questoes:[{numero:12,idioma:"pt"},{numero:13,idioma:"pt"},{numero:14,idioma:"pt"}]},
   8: {ano:2024,dia:1,caderno:"cdazul",idioma:"pt",pagina:8,
-      questoes:[{numero:15,idioma:"pt"},{numero:16,idioma:"pt"},{numero:17,idioma:"pt"}]}
+      questoes:[{numero:15,idioma:"pt"},{numero:16,idioma:"pt"},{numero:17,idioma:"pt"}]},
+  9: {ano:2024,dia:1,caderno:"cdazul",idioma:"pt",pagina:9,
+      questoes:[{numero:18,idioma:"pt"},{numero:19,idioma:"pt"},{numero:20,idioma:"pt"}]}
 };
 
 function linkDaPagina(item) {
@@ -540,6 +557,28 @@ async function abrirPaginaEstruturada(items,c) {
     continuation.append(continuing,form);
     sheet.append(continuation);
     q13.classList.add("pagina-q13-left");
+  }
+
+  if (c.pagina === 9) {
+    const q19=sheet.querySelector(".pagina-q19");
+    if (!q19) throw new Error("Q019 ausente da página 9");
+    const content=q19.querySelector(".pagina-blocos");
+    const paragraphs=Array.from(content.children);
+    if(paragraphs.length!==5 || !paragraphs[0].textContent.startsWith("Até ali que sabia")
+       || !paragraphs[4].textContent.startsWith("Nesse fragmento")) {
+      throw new Error("Contrato de fragmentação de coluna da Q019 não reconhecido");
+    }
+    const continuation=document.createElement("section");
+    continuation.className="pagina-questao pagina-q19-continued";
+    continuation.setAttribute("aria-label","Continuação da questão 19");
+    const continuing=document.createElement("div");
+    continuing.className="pagina-blocos";
+    continuing.append(paragraphs[4]);
+    const form=q19.querySelector("form");
+    if(!form) throw new Error("Formulário Q019 ausente");
+    continuation.append(continuing,form);
+    sheet.append(continuation);
+    q19.classList.add("pagina-q19-left");
   }
   for (const image of sheet.querySelectorAll("img")) {
     image.addEventListener("load",atualizarZoom);
