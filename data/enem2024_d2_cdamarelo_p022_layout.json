@@ -161,12 +161,12 @@
     "q151-E": {
       "url": "assets/enem2024_d2_cdamarelo_p022_q151-E.png",
       "mime_type": "image/png",
-      "sha256": "6e62ce1d399419f5aa13412ea4d501abfbfd07d8c954b13776417e4125089569",
+      "sha256": "18bccc5d43c3ebcff86dc79b967816779aa8cf4119641185ddd3656263169f06",
       "source_bbox": [
         45,
-        462,
+        457,
         278,
-        494
+        489
       ],
       "source_pdf_page": 22,
       "source_kind": "pdf_vector_crop",
