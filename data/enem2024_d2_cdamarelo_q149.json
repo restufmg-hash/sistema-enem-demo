@@ -1,0 +1,87 @@
+﻿{
+    "kind":  "enem.study_question.v1",
+    "question_id":  "enem:2024:regular_nacional:d2:q149",
+    "year":  2024,
+    "number":  149,
+    "area":  "Matemática",
+    "topic":  "Probabilidade sem reposição e Cifra de César",
+    "structured":  true,
+    "content_revision":  "2026-11-20-d2-c5-q149-structured-p021-v1",
+    "source":  {
+                   "provider":  "INEP",
+                   "document":  "2024_PV_impresso_D2_CD5.pdf",
+                   "page":  21,
+                   "sha256":  "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937"
+               },
+    "blocks":  [
+                   {
+                       "type":  "text",
+                       "text":  "A criptografia refere-se à construção e análise de protocolos que impedem terceiros de lerem mensagens privadas. Júlio César, imperador romano, utilizava um código para proteger as mensagens enviadas a seus generais. Assim, se a mensagem caísse em mãos inimigas, a informação não poderia ser compreendida. Nesse código, cada letra do alfabeto era substituída pela letra três posições à frente, ou seja, o “A” era substituído pelo “D”, o “B” pelo “E”, o “C” pelo “F”, e assim sucessivamente."
+                   },
+                   {
+                       "type":  "image",
+                       "asset":  "assets/enem2024_d2_cdamarelo_p021_q149-caesar.png",
+                       "alt":  "Diagrama original da Cifra de César: duas faixas com letras do texto codificado e do original ligadas por setas para representar substituição três posições adiante."
+                   },
+                   {
+                       "type":  "text",
+                       "text":  "Disponível em: www.codifica.ibict.br. Acesso em: 15 out. 2019."
+                   },
+                   {
+                       "type":  "text",
+                       "text":  "Qualquer código que tenha um padrão de substituição de letras como o descrito é considerado uma Cifra de César ou um Código de César. Note que, para decifrar uma Cifra de César, basta descobrir por qual letra o “A” foi substituído, pois isso define todas as demais substituições a serem feitas."
+                   },
+                   {
+                       "type":  "text",
+                       "text":  "Uma mensagem, em um alfabeto de 26 letras, foi codificada usando uma Cifra de César. Considere a probabilidade de se descobrir, aleatoriamente, o padrão utilizado nessa codificação, e que uma tentativa frustrada deverá ser eliminada nas tentativas seguintes."
+                   },
+                   {
+                       "type":  "text",
+                       "text":  "A probabilidade de se descobrir o padrão dessa Cifra de César apenas na terceira tentativa é dada por"
+                   }
+               ],
+    "options":  [
+                    {
+                        "label":  "A",
+                        "text":  "1/25 + 1/25 + 1/25",
+                        "image_only":  true,
+                        "asset":  "assets/enem2024_d2_cdamarelo_p021_q149-A.png",
+                        "alt":  "Alternativa A, soma de três frações 1/25 + 1/25 + 1/25, diretamente do PDF.",
+                        "pan_image":  true
+                    },
+                    {
+                        "label":  "B",
+                        "text":  "24/25 + 23/24 + 1/23",
+                        "image_only":  true,
+                        "asset":  "assets/enem2024_d2_cdamarelo_p021_q149-B.png",
+                        "alt":  "Alternativa B, soma 24/25 + 23/24 + 1/23, diretamente do PDF.",
+                        "pan_image":  true
+                    },
+                    {
+                        "label":  "C",
+                        "text":  "1/25 × 1/24 × 1/23",
+                        "image_only":  true,
+                        "asset":  "assets/enem2024_d2_cdamarelo_p021_q149-C.png",
+                        "alt":  "Alternativa C, produto 1/25 × 1/24 × 1/23, diretamente do PDF.",
+                        "pan_image":  true
+                    },
+                    {
+                        "label":  "D",
+                        "text":  "24/25 × 23/25 × 1/25",
+                        "image_only":  true,
+                        "asset":  "assets/enem2024_d2_cdamarelo_p021_q149-D.png",
+                        "alt":  "Alternativa D, produto 24/25 × 23/25 × 1/25, diretamente do PDF.",
+                        "pan_image":  true
+                    },
+                    {
+                        "label":  "E",
+                        "text":  "24/25 × 23/24 × 1/23",
+                        "image_only":  true,
+                        "asset":  "assets/enem2024_d2_cdamarelo_p021_q149-E.png",
+                        "alt":  "Alternativa E, produto 24/25 × 23/24 × 1/23, diretamente do PDF.",
+                        "pan_image":  true
+                    }
+                ],
+    "answer_policy":  "Gabarito e resolução não estão neste payload. A correção acontece somente no servidor após submissão da tentativa.",
+    "publication_stage":  "branch_only_candidate_not_student_released"
+}
