@@ -1,0 +1,55 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q016",
+  "content_revision": "2026-11-20.a2024d1.q016.r1",
+  "year": 2024,
+  "number": 16,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Multiculturalidade e produção de arte afro-brasileira",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 8
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "Uma definição possível para o conceito de arte afro-brasileira pode ser: produção plástica que é feita por negros, mestiços ou brancos a partir de suas experiências sociais com a cultura negra nacional. Exemplos clássicos dessa abordagem são Carybé (1911-1997), Mestre Didi (1917-2013) e Djanira da Motta e Silva (1914-1979), cujas obras emergem e ganham forma em razão do ambiente social no qual habitaram e viveram. Se Didi era um célebre representante da cultura religiosa nagô baiana e brasileira, iniciado desde o ventre no candomblé, Carybé era argentino e, naturalizado brasileiro, envolveu-se de tal modo com essa religião que alguns dos orixás dos quais conhecemos a imagem visual são produções suas."
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "Disponível em: www.premiopipa.com. Acesso em: 13 nov. 2021 (adaptado)."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "Sob a perspectiva da multiculturalidade e de acordo com o texto, a produção artística afro-brasileira caracteriza-se pelo(a)"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "estranhamento no modo de apropriação da cultura religiosa de matriz africana."
+    },
+    {
+      "label": "B",
+      "text": "distanciamento entre as raízes de matriz africana e a estética de outras culturas."
+    },
+    {
+      "label": "C",
+      "text": "visão uniformizadora das religiões de matriz africana expressada nas diferentes produções."
+    },
+    {
+      "label": "D",
+      "text": "relação complexa entre as vivências pessoais dos artistas e os referenciais estéticos de matriz africana."
+    },
+    {
+      "label": "E",
+      "text": "padronização da forma de produção e da temática da matriz africana presente nas obras dos artistas citados."
+    }
+  ],
+  "answer_policy": "Sem gabarito no payload; feedback apenas após persistência no servidor."
+}

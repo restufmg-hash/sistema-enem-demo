@@ -1,0 +1,70 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q015",
+  "content_revision": "2026-11-20.a2024d1.q015.r1",
+  "year": 2024,
+  "number": 15,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Telemedicina: ampliação do atendimento e barreiras de acesso",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 8
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "Telemedicina é para todos, mas nem todos estão preparados"
+    },
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "A telemedicina, nos últimos anos, tem se destacado como uma ferramenta valiosa, proporcionando uma gama de benefícios que vão desde a ampliação do acesso à assistência médica até a otimização dos recursos de todo o ecossistema de saúde."
+    },
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "O governo federal propõe a Estratégia de Saúde Digital, um programa destinado à transformação digital da saúde no Brasil. Seu principal objetivo é facilitar a troca de informações entre os diversos pontos da Rede de Atenção à Saúde, promovendo a interoperabilidade e, assim, possibilitando a transição e a continuidade do cuidado nos setores público e privado. Também está em discussão um projeto de lei que dispõe sobre o prontuário eletrônico unificado do cidadão, o que indica o quanto o tema está em evidência tanto para os gestores públicos quanto para os privados."
+    },
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "Contudo, é importante reconhecer que nem todas as pessoas estão igualmente preparadas para aproveitar plenamente os cuidados ofertados pela telemedicina. Um dos principais benefícios do atendimento de saúde a distância é a capacidade de superar barreiras geográficas, proporcionando acesso a serviços médicos, especialmente para pacientes que residem em áreas remotas e/ou carentes de certas especialidades médicas, os chamados “vazios assistenciais”. A equidade no acesso é uma questão crítica, uma vez que nem todos têm ao seu alcance dispositivos tecnológicos ou uma conexão à internet que seja confiável, entre outros problemas de infraestrutura. É um desafio tanto para os pacientes quanto para os profissionais de saúde, que, em muitos casos, não contam com estrutura para o trabalho remoto nem com letramento digital para desenvolver as funções."
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "OLIVEIRA, D. Disponível em: www.correiobraziliense.com.br. Acesso em: 21 jan. 2024 (adaptado)."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "Ao tratar da telemedicina, esse texto ressalta que um dos benefícios dessa tecnologia para a sociedade é o fato de ela"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "disponibilizar prontuário único do cidadão tanto na rede pública quanto na privada."
+    },
+    {
+      "label": "B",
+      "text": "oportunizar o acesso a atendimento médico a pacientes de áreas periféricas."
+    },
+    {
+      "label": "C",
+      "text": "fornecer dispositivos tecnológicos para a realização de exames."
+    },
+    {
+      "label": "D",
+      "text": "promover a interação entre diferentes especialidades médicas."
+    },
+    {
+      "label": "E",
+      "text": "garantir infraestrutura para o trabalho remoto de médicos."
+    }
+  ],
+  "answer_policy": "Sem gabarito no payload; feedback apenas após persistência no servidor."
+}

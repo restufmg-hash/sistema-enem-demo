@@ -129,6 +129,20 @@
   .pagina-p7 .pagina-tentativa {font-size:.71rem;line-height:1.24;}
   .pagina-p7 .pagina-tentativa fieldset label {margin:2px 0;}
   .pagina-p7 .pagina-tentativa button {padding:.28rem .43rem;font-size:.72rem;}
+
+  /* Página 8 INEP: Q015 ocupa coluna esquerda; Q016 e Q017 na coluna direita.
+     Conteúdo interativo original reconstruído dos student JSON (sem screenshot de fundo). */
+  .pagina-p8 {position:absolute;display:block;min-height:1370px;}
+  .pagina-p8 .pagina-questao {position:absolute;width:calc(50% - 29px);font-size:.73rem;}
+  .pagina-p8 .pagina-q15 {top:50px;left:20px;}
+  .pagina-p8 .pagina-q16 {top:50px;right:20px;}
+  .pagina-p8 .pagina-q17 {top:740px;right:20px;}
+  .pagina-p8 .pagina-blocos {font-size:.73rem;line-height:1.27;}
+  .pagina-p8 .pagina-blocos p {margin:.39rem 0;}
+  .pagina-p8 .pagina-blocos [data-role="passage"] {text-align:justify;}
+  .pagina-p8 .pagina-tentativa {font-size:.69rem;line-height:1.23;}
+  .pagina-p8 .pagina-tentativa fieldset label {margin:2px 0;}
+  .pagina-p8 .pagina-tentativa button {padding:.26rem .42rem;font-size:.69rem;}
 </style>
 </head>
 <body>
@@ -314,7 +328,9 @@ const CONFIG_PAGINAS_2024_D1 = {
   6: {ano:2024,dia:1,caderno:"cdazul",idioma:"pt",pagina:6,
       questoes:[{numero:9,idioma:"pt"},{numero:10,idioma:"pt"},{numero:11,idioma:"pt"}]},
   7: {ano:2024,dia:1,caderno:"cdazul",idioma:"pt",pagina:7,
-      questoes:[{numero:12,idioma:"pt"},{numero:13,idioma:"pt"},{numero:14,idioma:"pt"}]}
+      questoes:[{numero:12,idioma:"pt"},{numero:13,idioma:"pt"},{numero:14,idioma:"pt"}]},
+  8: {ano:2024,dia:1,caderno:"cdazul",idioma:"pt",pagina:8,
+      questoes:[{numero:15,idioma:"pt"},{numero:16,idioma:"pt"},{numero:17,idioma:"pt"}]}
 };
 
 function linkDaPagina(item) {
