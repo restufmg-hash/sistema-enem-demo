@@ -1,0 +1,397 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p025",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 25,
+    "pdf_page_index": 24,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "MATEMÁTICA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 745,
+        "order": [
+          157,
+          158
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 745,
+        "order": [
+          159,
+          160
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q157",
+      "number": 157,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        301
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q157.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q158",
+      "number": 158,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        302,
+        281,
+        665
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q158.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q159",
+      "number": 159,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        491
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q159.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q160",
+      "number": 160,
+      "column": "right",
+      "order": 1,
+      "bbox": [
+        290.29,
+        492,
+        539.5,
+        705
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q160.json"
+    }
+  ],
+  "media": {
+    "q159-promotion": {
+      "url": "assets/enem2024_d2_cdamarelo_p025_q159_promotion.png",
+      "mime_type": "image/png",
+      "sha256": "bcc63441efdafd05f54867ca4b55b2684e7f9556d4e6ae822abdb0043d14f4b8",
+      "source_kind": "native_image",
+      "source_pdf_page": 25,
+      "source_xref": 272,
+      "source_bbox": [
+        292.7131,
+        116.2253,
+        534.1531,
+        303.1853
+      ],
+      "source_role": "Cartaz promocional original: compre pelo menos 35 litros de defensivo do tipo A e ganhe uma máscara para aplicação; tipo A custa R$ 4,20 por litro, tipo B R$ 3,00 por litro e a máscara custa R$ 12,50."
+    },
+    "q158-A": {
+      "url": "assets/enem2024_d2_cdamarelo_p025_q158-A.png",
+      "mime_type": "image/png",
+      "sha256": "deb1de066573461db340f6bae0ea9484cdf0059bcc5d747a2e421d616f5dca8d",
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 25,
+      "source_bbox": [
+        46,
+        471,
+        200,
+        495
+      ],
+      "source_role": "Alternativa A da questão 158: fórmula de unidade de medida recortada diretamente do PDF convencional, mL multiplicado por segundo e centímetro quadrado."
+    },
+    "q158-B": {
+      "url": "assets/enem2024_d2_cdamarelo_p025_q158-B.png",
+      "mime_type": "image/png",
+      "sha256": "21f49c817e1859360355ab3641b2f374aa65fc98dc89b98cfb730568b56a7713",
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 25,
+      "source_bbox": [
+        46,
+        497,
+        200,
+        526
+      ],
+      "source_role": "Alternativa B da questão 158: fórmula de unidade de medida recortada diretamente do PDF convencional, mL por segundo, multiplicado por centímetro quadrado."
+    },
+    "q158-C": {
+      "url": "assets/enem2024_d2_cdamarelo_p025_q158-C.png",
+      "mime_type": "image/png",
+      "sha256": "d231e663e153b116e6fc7fec710a0c74c43d59fa990ade41382460620cbb8f12",
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 25,
+      "source_bbox": [
+        46,
+        529,
+        200,
+        559
+      ],
+      "source_role": "Alternativa C da questão 158: fórmula de unidade de medida recortada diretamente do PDF convencional, mL dividido por centímetro quadrado vezes segundo."
+    },
+    "q158-D": {
+      "url": "assets/enem2024_d2_cdamarelo_p025_q158-D.png",
+      "mime_type": "image/png",
+      "sha256": "6e2afbd061e4d867a63fff783d2770787b8822bfd83aedb5d67681756cd454d7",
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 25,
+      "source_bbox": [
+        46,
+        562,
+        200,
+        592
+      ],
+      "source_role": "Alternativa D da questão 158: fórmula de unidade de medida recortada diretamente do PDF convencional, centímetro quadrado vezes segundo dividido por mL."
+    },
+    "q158-E": {
+      "url": "assets/enem2024_d2_cdamarelo_p025_q158-E.png",
+      "mime_type": "image/png",
+      "sha256": "2962cc803e142d5b49addb6ee0308a53a2a5f26ad5e1413af8b1d76975f710d7",
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 25,
+      "source_bbox": [
+        46,
+        596,
+        200,
+        627
+      ],
+      "source_role": "Alternativa E da questão 158: fórmula de unidade de medida recortada diretamente do PDF convencional, centímetro quadrado dividido por mL vezes segundo."
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q157",
+      "label": "A",
+      "bbox": [
+        32.008,
+        214.536,
+        41.758,
+        224.286
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q157",
+      "label": "B",
+      "bbox": [
+        32.008,
+        227.65,
+        41.758,
+        237.4
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q157",
+      "label": "C",
+      "bbox": [
+        32.008,
+        240.764,
+        41.758,
+        250.514
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q157",
+      "label": "D",
+      "bbox": [
+        32.008,
+        253.878,
+        41.758,
+        263.628
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q157",
+      "label": "E",
+      "bbox": [
+        32.008,
+        266.991,
+        41.758,
+        276.741
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q158",
+      "label": "A",
+      "bbox": [
+        32.008,
+        476.006,
+        41.758,
+        485.756
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q158",
+      "label": "B",
+      "bbox": [
+        32.008,
+        502.175,
+        41.758,
+        511.925
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q158",
+      "label": "C",
+      "bbox": [
+        32.008,
+        534.342,
+        41.758,
+        544.092
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q158",
+      "label": "D",
+      "bbox": [
+        32.008,
+        567.516,
+        41.758,
+        577.266
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q158",
+      "label": "E",
+      "bbox": [
+        32.008,
+        601.183,
+        41.758,
+        610.933
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q159",
+      "label": "A",
+      "bbox": [
+        290.291,
+        401.668,
+        300.041,
+        411.418
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q159",
+      "label": "B",
+      "bbox": [
+        290.291,
+        414.781,
+        300.041,
+        424.531
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q159",
+      "label": "C",
+      "bbox": [
+        290.291,
+        427.895,
+        300.041,
+        437.645
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q159",
+      "label": "D",
+      "bbox": [
+        290.291,
+        441.009,
+        300.041,
+        450.759
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q159",
+      "label": "E",
+      "bbox": [
+        290.291,
+        454.123,
+        300.041,
+        463.873
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q160",
+      "label": "A",
+      "bbox": [
+        290.291,
+        618.699,
+        300.041,
+        628.449
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q160",
+      "label": "B",
+      "bbox": [
+        290.291,
+        631.813,
+        300.041,
+        641.563
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q160",
+      "label": "C",
+      "bbox": [
+        290.291,
+        644.926,
+        300.041,
+        654.676
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q160",
+      "label": "D",
+      "bbox": [
+        290.291,
+        658.04,
+        300.041,
+        667.79
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q160",
+      "label": "E",
+      "bbox": [
+        290.291,
+        671.154,
+        300.041,
+        680.904
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}

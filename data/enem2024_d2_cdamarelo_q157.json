@@ -1,0 +1,54 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q157",
+  "year": 2024,
+  "number": 157,
+  "area": "Matemática",
+  "topic": "Vazão constante e proporcionalidade entre tempo, volume e taxa",
+  "structured": true,
+  "content_revision": "2026-11-21-d2-c5-q157-structured-p025-v1",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 25,
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937"
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Uma piscina tem capacidade de 2 500 000 litros. Seu sistema de abastecimento foi regulado para ter uma vazão constante de 6 000 litros de água por minuto."
+    },
+    {
+      "type": "text",
+      "text": "O mesmo sistema foi instalado em uma segunda piscina, com capacidade de 2 750 000 litros, e regulado para ter uma vazão, também constante, capaz de enchê-la em um tempo 20% maior que o gasto para encher a primeira piscina."
+    },
+    {
+      "type": "text",
+      "text": "A vazão do sistema de abastecimento da segunda piscina, em litro por minuto, é"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "8 250."
+    },
+    {
+      "label": "B",
+      "text": "7 920."
+    },
+    {
+      "label": "C",
+      "text": "6 545."
+    },
+    {
+      "label": "D",
+      "text": "5 500."
+    },
+    {
+      "label": "E",
+      "text": "5 280."
+    }
+  ],
+  "answer_policy": "Gabarito e resolução não estão neste payload. A correção acontece somente no servidor após submissão da tentativa.",
+  "publication_stage": "branch_only_candidate_not_student_released"
+}
