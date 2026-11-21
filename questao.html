@@ -62,6 +62,31 @@
   .page-q-option span { overflow-wrap: anywhere; }
   .page-q-option.visual { min-height: 113px; align-items: center; }
   .page-q-option.visual img { max-width: 325px; width: 100%; max-height: 110px; object-fit: contain; }
+  /* Página excepcional: uma questão com cinco gráficos nativos em duas colunas. */
+  .page-columns.single-question-graphics { display: block; }
+  .single-question-graphics .page-graphic-options {
+    display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    column-gap: 24px; row-gap: 4px; align-items: start;
+  }
+  .single-question-graphics .page-graphic-options .page-q-option.visual {
+    display: flex; width: 100%; min-width: 0; min-height: 0;
+    align-items: center; gap: 6px; margin: 0;
+  }
+  .single-question-graphics .page-graphic-options .page-q-option.visual span { flex: 0 0 auto; }
+  .single-question-graphics .page-graphic-options .page-q-option.visual img {
+    flex: 1 1 auto; min-width: 0; width: auto; max-width: 100%; max-height: none;
+    height: auto; object-fit: contain;
+  }
+  .single-question-graphics .page-graphic-options [data-option-label="A"] { grid-column: 1; grid-row: 1; }
+  .single-question-graphics .page-graphic-options [data-option-label="B"] { grid-column: 1; grid-row: 2; }
+  .single-question-graphics .page-graphic-options [data-option-label="C"] { grid-column: 1; grid-row: 3; }
+  .single-question-graphics .page-graphic-options [data-option-label="D"] { grid-column: 2; grid-row: 1; }
+  .single-question-graphics .page-graphic-options [data-option-label="E"] { grid-column: 2; grid-row: 2; }
+  #page-viewport.read-mode .single-question-graphics .page-graphic-options { grid-template-columns: minmax(0,1fr); row-gap: 6px; }
+  #page-viewport.read-mode .single-question-graphics .page-graphic-options .page-q-option.visual {
+    grid-column: auto !important; grid-row: auto !important; width: 100%; min-width: 0;
+  }
+
   .page-question-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 3px; padding-top: 2px; border-top: 1px dotted #b0b9c2; font-size: 11px; }
   .page-question-controls select { font-size: 13px; margin-left: 3px; }
   .page-question-controls a { color: #0d4f7d; }
@@ -391,8 +416,14 @@ async function iniciarModoPagina(params, catalogo) {
   pequeno.textContent = page.layout.header;
   mast.append(logo, pequeno);
   sheet.appendChild(mast);
+  const graphicsMode = page.layout.mode === "single_question_graphics";
+  if (graphicsMode && (page.questions.length !== 1 ||
+      page.layout.columns.length !== 1 || page.layout.columns[0].order.length !== 1 ||
+      questions[0].data.options.some(o => !o.image_only || !(o.asset || o.asset_url)))) {
+    falha("Página gráfica única sem contrato válido."); return;
+  }
   const columns = document.createElement("div");
-  columns.className = "page-columns";
+  columns.className = "page-columns" + (graphicsMode ? " single-question-graphics" : "");
   const pendingRecovery = [];
 
   function paragraph(target, text) {
@@ -473,9 +504,16 @@ async function iniciarModoPagina(params, catalogo) {
       }
       const controls = [];
       const saved = lerRascunho(qid);
+      const graphicOptions = graphicsMode ? document.createElement("div") : null;
+      if (graphicOptions) {
+        graphicOptions.className = "page-graphic-options";
+        graphicOptions.setAttribute("role", "group");
+        graphicOptions.setAttribute("aria-label", "Alternativas gráficas da questão " + n);
+      }
       for (const option of obj.data.options) {
         const label = document.createElement("label");
         label.className = "page-q-option" + (option.image_only ? " visual" : "");
+        if (graphicsMode) label.dataset.optionLabel = option.label;
         const input = document.createElement("input");
         input.type = "radio";
         input.name = "pagina-opcao-" + n;
@@ -493,9 +531,10 @@ async function iniciarModoPagina(params, catalogo) {
           img.loading = "eager";
           label.appendChild(img);
         }
-        section.appendChild(label);
+        (graphicOptions || section).appendChild(label);
         controls.push(input);
       }
+      if (graphicOptions) section.appendChild(graphicOptions);
       const meta = document.createElement("div");
       meta.className = "page-question-controls";
       const certaintyLabel = document.createElement("label");
