@@ -12,9 +12,25 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "As placas que indicam saída de emergência brilham no escuro, pois apresentam substâncias que fosforecem na cor amarelo-esverdeada após exposição à luz ambiente, conforme a figura."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q098_integral.png",
-      "text": "Questão 98 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado informa que placas indicativas de saída de emergência brilham no escuro porque contêm substâncias que fosforecem na cor amarelo-esverdeada após exposição à luz ambiente. A figura apresenta uma placa de saída de emergência com moldura e pictograma verdes sobre fundo amarelo-claro. Pergunta: 'O aparecimento do brilho nessas condições ocorre como consequência de'."
+      "asset": "assets/enem2024_d2_cdamarelo_p004_q098-exit.png",
+      "alt": "Placa de saída de emergência verde, com figura branca de pessoa correndo."
+    },
+    {
+      "type": "text",
+      "text": "Esse fenômeno ocorre pela presença do sulfeto de zinco (ZnS), dopado com prata ou cobre, na superfície da placa."
+    },
+    {
+      "type": "text",
+      "text": "Zinc Sulphide Phosphorescence. Disponível em: https://physicsopenlab.org. Acesso em: 8 nov. 2023 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "O aparecimento do brilho nessas condições ocorre como consequência de"
     }
   ],
   "options": [
@@ -39,5 +55,8 @@
       "text": "reflexão da luz."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q098-structured-p004-v1"
 }

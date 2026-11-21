@@ -12,32 +12,62 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "Em um experimento de laboratório, duas barras metálicas, A e B, são carregadas com cargas opostas e imersas em óleo. Farelo de milho é jogado sobre o óleo e, após um certo tempo, o farelo assume o formato das linhas de campo elétrico entre as barras. A figura representa a vista superior desse experimento."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q100_integral.png",
-      "text": "Questão 100 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta um experimento com duas barras metálicas, A e B, carregadas com cargas elétricas opostas e imersas em óleo. Farelo de milho é espalhado sobre o óleo e passa a indicar o formato das linhas de campo elétrico. A figura inicial mostra duas barras verticais paralelas: A com sinais positivos, B com sinais negativos, e linhas horizontais com setas da esquerda para a direita. Pergunta: 'Ao repetir o experimento colocando um cilindro metálico oco entre as placas, qual esquema representa o formato das linhas de campo assumido pelo farelo?'."
+      "asset": "assets/enem2024_d2_cdamarelo_p004_q100-field.png",
+      "alt": "Campo elétrico uniforme entre duas barras, A positiva e B negativa, com linhas orientadas de A para B."
+    },
+    {
+      "type": "text",
+      "text": "ALMEIDA, M. A. T. Introdução às ciências físicas 2 — volume 4: módulo 4. Rio de Janeiro: Fundação CECIERJ, 2007 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Ao repetir o experimento colocando um cilindro metálico oco entre as placas, o esquema que representa o formato das linhas de campo assumido pelo farelo é:"
     }
   ],
   "options": [
     {
       "label": "A",
-      "text": "Esquema gráfico A: linhas horizontais da esquerda para a direita atravessando a região circular."
+      "text": "Esquema gráfico A: linhas horizontais da esquerda para a direita atravessando a região circular.",
+      "asset": "assets/enem2024_d2_cdamarelo_p004_q100-option-A.png",
+      "image_only": true,
+      "alt": "Esquema original de linhas de campo da alternativa A da Q100"
     },
     {
       "label": "B",
-      "text": "Esquema gráfico B: linhas horizontais da direita para a esquerda; no interior do círculo, o campo se concentra em faixa central."
+      "text": "Esquema gráfico B: linhas horizontais da direita para a esquerda; no interior do círculo, o campo se concentra em faixa central.",
+      "asset": "assets/enem2024_d2_cdamarelo_p004_q100-option-B.png",
+      "image_only": true,
+      "alt": "Esquema original de linhas de campo da alternativa B da Q100"
     },
     {
       "label": "C",
-      "text": "Esquema gráfico C: linhas da direita para a esquerda, com trajetórias que se curvam ao redor do círculo e interior sem linhas."
+      "text": "Esquema gráfico C: linhas da direita para a esquerda, com trajetórias que se curvam ao redor do círculo e interior sem linhas.",
+      "asset": "assets/enem2024_d2_cdamarelo_p004_q100-option-C.png",
+      "image_only": true,
+      "alt": "Esquema original de linhas de campo da alternativa C da Q100"
     },
     {
       "label": "D",
-      "text": "Esquema gráfico D: linhas horizontais da esquerda para a direita, com trajetórias curvas cruzadas no interior do círculo."
+      "text": "Esquema gráfico D: linhas horizontais da esquerda para a direita, com trajetórias curvas cruzadas no interior do círculo.",
+      "asset": "assets/enem2024_d2_cdamarelo_p004_q100-option-D.png",
+      "image_only": true,
+      "alt": "Esquema original de linhas de campo da alternativa D da Q100"
     },
     {
       "label": "E",
-      "text": "Esquema gráfico E: linhas da esquerda para a direita; as linhas próximas ao círculo curvam-se ao redor dele e não há linhas no interior do círculo."
+      "text": "Esquema gráfico E: linhas da esquerda para a direita; as linhas próximas ao círculo curvam-se ao redor dele e não há linhas no interior do círculo.",
+      "asset": "assets/enem2024_d2_cdamarelo_p004_q100-option-E.png",
+      "image_only": true,
+      "alt": "Esquema original de linhas de campo da alternativa E da Q100"
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q100-structured-p004-v1"
 }
