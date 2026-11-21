@@ -1,0 +1,260 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p020",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 20,
+    "pdf_page_index": 19,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "single_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "MATEMÁTICA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "full",
+        "x0": 32,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 745,
+        "order": [
+          147,
+          148
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q147",
+      "number": 147,
+      "column": "full",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        539.5,
+        295
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q147.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q148",
+      "number": 148,
+      "column": "full",
+      "order": 1,
+      "bbox": [
+        32,
+        296,
+        539.5,
+        745
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q148.json"
+    }
+  ],
+  "media": {
+    "q147-A": {
+      "url": "assets/enem2024_d2_cdamarelo_p020_q147-A.png",
+      "mime_type": "image/png",
+      "sha256": "c3c74d4ae97101db0e6b8692bff186a5be0086fc341cd5dde5ec2da841dedc16",
+      "source_bbox": [
+        45,
+        145,
+        538,
+        173
+      ],
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 20,
+      "source_role": "Alternativa A da questão 147, texto e fórmula completos conforme PDF oficial: hexágono regular, pois a área do jardim, em metro quadrado, será k²√3/24."
+    },
+    "q147-B": {
+      "url": "assets/enem2024_d2_cdamarelo_p020_q147-B.png",
+      "mime_type": "image/png",
+      "sha256": "ac4f584760de026f0833839d890f0f9ae96a172faae82544ff0706d8f2c7a779",
+      "source_bbox": [
+        45,
+        173,
+        538,
+        204
+      ],
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 20,
+      "source_role": "Alternativa B da questão 147, texto e fórmula completos conforme PDF oficial: hexágono regular, pois a área do jardim, em metro quadrado, será 3k²√3/2."
+    },
+    "q147-C": {
+      "url": "assets/enem2024_d2_cdamarelo_p020_q147-C.png",
+      "mime_type": "image/png",
+      "sha256": "d2e832f0a44c28b0209ba77417a5485b58213fda482180dbfee51096fdf25945",
+      "source_bbox": [
+        45,
+        204,
+        538,
+        233
+      ],
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 20,
+      "source_role": "Alternativa C da questão 147, texto e fórmula completos conforme PDF oficial: quadrado, pois a área do jardim, em metro quadrado, será k²/16."
+    },
+    "q147-D": {
+      "url": "assets/enem2024_d2_cdamarelo_p020_q147-D.png",
+      "mime_type": "image/png",
+      "sha256": "e0ab6099ae3fb66785fe2ec299b9568657d180e2a938038d785196899480c979",
+      "source_bbox": [
+        45,
+        233,
+        538,
+        260
+      ],
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 20,
+      "source_role": "Alternativa D da questão 147, texto e fórmula completos conforme PDF oficial: triângulo equilátero, pois a área do jardim, em metro quadrado, será k²√3/36."
+    },
+    "q147-E": {
+      "url": "assets/enem2024_d2_cdamarelo_p020_q147-E.png",
+      "mime_type": "image/png",
+      "sha256": "b318c11c97bf3b7c9c7e07b3a8bef4ac5ed9108217febff15b9e16cf6c846d05",
+      "source_bbox": [
+        45,
+        263,
+        538,
+        286
+      ],
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_pdf_page": 20,
+      "source_role": "Alternativa E da questão 147, texto e fórmula completos conforme PDF oficial: triângulo equilátero, pois a área do jardim, em metro quadrado, será k²√3/4."
+    },
+    "q148-cameras": {
+      "url": "assets/enem2024_d2_cdamarelo_p020_q148_cameras.png",
+      "mime_type": "image/png",
+      "sha256": "d5d724d902c2e910a93757c47fe51da8d6b3b326efcd54160808f7e0376aa824",
+      "source_bbox": [
+        166.1075,
+        359.2571,
+        403.4675,
+        409.8971
+      ],
+      "source_kind": "native_image",
+      "source_xref": 210,
+      "source_pdf_page": 20,
+      "source_role": "Esquema do percurso entre Terminal 1 e Terminal 2 com câmeras I a V, cada uma monitorando uma faixa de extensão variável."
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q147",
+      "label": "A",
+      "bbox": [
+        32.01,
+        151.2,
+        41.76,
+        160.95
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q147",
+      "label": "B",
+      "bbox": [
+        32.01,
+        180.45,
+        41.76,
+        190.2
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q147",
+      "label": "C",
+      "bbox": [
+        32.01,
+        210.4,
+        41.76,
+        220.15
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q147",
+      "label": "D",
+      "bbox": [
+        32.01,
+        239.64,
+        41.76,
+        249.39
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q147",
+      "label": "E",
+      "bbox": [
+        32.01,
+        268.17,
+        41.76,
+        277.92
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q148",
+      "label": "A",
+      "bbox": [
+        32.01,
+        635.89,
+        41.76,
+        645.64
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q148",
+      "label": "B",
+      "bbox": [
+        32.01,
+        649.01,
+        41.76,
+        658.76
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q148",
+      "label": "C",
+      "bbox": [
+        32.01,
+        662.12,
+        41.76,
+        671.87
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q148",
+      "label": "D",
+      "bbox": [
+        32.01,
+        675.23,
+        41.76,
+        684.98
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q148",
+      "label": "E",
+      "bbox": [
+        32.01,
+        688.35,
+        41.76,
+        698.1
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}
