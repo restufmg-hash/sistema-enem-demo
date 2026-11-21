@@ -49,8 +49,11 @@ def test_viewport(browser, url, viewport):
     page.on("pageerror", lambda exc: errors.append(str(exc)))
 
     def allow_local(route):
-        external.append(route.request.url)
-        route.abort()
+        if route.request.url.startswith(url + "/"):
+            route.continue_()
+        else:
+            external.append(route.request.url)
+            route.abort()
 
     # Fail closed: no actual external traffic, including the production Apps Script.
     page.route("**/*", allow_local)
@@ -74,8 +77,6 @@ def test_viewport(browser, url, viewport):
 
     page.route("https://example.invalid/exec", fake_post)
 
-    # Serve only the reviewed HTML from an ephemeral loopback server.
-    page.route(url + "/**", lambda route: route.continue_())
     try:
         page.goto(url + "/questao.html?id=q133", wait_until="networkidle")
         page.locator('input[name="alternativa"][value="A"]').check()
