@@ -1,0 +1,55 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q145",
+  "year": 2024,
+  "number": 145,
+  "area": "Matemática",
+  "topic": "Equidistância, triângulo equilátero e centro circunscrito",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q145-structured-p018-v1",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 18,
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937"
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "text": "A prefeitura de uma cidade planeja construir três postos de saúde. Esses postos devem ser construídos em locais equidistantes entre si e de forma que as distâncias desses três postos ao hospital dessa cidade sejam iguais. Foram conseguidos três locais para a construção dos postos de saúde que apresentam as características desejadas, e que distam 10 km entre si, conforme o esquema, no qual o ponto H representa o local onde está construído o hospital; os pontos P₁, P₂ e P₃, os postos de saúde; e esses quatro pontos estão em um mesmo plano."
+    },
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_p018_q145-hospital.png",
+      "alt": "Triângulo equilátero de postos P₁, P₂ e P₃ distando 10 km entre si e hospital H equidistante dos três."
+    },
+    {
+      "type": "text",
+      "text": "A distância, em quilômetro, entre o hospital e cada um dos postos de saúde, é um valor entre"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "2 e 3."
+    },
+    {
+      "label": "B",
+      "text": "4 e 5."
+    },
+    {
+      "label": "C",
+      "text": "5 e 6."
+    },
+    {
+      "label": "D",
+      "text": "7 e 8."
+    },
+    {
+      "label": "E",
+      "text": "8 e 9."
+    }
+  ],
+  "answer_policy": "Gabarito e resolução não estão neste payload. A correção acontece somente no servidor após submissão da tentativa.",
+  "publication_stage": "branch_only_candidate_not_student_released"
+}
