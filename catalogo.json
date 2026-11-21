@@ -1394,6 +1394,33 @@
       "revision": "d23d48a3079db9dd0f256ce095fea757a65bf79f1fb24d369a6345d3cb99cbb2"
     },
     {
+      "id": "enem2025-d2-cdamarelo-q101",
+      "question_id": "enem:2025:regular_nacional:d2:q101",
+      "ano": 2025,
+      "numero_oficial": 101,
+      "anulada": false,
+      "area": "Ciências da Natureza",
+      "prova": "ENEM 2025 · 2º dia · Caderno 5 Amarelo (CD5)",
+      "pagina": 4,
+      "fonte": "INEP, 2025_PV_impresso_D2_CD5.pdf",
+      "sha256_imagem": "0625B3BF8F7859166D3582843179DC5D28F8EA455EBC86BC871EB0916689A0B5",
+      "data": "data/enem2025_d2_cdamarelo_q101.json",
+      "imagem": "assets/enem2025_d2_cdamarelo_q101_integral.png",
+      "alt": "Questão 101 do ENEM 2025, Caderno 5 Amarelo, página 4. Fototerapia neonatal, sensor de luminescência, gráfico de emissão inicial próximo de 600 nm e cinco alternativas gráficas originais; texto estruturado e gráficos reproduzidos na página.",
+      "occurrence": {
+        "ano": 2025,
+        "dia": 2,
+        "caderno": "cdamarelo",
+        "cor": "amarelo",
+        "idioma": null,
+        "numero_oficial": 101,
+        "revisao": "ed6e73f8f2f496924b560c3d56c90a686222079d1c17ce0ad8ac27940fecfeb7",
+        "sequencia_colecao": null
+      },
+      "aliases": [],
+      "revision": "ed6e73f8f2f496924b560c3d56c90a686222079d1c17ce0ad8ac27940fecfeb7"
+    },
+    {
       "id": "enem2025-d1-cdazul-q001-en",
       "question_id": "enem:2025:regular_nacional:d1:q001:en",
       "ano": 2025,
