@@ -159,6 +159,26 @@ function reciboPersistido(corpo, questionId, attemptId) {
   return corpo.persisted === true;
 }
 
+// O mesmo nonce nunca deve ser reutilizado com alternativa/confianca diferente.
+// Sem armazenamento de sessao, interromper o envio: nao ha replay seguro.
+function reservarPayloadTentativa(tentativa, payload) {
+  if (!tentativa.chave) return "armazenamento_indisponivel";
+  const chavePayload = tentativa.chave + "_payload";
+  const assinatura = JSON.stringify({
+    selected_option: payload.selected_option,
+    confidence: payload.confidence,
+    anon_session_id: payload.anon_session_id,
+  });
+  try {
+    const anterior = sessionStorage.getItem(chavePayload);
+    if (anterior !== null) return anterior === assinatura ? null : "payload_divergente";
+    sessionStorage.setItem(chavePayload, assinatura);
+    return null;
+  } catch (_) {
+    return "armazenamento_indisponivel";
+  }
+}
+
 function idTentativa(questionId) {
   // Um clique = um envio; o mesmo UUID e reutilizado em reenvios da mesma submissao
   // (falha de rede), garantindo idempotencia no servidor. Liberado apos sucesso.
@@ -319,6 +339,21 @@ async function iniciar() {
     }
     resultado.textContent = "Enviando ao servidor…";
     const tentativa = idTentativa(item.question_id);
+    const payload = {
+      question_id: item.question_id,
+      selected_option: selecionada.value,
+      confidence: confianca ? Number(confianca.value) : 3,
+      client_attempt_id: tentativa.id,
+      anon_session_id: sessaoAnonima(),
+    };
+    const bloqueio = reservarPayloadTentativa(tentativa, payload);
+    if (bloqueio) {
+      resultado.className = "erro";
+      resultado.textContent = bloqueio === "payload_divergente"
+        ? "Existe um envio pendente para outra alternativa ou confiança. Restaure a seleção anterior para tentar novamente sem duplicação."
+        : "Não foi possível guardar o identificador de tentativa nesta sessão. O envio foi bloqueado para evitar duplicação.";
+      return;
+    }
     const endpoint = SILENCIADO.api.replace(/\/$/, "");
     envioPendente = true;
     const botao = document.querySelector('#form-resposta button[type="submit"]');
@@ -329,13 +364,7 @@ async function iniciar() {
       const resposta = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({
-          question_id: item.question_id,
-          selected_option: selecionada.value,
-          confidence: confianca ? Number(confianca.value) : 3,
-          client_attempt_id: tentativa.id,
-          anon_session_id: sessaoAnonima(),
-        }),
+        body: JSON.stringify(payload),
       });
       if (!resposta.ok) {
         resultado.className = "erro";
@@ -346,7 +375,12 @@ async function iniciar() {
       if (!reciboPersistido(corpo, item.question_id, tentativa.id)) {
         throw new Error("RECIBO_PERSISTENCIA_NAO_CONFIRMADO");
       }
-      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
+      try {
+        if (tentativa.chave) {
+          sessionStorage.removeItem(tentativa.chave + "_payload");
+          sessionStorage.removeItem(tentativa.chave);
+        }
+      } catch (_) { /* sem sessionStorage */ }
       resultado.className = "ok";
       if (corpo.official_status === "annulled") {
         resultado.textContent = "Questão anulada pelo INEP: não há alternativa correta. Sua tentativa foi registrada no servidor.";
