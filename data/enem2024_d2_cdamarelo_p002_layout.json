@@ -1,0 +1,351 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p002",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 2,
+    "pdf_page_index": 1,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 744,
+        "order": [
+          91,
+          92
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 744,
+        "order": [
+          93,
+          94
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q091",
+      "number": 91,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        535
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q091.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q092",
+      "number": 92,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        537,
+        281,
+        744
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q092.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q093",
+      "number": 93,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        299
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q093.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q094",
+      "number": 94,
+      "column": "right",
+      "order": 1,
+      "bbox": [
+        290.29,
+        301,
+        539.5,
+        743
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q094.json"
+    }
+  ],
+  "media": {
+    "q091-amoebas": {
+      "url": "assets/enem2024_d2_cdamarelo_p002_q091_amoebas.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "69c40c9a7355d019511ba5372e18f24a8b68f669975706a0c48f04f001e6a256",
+      "source_bbox": [
+        47.1497,
+        177.0893,
+        263.1497,
+        386.6093
+      ],
+      "source_pdf_page": 2,
+      "source_role": "experimento de amebas, grupos controle e citocalasina B",
+      "source_kind": "native_image"
+    },
+    "q094-equilibrium": {
+      "url": "assets/enem2024_d2_cdamarelo_p002_q094-equilibrium_source.png",
+      "mime_type": "image/png",
+      "sha256": "a7d00b4999ae7108a4cac04a621e7f5ce9dfd47fc066d3121ed1d224fda93722",
+      "source_bbox": [
+        291,
+        389,
+        537,
+        460
+      ],
+      "source_pdf_page": 2,
+      "source_role": "Equilíbrio químico entre hidroxiapatita sólida Ca₅(PO₄)₃OH mais H⁺ aquoso e cinco Ca²⁺ aquosos mais três PO₄³⁻ aquosos e água líquida, com setas opostas: desmineralização à direita, mineralização à esquerda.",
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 2.5
+    },
+    "q094-table": {
+      "url": "assets/enem2024_d2_cdamarelo_p002_q094-table_source.png",
+      "mime_type": "image/png",
+      "sha256": "f82aff021a075f17b9974f9c1b47b0f606c01a8ce301dbecab8dd4c4f7ba1d7f",
+      "source_bbox": [
+        291,
+        506,
+        536,
+        612
+      ],
+      "source_pdf_page": 2,
+      "source_role": "Tabela de cremes dentais: I bicarbonato de sódio pH 9,5; II carbonato de cálcio pH 11,0; III citrato de potássio pH 7,7; IV dióxido de silício pH 6,9; V fosfato de cálcio pH 7,3.",
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 2.5
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q091",
+      "label": "A",
+      "bbox": [
+        32.01,
+        447.69,
+        41.76,
+        457.44
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q091",
+      "label": "B",
+      "bbox": [
+        32.01,
+        461.47,
+        41.76,
+        471.22
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q091",
+      "label": "C",
+      "bbox": [
+        32.01,
+        475.26,
+        41.76,
+        485.01
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q091",
+      "label": "D",
+      "bbox": [
+        32.01,
+        489.05,
+        41.76,
+        498.8
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q091",
+      "label": "E",
+      "bbox": [
+        32.01,
+        502.83,
+        41.76,
+        512.58
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q092",
+      "label": "A",
+      "bbox": [
+        32,
+        674.76,
+        41.75,
+        684.51
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q092",
+      "label": "B",
+      "bbox": [
+        32,
+        688.54,
+        41.75,
+        698.29
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q092",
+      "label": "C",
+      "bbox": [
+        32,
+        702.33,
+        41.75,
+        712.08
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q092",
+      "label": "D",
+      "bbox": [
+        32,
+        716.11,
+        41.75,
+        725.86
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q092",
+      "label": "E",
+      "bbox": [
+        32,
+        729.9,
+        41.75,
+        739.65
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q093",
+      "label": "A",
+      "bbox": [
+        290.29,
+        222.31,
+        300.04,
+        232.06
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q093",
+      "label": "B",
+      "bbox": [
+        290.29,
+        234.03,
+        300.04,
+        243.78
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q093",
+      "label": "C",
+      "bbox": [
+        290.29,
+        245.75,
+        300.04,
+        255.5
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q093",
+      "label": "D",
+      "bbox": [
+        290.29,
+        257.46,
+        300.04,
+        267.21
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q093",
+      "label": "E",
+      "bbox": [
+        290.29,
+        269.18,
+        300.04,
+        278.93
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q094",
+      "label": "A",
+      "bbox": [
+        290.29,
+        683.02,
+        300.04,
+        692.77
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q094",
+      "label": "B",
+      "bbox": [
+        290.29,
+        694.74,
+        300.04,
+        704.49
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q094",
+      "label": "C",
+      "bbox": [
+        290.29,
+        706.46,
+        300.04,
+        716.21
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q094",
+      "label": "D",
+      "bbox": [
+        290.29,
+        718.18,
+        300.04,
+        727.93
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q094",
+      "label": "E",
+      "bbox": [
+        290.29,
+        729.9,
+        300.04,
+        739.65
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}

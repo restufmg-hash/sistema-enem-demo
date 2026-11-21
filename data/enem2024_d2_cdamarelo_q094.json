@@ -12,9 +12,30 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "A hidroxiapatita, Ca₅(PO₄)₃OH, é um mineral constituinte do esmalte dos dentes. Entre as diversas reações que ocorrem no meio bucal, encontram-se em equilíbrio as reações de desmineralização e mineralização da hidroxiapatita em meio aquoso, ilustradas a seguir. A desmineralização está associada à fragilização do esmalte do dente e à formação de cáries."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q094_integral.png",
-      "text": "Questão 94 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta a hidroxiapatita, Ca₅(PO₄)₃OH, como mineral constituinte do esmalte dos dentes e descreve o equilíbrio entre desmineralização e mineralização em meio aquoso. A figura apresenta dois quadros ligados por setas em sentidos opostos. No quadro esquerdo aparecem Ca₅(PO₄)₃OH (s) e H⁺ (aq). No quadro direito aparecem 5 Ca²⁺ (aq), 3 PO₄³⁻ (aq) e H₂O (l). A seta superior, orientada da esquerda para a direita, é identificada como 'Desmineralização'. A seta inferior, orientada da direita para a esquerda, é identificada como 'Mineralização'. A referência é STORGATTO, G. A.; BRAIBANTE, M. E. F.; BRAIBANTE, H. T. S., A química na odontologia, Química Nova na Escola, v. 39, fev. 2017, adaptado. Pergunta: 'Considerando o equilíbrio químico envolvido, qual creme dental promove a maior desmineralização do esmalte do dente?'."
+      "asset": "assets/enem2024_d2_cdamarelo_p002_q094-equilibrium_source.png",
+      "alt": "Esquema original da reação reversível: Ca₅(PO₄)₃OH sólido mais H⁺ aquoso, em equilíbrio com cinco íons Ca²⁺ aquosos, três íons PO₄³⁻ aquosos e H₂O líquido; desmineralização para a direita e mineralização para a esquerda."
+    },
+    {
+      "type": "text",
+      "text": "O uso de creme dental pode minimizar a perda da hidroxiapatita. O quadro apresenta o agente de polimento e o pH de alguns cremes dentais comerciais."
+    },
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_p002_q094-table_source.png",
+      "alt": "Tabela com colunas creme dental, agente de polimento e pH: I bicarbonato de sódio 9,5; II carbonato de cálcio 11,0; III citrato de potássio 7,7; IV dióxido de silício 6,9; V fosfato de cálcio 7,3."
+    },
+    {
+      "type": "text",
+      "text": "STORGATTO, G. A.; BRAIBANTE, M. E. F.; BRAIBANTE, H. T. S. A química na odontologia. Química Nova na Escola, v. 39, fev. 2017 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Considerando o equilíbrio químico envolvido, qual creme dental promove a maior desmineralização do esmalte do dente?"
     }
   ],
   "options": [
@@ -39,5 +60,8 @@
       "text": "V"
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q094-structured-p002-v1"
 }
