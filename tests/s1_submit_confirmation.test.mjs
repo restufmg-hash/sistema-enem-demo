@@ -169,8 +169,9 @@ test("duplo clique enquanto a chamada esta pendente faz apenas um POST", async (
   const h = createHarness([() => pending]);
   await h.ready();
   const first = h.submit();
-  await Promise.resolve();
+  await new Promise((resolveTick) => setImmediate(resolveTick));
   const second = h.submit();
+  await new Promise((resolveTick) => setImmediate(resolveTick));
   assert.equal(h.posts.length, 1);
   assert.equal(h.button.disabled, true);
   respond({ ok: true, status: 200, json: async () => ({ persisted: true, correct: true }) });
