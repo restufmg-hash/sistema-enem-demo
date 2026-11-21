@@ -1,0 +1,334 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p006",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 6,
+    "pdf_page_index": 5,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 743,
+        "order": [
+          104,
+          105
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 743,
+        "order": [
+          106
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q104",
+      "number": 104,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        502
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q104.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q105",
+      "number": 105,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        504,
+        281,
+        743
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q105.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q106",
+      "number": 106,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        744
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q106.json"
+    }
+  ],
+  "media": {
+    "q104-circuit": {
+      "url": "assets/enem2024_d2_cdamarelo_p006_q104-circuit.png",
+      "mime_type": "image/png",
+      "sha256": "ef3b0e58e242303c51e1d841b4f8c7109841181a69a72fcfd0b657c963a1452b",
+      "source_pdf_page": 6,
+      "source_bbox": [
+        51.5897,
+        249.0642,
+        258.7097,
+        388.5042
+      ],
+      "source_role": "q104-circuit"
+    },
+    "q106-comic": {
+      "url": "assets/enem2024_d2_cdamarelo_p006_q106-comic.png",
+      "mime_type": "image/png",
+      "sha256": "65cf379b0a9bcdee60a2a88ace2bbfd9af3e3bc9376ab3e6a4ae84811e7e11a2",
+      "source_pdf_page": 6,
+      "source_bbox": [
+        291.7531,
+        149.9733,
+        535.1131,
+        468.6933
+      ],
+      "source_role": "q106-comic"
+    },
+    "q106-A": {
+      "url": "assets/enem2024_d2_cdamarelo_p006_q106-A.png",
+      "mime_type": "image/png",
+      "sha256": "104fb7354ea541d6a79e9ccb514c498ac83096e215ce01b0e2e80d1e48f1ff1b",
+      "source_pdf_page": 6,
+      "source_bbox": [
+        308.4651,
+        521.7473,
+        355.0251,
+        567.1072
+      ],
+      "source_role": "q106-A"
+    },
+    "q106-B": {
+      "url": "assets/enem2024_d2_cdamarelo_p006_q106-B.png",
+      "mime_type": "image/png",
+      "sha256": "756c87b8f4946deaaec47f43334e0718ad8e622554f4fd80c34d2564562b2ba8",
+      "source_pdf_page": 6,
+      "source_bbox": [
+        305.7562,
+        578.9111,
+        370.0762,
+        587.3112
+      ],
+      "source_role": "q106-B"
+    },
+    "q106-C": {
+      "url": "assets/enem2024_d2_cdamarelo_p006_q106-C.png",
+      "mime_type": "image/png",
+      "sha256": "4db1ae466947f4f835959c49adca72fcabeacfef42912943713ee2e0c1c1c37c",
+      "source_pdf_page": 6,
+      "source_bbox": [
+        305.7562,
+        603.4344,
+        352.3162,
+        648.7944
+      ],
+      "source_role": "q106-C"
+    },
+    "q106-D": {
+      "url": "assets/enem2024_d2_cdamarelo_p006_q106-D.png",
+      "mime_type": "image/png",
+      "sha256": "c2c3e59aa1a8c713e7c536394d1c7d769ba06d191c97e60d98fcdba29203e54d",
+      "source_pdf_page": 6,
+      "source_bbox": [
+        312.7974,
+        656.4137,
+        320.9574,
+        720.9737
+      ],
+      "source_role": "q106-D"
+    },
+    "q106-E": {
+      "url": "assets/enem2024_d2_cdamarelo_p006_q106-E.png",
+      "mime_type": "image/png",
+      "sha256": "3f1e62fd81382f9c8eeb83c03820d7252d5bfbc2c58c8fd87c7270ad1daa3b94",
+      "source_pdf_page": 6,
+      "source_bbox": [
+        305.7562,
+        728.3083,
+        370.0762,
+        736.7083
+      ],
+      "source_role": "q106-E"
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q104",
+      "label": "A",
+      "bbox": [
+        32.01,
+        420.95,
+        41.76,
+        430.7
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q104",
+      "label": "B",
+      "bbox": [
+        32.01,
+        434.41,
+        41.76,
+        444.16
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q104",
+      "label": "C",
+      "bbox": [
+        32.01,
+        447.86,
+        41.76,
+        457.61
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q104",
+      "label": "D",
+      "bbox": [
+        32.01,
+        461.32,
+        41.76,
+        471.07
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q104",
+      "label": "E",
+      "bbox": [
+        32.01,
+        474.77,
+        41.76,
+        484.52
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q105",
+      "label": "A",
+      "bbox": [
+        32.01,
+        676.09,
+        41.76,
+        685.84
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q105",
+      "label": "B",
+      "bbox": [
+        32.01,
+        689.54,
+        41.76,
+        699.29
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q105",
+      "label": "C",
+      "bbox": [
+        32.01,
+        703.0,
+        41.76,
+        712.75
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q105",
+      "label": "D",
+      "bbox": [
+        32.01,
+        716.45,
+        41.76,
+        726.2
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q105",
+      "label": "E",
+      "bbox": [
+        32.01,
+        729.91,
+        41.76,
+        739.66
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q106",
+      "label": "A",
+      "bbox": [
+        290.29,
+        539.35,
+        300.04,
+        549.1
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q106",
+      "label": "B",
+      "bbox": [
+        290.29,
+        579.39,
+        300.04,
+        589.14
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q106",
+      "label": "C",
+      "bbox": [
+        290.29,
+        621.03,
+        300.04,
+        630.78
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q106",
+      "label": "D",
+      "bbox": [
+        290.29,
+        684.7,
+        300.04,
+        694.45
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q106",
+      "label": "E",
+      "bbox": [
+        290.29,
+        728.79,
+        300.04,
+        738.54
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}

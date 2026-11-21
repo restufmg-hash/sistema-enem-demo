@@ -12,9 +12,17 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "Para os circuitos de maratonas aquáticas realizadas em mares calmos e próximos à praia, é montado um sistema de boias que determinam o trajeto a ser seguido pelos nadadores. Uma das dificuldades desse tipo de circuito é compensar os efeitos da corrente marinha. O diagrama contém o circuito em que deve ser realizada uma volta no sentido anti-horário. As quatro boias estão numeradas de 1 a 4. Existe uma corrente marinha de velocidade vetorial vᶜ, cujo módulo é 30 metros por minuto, paralela à praia em toda a área do circuito. Nas arestas mais longas, o nadador precisará nadar na direção apontada pelos vetores vⁿ nos pontos 1 até 2 e de 3 até 4. Considere que a velocidade do nadador é de 50 metros por minuto, em relação à água, durante todo o circuito."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q104_integral.png",
-      "text": "Questão 104 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado informa que os circuitos de maratonas aquáticas são montados com boias numeradas de 1 a 4, que determinam o trajeto a ser seguido. Existe uma corrente marinha de velocidade ν_c, cujo módulo é 30 metros por minuto, paralela à praia. O nadador percorre no sentido anti-horário, e a velocidade dele em relação à água é 50 metros por minuto. Pergunta: 'Nessa situação, em quantos minutos o nadador completará a prova?'."
+      "asset": "assets/enem2024_d2_cdamarelo_p006_q104-circuit.png",
+      "alt": "Circuito de maratona aquática com boias numeradas 1 a 4, distâncias 800 m e 400 m e vetores de velocidade da corrente e do nadador."
+    },
+    {
+      "type": "text",
+      "text": "Nessa situação, em quantos minutos o nadador completará a prova?"
     }
   ],
   "options": [
@@ -39,5 +47,8 @@
       "text": "120"
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q104-p006-structured-v1"
 }

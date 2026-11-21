@@ -12,9 +12,16 @@
   },
   "blocks": [
     {
-      "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q105_integral.png",
-      "text": "Questão 105 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta o vírus linfotrópico de células T humanas tipo 1 (HTLV-1), um retrovírus do mesmo grupo do vírus da imunodeficiência humana (HIV). Pergunta: 'Uma possível consequência da infecção por HTLV-1 é o desenvolvimento de'."
+      "type": "text",
+      "text": "O vírus linfotrópico de células T humanas tipo 1 (HTLV-1) é um retrovírus do mesmo grupo do vírus da imunodeficiência humana (HIV). Ambos são transmitidos da mesma forma e infectam as mesmas células de defesa do organismo, os linfócitos T. A diferença entre eles é que o HTLV-1 estimula o aumento da produção desses linfócitos, enquanto o HIV causa destruição dessas células."
+    },
+    {
+      "type": "text",
+      "text": "ROMANELLI, L. C. F.; CARAMELLI, P.; PROIETTI, A. B. F. C. O vírus linfotrópico de células T humanas tipo 1 (HTLV-1): quando suspeitar da infecção? Revista da Associação Médica Brasileira, v. 56, 2010 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Uma possível consequência da infecção por HTLV-1 é o desenvolvimento de"
     }
   ],
   "options": [
@@ -39,5 +46,8 @@
       "text": "hemorragia."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q105-p006-structured-v1"
 }
