@@ -12,9 +12,21 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "A tirinha ilustra esquimós dentro de um iglu, habitação de formato hemisférico construída durante o inverno a partir de neve ou blocos de gelo. Essa estrutura de construção se justifica pelo fato de esse povo habitar as regiões mais setentrionais da Groenlândia, Canadá e Alasca."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q095_integral.png",
-      "text": "Questão 95 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. A tirinha ilustra esquimós dentro de um iglu: uma pessoa perguntando sobre a geladeira, outro ponto mostrando a retirada do gelo para as crianças brincarem de casinha, e ao final, as crianças brincando de construir casinhas com blocos de gelo. A referência é LAERTE, disponível em artedafisicapibid.blogspot.com, acesso em 4 de dezembro de 2021, adaptada. Pergunta: 'Na tirinha, a geladeira é necessária para fazer gelo porque'."
+      "asset": "assets/enem2024_d2_cdamarelo_p003_q095-comic.jpg",
+      "alt": "Tirinha original de Laerte em três quadros: moradores de iglu com geladeira, formas para gelo e crianças brincando com blocos."
+    },
+    {
+      "type": "text",
+      "text": "LAERTE. Disponível em: https://artedafisicapibid.blogspot.com. Acesso em: 4 dez. 2021 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Na tirinha, a geladeira é necessária para fazer gelo porque"
     }
   ],
   "options": [
@@ -39,5 +51,8 @@
       "text": "a pressão do ar no interior do iglu é baixa, dificultando a solidificação da água."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q095-structured-p003-v1"
 }

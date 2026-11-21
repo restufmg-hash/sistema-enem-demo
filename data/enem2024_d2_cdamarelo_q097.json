@@ -12,9 +12,17 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "Utilizando-se um mesmo meio nutritivo, três gêneros bacterianos diferentes foram submetidos ao cultivo em tubos de ensaio. Após certo período de crescimento da cultura bacteriana em condições físico-químicas ideais, observou-se que o padrão de distribuição das células (representadas por pontos na figura) ao longo dos tubos era diferente em cada um dos casos."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q097_integral.png",
-      "text": "Questão 97 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado informa que um mesmo meio nutritivo foi utilizado para o cultivo de três gêneros bacterianos diferentes em tubos de ensaio. Após um período de crescimento em condições físico-químicas ideais, observou-se que o padrão de distribuição das células (representadas por pontos na figura) ao longo dos tubos era diferente em cada caso. A figura apresenta três tubos de ensaio verticais numerados 1, 2 e 3. Pergunta: 'Em relação ao metabolismo energético, os microrganismos presentes nos tubos 1, 2 e 3 são classificados, respectivamente, como'."
+      "asset": "assets/enem2024_d2_cdamarelo_p003_q097-tubes.jpg",
+      "alt": "Três tubos de cultura identificados por 1, 2 e 3: bactérias predominantemente no topo, no fundo e distribuídas pelo meio, respectivamente."
+    },
+    {
+      "type": "text",
+      "text": "Em relação ao metabolismo energético, os microrganismos presentes nos tubos 1, 2 e 3 são classificados, respectivamente, como"
     }
   ],
   "options": [
@@ -39,5 +47,8 @@
       "text": "aeróbio estrito, anaeróbio facultativo e anaeróbio estrito."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q097-structured-p003-v1"
 }
