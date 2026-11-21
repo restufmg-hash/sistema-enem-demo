@@ -147,6 +147,18 @@ function sessaoAnonima() {
   } catch (_) { return undefined; }
 }
 
+// A resposta HTTP 200, isoladamente, nao comprova persistencia no Apps Script.
+// Um replay com persisted=false pode existir no banco; sem recibo inequivoco,
+// mantenha o nonce para reconsulta/reenvio idempotente, em vez de inventar sucesso.
+function reciboPersistido(corpo, questionId, attemptId) {
+  if (!corpo || typeof corpo !== "object" || Array.isArray(corpo)) return false;
+  if (corpo.error != null && corpo.error !== "") return false;
+  if (corpo.ok === false || corpo.status === "error") return false;
+  if (corpo.question_id != null && corpo.question_id !== questionId) return false;
+  if (corpo.client_attempt_id != null && corpo.client_attempt_id !== attemptId) return false;
+  return corpo.persisted === true;
+}
+
 function idTentativa(questionId) {
   // Um clique = um envio; o mesmo UUID e reutilizado em reenvios da mesma submissao
   // (falha de rede), garantindo idempotencia no servidor. Liberado apos sucesso.
@@ -280,8 +292,10 @@ async function iniciar() {
   let primeira = null;
   try { primeira = localStorage.getItem(chave); } catch (_) { primeira = null; }
 
+  let envioPendente = false;
   document.getElementById("form-resposta").addEventListener("submit", async (evento) => {
     evento.preventDefault();
+    if (envioPendente) return;
     const selecionada = document.querySelector('input[name="alternativa"]:checked');
     resultado.style.display = "block";
     resultado.className = "";
@@ -306,6 +320,9 @@ async function iniciar() {
     resultado.textContent = "Enviando ao servidor…";
     const tentativa = idTentativa(item.question_id);
     const endpoint = SILENCIADO.api.replace(/\/$/, "");
+    envioPendente = true;
+    const botao = document.querySelector('#form-resposta button[type="submit"]');
+    if (botao) botao.disabled = true;
     try {
       // Application/json exigiria preflight CORS que o endpoint gratuito nao responde;
       // text/plain (simple request) e lido pelo servidor como JSON.
@@ -325,8 +342,11 @@ async function iniciar() {
         resultado.textContent = "Não foi possível registrar no servidor agora (HTTP " + resposta.status + "). Sua resposta ficou guardada neste navegador.";
         return;
       }
-      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
       const corpo = await resposta.json();
+      if (!reciboPersistido(corpo, item.question_id, tentativa.id)) {
+        throw new Error("RECIBO_PERSISTENCIA_NAO_CONFIRMADO");
+      }
+      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
       resultado.className = "ok";
       if (corpo.official_status === "annulled") {
         resultado.textContent = "Questão anulada pelo INEP: não há alternativa correta. Sua tentativa foi registrada no servidor.";
@@ -339,7 +359,10 @@ async function iniciar() {
       }
     } catch (_) {
       resultado.className = "erro";
-      resultado.textContent = "Falha de conexão com o servidor. Sua resposta ficou guardada neste navegador.";
+      resultado.textContent = "Não foi possível confirmar a gravação no servidor. Ao tentar novamente, será usado o mesmo identificador para evitar duplicação.";
+    } finally {
+      envioPendente = false;
+      if (botao) botao.disabled = false;
     }
   });
 }
