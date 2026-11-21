@@ -64,6 +64,12 @@ try:
      pg.locator(".page-question").nth(2).locator("img").count()==0 and
      pg.locator(".page-question").nth(3).locator(".page-q-option img").count()==5)
    check(mode+"_no_external_overflow",pg.evaluate("()=>document.documentElement.scrollWidth<=innerWidth"))
+   if mode=="mobile" and pg.locator("#page-viewport.read-mode").count():
+    images=pg.locator(".page-question").last.locator(".page-q-option.visual img")
+    check("mobile_q139_five_graphics_fit",images.count()==5 and images.evaluate_all(
+     "(xs)=>xs.every(im=>{const r=im.getBoundingClientRect(),p=im.closest('.page-q-option').getBoundingClientRect();return r.left>=p.left&&r.right<=p.right+1&&r.width>=70;})"))
+    check("mobile_read_mode_required",pg.locator("#page-reading-mode").count()==1)
+
    check(mode+"_reading_state",pg.locator("#page-viewport").evaluate("(e)=>e.classList.contains('read-mode')")==(mode=="mobile" and pg.locator("#page-reading-mode").count()==1))
    for i,letter in enumerate("BCDE"):pg.locator(".page-question").nth(i).locator(f"input[value={letter}]").check()
    pg.reload(wait_until="networkidle")
