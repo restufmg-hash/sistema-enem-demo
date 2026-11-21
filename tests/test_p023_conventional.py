@@ -49,7 +49,7 @@ try:
    context=browser.new_context(viewport={"width":width,"height":844})
    pg=context.new_page();errs=[]
    pg.on("pageerror",lambda err:errs.append(str(err)))
-   response=pg.goto(f"http://127.0.0.1:{server.server_port}/questao.html?ano=2024&dia=2&pagina=19&caderno=cdamarelo&cor=amarelo",wait_until="networkidle")
+   response=pg.goto(f"http://127.0.0.1:{server.server_port}/questao.html?ano=2024&dia=2&pagina=23&caderno=cdamarelo&cor=amarelo",wait_until="networkidle")
    check(mode+"_200",response.status==200)
    check(mode+"_one_question",pg.locator(".page-question h2").all_inner_texts()==["QUESTÃO 153"])
    check(mode+"_one_column",pg.locator(".page-columns.single-question-graphics .page-column").count()==1)
