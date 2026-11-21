@@ -88,7 +88,8 @@ function createHarness(responses) {
   }, { filename: "questao.html" });
 
   async function ready() {
-    for (let i = 0; i < 8; i++) await Promise.resolve();
+    // Escoa as microtarefas do contexto vm em uma volta real do event loop.
+    await new Promise((resolveTick) => setImmediate(resolveTick));
     assert.equal(typeof getElement("form-resposta").on_submit, "function",
       JSON.stringify({ bootstrapError: window.__bootstrapError, meta: getElement("meta").textContent }));
   }
