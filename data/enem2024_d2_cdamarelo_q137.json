@@ -1,0 +1,55 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q137",
+  "year": 2024,
+  "number": 137,
+  "area": "Matemática",
+  "topic": "Mediana em série de dados mensais",
+  "structured": true,
+  "content_revision": "2026-11-20-d2-c5-q137-structured-p016-v1",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 16,
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937"
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "text": "A umidade relativa do ar é um dos indicadores utilizados na meteorologia para fazer previsões sobre o clima. O quadro apresenta as médias mensais, em porcentagem, da umidade relativa do ar em um período de seis meses consecutivos em uma cidade."
+    },
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_p016_q137-table.png",
+      "alt": "Tabela de médias mensais de umidade relativa: maio 66%, junho 64%, julho 54%, agosto 46%, setembro 60%, outubro 64%."
+    },
+    {
+      "type": "text",
+      "text": "Nessa cidade, a mediana desses dados, em porcentagem, da umidade relativa do ar no período considerado foi"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "56."
+    },
+    {
+      "label": "B",
+      "text": "58."
+    },
+    {
+      "label": "C",
+      "text": "59."
+    },
+    {
+      "label": "D",
+      "text": "60."
+    },
+    {
+      "label": "E",
+      "text": "62."
+    }
+  ],
+  "answer_policy": "Gabarito e resolução não estão neste payload. A correção acontece somente no servidor após submissão da tentativa.",
+  "publication_stage": "branch_only_candidate_not_student_released"
+}

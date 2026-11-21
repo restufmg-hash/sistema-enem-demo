@@ -1,0 +1,412 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p016",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 16,
+    "pdf_page_index": 15,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "MATEMÁTICA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 744,
+        "order": [
+          136,
+          137
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 744,
+        "order": [
+          138,
+          139
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q136",
+      "number": 136,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        361
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q136.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q137",
+      "number": 137,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        364,
+        281,
+        620
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q137.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q138",
+      "number": 138,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        356
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q138.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q139",
+      "number": 139,
+      "column": "right",
+      "order": 1,
+      "bbox": [
+        290.29,
+        360,
+        539.5,
+        660
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q139.json"
+    }
+  ],
+  "media": {
+    "q136-table": {
+      "url": "assets/enem2024_d2_cdamarelo_p016_q136-table.png",
+      "mime_type": "image/png",
+      "sha256": "e5bcb99da983c76d74c6c54d150301554e9d1e39c6f1a672e6f928100e621fda",
+      "source_bbox": [
+        34,
+        200,
+        277,
+        264
+      ],
+      "source_pdf_page": 16,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Tabela de custo de mochilas: quantidade 30, 50, 100; custo total R$ 1.050,00, R$ 1.650,00 e R$ 3.150,00, respectivamente."
+    },
+    "q137-table": {
+      "url": "assets/enem2024_d2_cdamarelo_p016_q137-table.png",
+      "mime_type": "image/png",
+      "sha256": "83464a627fa026f2da0290d996d4225cc2dabf4eb28f383cce73673367049463",
+      "source_bbox": [
+        34,
+        447,
+        278,
+        508
+      ],
+      "source_pdf_page": 16,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Tabela de médias mensais de umidade relativa: maio 66%, junho 64%, julho 54%, agosto 46%, setembro 60%, outubro 64%."
+    },
+    "q139-A": {
+      "url": "assets/enem2024_d2_cdamarelo_p016_q139-A.png",
+      "mime_type": "image/png",
+      "sha256": "92d75cd79e46f887289c6aac98eaba32bd14367027c606dae8085e232ac9a290",
+      "source_bbox": [
+        305,
+        469,
+        536,
+        500
+      ],
+      "source_pdf_page": 16,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa A: fração com fatoriais 7! e 4! multiplicada por fração com fatoriais 6! e 4!, conforme diagrama original."
+    },
+    "q139-B": {
+      "url": "assets/enem2024_d2_cdamarelo_p016_q139-B.png",
+      "mime_type": "image/png",
+      "sha256": "913a9c96aadca9600d27c33874f094d84921575837ba5669560d0d8d6c57573c",
+      "source_bbox": [
+        305,
+        502,
+        536,
+        533
+      ],
+      "source_pdf_page": 16,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa B: produto de duas frações fatoriais de 7! sobre 3! e 4!, e 6! sobre 2! e 4!, conforme diagrama original."
+    },
+    "q139-C": {
+      "url": "assets/enem2024_d2_cdamarelo_p016_q139-C.png",
+      "mime_type": "image/png",
+      "sha256": "836cc9e97728500d3ba91fb25580cd7ca4d233db299de769dec72975d2385586",
+      "source_bbox": [
+        305,
+        535,
+        536,
+        569
+      ],
+      "source_pdf_page": 16,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa C: soma das três frações fatoriais de combinações representadas no original."
+    },
+    "q139-D": {
+      "url": "assets/enem2024_d2_cdamarelo_p016_q139-D.png",
+      "mime_type": "image/png",
+      "sha256": "76c95faa771494c96f095de4424694373b5fbbcbcd52ccd3bd56879e9323d49c",
+      "source_bbox": [
+        305,
+        569,
+        536,
+        606
+      ],
+      "source_pdf_page": 16,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa D: produto de somas de razões de fatoriais, conforme expressão original."
+    },
+    "q139-E": {
+      "url": "assets/enem2024_d2_cdamarelo_p016_q139-E.png",
+      "mime_type": "image/png",
+      "sha256": "1869c5610e7ea38b653d7e74cae34a85e7f03921c0328e4eb789e430f1e70a69",
+      "source_bbox": [
+        305,
+        606,
+        536,
+        642
+      ],
+      "source_pdf_page": 16,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa E: soma de produtos de razões de fatoriais, conforme expressão original."
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q136",
+      "label": "A",
+      "bbox": [
+        32.0,
+        285.82,
+        41.75,
+        295.57
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q136",
+      "label": "B",
+      "bbox": [
+        32.0,
+        298.93,
+        41.75,
+        308.68
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q136",
+      "label": "C",
+      "bbox": [
+        32.0,
+        312.04,
+        41.75,
+        321.79
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q136",
+      "label": "D",
+      "bbox": [
+        32.0,
+        325.16,
+        41.75,
+        334.91
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q136",
+      "label": "E",
+      "bbox": [
+        32.0,
+        338.27,
+        41.75,
+        348.02
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q137",
+      "label": "A",
+      "bbox": [
+        32.0,
+        542.28,
+        41.75,
+        552.03
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q137",
+      "label": "B",
+      "bbox": [
+        32.0,
+        555.4,
+        41.75,
+        565.15
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q137",
+      "label": "C",
+      "bbox": [
+        32.0,
+        568.51,
+        41.75,
+        578.26
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q137",
+      "label": "D",
+      "bbox": [
+        32.0,
+        581.62,
+        41.75,
+        591.37
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q137",
+      "label": "E",
+      "bbox": [
+        32.0,
+        594.74,
+        41.75,
+        604.49
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q138",
+      "label": "A",
+      "bbox": [
+        290.29,
+        279.4,
+        300.04,
+        289.15
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q138",
+      "label": "B",
+      "bbox": [
+        290.29,
+        292.52,
+        300.04,
+        302.27
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q138",
+      "label": "C",
+      "bbox": [
+        290.29,
+        305.63,
+        300.04,
+        315.38
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q138",
+      "label": "D",
+      "bbox": [
+        290.29,
+        318.74,
+        300.04,
+        328.49
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q138",
+      "label": "E",
+      "bbox": [
+        290.29,
+        331.86,
+        300.04,
+        341.61
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q139",
+      "label": "A",
+      "bbox": [
+        290.29,
+        479.41,
+        300.04,
+        489.16
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q139",
+      "label": "B",
+      "bbox": [
+        290.29,
+        511.54,
+        300.04,
+        521.29
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q139",
+      "label": "C",
+      "bbox": [
+        290.29,
+        544.65,
+        300.04,
+        554.4
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q139",
+      "label": "D",
+      "bbox": [
+        290.29,
+        579.23,
+        300.04,
+        588.98
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q139",
+      "label": "E",
+      "bbox": [
+        290.29,
+        615.28,
+        300.04,
+        625.03
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}

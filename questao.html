@@ -62,6 +62,14 @@
   .page-q-option span { overflow-wrap: anywhere; }
   .page-q-option.visual { min-height: 113px; align-items: center; }
   .page-q-option.visual img { max-width: 325px; width: 100%; max-height: 110px; object-fit: contain; }
+  /* Frações e expressões vetoriais devem caber na coluna de leitura móvel.
+     Não altera o arquivo original, somente o ajuste de exibição. */
+  #page-viewport.read-mode .page-q-option.visual { width: 100%; min-width: 0; }
+  #page-viewport.read-mode .page-q-option.visual span { flex: 0 0 auto; }
+  #page-viewport.read-mode .page-q-option.visual img {
+    min-width: 0; flex: 1 1 auto; width: auto; max-width: 100%; height: auto;
+  }
+
   .page-question-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 3px; padding-top: 2px; border-top: 1px dotted #b0b9c2; font-size: 11px; }
   .page-question-controls select { font-size: 13px; margin-left: 3px; }
   .page-question-controls a { color: #0d4f7d; }
