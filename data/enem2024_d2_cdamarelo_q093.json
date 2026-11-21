@@ -12,9 +12,16 @@
   },
   "blocks": [
     {
-      "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q093_integral.png",
-      "text": "Questão 93 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado relata que moradores do Brooklin, bairro de São Paulo, perdem o sono devido a um som alto, constante e estridente. O som é provocado por anfíbios anuros trazidos do Caribe, da espécie Eleutherodactylus jahnstonei, que possuem tamanho pouco maior que um grão de feijão. Esses animais encontraram na capital paulista ambiente favorável e foram observados nos jardins das casas. A referência é a reportagem 'Pererecas-assobiadoras tiram o sono de moradores do Brooklin', publicada no G1, acesso em 26 de março de 2015, adaptada. Pergunta: 'Ao emitirem o som estridente, esses anfíbios'."
+      "type": "text",
+      "text": "Moradores do Brooklin, bairro de São Paulo, perdem o sono com um som alto, constante e estridente. O barulho é causado por anfíbios anuros trazidos do Caribe, da espécie Eleutherodactylus jahnstonei, que têm tamanho um pouco maior que o de um grão de feijão e que encontraram na capital um ambiente favorável. Cientistas foram até o local e encontraram esses animais nos jardins das casas."
+    },
+    {
+      "type": "text",
+      "text": "Pererecas-assobiadoras tiram o sono de moradores do Brooklin. Disponível em: http://g1.globo.com. Acesso em: 26 mar. 2015 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Ao emitirem o som estridente, esses anfíbios"
     }
   ],
   "options": [
@@ -39,5 +46,8 @@
       "text": "atraem fêmeas para o acasalamento."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q093-structured-p002-v1"
 }
