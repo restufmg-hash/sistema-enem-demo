@@ -1,0 +1,70 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d2:q151",
+  "year": 2024,
+  "number": 151,
+  "area": "Matemática",
+  "topic": "Geometria espacial, cilindros de mesma área lateral e volumes diferentes",
+  "structured": true,
+  "content_revision": "2026-11-21-d2-c5-q151-structured-p022-v1",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "page": 22,
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937"
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "text": "Uma indústria faz uma parceria com uma distribuidora de sucos para lançar no mercado dois tipos de embalagens. Para a fabricação dessas embalagens, a indústria dispõe de folhas de alumínio retangulares, de dimensões 10 cm por 20 cm. Cada uma dessas folhas é utilizada para formar a superfície lateral da embalagem, em formato de cilindro circular reto, que posteriormente recebe fundo e tampa circulares. A figura ilustra, dependendo de qual das duas extensões será utilizada como altura, as duas opções para formar a possível embalagem."
+    },
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_p022_q151-packaging.png",
+      "alt": "Duas embalagens de suco formadas com retângulos de alumínio 10 cm por 20 cm. Embalagem 1 usa 20 cm de altura e 10 cm de circunferência; embalagem 2 usa 10 cm de altura e 20 cm de circunferência."
+    },
+    {
+      "type": "text",
+      "text": "Dentre essas duas embalagens, a de maior capacidade apresentará volume, em centímetro cúbico, igual a"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "4 000 π",
+      "asset": "assets/enem2024_d2_cdamarelo_p022_q151-A.png",
+      "alt": "Alternativa A da questão 151, expressão 4 000 π, fiel à composição gráfica original.",
+      "image_only": true
+    },
+    {
+      "label": "B",
+      "text": "2 000 π",
+      "asset": "assets/enem2024_d2_cdamarelo_p022_q151-B.png",
+      "alt": "Alternativa B da questão 151, expressão 2 000 π, fiel à composição gráfica original.",
+      "image_only": true
+    },
+    {
+      "label": "C",
+      "text": "4 000 dividido por π",
+      "asset": "assets/enem2024_d2_cdamarelo_p022_q151-C.png",
+      "alt": "Alternativa C da questão 151, expressão 4 000 dividido por π, fiel à composição gráfica original.",
+      "image_only": true
+    },
+    {
+      "label": "D",
+      "text": "1 000 dividido por π",
+      "asset": "assets/enem2024_d2_cdamarelo_p022_q151-D.png",
+      "alt": "Alternativa D da questão 151, expressão 1 000 dividido por π, fiel à composição gráfica original.",
+      "image_only": true
+    },
+    {
+      "label": "E",
+      "text": "500 dividido por π",
+      "asset": "assets/enem2024_d2_cdamarelo_p022_q151-E.png",
+      "alt": "Alternativa E da questão 151, expressão 500 dividido por π, fiel à composição gráfica original.",
+      "image_only": true
+    }
+  ],
+  "answer_policy": "Gabarito e resolução não estão neste payload. A correção acontece somente no servidor após submissão da tentativa.",
+  "publication_stage": "branch_only_candidate_not_student_released"
+}

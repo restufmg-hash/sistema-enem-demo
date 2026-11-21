@@ -1,0 +1,284 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p022",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 22,
+    "pdf_page_index": 21,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "MATEMÁTICA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 745,
+        "order": [
+          151
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 745,
+        "order": [
+          152
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q151",
+      "number": 151,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        525
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q151.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q152",
+      "number": 152,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        520
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q152.json"
+    }
+  ],
+  "media": {
+    "q151-packaging": {
+      "url": "assets/enem2024_d2_cdamarelo_p022_q151-packaging.png",
+      "mime_type": "image/png",
+      "sha256": "3171b1da963734d269450c90b9ea3411f8ac72a72004df1145c2d2a20d1a7e4a",
+      "source_bbox": [
+        37.5497,
+        215.2252,
+        272.7497,
+        305.2252
+      ],
+      "source_pdf_page": 22,
+      "source_kind": "native_image",
+      "source_xref": 229,
+      "source_role": "Duas embalagens de suco formadas com retângulos de alumínio 10 cm por 20 cm. Embalagem 1 usa 20 cm de altura e 10 cm de circunferência; embalagem 2 usa 10 cm de altura e 20 cm de circunferência."
+    },
+    "q152-revenue": {
+      "url": "assets/enem2024_d2_cdamarelo_p022_q152-revenue.png",
+      "mime_type": "image/png",
+      "sha256": "777c62ef5236a47fc795e42d7ad4255ac9f3c2e95128bf302d24261dd69d9aae",
+      "source_bbox": [
+        293.1931,
+        160.2253,
+        533.6731,
+        375.9853
+      ],
+      "source_pdf_page": 22,
+      "source_kind": "native_image",
+      "source_xref": 231,
+      "source_role": "Gráfico de receitas anuais em milhões de reais versus anos 2014 a 2021, com pontos observados e reta crescente de tendência para extrapolação em 2026."
+    },
+    "q151-A": {
+      "url": "assets/enem2024_d2_cdamarelo_p022_q151-A.png",
+      "mime_type": "image/png",
+      "sha256": "73e9b8ad2ecc306be0c88663250f1c5b3badeb279af2559defffec7766f4838e",
+      "source_bbox": [
+        45,
+        347,
+        278,
+        370
+      ],
+      "source_pdf_page": 22,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa A da questão 151, expressão 4 000 π, fiel à composição gráfica original."
+    },
+    "q151-B": {
+      "url": "assets/enem2024_d2_cdamarelo_p022_q151-B.png",
+      "mime_type": "image/png",
+      "sha256": "1031387b5a2263300a4b6c38e1a2028a059a686a6e16913e8f9e0db535a388e3",
+      "source_bbox": [
+        45,
+        370,
+        278,
+        390
+      ],
+      "source_pdf_page": 22,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa B da questão 151, expressão 2 000 π, fiel à composição gráfica original."
+    },
+    "q151-C": {
+      "url": "assets/enem2024_d2_cdamarelo_p022_q151-C.png",
+      "mime_type": "image/png",
+      "sha256": "1d9964dd786af0057a9ad9a51b2f30e6b77061120d05443832abd4aaf0a9e19d",
+      "source_bbox": [
+        45,
+        393,
+        278,
+        421
+      ],
+      "source_pdf_page": 22,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa C da questão 151, expressão 4 000 dividido por π, fiel à composição gráfica original."
+    },
+    "q151-D": {
+      "url": "assets/enem2024_d2_cdamarelo_p022_q151-D.png",
+      "mime_type": "image/png",
+      "sha256": "78b80cd18517ce405bef36bcad5081baf307be692812f68cb763ec0f8400781f",
+      "source_bbox": [
+        45,
+        426,
+        278,
+        453
+      ],
+      "source_pdf_page": 22,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa D da questão 151, expressão 1 000 dividido por π, fiel à composição gráfica original."
+    },
+    "q151-E": {
+      "url": "assets/enem2024_d2_cdamarelo_p022_q151-E.png",
+      "mime_type": "image/png",
+      "sha256": "18bccc5d43c3ebcff86dc79b967816779aa8cf4119641185ddd3656263169f06",
+      "source_bbox": [
+        45,
+        457,
+        278,
+        489
+      ],
+      "source_pdf_page": 22,
+      "source_kind": "pdf_vector_crop",
+      "render_scale": 3,
+      "source_role": "Alternativa E da questão 151, expressão 500 dividido por π, fiel à composição gráfica original."
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q151",
+      "label": "A",
+      "bbox": [
+        32.008,
+        348.684,
+        41.758,
+        358.434
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q151",
+      "label": "B",
+      "bbox": [
+        32.008,
+        371.143,
+        41.758,
+        380.893
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q151",
+      "label": "C",
+      "bbox": [
+        32.008,
+        398.241,
+        41.758,
+        407.991
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q151",
+      "label": "D",
+      "bbox": [
+        32.008,
+        431.724,
+        41.758,
+        441.474
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q151",
+      "label": "E",
+      "bbox": [
+        32.008,
+        465.206,
+        41.758,
+        474.956
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q152",
+      "label": "A",
+      "bbox": [
+        290.291,
+        424.806,
+        300.041,
+        434.556
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q152",
+      "label": "B",
+      "bbox": [
+        290.291,
+        437.919,
+        300.041,
+        447.669
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q152",
+      "label": "C",
+      "bbox": [
+        290.291,
+        451.033,
+        300.041,
+        460.783
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q152",
+      "label": "D",
+      "bbox": [
+        290.291,
+        464.147,
+        300.041,
+        473.897
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q152",
+      "label": "E",
+      "bbox": [
+        290.291,
+        477.261,
+        300.041,
+        487.011
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}
