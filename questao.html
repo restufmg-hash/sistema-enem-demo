@@ -328,12 +328,15 @@ async function iniciar() {
       resultado.textContent = "Selecione sua confiança de 1 a 5 antes de registrar.";
       return;
     }
-    if (primeira === null) {
-      try { localStorage.setItem(chave, selecionada.value); } catch (_) { /* sem armazenamento local */ }
-      primeira = selecionada.value;
-    }
-
     if (!SILENCIADO.api) {
+      if (primeira === null) {
+        try { localStorage.setItem(chave, selecionada.value); primeira = selecionada.value; }
+        catch (_) {
+          resultado.className = "erro";
+          resultado.textContent = "Não foi possível guardar a resposta neste navegador.";
+          return;
+        }
+      }
       resultado.textContent = "Resposta registrada neste navegador. A conferência e o feedback acontecem no servidor; o feedback ainda não está disponível nesta página.";
       return;
     }
@@ -346,6 +349,11 @@ async function iniciar() {
       client_attempt_id: tentativa.id,
       anon_session_id: sessaoAnonima(),
     };
+    if (!payload.anon_session_id) {
+      resultado.className = "erro";
+      resultado.textContent = "Não foi possível preservar a sessão anônima. O envio foi bloqueado para evitar perda de identidade da tentativa.";
+      return;
+    }
     const bloqueio = reservarPayloadTentativa(tentativa, payload);
     if (bloqueio) {
       resultado.className = "erro";
@@ -381,6 +389,11 @@ async function iniciar() {
           sessionStorage.removeItem(tentativa.chave);
         }
       } catch (_) { /* sem sessionStorage */ }
+      // A primeira resposta local so e registrada apos confirmacao do servidor.
+      if (primeira === null) {
+        try { localStorage.setItem(chave, selecionada.value); primeira = selecionada.value; }
+        catch (_) { /* recibo remoto confirmado; armazenamento local opcional */ }
+      }
       resultado.className = "ok";
       if (corpo.official_status === "annulled") {
         resultado.textContent = "Questão anulada pelo INEP: não há alternativa correta. Sua tentativa foi registrada no servidor.";
