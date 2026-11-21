@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ENEM 2025 Dia 2 — Página 5, Caderno 5 Amarelo</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f5f8;color:#17283b;font-family:system-ui,Arial,sans-serif}
+header{background:#0d2b45;color:#fff;padding:1rem max(1rem,calc((100vw - 1200px)/2))}
+h1{font-size:1.2rem;margin:.2rem 0}p{line-height:1.5}
+nav{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+button,a.navlink{border:1px solid #ccd5df;border-radius:8px;background:#fff;color:#12324a;padding:.5rem .8rem;font:inherit;text-decoration:none;cursor:pointer}
+button[aria-pressed=true]{background:#123b58;color:#fff}
+main{max-width:1250px;margin:1rem auto;padding:0 1rem}
+#interacao{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;align-items:start}
+article{min-width:0;background:white;padding:.8rem;border-radius:12px;box-shadow:0 1px 4px #ccd3db}
+article h2{font-size:1rem;margin:.2rem 0 .8rem}
+iframe{display:block;border:0;width:100%;height:1800px}
+#fonte img{display:block;max-width:100%;width:100%;height:auto}
+footer{padding:1rem;color:#55677d;font-size:.8rem}[hidden]{display:none!important}
+@media(max-width:680px){main{padding:0 .45rem}article{padding:.45rem}#interacao{grid-template-columns:minmax(0,1fr)}iframe{height:1800px}}
+</style></head>
+<body><header><h1>ENEM 2025 · Dia 2 · Caderno 5 Amarelo</h1>
+<p>Página 5 · Questões 102 e 103, com imagens e cinco alternativas gráficas originais por questão. Validação privada.</p>
+<nav aria-label="Alternar visualização">
+<button id="interativa" type="button" aria-pressed="true">Questões interativas</button>
+<button id="original" type="button" aria-pressed="false">Página oficial original</button>
+<a class="navlink" href="pagina4.html?id=enem2025-d2-cdamarelo-p04">Página 4</a>
+<a class="navlink" href="index.html">Índice</a></nav></header>
+<main>
+<section id="interacao" aria-label="Questões 102 e 103, duas colunas na ordem do caderno">
+<article><h2>Questão 102 <a href="questao.html?id=enem2025-d2-cdamarelo-q102">Abrir individualmente</a></h2>
+<iframe title="Questão 102 interativa" src="questao.html?id=enem2025-d2-cdamarelo-q102"></iframe></article>
+<article><h2>Questão 103 <a href="questao.html?id=enem2025-d2-cdamarelo-q103">Abrir individualmente</a></h2>
+<iframe title="Questão 103 interativa" src="questao.html?id=enem2025-d2-cdamarelo-q103"></iframe></article>
+</section>
+<article id="fonte" hidden><h2>Reprodução integral da página oficial 5</h2>
+<p>Questão 102 à esquerda, questão 103 à direita. Figura de herança e gráficos originais preservados do PDF do INEP.</p>
+<img src="assets/enem2025_d2_cdamarelo_p05_fonte.png" alt="Página 5 integral do ENEM 2025 Dia 2 Caderno 5 Amarelo, com questões 102 e 103 e alternativas gráficas originais." /></article>
+</main>
+<footer>Embargo editorial ativo: a página permanece na branch de validação. Nenhum gabarito é entregue no conteúdo de leitura do estudante.</footer>
+<script>
+const interactive=document.getElementById("interativa"),original=document.getElementById("original"),
+a=document.getElementById("interacao"),b=document.getElementById("fonte");
+function show(isInteractive){a.hidden=!isInteractive;b.hidden=isInteractive;interactive.setAttribute("aria-pressed",String(isInteractive));original.setAttribute("aria-pressed",String(!isInteractive));}
+interactive.addEventListener("click",()=>show(true));original.addEventListener("click",()=>show(false));
+for(const frame of a.querySelectorAll("iframe")){
+frame.addEventListener("load",function(){try{const doc=this.contentDocument;const resize=()=>{frame.style.height=Math.max(1200,doc.documentElement.scrollHeight+25)+"px";};resize();new ResizeObserver(resize).observe(doc.documentElement);}catch(_){this.style.height="1900px";}});
+}
+</script></body></html>

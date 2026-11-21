@@ -1,0 +1,76 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q102",
+  "year": 2025,
+  "number": 102,
+  "area": "Ciências da Natureza",
+  "topic": "Proporção fenotípica em cruzamentos genéticos",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 5,
+    "sha256": "0A59697676989B55E6F3E40636FAD164C1C26868DDBA37D04E4FFFC101168298"
+  },
+  "content_revision": "0250da0feec3e6887c577b48742fe6ca82969f9ab3cb18e55dadab522f391789",
+  "blocks": [
+    {
+      "type": "text",
+      "role": "paragraph",
+      "text": "A figura apresenta a herança genética de uma característica \na partir do cruzamento de insetos de uma mesma espécie.",
+      "source_bbox": [
+        22.676,
+        93.612,
+        276.131,
+        118.992
+      ]
+    },
+    {
+      "type": "text",
+      "role": "prompt",
+      "text": "Qual alternativa representa a proporção fenotípica da prole \nresultante do cruzamento entre indivíduos da primeira geração?",
+      "source_bbox": [
+        22.676,
+        318.748,
+        276.189,
+        344.128
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Alternativa A: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q102_option_a.png",
+      "image_sha256": "B5F7622BEB3CBB88B1542FBCBABE82ACFD12FCD509D84FADDAC5AD3AAB593581"
+    },
+    {
+      "label": "B",
+      "text": "Alternativa B: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q102_option_b.png",
+      "image_sha256": "22AA4469BE11CE96FA3E7E319ADB2E4B55E7205178D7FEC48CCA290387882C52"
+    },
+    {
+      "label": "C",
+      "text": "Alternativa C: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q102_option_c.png",
+      "image_sha256": "FC1473A99AA43393270BCA665F85DC2851995CF2B587726590792441A7C60D75"
+    },
+    {
+      "label": "D",
+      "text": "Alternativa D: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q102_option_d.png",
+      "image_sha256": "5E6DC17AE28162034E797E9A73297E892A7D637BB6A2FF4435484FB012872060"
+    },
+    {
+      "label": "E",
+      "text": "Alternativa E: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q102_option_e.png",
+      "image_sha256": "78FD875E73321BF7F6E55417E2CD39156C538F161B4E5796BAC56A65D0EEC456"
+    }
+  ],
+  "original_page_image": "assets/enem2025_d2_cdamarelo_q102_integral.png",
+  "original_page_image_sha256": "42C9427C1FCF908B325FC017A4E4EBD50DEFFD0DD9ABC9A8FEB52765CC70C4A1",
+  "official_page_image": "assets/enem2025_d2_cdamarelo_p05_fonte.png",
+  "official_page_image_sha256": "95A90436E45A793B1C3674EE4D44E56D18D8F077752CD095AD1E1BC36D6AFA6F",
+  "answer_policy": "Sem gabarito, feedback ou explicação antes do envio ao servidor. Alternativas visuais preservadas."
+}

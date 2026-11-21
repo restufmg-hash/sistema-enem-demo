@@ -42,7 +42,7 @@
 </style>
 </head>
 <body>
-<header><h1>Sistema ENEM</h1><a id="voltar-pagina-2025d2" href="pagina.html?id=enem2025-d2-cdamarelo-p02" hidden><a id="voltar-pagina3-2025d2" href="pagina3.html?id=enem2025-d2-cdamarelo-p03" hidden><a id="voltar-pagina4-2025d2" href="pagina4.html?id=enem2025-d2-cdamarelo-p04" hidden>Ver página 4 completa · </a>Ver página 3 completa · </a>Ver página 2 completa · </a><a href="index.html">&larr; Índice de questões</a></header>
+<header><h1>Sistema ENEM</h1><a id="voltar-pagina-2025d2" href="pagina.html?id=enem2025-d2-cdamarelo-p02" hidden><a id="voltar-pagina3-2025d2" href="pagina3.html?id=enem2025-d2-cdamarelo-p03" hidden><a id="voltar-pagina4-2025d2" href="pagina4.html?id=enem2025-d2-cdamarelo-p04" hidden><a id="voltar-pagina5-2025d2" href="pagina5.html?id=enem2025-d2-cdamarelo-p05" hidden>Ver página 5 completa · </a>Ver página 4 completa · </a>Ver página 3 completa · </a>Ver página 2 completa · </a><a href="index.html">&larr; Índice de questões</a></header>
 <script>
 (function(){
   const id=new URLSearchParams(location.search).get("id")||"";
@@ -54,6 +54,9 @@
   }
   if (id==="enem2025-d2-cdamarelo-q101") {
     document.getElementById("voltar-pagina4-2025d2").hidden=false;
+  }
+  if (/^enem2025-d2-cdamarelo-q(102|103)$/.test(id)) {
+    document.getElementById("voltar-pagina5-2025d2").hidden=false;
   }
 })();
 </script>

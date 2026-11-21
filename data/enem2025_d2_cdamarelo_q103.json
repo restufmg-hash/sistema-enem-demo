@@ -1,0 +1,65 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2025:regular_nacional:d2:q103",
+  "year": 2025,
+  "number": 103,
+  "area": "Ciências da Natureza",
+  "topic": "Força de atrito cinético em deslocamento por plano inclinado",
+  "source": {
+    "provider": "INEP",
+    "document": "2025_PV_impresso_D2_CD5.pdf",
+    "page": 5,
+    "sha256": "0A59697676989B55E6F3E40636FAD164C1C26868DDBA37D04E4FFFC101168298"
+  },
+  "content_revision": "f38e806c5322272a1aac8d2bf06cb44512693cfdeb4d0d43052f7c58bb8374c3",
+  "blocks": [
+    {
+      "type": "text",
+      "role": "paragraph",
+      "text": "Para transportar uma caixa do primeiro para o segundo \npiso de uma construção, um trabalhador precisará arrasta-lá \nsobre um plano inclinado. O trabalhador começa a arrastar a \ncaixa no primeiro piso, exercendo sobre ela uma força de grande \nintensidade, paralela ao seu deslocamento. Na medida em que a \ncaixa sobe o plano inclinado, ele decide reduzir a força sobre ela, \narrastando-a lentamente até chegar ao segundo piso. Considere \nque a caixa permanece em movimento nos encontros dos pisos \ncom o plano inclinado, e que a rugosidade entre as superfícies \npermanece a mesma durante todo o percurso.\nO comportamento da força de atrito entre a caixa e o chão no \nplano inclinado é representado em:",
+      "source_bbox": [
+        285.92,
+        92.512,
+        539.441,
+        228.622
+      ]
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "Alternativa A: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q103_option_a.png",
+      "image_sha256": "E201CFFD9F3AA610B7F71B22B3FECFF7968C6F02D85867ADA9567CB53C252662"
+    },
+    {
+      "label": "B",
+      "text": "Alternativa B: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q103_option_b.png",
+      "image_sha256": "4C33E70585DA40B1AC5CCFC5A17F02AF68F6FE4A3006465522C8247F2123058C"
+    },
+    {
+      "label": "C",
+      "text": "Alternativa C: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q103_option_c.png",
+      "image_sha256": "AA799BB42BAB263E1A6BFA3A95D95AD5BC484E0666072FEE82EFEA0D2412025A"
+    },
+    {
+      "label": "D",
+      "text": "Alternativa D: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q103_option_d.png",
+      "image_sha256": "5F3A6F9E5161769226CB9F31509575F7BCA8D2176A692CE28C7743EE1A1B244C"
+    },
+    {
+      "label": "E",
+      "text": "Alternativa E: gráfico ou esquema original do INEP, apresentado na imagem.",
+      "image": "assets/enem2025_d2_cdamarelo_q103_option_e.png",
+      "image_sha256": "6BE1434745D52A3FE881EE0103706350B10F21A4711FA6BE88F8717FBDCB1E8F"
+    }
+  ],
+  "original_page_image": "assets/enem2025_d2_cdamarelo_q103_integral.png",
+  "original_page_image_sha256": "8F60080569DAF2104CD4D9516E813E39D4453D59A15015DF02444B978B031DFA",
+  "official_page_image": "assets/enem2025_d2_cdamarelo_p05_fonte.png",
+  "official_page_image_sha256": "95A90436E45A793B1C3674EE4D44E56D18D8F077752CD095AD1E1BC36D6AFA6F",
+  "answer_policy": "Sem gabarito, feedback ou explicação antes do envio ao servidor. Alternativas visuais preservadas."
+}
