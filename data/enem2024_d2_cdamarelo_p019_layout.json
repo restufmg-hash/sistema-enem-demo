@@ -1,0 +1,192 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p019",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 19,
+    "pdf_page_index": 18,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "single_question_graphics",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "MATEMÁTICA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "full",
+        "x0": 32,
+        "y0": 65,
+        "x1": 540,
+        "y1": 744,
+        "order": [
+          146
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q146",
+      "number": 146,
+      "column": "full",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        540,
+        744
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q146.json"
+    }
+  ],
+  "media": {
+    "q146-A": {
+      "url": "assets/enem2024_d2_cdamarelo_p019_q146_option_A.png",
+      "mime_type": "image/png",
+      "sha256": "01fb87046539b75d008b465e8585994e804c67d89c31f6f1ab4754d853352588",
+      "source_bbox": [
+        44.7638,
+        194.2639,
+        278.7638,
+        338.2639
+      ],
+      "source_pdf_page": 19,
+      "source_kind": "native_image",
+      "source_xref": 185,
+      "source_role": "Gráfico original A–E da alternativa A (amplitude em centímetros ao longo de vinte minutos)"
+    },
+    "q146-B": {
+      "url": "assets/enem2024_d2_cdamarelo_p019_q146_option_B.png",
+      "mime_type": "image/png",
+      "sha256": "62b9249b3d42f68c1787cbc0db516b1abf1ff7ece45cb6e9725f738e83b968e1",
+      "source_bbox": [
+        44.7638,
+        387.6941,
+        278.7638,
+        531.6941
+      ],
+      "source_pdf_page": 19,
+      "source_kind": "native_image",
+      "source_xref": 187,
+      "source_role": "Gráfico original A–E da alternativa B (amplitude em centímetros ao longo de vinte minutos)"
+    },
+    "q146-C": {
+      "url": "assets/enem2024_d2_cdamarelo_p019_q146_option_C.png",
+      "mime_type": "image/png",
+      "sha256": "7ba0a892ae5fa71413223bcc74e7dfa220935312fc838a590e3000741eeee916",
+      "source_bbox": [
+        44.7638,
+        581.8331,
+        275.1638,
+        725.8331
+      ],
+      "source_pdf_page": 19,
+      "source_kind": "native_image",
+      "source_xref": 189,
+      "source_role": "Gráfico original A–E da alternativa C (amplitude em centímetros ao longo de vinte minutos)"
+    },
+    "q146-D": {
+      "url": "assets/enem2024_d2_cdamarelo_p019_q146_option_D.png",
+      "mime_type": "image/png",
+      "sha256": "ba77857e3ac3000f3311068b9ab4a1192468cb192bd985c115e99888f9c372df",
+      "source_bbox": [
+        300.0473,
+        194.2639,
+        530.4473,
+        338.2639
+      ],
+      "source_pdf_page": 19,
+      "source_kind": "native_image",
+      "source_xref": 191,
+      "source_role": "Gráfico original A–E da alternativa D (amplitude em centímetros ao longo de vinte minutos)"
+    },
+    "q146-E": {
+      "url": "assets/enem2024_d2_cdamarelo_p019_q146_option_E.png",
+      "mime_type": "image/png",
+      "sha256": "8dc25544711712e3ef80f566f0c664ee2b7118e0752228b460937e305078a6a7",
+      "source_bbox": [
+        300.0473,
+        388.4028,
+        534.0473,
+        532.4028
+      ],
+      "source_pdf_page": 19,
+      "source_kind": "native_image",
+      "source_xref": 193,
+      "source_role": "Gráfico original A–E da alternativa E (amplitude em centímetros ao longo de vinte minutos)"
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q146",
+      "label": "A",
+      "bbox": [
+        32.008,
+        255.933,
+        41.758,
+        265.683
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q146",
+      "label": "B",
+      "bbox": [
+        32.008,
+        450.071,
+        41.758,
+        459.821
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q146",
+      "label": "C",
+      "bbox": [
+        32.008,
+        643.501,
+        41.758,
+        653.251
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q146",
+      "label": "D",
+      "bbox": [
+        287.291,
+        256.641,
+        297.041,
+        266.391
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q146",
+      "label": "E",
+      "bbox": [
+        287.291,
+        449.362,
+        297.041,
+        459.112
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation",
+    "source_graphic_columns": {
+      "left": [
+        "A",
+        "B",
+        "C"
+      ],
+      "right": [
+        "D",
+        "E"
+      ]
+    }
+  }
+}
