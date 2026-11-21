@@ -12,9 +12,21 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "Placas solares comuns dependem de dias ensolarados para gerar energia. Mas podemos gerar eletricidade com a ajuda de gotas de chuva, revestindo placas solares com uma fina camada de grafeno. Os íons dissociados a partir da água da chuva (Aᵐ⁺ e Bⁿ⁻) tornam a combinação grafeno e água da chuva um par perfeito para geração de energia. O processo requer apenas uma camada de grafeno para que grande quantidade de elétrons (e⁻) se movimente ao longo da superfície."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q101_integral.png",
-      "text": "Questão 101 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta uma placa solar especial, recoberta de grafeno, que pode gerar eletricidade até com gotas de chuva. Os íons dissociados a partir da água da chuva, identificados como Aᵐ⁺ e Bⁿ⁻, tornam a combinação grafeno e água um par capaz de gerar energia. A ampliação mostra uma camada de água com Bⁿ⁻ na parte superior, uma camada de grafeno com Aᵐ⁺ e e⁻ movendo-se ao longo da superfície, gerando regiões de alto e baixo potencial elétrico. Pergunta: 'Ao produzir eletricidade em dias chuvosos, o grafeno'."
+      "asset": "assets/enem2024_d2_cdamarelo_p005_q101-graphene.jpg",
+      "alt": "Esquema original de grafeno e chuva, com camada fina de água, íons positivos e negativos e alto e baixo potencial elétrico."
+    },
+    {
+      "type": "text",
+      "text": "TANG, Q. et al. A Solar Cell that is Triggered by Sun and Rain. Angewandte Chemie International Edition, n. 55, 2016 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "Ao produzir eletricidade em dias chuvosos, o grafeno"
     }
   ],
   "options": [
@@ -39,5 +51,8 @@
       "text": "gera uma diferença de potencial pela interação dos elétrons com os cátions."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q101-structured-p005-v1"
 }

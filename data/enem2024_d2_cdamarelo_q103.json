@@ -12,9 +12,30 @@
   },
   "blocks": [
     {
+      "type": "text",
+      "text": "O diagrama P–V a seguir representa o ciclo de Otto para um motor de combustão interna, como os motores a gasolina ou a etanol, utilizados nos automóveis."
+    },
+    {
       "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q103_integral.png",
-      "text": "Questão 103 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. O enunciado apresenta o diagrama P-V referente ao ciclo de Otto de um motor de combustão interna (gasolina/etanol). O gráfico P-V mostra pontos 0, 1, 2, 3, 4 e a área W. Abaixo, as etapas do ciclo estão descritas numa tabela (I: admissão; II: compressão adiabática; III: introdução de calor; IV: expansão adiabática; V: liberação de calor; VI: liberação dos gases). A referência é Disponível em: www.mspc.eng.br, acesso em 24 fev. 2013, adaptada. Pergunta: 'A transformação da energia térmica em energia útil ocorre na etapa'."
+      "asset": "assets/enem2024_d2_cdamarelo_p005_q103-cycle.png",
+      "alt": "Diagrama P-V original do ciclo de Otto com pontos 0, 1, 2, 3, 4, duas curvas vermelhas e área W destacada."
+    },
+    {
+      "type": "text",
+      "text": "As etapas representadas no diagrama estão descritas no quadro."
+    },
+    {
+      "type": "image",
+      "asset": "assets/enem2024_d2_cdamarelo_p005_q103_table_pdf.png",
+      "alt": "Tabela original de seis etapas do ciclo de Otto. I: 0 a 1, admissão isobárica; II: 1 a 2, compressão adiabática; III: 2 a 3, calor de combustão; IV: 3 a 4, expansão adiabática; V: 4 a 1, liberação de calor; VI: 1 a 0, liberação de gases."
+    },
+    {
+      "type": "text",
+      "text": "Disponível em: www.mspc.eng.br. Acesso em: 24 fev. 2013 (adaptado)."
+    },
+    {
+      "type": "text",
+      "text": "A transformação da energia térmica em energia útil ocorre na etapa"
     }
   ],
   "options": [
@@ -39,5 +60,8 @@
       "text": "VI."
     }
   ],
-  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo."
+  "answer_policy": "A alternativa correta não é exibida nem validada nesta página; a conferência acontece no sistema, no servidor. Nenhuma resposta ou resumo criptográfico que permita deduzir a alternativa correta está contido neste arquivo.",
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q103-structured-p005-v1"
 }

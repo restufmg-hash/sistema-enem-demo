@@ -1,0 +1,282 @@
+{
+  "kind": "enem.original_page_layout.v1",
+  "schema_version": "1.0",
+  "page_id": "enem:2024:regular_nacional:d2:c5_amarelo:pt-BR:p005",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D2_CD5.pdf",
+    "sha256": "ec4e704ab4017762ffb1eba84c55285a429d3d02ed0e58258c1171315cb34937",
+    "printed_page": 5,
+    "pdf_page_index": 4,
+    "pdf_width_pt": 568.5823,
+    "pdf_height_pt": 781.1813
+  },
+  "layout": {
+    "mode": "two_column",
+    "page_title": "enem2024",
+    "header": "Exame Nacional do Ensino Médio",
+    "footer": "CIÊNCIAS DA NATUREZA E SUAS TECNOLOGIAS · 2º DIA · CADERNO 5 · AMARELO",
+    "columns": [
+      {
+        "name": "left",
+        "x0": 32,
+        "y0": 65,
+        "x1": 281,
+        "y1": 743,
+        "order": [
+          101,
+          102
+        ]
+      },
+      {
+        "name": "right",
+        "x0": 290.29,
+        "y0": 65,
+        "x1": 539.5,
+        "y1": 743,
+        "order": [
+          103
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q101",
+      "number": 101,
+      "column": "left",
+      "order": 0,
+      "bbox": [
+        32,
+        65,
+        281,
+        534
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q101.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q102",
+      "number": 102,
+      "column": "left",
+      "order": 1,
+      "bbox": [
+        32,
+        536,
+        281,
+        744
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q102.json"
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q103",
+      "number": 103,
+      "column": "right",
+      "order": 0,
+      "bbox": [
+        290.29,
+        65,
+        539.5,
+        653
+      ],
+      "source_data": "data/enem2024_d2_cdamarelo_q103.json"
+    }
+  ],
+  "media": {
+    "q101-graphene": {
+      "url": "assets/enem2024_d2_cdamarelo_p005_q101-graphene.jpg",
+      "mime_type": "image/jpeg",
+      "sha256": "006ef0fff98ca86575541225900fb4548dd3efb74f0ea07e60f9eeda81bfa23a",
+      "source_bbox": [
+        32.2696,
+        189.1402,
+        278.0296,
+        384.7402
+      ],
+      "source_pdf_page": 5,
+      "source_role": "q101-graphene"
+    },
+    "q103-cycle": {
+      "url": "assets/enem2024_d2_cdamarelo_p005_q103-cycle.png",
+      "mime_type": "image/png",
+      "sha256": "e13dafd9e6c9405706e1d0434016d9672379b5480ea195d9022bc2dba3529ea6",
+      "source_bbox": [
+        313.9531,
+        124.3905,
+        512.9131,
+        270.5505
+      ],
+      "source_pdf_page": 5,
+      "source_role": "q103-cycle"
+    },
+    "q103-table": {
+      "url": "assets/enem2024_d2_cdamarelo_p005_q103_table_pdf.png",
+      "mime_type": "image/png",
+      "sha256": "50d3e73abc2f7fb157895a9badc76997a9484fe291c6684eb753c44ffdd5c706",
+      "source_bbox": [
+        291,
+        307,
+        536,
+        512
+      ],
+      "source_pdf_page": 5,
+      "source_role": "Tabela original das etapas I–VI do ciclo de Otto; imagem recortada da página PDF"
+    }
+  },
+  "response_targets": [
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q101",
+      "label": "A",
+      "bbox": [
+        32.01,
+        434.22,
+        41.76,
+        443.97
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q101",
+      "label": "B",
+      "bbox": [
+        32.01,
+        447.5,
+        41.76,
+        457.25
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q101",
+      "label": "C",
+      "bbox": [
+        32.01,
+        460.78,
+        41.76,
+        470.53
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q101",
+      "label": "D",
+      "bbox": [
+        32.01,
+        474.05,
+        41.76,
+        483.8
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q101",
+      "label": "E",
+      "bbox": [
+        32.01,
+        499.19,
+        41.76,
+        508.94
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q102",
+      "label": "A",
+      "bbox": [
+        32.01,
+        676.8,
+        41.76,
+        686.55
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q102",
+      "label": "B",
+      "bbox": [
+        32.01,
+        690.08,
+        41.76,
+        699.83
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q102",
+      "label": "C",
+      "bbox": [
+        32.01,
+        703.36,
+        41.76,
+        713.11
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q102",
+      "label": "D",
+      "bbox": [
+        32.01,
+        716.64,
+        41.76,
+        726.39
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q102",
+      "label": "E",
+      "bbox": [
+        32.01,
+        729.92,
+        41.76,
+        739.67
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q103",
+      "label": "A",
+      "bbox": [
+        290.29,
+        570.48,
+        300.04,
+        580.23
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q103",
+      "label": "B",
+      "bbox": [
+        290.29,
+        583.6,
+        300.04,
+        593.35
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q103",
+      "label": "C",
+      "bbox": [
+        290.29,
+        596.71,
+        300.04,
+        606.46
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q103",
+      "label": "D",
+      "bbox": [
+        290.29,
+        609.82,
+        300.04,
+        619.57
+      ]
+    },
+    {
+      "question_id": "enem:2024:regular_nacional:d2:q103",
+      "label": "E",
+      "bbox": [
+        290.29,
+        622.94,
+        300.04,
+        632.69
+      ]
+    }
+  ],
+  "presentation": {
+    "interactive_page_mode": true,
+    "source_background_pdf": false,
+    "publication_stage": "branch_only_validation"
+  }
+}

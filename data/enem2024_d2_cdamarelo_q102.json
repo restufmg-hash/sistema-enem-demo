@@ -13,9 +13,12 @@
   },
   "blocks": [
     {
-      "type": "image",
-      "asset": "assets/enem2024_d2_cdamarelo_q102_integral.png",
-      "text": "Questão 102 do ENEM 2024 (2º dia, Caderno 5 Amarelo), área Ciências da Natureza. Questão ANULADA PELO INEP. O enunciado informa que um estudante comprou uma cafeteira elétrica de 700 W de potência e com capacidade de 0,5 L de água (500 g). Enquanto o café estava em preparação na capacidade máxima da cafeteira, ele marcou que demorou 3 minutos para a cafeteira ferver toda a água (100 °C) a partir da temperatura ambiente de 20 °C. Pergunta: 'Qual a eficiência energética calculada pelo estudante?'."
+      "type": "text",
+      "text": "Um estudante comprou uma cafeteira elétrica de 700 W de potência e com capacidade de 0,5 L de água (500 g). Enquanto o café estava em preparação na capacidade máxima da cafeteira, ele marcou que demorou 3 minutos para a cafeteira ferver toda a água (100 °C) a partir da temperatura ambiente de 20 °C. Em seguida, para avaliar a eficiência da cafeteira, ele calculou esse tempo desprezando quaisquer perdas energéticas. É necessária 1 cal (4,2 J) para elevar em 1 °C a temperatura de 1 grama de água."
+    },
+    {
+      "type": "text",
+      "text": "Qual a eficiência energética calculada pelo estudante?"
     }
   ],
   "options": [
@@ -39,5 +42,8 @@
       "label": "E",
       "text": "5,1%"
     }
-  ]
+  ],
+  "structured": true,
+  "legacy_integral_crop_retained_in_catalog": true,
+  "content_revision": "2026-11-20-d2-c5-q102-structured-p005-v1"
 }
