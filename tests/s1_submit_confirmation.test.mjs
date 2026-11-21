@@ -78,8 +78,9 @@ function createHarness(responses) {
     };
   };
 
-  vm.runInNewContext(code, {
-    window: { SISTEMA_ENEM_API: "https://example.invalid/exec" },
+  const window = { SISTEMA_ENEM_API: "https://example.invalid/exec" };
+  vm.runInNewContext(code.replace(/iniciar\(\);\s*$/, "iniciar().catch((err) => { window.__bootstrapError = String(err); });"), {
+    window,
     document, location: { search: "?id=q133" }, URLSearchParams,
     fetch, sessionStorage: store(sessionData), localStorage: store(localData),
     crypto: { randomUUID: () => "nonce-" + ++uuid },
@@ -88,7 +89,8 @@ function createHarness(responses) {
 
   async function ready() {
     for (let i = 0; i < 8; i++) await Promise.resolve();
-    assert.equal(typeof getElement("form-resposta").on_submit, "function");
+    assert.equal(typeof getElement("form-resposta").on_submit, "function",
+      JSON.stringify({ bootstrapError: window.__bootstrapError, meta: getElement("meta").textContent }));
   }
   async function submit() {
     await ready();
