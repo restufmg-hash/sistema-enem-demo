@@ -13,8 +13,8 @@ assert.ok(code, "script embutido da página deve existir");
 function createHarness(responses, options = {}) {
   const questionId = "enem:2024:regular_nacional:d2:q133";
   const key = "sistema_enem_attempt_" + questionId;
-  const localData = new Map();
-  const sessionData = new Map();
+  const localData = options.localData ?? new Map();
+  const sessionData = options.sessionData ?? new Map();
   const elements = new Map();
   const posts = [];
   let uuid = 0;
@@ -88,7 +88,11 @@ function createHarness(responses, options = {}) {
           setItem() { throw new Error("Indisponível"); },
           removeItem() { throw new Error("Indisponível"); } }
       : store(sessionData),
-    localStorage: store(localData),
+    localStorage: options.noLocalStorage
+      ? { getItem() { throw new Error("Indisponível"); },
+          setItem() { throw new Error("Indisponível"); },
+          removeItem() { throw new Error("Indisponível"); } }
+      : store(localData),
     crypto: { randomUUID: () => "nonce-" + ++uuid },
     Date, Math, Number, String,
   }, { filename: "questao.html" });
@@ -104,7 +108,7 @@ function createHarness(responses, options = {}) {
     return getElement("form-resposta").on_submit({ preventDefault() {} });
   }
   return {
-    key, posts, sessionData, button, option, confidence, submit, ready,
+    key, posts, localData, sessionData, button, option, confidence, submit, ready,
     result: () => getElement("resultado"),
   };
 }
@@ -220,4 +224,45 @@ test("sem armazenamento de sessao nao cria POST com nonce instavel", async () =>
   assert.equal(h.posts.length, 0);
   assert.equal(h.result().className, "erro");
   assert.match(h.result().textContent, /bloqueado para evitar duplicação/);
+});
+
+test("resposta nao confirmada nao cria primeira alternativa local; confirmacao cria", async () => {
+  const h = createHarness([
+    { body: { error: "not_found" } },
+    { body: { persisted: true, correct: false, official_status: "valid" } },
+  ]);
+  const firstKey = "sistema_enem_primeira_enem:2024:regular_nacional:d2:q133";
+  await h.submit();
+  assert.equal(h.localData.has(firstKey), false);
+  assert.equal(h.posts.length, 1);
+  await h.submit();
+  assert.equal(h.localData.get(firstKey), "A");
+});
+
+test("falha no armazenamento da sessao anonima bloqueia POST e nao simula sucesso", async () => {
+  const h = createHarness([
+    { body: { persisted: true, correct: true } },
+  ], { noLocalStorage: true });
+  await h.submit();
+  assert.equal(h.posts.length, 0);
+  assert.equal(h.result().className, "erro");
+  assert.match(h.result().textContent, /sessão anônima/);
+});
+
+test("recarregamento apos retorno invalido reutiliza nonce e payload idênticos", async () => {
+  const localData = new Map();
+  const sessionData = new Map();
+  const a = createHarness([{ invalidJson: true }], { localData, sessionData });
+  await a.submit();
+  assert.equal(a.posts.length, 1);
+  assert.equal(a.result().className, "erro");
+  const original = a.posts[0];
+  const b = createHarness([
+    { body: { persisted: true, correct: false, official_status: "valid" } },
+  ], { localData, sessionData });
+  await b.submit();
+  assert.equal(b.posts.length, 1);
+  assert.deepEqual(b.posts[0], original);
+  assert.equal(b.result().className, "ok");
+  assert.equal(sessionData.has(b.key), false);
 });
