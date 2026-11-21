@@ -1,0 +1,55 @@
+{
+  "kind": "enem.study_question.v1",
+  "question_id": "enem:2024:regular_nacional:d1:q018",
+  "content_revision": "2026-11-20.a2024d1.q018.r1",
+  "year": 2024,
+  "number": 18,
+  "area": "Linguagens, Códigos e suas Tecnologias",
+  "topic": "Saúde mental, atividade física e desigualdade socioeconômica",
+  "source": {
+    "provider": "INEP",
+    "document": "2024_PV_impresso_D1_CD1.pdf",
+    "sha256": "B0ADC1DC79A002ABA36F725F1EF792CF53E47FF75EE012638EF34A4E6FBB18F5",
+    "page": 9
+  },
+  "blocks": [
+    {
+      "type": "text",
+      "role": "passage",
+      "text": "Um estudo norte-americano analisou os efeitos da pandemia da covid-19 sobre a saúde mental e a manutenção da atividade física, revelando que um fator está diretamente ligado ao outro. De acordo com os dados, famílias de baixa renda foram mais impactadas pelo ciclo vicioso de falta de motivação e pelo sedentarismo. Diante da necessidade de distanciamento social e do início da quarentena, as opções de espaços seguros para exercícios físicos diminuíram, o que dificultou que as pessoas mantivessem seus níveis de atividade. Os dados evidenciaram que as pessoas mais ativas tinham melhor estado de saúde mental. As pessoas com menor renda tiveram mais dificuldade para manter os níveis de atividade física durante a pandemia, sendo aproximadamente duas vezes menos propensas a continuarem no mesmo ritmo de exercícios de antes da pandemia. Habitantes de áreas urbanas mostraram maior probabilidade de não conseguirem manter os níveis de atividade física semelhantes aos de pessoas que vivem em zonas rurais, onde há mais oportunidades de sair para espaços abertos."
+    },
+    {
+      "type": "text",
+      "role": "reference",
+      "text": "Disponível em: https://revistagalileu.globo.com. Acesso em: 6 dez. 2021 (adaptado)."
+    },
+    {
+      "type": "text",
+      "role": "stem",
+      "text": "O texto evidencia a perspectiva ampliada de saúde ao abordar criticamente a pandemia da covid-19 a partir do(a)"
+    }
+  ],
+  "options": [
+    {
+      "label": "A",
+      "text": "busca por espaços para a prática de exercícios físicos."
+    },
+    {
+      "label": "B",
+      "text": "necessidade de se manter ativo para ter equilíbrio emocional."
+    },
+    {
+      "label": "C",
+      "text": "distanciamento social e sua vinculação com a prática de atividades físicas."
+    },
+    {
+      "label": "D",
+      "text": "relação entre os determinantes socioeconômicos e a prática de exercícios."
+    },
+    {
+      "label": "E",
+      "text": "benefício de morar em áreas rurais para preservar a estabilidade psicológica."
+    }
+  ],
+  "answer_policy": "Sem gabarito no payload; feedback apenas após persistência no servidor."
+}
