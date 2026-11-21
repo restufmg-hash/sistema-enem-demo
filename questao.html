@@ -24,12 +24,19 @@
   figure { margin: 1rem 0; }
   figure img { max-width: 100%; height: auto; border: 1px solid #e2e5ea; border-radius: 8px; }
   figcaption { font-size: .8rem; color: #4a5568; margin-top: .4rem; }
-  fieldset { border: 0; padding: 0; margin: 1rem 0 0; }
+  fieldset { border: 0; padding: 0; margin: 1rem 0 0; min-width: 0; }
   legend { font-weight: 600; margin-bottom: .5rem; }
   label.option { display: block; border: 1px solid #d6dbe3; border-radius: 10px; padding: .65rem .8rem; margin: .45rem 0; cursor: pointer; transition: border-color .15s, background .15s; }
   label.option:hover { border-color: #0d2b45; background: #f7fafd; }
   label.option input { margin-right: .6rem; }
   label.option img.option-media { display: block; width: auto; max-width: 100%; max-height: 240px; height: auto; margin: .55rem 0 .1rem; object-fit: contain; background: #fff; }
+  /* Mídias matemáticas extensas: leitura com foco e rolagem também na questão individual. */
+  .option-individual-pan { display: block; overflow-x: auto; overflow-y: hidden;
+    max-width: 100%; margin: .5rem 0 .1rem; scrollbar-width: thin; }
+  .option-individual-pan:focus-visible { outline: 3px solid #0d4f7d; outline-offset: 2px; }
+  label.option .option-individual-pan img.option-media { display: block; width: 760px; max-width: none;
+    max-height: none; height: auto; margin: 0; object-fit: contain; }
+
   button { background: #0d2b45; color: #fff; border: 0; border-radius: 10px; padding: .7rem 1.4rem; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: .5rem; }
   button:hover { background: #14405f; }
   #resultado { margin-top: 1rem; padding: .75rem .9rem; border-radius: 10px; font-weight: 600; display: none; background: #eef2f7; color: #2d3748; border: 1px solid #cbd5e0; }
@@ -62,6 +69,27 @@
   .page-q-option span { overflow-wrap: anywhere; }
   .page-q-option.visual { min-height: 113px; align-items: center; }
   .page-q-option.visual img { max-width: 325px; width: 100%; max-height: 110px; object-fit: contain; }
+  /* Ampliação opt-in de alternativas longas: rolagem interna sem ampliar o documento. */
+  .page-q-option.visual .page-option-pan {
+    flex: 1 1 0; min-width: 0; max-width: 100%; overflow-x: auto; overflow-y: hidden;
+    display: block; border-radius: 3px; scrollbar-width: thin;
+  }
+  .page-q-option.visual .page-option-pan:focus-visible { outline: 3px solid #0d4f7d; outline-offset: 2px; }
+  .page-columns.single-column .page-option-pan img {
+    display: block; width: 100%; max-width: 100%; max-height: none; height: auto; object-fit: contain;
+  }
+  .page-option-pan-hint { display: none; }
+  #page-viewport.read-mode .page-q-option.visual .page-option-pan {
+    flex: 1 1 0; width: 100%; min-width: 0; max-width: 100%; touch-action: pan-x;
+  }
+  #page-viewport.read-mode .page-q-option.visual .page-option-pan img {
+    display: block; width: 760px; max-width: none; max-height: none; height: auto;
+    object-fit: contain;
+  }
+  #page-viewport.read-mode .page-option-pan-hint {
+    display: block; font-size: 12px; color: #31546c; margin: 4px 0 10px;
+  }
+
   .page-question-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 3px; padding-top: 2px; border-top: 1px dotted #b0b9c2; font-size: 11px; }
   .page-question-controls select { font-size: 13px; margin-left: 3px; }
   .page-question-controls a { color: #0d4f7d; }
@@ -491,10 +519,24 @@ async function iniciarModoPagina(params, catalogo) {
           img.src = option.asset || option.asset_url;
           img.alt = option.alt || "Figura da alternativa " + option.label;
           img.loading = "eager";
-          label.appendChild(img);
+          if (option.pan_image === true) {
+            const pan = document.createElement("span");
+            pan.className = "page-option-pan";
+            pan.tabIndex = 0;
+            pan.setAttribute("role", "region");
+            pan.setAttribute("aria-label", "Alternativa " + option.label + ": imagem ampliada, use rolagem horizontal para ler a fórmula");
+            pan.appendChild(img);
+            label.appendChild(pan);
+          } else label.appendChild(img);
         }
         section.appendChild(label);
         controls.push(input);
+      }
+      if (obj.data.options.some(o => o.pan_image === true)) {
+        const hint = document.createElement("p");
+        hint.className = "page-option-pan-hint";
+        hint.textContent = "Deslize horizontalmente nas alternativas para ampliar o texto e as fórmulas.";
+        section.appendChild(hint);
       }
       const meta = document.createElement("div");
       meta.className = "page-question-controls";
@@ -737,7 +779,15 @@ async function iniciar() {
       imagem.alt = opcao.alt || ("Diagrama da alternativa " + opcao.label);
       imagem.loading = "lazy";
       imagem.decoding = "async";
-      label.appendChild(imagem);
+      if (opcao.pan_image === true) {
+        const pan = document.createElement("span");
+        pan.className = "option-individual-pan";
+        pan.tabIndex = 0;
+        pan.setAttribute("role", "region");
+        pan.setAttribute("aria-label", "Imagem ampliada da alternativa " + opcao.label + ", use rolagem horizontal para ler a fórmula");
+        pan.appendChild(imagem);
+        label.appendChild(pan);
+      } else label.appendChild(imagem);
     }
     container.appendChild(label);
   }

@@ -29,35 +29,40 @@
       "text": "hexágono regular, pois a área do jardim, em metro quadrado, será k²√3/24.",
       "image_only": true,
       "asset": "assets/enem2024_d2_cdamarelo_p020_q147-A.png",
-      "alt": "Alternativa A: hexágono regular, pois a área do jardim, em metro quadrado, será k²√3/24. Expressão gráfica preservada do PDF oficial."
+      "alt": "Alternativa A: hexágono regular, pois a área do jardim, em metro quadrado, será k²√3/24. Expressão gráfica preservada do PDF oficial.",
+      "pan_image": true
     },
     {
       "label": "B",
       "text": "hexágono regular, pois a área do jardim, em metro quadrado, será 3k²√3/2.",
       "image_only": true,
       "asset": "assets/enem2024_d2_cdamarelo_p020_q147-B.png",
-      "alt": "Alternativa B: hexágono regular, pois a área do jardim, em metro quadrado, será 3k²√3/2. Expressão gráfica preservada do PDF oficial."
+      "alt": "Alternativa B: hexágono regular, pois a área do jardim, em metro quadrado, será 3k²√3/2. Expressão gráfica preservada do PDF oficial.",
+      "pan_image": true
     },
     {
       "label": "C",
       "text": "quadrado, pois a área do jardim, em metro quadrado, será k²/16.",
       "image_only": true,
       "asset": "assets/enem2024_d2_cdamarelo_p020_q147-C.png",
-      "alt": "Alternativa C: quadrado, pois a área do jardim, em metro quadrado, será k²/16. Expressão gráfica preservada do PDF oficial."
+      "alt": "Alternativa C: quadrado, pois a área do jardim, em metro quadrado, será k²/16. Expressão gráfica preservada do PDF oficial.",
+      "pan_image": true
     },
     {
       "label": "D",
       "text": "triângulo equilátero, pois a área do jardim, em metro quadrado, será k²√3/36.",
       "image_only": true,
       "asset": "assets/enem2024_d2_cdamarelo_p020_q147-D.png",
-      "alt": "Alternativa D: triângulo equilátero, pois a área do jardim, em metro quadrado, será k²√3/36. Expressão gráfica preservada do PDF oficial."
+      "alt": "Alternativa D: triângulo equilátero, pois a área do jardim, em metro quadrado, será k²√3/36. Expressão gráfica preservada do PDF oficial.",
+      "pan_image": true
     },
     {
       "label": "E",
       "text": "triângulo equilátero, pois a área do jardim, em metro quadrado, será k²√3/4.",
       "image_only": true,
       "asset": "assets/enem2024_d2_cdamarelo_p020_q147-E.png",
-      "alt": "Alternativa E: triângulo equilátero, pois a área do jardim, em metro quadrado, será k²√3/4. Expressão gráfica preservada do PDF oficial."
+      "alt": "Alternativa E: triângulo equilátero, pois a área do jardim, em metro quadrado, será k²√3/4. Expressão gráfica preservada do PDF oficial.",
+      "pan_image": true
     }
   ],
   "answer_policy": "Gabarito e resolução não estão neste payload. A correção acontece somente no servidor após submissão da tentativa.",
