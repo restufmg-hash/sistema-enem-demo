@@ -59,7 +59,7 @@ function createHarness(responses, options = {}) {
   const defaultItem = {
     id: "q133", question_id: questionId, numero_oficial: 133,
     ano: 2024, prova: "ENEM", pagina: 15, area: "CN",
-    fonte: "INEP", imagem: "q133.png", data: "q133.json",
+    fonte: "INEP", imagem: "assets/q133.png", data: "data/q133.json",
     occurrence: {
       ano: 2024, dia: 2, caderno: "cdamarelo",
       cor: "amarelo", idioma: null, numero_oficial: 133,
@@ -69,7 +69,7 @@ function createHarness(responses, options = {}) {
     if (url === "catalogo.json") return {
       json: async () => ({ items: options.catalog ?? [defaultItem] }),
     };
-    if (url === "q133.json") return {
+    if (url === "data/q133.json") return {
       json: async () => options.questionData ?? ({
         question_id: questionId,
         options: [..."ABCDE"].map((label) => ({ label, text: "Opção de teste " + label })),
@@ -380,7 +380,7 @@ test("id direto duplicado nao seleciona arbitrariamente a primeira ocorrencia", 
   const standard = {
     id: "q133", question_id: "enem:2024:regular_nacional:d2:q133",
     numero_oficial: 133, ano: 2024, prova: "ENEM",
-    pagina: 15, area: "CN", fonte: "INEP", data: "q133.json",
+    pagina: 15, area: "CN", fonte: "INEP", imagem: "assets/q133.png", data: "data/q133.json",
     occurrence: { ano: 2024, dia: 2, caderno: "cdamarelo", numero_oficial: 133 },
   };
   const duplicate = {
@@ -433,6 +433,53 @@ test("alternativas duplicadas, ausentes ou com rotulo invalido nao liberam envio
 });
 
 test("alternativas validas e identidade correta permitem formulario", async () => {
+  const h = createHarness([]);
+  await h.ready();
+  assert.equal(h.formHidden(), false);
+});
+
+test("referencias externas de alternativas e imagem bloqueiam formulario sem POST", async () => {
+  for (const corrupt of [
+    { data: "https://example.invalid/questao.json" },
+    { imagem: "https://example.invalid/questao.png" },
+    { imagem_texto: "https://example.invalid/base.png" },
+  ]) {
+    const item = {
+      id: "q133", question_id: "enem:2024:regular_nacional:d2:q133",
+      numero_oficial: 133, ano: 2024, prova: "ENEM", pagina: 15,
+      area: "CN", fonte: "INEP", imagem: "assets/q133.png", data: "data/q133.json",
+      ...corrupt,
+    };
+    const h = createHarness([], { catalog: [item] });
+    await h.bootstrap();
+    assert.equal(h.formHidden(), true, JSON.stringify(corrupt));
+    assert.match(h.meta(), /Referências de arquivos/, JSON.stringify(corrupt));
+    assert.equal(h.posts.length, 0);
+  }
+});
+
+test("travessia de diretórios e query strings nos recursos não liberam envio", async () => {
+  for (const corrupt of [
+    { data: "data/../private.json" },
+    { data: "data/q133.json?token=1" },
+    { imagem: "assets/../outside.png" },
+    { imagem_texto: "//example.invalid/path.png" },
+  ]) {
+    const item = {
+      id: "q133", question_id: "enem:2024:regular_nacional:d2:q133",
+      numero_oficial: 133, ano: 2024, prova: "ENEM", pagina: 15,
+      area: "CN", fonte: "INEP", imagem: "assets/q133.png", data: "data/q133.json",
+      ...corrupt,
+    };
+    const h = createHarness([], { catalog: [item] });
+    await h.bootstrap();
+    assert.equal(h.formHidden(), true, JSON.stringify(corrupt));
+    assert.match(h.meta(), /Referências de arquivos/, JSON.stringify(corrupt));
+    assert.equal(h.posts.length, 0);
+  }
+});
+
+test("caminhos de recursos locais esperados continuam funcionando", async () => {
   const h = createHarness([]);
   await h.ready();
   assert.equal(h.formHidden(), false);
