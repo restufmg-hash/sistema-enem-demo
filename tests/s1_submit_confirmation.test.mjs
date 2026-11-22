@@ -70,7 +70,10 @@ function createHarness(responses, options = {}) {
       json: async () => ({ items: options.catalog ?? [defaultItem] }),
     };
     if (url === "q133.json") return {
-      json: async () => ({ options: [{ label: "A", text: "Opção de teste" }] }),
+      json: async () => options.questionData ?? ({
+        question_id: questionId,
+        options: [..."ABCDE"].map((label) => ({ label, text: "Opção de teste " + label })),
+      }),
     };
     posts.push(JSON.parse(init.body));
     if (!responses.length) throw new Error("Sem resposta simulada");
@@ -389,4 +392,48 @@ test("id direto duplicado nao seleciona arbitrariamente a primeira ocorrencia", 
   await h.bootstrap();
   assert.equal(h.formHidden(), true);
   assert.equal(h.posts.length, 0);
+});
+
+test("arquivo de alternativas nao pode pertencer a outra questao", async () => {
+  const h = createHarness([], {
+    questionData: {
+      question_id: "enem:2024:regular_nacional:d2:q132",
+      options: [..."ABCDE"].map((label) => ({ label, text: "Teste" })),
+    },
+  });
+  await h.bootstrap();
+  assert.equal(h.formHidden(), true);
+  assert.match(h.meta(), /Alternativas incompatíveis/);
+  assert.equal(h.posts.length, 0);
+});
+
+test("arquivo de alternativas sem identidade nao libera formulario", async () => {
+  const h = createHarness([], {
+    questionData: { options: [..."ABCDE"].map((label) => ({ label, text: "Teste" })) },
+  });
+  await h.bootstrap();
+  assert.equal(h.formHidden(), true);
+  assert.equal(h.posts.length, 0);
+});
+
+test("alternativas duplicadas, ausentes ou com rotulo invalido nao liberam envio", async () => {
+  const variations = ["AABDE", "ABCD", "ABCDF"];
+  for (const labels of variations) {
+    const h = createHarness([], {
+      questionData: {
+        question_id: "enem:2024:regular_nacional:d2:q133",
+        options: [...labels].map((label) => ({ label, text: "Teste" })),
+      },
+    });
+    await h.bootstrap();
+    assert.equal(h.formHidden(), true, labels);
+    assert.match(h.meta(), /Alternativas incompatíveis/, labels);
+    assert.equal(h.posts.length, 0, labels);
+  }
+});
+
+test("alternativas validas e identidade correta permitem formulario", async () => {
+  const h = createHarness([]);
+  await h.ready();
+  assert.equal(h.formHidden(), false);
 });
