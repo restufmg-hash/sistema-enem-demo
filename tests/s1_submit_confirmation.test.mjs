@@ -24,6 +24,10 @@ function createHarness(responses, options = {}) {
       hidden: false, className: "", textContent: "", innerHTML: "",
       disabled: false, style: {}, children: [],
       appendChild(node) { this.children.push(node); },
+      querySelector(selector) {
+        return this.children.find((node) => node?.name &&
+          selector.includes('name="' + node.name + '"')) ?? null;
+      },
       setAttribute() {},
       addEventListener(type, fn) { this["on_" + type] = fn; },
     };
@@ -109,6 +113,14 @@ function createHarness(responses, options = {}) {
   }
   return {
     key, posts, localData, sessionData, button, option, confidence, submit, ready,
+    selectedControls: () => ({
+      alternativas: getElement("alternativas").children
+        .map((label) => label.children[0])
+        .filter((node) => node?.checked).map((node) => node.value),
+      confianca: getElement("confianca").children
+        .map((label) => label.children[0])
+        .filter((node) => node?.checked).map((node) => node.value),
+    }),
     result: () => getElement("resultado"),
   };
 }
@@ -260,9 +272,23 @@ test("recarregamento apos retorno invalido reutiliza nonce e payload idênticos"
   const b = createHarness([
     { body: { persisted: true, correct: false, official_status: "valid" } },
   ], { localData, sessionData });
+  await b.ready();
+  assert.deepEqual(b.selectedControls(), { alternativas: ["A"], confianca: ["3"] });
+  assert.match(b.result().textContent, /Envio anterior sem confirmação/);
   await b.submit();
   assert.equal(b.posts.length, 1);
   assert.deepEqual(b.posts[0], original);
   assert.equal(b.result().className, "ok");
   assert.equal(sessionData.has(b.key), false);
+});
+
+test("sessao anonima alterada nao restaura selecao pendente e nao dispara POST", async () => {
+  const localData = new Map(), sessionData = new Map();
+  const original = createHarness([{ invalidJson: true }], { localData, sessionData });
+  await original.submit();
+  localData.set("sistema_enem_anon_session", "sessao-alterada");
+  const recovered = createHarness([], { localData, sessionData });
+  await recovered.ready();
+  assert.deepEqual(recovered.selectedControls(), { alternativas: [], confianca: [] });
+  assert.equal(recovered.posts.length, 0);
 });
