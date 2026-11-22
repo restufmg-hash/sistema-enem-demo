@@ -92,6 +92,7 @@ function createHarness(responses, options = {}) {
           return {
             question_id: last.question_id,
             client_attempt_id: last.client_attempt_id,
+            attempt_receipt: "123e4567-e89b-12d3-a456-426614174000",
             ...next.body,
           };
         }
@@ -219,6 +220,42 @@ test("persisted true sem identidade explicita nao confirma, nem libera nonce", a
   }
 });
 
+test("persisted true sem recibo opaco do servidor nao confirma", async () => {
+  const partial = [
+    { persisted: true, correct: true },
+    { persisted: true, attempt_receipt: null },
+    { persisted: true, attempt_receipt: "" },
+    { persisted: true, attempt_receipt: "   " },
+    { persisted: true, attempt_receipt: "x" },
+    { persisted: true, attempt_receipt: 12345 },
+  ];
+  for (const body of partial) {
+    const h = createHarness([{
+      body: {
+        question_id: "enem:2024:regular_nacional:d2:q133",
+        client_attempt_id: "nonce-2",
+        ...body,
+      },
+      rawBody: true,
+    }]);
+    await h.submit();
+    assert.equal(h.posts.length, 1, JSON.stringify(body));
+    assert.equal(h.result().className, "erro", JSON.stringify(body));
+    assert.equal(h.sessionData.has(h.key), true, JSON.stringify(body));
+    assert.equal(h.localData.has("sistema_enem_primeira_enem:2024:regular_nacional:d2:q133"), false);
+  }
+});
+
+test("recibo presente confirma mesmo em replay idempotente", async () => {
+  const h = createHarness([{
+    body: { persisted: true, replayed: true, correct: false,
+            attempt_receipt: "123e4567-e89b-12d3-a456-426614174000" },
+  }]);
+  await h.submit();
+  assert.equal(h.result().className, "ok");
+  assert.equal(h.sessionData.has(h.key), false);
+});
+
 test("recibo persistido de questao anulada libera nonce e confirma registro", async () => {
   const h = createHarness([{ body: { persisted: true, official_status: "annulled", correct: null } }]);
   await h.submit();
@@ -242,6 +279,7 @@ test("duplo clique enquanto a chamada esta pendente faz apenas um POST", async (
     persisted: true, correct: true,
     question_id: h.posts[0].question_id,
     client_attempt_id: h.posts[0].client_attempt_id,
+    attempt_receipt: "123e4567-e89b-12d3-a456-426614174000",
   }) });
   await Promise.all([first, second]);
   assert.equal(h.button.disabled, false);
