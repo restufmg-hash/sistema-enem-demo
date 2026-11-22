@@ -98,9 +98,11 @@ function normIdioma(v) {
 
 function acharItemPorId(items, id) {
   if (!id) return { item: null, matches: [] };
-  const direct = items.find((i) => i.id === id || i.question_id === id);
-  if (direct) return { item: direct, matches: [direct] };
-  const byAlias = items.filter((i) => (i.aliases || []).includes(id));
+  const direct = items.filter((i) => i.id === id || i.question_id === id);
+  if (direct.length) {
+    return { item: direct.length === 1 ? direct[0] : null, matches: direct };
+  }
+  const byAlias = items.filter((i) => Array.isArray(i.aliases) && i.aliases.includes(id));
   if (byAlias.length === 1) return { item: byAlias[0], matches: byAlias };
   return { item: null, matches: byAlias };
 }
@@ -113,7 +115,7 @@ function filtrarPorOcorrencia(items, occ) {
     if (occ.dia) campos.push(() => String(o.dia) === String(occ.dia));
     if (occ.caderno) campos.push(() => String(o.caderno || "") === String(occ.caderno));
     if (occ.cor) campos.push(() => String(o.cor || "") === String(occ.cor));
-    if (occ.idioma) campos.push(() => String(o.idioma || "") === String(occ.idioma));
+    if (occ.idioma) campos.push(() => normIdioma(o.idioma) === occ.idioma);
     if (occ.numero) campos.push(() => String(o.numero_oficial) === String(occ.numero));
     return campos.every((c) => c());
   });
@@ -134,6 +136,22 @@ function falha(mensagem) {
   mostrar(document.getElementById("form-resposta"), false);
 }
 
+// Recursos publicos precisam permanecer na arvore local da demo.
+// Nao aceitar URLs externas, caminhos absolutos, travessia ou query strings.
+function recursoLocalSeguro(value, pasta, extensao) {
+  if (typeof value !== "string") return false;
+  const safeName = "[A-Za-z0-9_-][A-Za-z0-9_.-]*";
+  return new RegExp("^" + pasta + "/" + safeName + "\\." + extensao + "$").test(value);
+}
+
+// Mesma regra textual aplicada no Apps Script v15. Nunca tentar enviar um
+// identificador local corrompido: o servidor rejeitaria e o cliente ficaria
+// repetindo uma requisicao impossivel de confirmar.
+function identificadorValido(value, minLen, maxLen) {
+  return typeof value === "string" && value.length >= minLen &&
+    value.length <= maxLen && /^[A-Za-z0-9][A-Za-z0-9_-]*$/.test(value);
+}
+
 function primeiraChave(questionId) { return "sistema_enem_primeira_" + questionId; }
 
 function sessaoAnonima() {
@@ -143,8 +161,46 @@ function sessaoAnonima() {
       s = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(16).slice(2));
       localStorage.setItem("sistema_enem_anon_session", s);
     }
-    return s;
+    return identificadorValido(s, 8, 128) ? s : undefined;
   } catch (_) { return undefined; }
+}
+
+// A resposta HTTP 200, isoladamente, nao comprova persistencia no Apps Script.
+// Um replay com persisted=false pode existir no banco; sem recibo inequivoco,
+// mantenha o nonce para reconsulta/reenvio idempotente, em vez de inventar sucesso.
+function reciboPersistido(corpo, questionId, attemptId) {
+  if (!corpo || typeof corpo !== "object" || Array.isArray(corpo)) return false;
+  if (corpo.error != null && corpo.error !== "") return false;
+  if (corpo.ok === false || corpo.status === "error") return false;
+  // O recibo precisa vincular explicitamente esta questao e este UUID.
+  // Afirmar persisted=true sem identidade permite falso positivo de outro envio.
+  if (corpo.question_id !== questionId) return false;
+  if (corpo.client_attempt_id !== attemptId) return false;
+  // O contrato do Apps Script emite um identificador opaco do registro persistido.
+  // Um simples eco de question_id/client_attempt_id nao constitui recibo de gravação.
+  if (typeof corpo.attempt_receipt !== "string" ||
+      corpo.attempt_receipt.trim().length < 8) return false;
+  return corpo.persisted === true;
+}
+
+// O mesmo nonce nunca deve ser reutilizado com alternativa/confianca diferente.
+// Sem armazenamento de sessao, interromper o envio: nao ha replay seguro.
+function reservarPayloadTentativa(tentativa, payload) {
+  if (!tentativa.chave) return "armazenamento_indisponivel";
+  const chavePayload = tentativa.chave + "_payload";
+  const assinatura = JSON.stringify({
+    selected_option: payload.selected_option,
+    confidence: payload.confidence,
+    anon_session_id: payload.anon_session_id,
+  });
+  try {
+    const anterior = sessionStorage.getItem(chavePayload);
+    if (anterior !== null) return anterior === assinatura ? null : "payload_divergente";
+    sessionStorage.setItem(chavePayload, assinatura);
+    return null;
+  } catch (_) {
+    return "armazenamento_indisponivel";
+  }
 }
 
 function idTentativa(questionId) {
@@ -154,13 +210,40 @@ function idTentativa(questionId) {
   const novo = () => (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(16).slice(2));
   try {
     let s = sessionStorage.getItem(chave);
-    if (!s) { s = novo(); sessionStorage.setItem(chave, s); }
+    if (!s) {
+      // Um payload sem nonce pode corresponder a um POST anterior já gravado.
+      // Nunca criar outro nonce enquanto houver esse estado órfão.
+      if (sessionStorage.getItem(chave + "_payload") !== null) {
+        return { id: null, chave, pendenteSemId: true };
+      }
+      s = novo();
+      sessionStorage.setItem(chave, s);
+    }
     return { id: s, chave };
   } catch (_) { return { id: novo(), chave: null }; }
 }
 
 async function iniciar() {
   const params = new URLSearchParams(location.search);
+  // Um numero invalido ou um parametro repetido nao e um filtro ausente.
+  // Falhar antes de selecionar outra ocorrencia, inclusive quando existe id.
+  const numericos = ["ano", "dia", "numero", "n"];
+  const numericoInvalido = numericos.some((campo) => {
+    const valores = params.getAll(campo);
+    return valores.length > 1 || valores.some((valor) => {
+      const texto = valor.trim();
+      return !/^[1-9][0-9]*$/.test(texto) ||
+        !Number.isSafeInteger(Number(texto));
+    });
+  });
+  const textuaisRepetidos = ["id", "caderno", "cor", "idioma"].some(
+    (campo) => params.getAll(campo).length > 1
+  );
+  if (numericoInvalido || (params.has("numero") && params.has("n")) ||
+      textuaisRepetidos || (params.has("id") && !(params.get("id") || "").trim())) {
+    falha("Filtros de ocorrência inválidos, duplicados ou conflitantes na URL.");
+    return;
+  }
   const id = (params.get("id") || "").trim();
   const occ = {
     ano: intOrUndef(params.get("ano")),
@@ -184,9 +267,27 @@ async function iniciar() {
   const porId = acharItemPorId(items, id);
   let item = porId.item;
   let candidatos = porId.matches;
+  const filtrosInformados = Object.values(occ).some((v) =>
+    v !== undefined && v !== null && v !== ""
+  );
+
+  // Identificadores explicitos nunca podem cair em uma ocorrencia diferente.
+  // Se o ID apontar a varios aliases, limitar a busca apenas aos candidatos.
+  if (id && candidatos.length === 0) {
+    falha("Identificador de questão não encontrado no catálogo público.");
+    return;
+  }
+  if (item && filtrosInformados && filtrarPorOcorrencia([item], occ).length !== 1) {
+    falha("Identificador e filtros de ocorrência não correspondem à mesma questão.");
+    return;
+  }
+  if (!item && !id && !filtrosInformados) {
+    falha("Informe o identificador ou os filtros da questão.");
+    return;
+  }
 
   if (!item) {
-    const porOcc = filtrarPorOcorrencia(items, occ);
+    const porOcc = filtrarPorOcorrencia(id ? candidatos : items, occ);
     if (porOcc.length === 1) {
       item = porOcc[0];
       candidatos = porOcc;
@@ -214,12 +315,31 @@ async function iniciar() {
     }
   }
   if (!item) { falha("Questão não encontrada no catálogo público."); return; }
+  if (!recursoLocalSeguro(item.data, "data", "json") ||
+      !recursoLocalSeguro(item.imagem, "assets", "png") ||
+      (item.imagem_texto != null && item.imagem_texto !== "" &&
+       !recursoLocalSeguro(item.imagem_texto, "assets", "png"))) {
+    falha("Referências de arquivos da questão inválidas ou externas. Registro bloqueado.");
+    return;
+  }
 
   document.title = "Sistema ENEM — Questão " + item.numero_oficial + " (" + item.ano + ")";
   const meta = document.getElementById("meta");
-  meta.innerHTML = "<strong>Questão " + item.numero_oficial + "</strong> · " + item.prova +
-    ", página " + item.pagina + " · " + item.area +
-    (item.anulada ? '<span class="badge">ANULADA pelo INEP</span>' : "");
+  // Metadados do catalogo sao conteudo, nunca codigo HTML executavel.
+  // Criar nos DOM explicitamente impede injecao de marcacao por campos JSON.
+  meta.textContent = "";
+  const tituloQuestao = document.createElement("strong");
+  tituloQuestao.textContent = "Questão " + item.numero_oficial;
+  meta.appendChild(tituloQuestao);
+  meta.appendChild(document.createTextNode(
+    " · " + item.prova + ", página " + item.pagina + " · " + item.area
+  ));
+  if (item.anulada) {
+    const selo = document.createElement("span");
+    selo.className = "badge";
+    selo.textContent = "ANULADA pelo INEP";
+    meta.appendChild(selo);
+  }
 
   const imgTexto = document.getElementById("enunciado_texto");
   if (item.imagem_texto) {
@@ -245,9 +365,23 @@ async function iniciar() {
     return;
   }
 
+  // Nao combinar alternativas de um arquivo com o question_id de outro item.
+  // A verificacao e local, sem obter ou expor qualquer gabarito.
+  const opcoes = dados && dados.options;
+  const rotulos = Array.isArray(opcoes) ? opcoes.map((o) => o && o.label) : [];
+  const dadosValidos = dados && dados.question_id === item.question_id &&
+    Array.isArray(opcoes) && opcoes.length === 5 &&
+    rotulos.every((r) => typeof r === "string" && /^[A-E]$/.test(r)) &&
+    new Set(rotulos).size === 5 &&
+    opcoes.every((o) => o && typeof o.text === "string");
+  if (!dadosValidos) {
+    falha("Alternativas incompatíveis com a identidade da questão. Registro bloqueado.");
+    return;
+  }
+
   const container = document.getElementById("alternativas");
   container.textContent = "";
-  for (const opcao of dados.options || []) {
+  for (const opcao of opcoes) {
     const label = document.createElement("label");
     label.className = "option";
     const input = document.createElement("input");
@@ -280,8 +414,43 @@ async function iniciar() {
   let primeira = null;
   try { primeira = localStorage.getItem(chave); } catch (_) { primeira = null; }
 
+  // Restaurar apenas o formulario de uma tentativa local ainda nao confirmada.
+  // Isto NAO demonstra que o servidor tenha gravado nem recuperado a tentativa.
+  if (SILENCIADO.api) {
+    try {
+      const chavePendente = "sistema_enem_attempt_" + item.question_id;
+      const noncePendente = sessionStorage.getItem(chavePendente);
+      const assinatura = sessionStorage.getItem(chavePendente + "_payload");
+      if (noncePendente && assinatura) {
+        const anterior = JSON.parse(assinatura);
+        const alternativaValida = /^[A-E]$/.test(anterior.selected_option || "");
+        const confiancaValida = Number.isInteger(anterior.confidence) &&
+          anterior.confidence >= 1 && anterior.confidence <= 5;
+        const sessaoValida = typeof anterior.anon_session_id === "string" &&
+          anterior.anon_session_id === sessaoAnonima();
+        if (alternativaValida && confiancaValida && sessaoValida) {
+          for (const rotulo of container.children) {
+            const controle = rotulo.querySelector('input[name="alternativa"]');
+            if (controle && controle.value === anterior.selected_option) controle.checked = true;
+          }
+          for (const rotulo of confiancaContainer.children) {
+            const controle = rotulo.querySelector('input[name="confianca"]');
+            if (controle && Number(controle.value) === anterior.confidence) controle.checked = true;
+          }
+          resultado.style.display = "block";
+          resultado.className = "";
+          resultado.textContent = "Envio anterior sem confirmação. Sua seleção foi restaurada; tente novamente para verificar o registro no servidor.";
+        }
+      }
+    } catch (_) {
+      // Sem estado local confiavel, nao inferir gravacao ou feedback remoto.
+    }
+  }
+
+  let envioPendente = false;
   document.getElementById("form-resposta").addEventListener("submit", async (evento) => {
     evento.preventDefault();
+    if (envioPendente) return;
     const selecionada = document.querySelector('input[name="alternativa"]:checked');
     resultado.style.display = "block";
     resultado.className = "";
@@ -294,39 +463,93 @@ async function iniciar() {
       resultado.textContent = "Selecione sua confiança de 1 a 5 antes de registrar.";
       return;
     }
-    if (primeira === null) {
-      try { localStorage.setItem(chave, selecionada.value); } catch (_) { /* sem armazenamento local */ }
-      primeira = selecionada.value;
-    }
-
     if (!SILENCIADO.api) {
+      if (primeira === null) {
+        try { localStorage.setItem(chave, selecionada.value); primeira = selecionada.value; }
+        catch (_) {
+          resultado.className = "erro";
+          resultado.textContent = "Não foi possível guardar a resposta neste navegador.";
+          return;
+        }
+      }
       resultado.textContent = "Resposta registrada neste navegador. A conferência e o feedback acontecem no servidor; o feedback ainda não está disponível nesta página.";
       return;
     }
     resultado.textContent = "Enviando ao servidor…";
     const tentativa = idTentativa(item.question_id);
+    if (tentativa.pendenteSemId) {
+      resultado.className = "erro";
+      resultado.textContent = "Existe um envio pendente sem identificador local. O registro foi bloqueado para evitar duplicação; preserve esta aba para recuperação assistida.";
+      return;
+    }
+    if (!identificadorValido(tentativa.id, 8, 80)) {
+      resultado.className = "erro";
+      resultado.textContent = "Identificador de tentativa local inválido. O envio foi bloqueado para não duplicar nem perder um registro pendente.";
+      return;
+    }
+    const payload = {
+      question_id: item.question_id,
+      selected_option: selecionada.value,
+      confidence: confianca ? Number(confianca.value) : 3,
+      client_attempt_id: tentativa.id,
+      anon_session_id: sessaoAnonima(),
+    };
+    if (!payload.anon_session_id) {
+      resultado.className = "erro";
+      resultado.textContent = "Não foi possível preservar a sessão anônima. O envio foi bloqueado para evitar perda de identidade da tentativa.";
+      return;
+    }
+    const bloqueio = reservarPayloadTentativa(tentativa, payload);
+    if (bloqueio) {
+      resultado.className = "erro";
+      resultado.textContent = bloqueio === "payload_divergente"
+        ? "Existe um envio pendente para outra alternativa ou confiança. Restaure a seleção anterior para tentar novamente sem duplicação."
+        : "Não foi possível guardar o identificador de tentativa nesta sessão. O envio foi bloqueado para evitar duplicação.";
+      return;
+    }
     const endpoint = SILENCIADO.api.replace(/\/$/, "");
+    envioPendente = true;
+    const botao = document.querySelector('#form-resposta button[type="submit"]');
+    if (botao) botao.disabled = true;
+    // Requisicoes sem resposta nao podem bloquear o formulario indefinidamente.
+    // Em qualquer timeout, o nonce/payload permanecem intactos: o backend pode
+    // ter persistido antes da perda de resposta; o replay deve ser idempotente.
+    const abortController = typeof AbortController === "function"
+      ? new AbortController() : null;
+    const timeoutEnvio = abortController && typeof setTimeout === "function"
+      ? setTimeout(() => abortController.abort(), 20000) : null;
     try {
       // Application/json exigiria preflight CORS que o endpoint gratuito nao responde;
       // text/plain (simple request) e lido pelo servidor como JSON.
       const resposta = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({
-          question_id: item.question_id,
-          selected_option: selecionada.value,
-          confidence: confianca ? Number(confianca.value) : 3,
-          client_attempt_id: tentativa.id,
-          anon_session_id: sessaoAnonima(),
-        }),
+        body: JSON.stringify(payload),
+        ...(abortController ? { signal: abortController.signal } : {}),
       });
       if (!resposta.ok) {
         resultado.className = "erro";
         resultado.textContent = "Não foi possível registrar no servidor agora (HTTP " + resposta.status + "). Sua resposta ficou guardada neste navegador.";
         return;
       }
-      try { if (tentativa.chave) sessionStorage.removeItem(tentativa.chave); } catch (_) { /* sem sessionStorage */ }
       const corpo = await resposta.json();
+      if (!reciboPersistido(corpo, item.question_id, tentativa.id)) {
+        throw new Error("RECIBO_PERSISTENCIA_NAO_CONFIRMADO");
+      }
+      try {
+        if (tentativa.chave) {
+          // Remover o nonce primeiro: se a limpeza do payload falhar depois,
+          // o payload órfão bloqueia qualquer novo UUID e evita duplicação.
+          // Se a remoção do nonce falhar, manter ambos para replay idempotente.
+          sessionStorage.removeItem(tentativa.chave);
+          sessionStorage.removeItem(tentativa.chave + "_payload");
+        }
+      } catch (_) { /* sem sessionStorage */ }
+      // A primeira resposta local so e registrada apos confirmacao do servidor.
+      if (primeira === null) {
+        try { localStorage.setItem(chave, selecionada.value); primeira = selecionada.value; }
+        catch (_) { /* recibo remoto confirmado; armazenamento local opcional */ }
+      }
       resultado.className = "ok";
       if (corpo.official_status === "annulled") {
         resultado.textContent = "Questão anulada pelo INEP: não há alternativa correta. Sua tentativa foi registrada no servidor.";
@@ -339,7 +562,13 @@ async function iniciar() {
       }
     } catch (_) {
       resultado.className = "erro";
-      resultado.textContent = "Falha de conexão com o servidor. Sua resposta ficou guardada neste navegador.";
+      resultado.textContent = "Não foi possível confirmar a gravação no servidor. Ao tentar novamente, será usado o mesmo identificador para evitar duplicação.";
+    } finally {
+      if (timeoutEnvio !== null && typeof clearTimeout === "function") {
+        clearTimeout(timeoutEnvio);
+      }
+      envioPendente = false;
+      if (botao) botao.disabled = false;
     }
   });
 }
