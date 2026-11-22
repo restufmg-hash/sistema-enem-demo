@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { dirname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
@@ -43,6 +43,42 @@ function sourcePath(relative) {
   assert.ok(full.startsWith(dataRoot + sep), "Arquivo fora de data/: " + relative);
   return full;
 }
+
+// Pastas publicadas em Pages nao precisam estar referenciadas para serem
+// acessiveis por URL. Proibir arquivos extras e subpastas em data/.
+function requireDataDirectoryClosed(entries, expected) {
+  const present = new Set();
+  for (const entry of entries) {
+    assert.ok(entry.isFile(), "Subpasta ou link proibido em data/: " + entry.name);
+    const relative = "data/" + entry.name;
+    assert.match(relative, /^data\/[A-Za-z0-9_-][A-Za-z0-9_.-]*\.json$/,
+      "Nome de arquivo publico inesperado: " + relative);
+    assert.ok(expected.has(relative), "Arquivo publico sem catalogo: " + relative);
+    assert.ok(!present.has(relative), "Arquivo repetido: " + relative);
+    present.add(relative);
+  }
+  assert.deepEqual([...present].sort(), [...expected].sort(),
+    "JSON catalogado ausente do diretorio publico data/");
+}
+
+test("data publica somente JSONs explicitamente referenciados no catalogo", () => {
+  const referenced = new Set(catalog.items.map((item) => item.data));
+  requireDataDirectoryClosed(readdirSync(dataRoot, { withFileTypes: true }), referenced);
+});
+
+test("auditoria recusa arquivo extra, arquivo oculto e subdiretorio", () => {
+  const file = (name) => ({ name, isFile: () => true });
+  const folder = { name: "backup", isFile: () => false };
+  const refs = new Set(["data/questao.json"]);
+  assert.doesNotThrow(() => requireDataDirectoryClosed([file("questao.json")], refs));
+  for (const extras of [
+    [file("questao.json"), file("gabarito.json")],
+    [file("questao.json"), file(".secreto.json")],
+    [file("questao.json"), folder],
+  ]) {
+    assert.throws(() => requireDataDirectoryClosed(extras, refs));
+  }
+});
 
 test("catalogo da demo nao contem campos de gabarito", () => {
   assert.equal(catalog.kind, "sistema-enem.catalogo_publico.v1");
