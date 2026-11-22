@@ -244,6 +244,24 @@ def test_viewport(browser, url, viewport):
         assert stored == ["=IMPORTXML(foo)", "PAYLOAD_PENDENTE_INTACTO"], stored
         assert len(posts) == 2
 
+        # Payload órfão (sem nonce) não pode gerar UUID novo nem duplicar POST.
+        page.evaluate("""(nonceKey) => {
+            sessionStorage.removeItem(nonceKey);
+            sessionStorage.setItem(nonceKey + '_payload',
+                'PAYLOAD_PENDENTE_INTACTO');
+        }""", nonce_key)
+        page.reload(wait_until="networkidle")
+        page.locator('input[name="alternativa"][value="A"]').check()
+        page.locator('input[name="confianca"][value="3"]').check()
+        page.locator('button[type="submit"]').click()
+        page.get_by_text("envio pendente sem identificador local", exact=False).wait_for()
+        stored = page.evaluate("""(nonceKey) => [
+            sessionStorage.getItem(nonceKey),
+            sessionStorage.getItem(nonceKey + '_payload')
+        ]""", nonce_key)
+        assert stored == [None, "PAYLOAD_PENDENTE_INTACTO"], stored
+        assert len(posts) == 2
+
         assert not errors, errors
         assert not external, external  # No unrecognized / real network calls.
         print(
@@ -257,6 +275,7 @@ def test_viewport(browser, url, viewport):
             "OPTIONS_IDENTITY_FAIL_CLOSED",
             "EXTERNAL_RESOURCE_FAIL_CLOSED",
             "INVALID_LOCAL_ID_FAIL_CLOSED",
+            "ORPHANED_PAYLOAD_FAIL_CLOSED",
             "EXTERNAL_REQUESTS=0",
             "JS_ERRORS=0",
         )
