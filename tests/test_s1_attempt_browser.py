@@ -26,7 +26,8 @@ catalog = {"items": [{
     "question_id": "enem:2024:regular_nacional:d2:q133",
     "numero_oficial": 133,
     "ano": 2024,
-    "prova": "ENEM",
+    # Metadado hostil somente de QA: jamais deve virar HTML executavel.
+    "prova": 'ENEM <img src="data:,invalid" onerror="window.__catalogXssTriggered=true">',
     "pagina": 15,
     "area": "CN",
     "fonte": "INEP",
@@ -83,6 +84,10 @@ def test_viewport(browser, url, viewport):
 
     try:
         page.goto(url + "/questao.html?id=q133", wait_until="networkidle")
+        # O metadado perigoso deve aparecer como texto, nao como imagem/script.
+        assert page.locator("#meta img, #meta svg, #meta script").count() == 0
+        assert page.evaluate("window.__catalogXssTriggered === true") is False
+        assert "<img src=" in page.locator("#meta").inner_text()
         page.locator('input[name="alternativa"][value="A"]').check()
         page.locator('input[name="confianca"][value="3"]').check()
         page.locator('button[type="submit"]').click()
