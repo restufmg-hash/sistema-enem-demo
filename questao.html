@@ -217,6 +217,22 @@ function idTentativa(questionId) {
 
 async function iniciar() {
   const params = new URLSearchParams(location.search);
+  // Um numero invalido ou um parametro repetido nao e um filtro ausente.
+  // Falhar antes de selecionar outra ocorrencia, inclusive quando existe id.
+  const numericos = ["ano", "dia", "numero", "n"];
+  const numericoInvalido = numericos.some((campo) => {
+    const valores = params.getAll(campo);
+    return valores.length > 1 || valores.some((valor) => {
+      const texto = valor.trim();
+      return !/^[1-9][0-9]*$/.test(texto) ||
+        !Number.isSafeInteger(Number(texto));
+    });
+  });
+  if (numericoInvalido || (params.has("numero") && params.has("n")) ||
+      params.getAll("id").length > 1) {
+    falha("Filtros numéricos inválidos, duplicados ou conflitantes na URL.");
+    return;
+  }
   const id = (params.get("id") || "").trim();
   const occ = {
     ano: intOrUndef(params.get("ano")),
