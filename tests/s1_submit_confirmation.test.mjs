@@ -116,7 +116,7 @@ function createHarness(responses, options = {}) {
           setItem() { throw new Error("Indisponível"); },
           removeItem() { throw new Error("Indisponível"); } }
       : store(localData),
-    crypto: { randomUUID: () => "nonce-" + ++uuid },
+    crypto: { randomUUID: () => "nonce-" + String(++uuid).padStart(4, "0") },
     Date, Math, Number, String,
   }, { filename: "questao.html" });
 
@@ -206,8 +206,8 @@ test("persisted true sem identidade explicita nao confirma, nem libera nonce", a
   const bodies = [
     { persisted: true, correct: true },
     { persisted: true, question_id: "enem:2024:regular_nacional:d2:q133" },
-    { persisted: true, client_attempt_id: "nonce-2" },
-    { persisted: true, question_id: null, client_attempt_id: "nonce-2" },
+    { persisted: true, client_attempt_id: "nonce-0002" },
+    { persisted: true, question_id: null, client_attempt_id: "nonce-0002" },
     { persisted: true, question_id: "enem:2024:regular_nacional:d2:q133", client_attempt_id: null },
   ];
   for (const body of bodies) {
@@ -233,7 +233,7 @@ test("persisted true sem recibo opaco do servidor nao confirma", async () => {
     const h = createHarness([{
       body: {
         question_id: "enem:2024:regular_nacional:d2:q133",
-        client_attempt_id: "nonce-1",
+        client_attempt_id: "nonce-0001",
         ...body,
       },
       rawBody: true,
@@ -521,4 +521,63 @@ test("caminhos de recursos locais esperados continuam funcionando", async () => 
   const h = createHarness([]);
   await h.ready();
   assert.equal(h.formHidden(), false);
+});
+
+test("IDs recém-gerados respeitam as restrições da candidata privada v15", async () => {
+  const h = createHarness([{ body: { persisted: true, correct: false } }]);
+  await h.submit();
+  assert.equal(h.posts.length, 1);
+  const body = h.posts[0];
+  assert.match(body.client_attempt_id, /^[A-Za-z0-9][A-Za-z0-9_-]{7,79}$/);
+  assert.match(body.anon_session_id, /^[A-Za-z0-9][A-Za-z0-9_-]{7,127}$/);
+  assert.equal(h.result().className, "ok");
+});
+
+test("sessão anônima preexistente inválida impede POST sem alterar dados", async () => {
+  for (const invalid of [
+    "curta", "=HYPERLINK(foo)", "sessao.com.pontos", "A".repeat(129),
+  ]) {
+    const localData = new Map([["sistema_enem_anon_session", invalid]]);
+    const h = createHarness([], { localData });
+    await h.submit();
+    assert.equal(h.posts.length, 0, invalid);
+    assert.equal(h.result().className, "erro", invalid);
+    assert.equal(localData.get("sistema_enem_anon_session"), invalid);
+    assert.equal(localData.has("sistema_enem_primeira_enem:2024:regular_nacional:d2:q133"), false);
+  }
+});
+
+test("nonce local corrompido impede POST e mantém a tentativa pendente intacta", async () => {
+  for (const invalid of ["curto", "=IMPORTXML(foo)", "x".repeat(81), "A/B"]) {
+    const sessionData = new Map();
+    const key = "sistema_enem_attempt_enem:2024:regular_nacional:d2:q133";
+    const payloadKey = key + "_payload";
+    sessionData.set(key, invalid);
+    sessionData.set(payloadKey, "TESTE_PENDENTE_PRESERVADO");
+    const h = createHarness([], { sessionData });
+    await h.submit();
+    assert.equal(h.posts.length, 0, invalid);
+    assert.equal(h.result().className, "erro", invalid);
+    assert.match(h.result().textContent, /Identificador de tentativa local inválido/);
+    assert.equal(sessionData.get(key), invalid);
+    assert.equal(sessionData.get(payloadKey), "TESTE_PENDENTE_PRESERVADO");
+  }
+});
+
+test("identificadores válidos anteriormente armazenados seguem idempotentes", async () => {
+  const sessionData = new Map();
+  const localData = new Map();
+  const id = "legacy-safe-id-123456789";
+  const sid = "legacy-safe-session-123456789";
+  const key = "sistema_enem_attempt_enem:2024:regular_nacional:d2:q133";
+  sessionData.set(key, id);
+  localData.set("sistema_enem_anon_session", sid);
+  const h = createHarness([{ body: { persisted: true, correct: false } }], {
+    sessionData, localData,
+  });
+  await h.submit();
+  assert.equal(h.posts.length, 1);
+  assert.equal(h.posts[0].client_attempt_id, id);
+  assert.equal(h.posts[0].anon_session_id, sid);
+  assert.equal(h.result().className, "ok");
 });
