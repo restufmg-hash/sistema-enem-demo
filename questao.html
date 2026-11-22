@@ -136,6 +136,14 @@ function falha(mensagem) {
   mostrar(document.getElementById("form-resposta"), false);
 }
 
+// Recursos publicos precisam permanecer na arvore local da demo.
+// Nao aceitar URLs externas, caminhos absolutos, travessia ou query strings.
+function recursoLocalSeguro(value, pasta, extensao) {
+  if (typeof value !== "string") return false;
+  const safeName = "[A-Za-z0-9_-][A-Za-z0-9_.-]*";
+  return new RegExp("^" + pasta + "/" + safeName + "\\." + extensao + "$").test(value);
+}
+
 function primeiraChave(questionId) { return "sistema_enem_primeira_" + questionId; }
 
 function sessaoAnonima() {
@@ -268,6 +276,13 @@ async function iniciar() {
     }
   }
   if (!item) { falha("Questão não encontrada no catálogo público."); return; }
+  if (!recursoLocalSeguro(item.data, "data", "json") ||
+      !recursoLocalSeguro(item.imagem, "assets", "png") ||
+      (item.imagem_texto != null && item.imagem_texto !== "" &&
+       !recursoLocalSeguro(item.imagem_texto, "assets", "png"))) {
+    falha("Referências de arquivos da questão inválidas ou externas. Registro bloqueado.");
+    return;
+  }
 
   document.title = "Sistema ENEM — Questão " + item.numero_oficial + " (" + item.ano + ")";
   const meta = document.getElementById("meta");
