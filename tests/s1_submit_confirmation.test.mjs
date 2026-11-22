@@ -56,13 +56,18 @@ function createHarness(responses, options = {}) {
     setItem(k, v) { map.set(k, String(v)); },
     removeItem(k) { map.delete(k); },
   });
+  const defaultItem = {
+    id: "q133", question_id: questionId, numero_oficial: 133,
+    ano: 2024, prova: "ENEM", pagina: 15, area: "CN",
+    fonte: "INEP", imagem: "q133.png", data: "q133.json",
+    occurrence: {
+      ano: 2024, dia: 2, caderno: "cdamarelo",
+      cor: "amarelo", idioma: null, numero_oficial: 133,
+    },
+  };
   const fetch = async (url, init) => {
     if (url === "catalogo.json") return {
-      json: async () => ({ items: [{
-        id: "q133", question_id: questionId, numero_oficial: 133,
-        ano: 2024, prova: "ENEM", pagina: 15, area: "CN",
-        fonte: "INEP", imagem: "q133.png", data: "q133.json",
-      }] }),
+      json: async () => ({ items: options.catalog ?? [defaultItem] }),
     };
     if (url === "q133.json") return {
       json: async () => ({ options: [{ label: "A", text: "Opção de teste" }] }),
@@ -95,7 +100,7 @@ function createHarness(responses, options = {}) {
   const window = { SISTEMA_ENEM_API: "https://example.invalid/exec" };
   vm.runInNewContext(code.replace(/iniciar\(\);\s*$/, "iniciar().catch((err) => { window.__bootstrapError = String(err); });"), {
     window,
-    document, location: { search: "?id=q133" }, URLSearchParams,
+    document, location: { search: options.search ?? "?id=q133" }, URLSearchParams,
     fetch,
     sessionStorage: options.noSessionStorage
       ? { getItem() { throw new Error("Indisponível"); },
@@ -111,9 +116,13 @@ function createHarness(responses, options = {}) {
     Date, Math, Number, String,
   }, { filename: "questao.html" });
 
+  async function bootstrap() {
+    await new Promise((resolveTick) => setImmediate(resolveTick));
+    assert.equal(window.__bootstrapError, undefined, "Falha na inicializacao");
+  }
   async function ready() {
     // Escoa as microtarefas do contexto vm em uma volta real do event loop.
-    await new Promise((resolveTick) => setImmediate(resolveTick));
+    await bootstrap();
     assert.equal(typeof getElement("form-resposta").on_submit, "function",
       JSON.stringify({ bootstrapError: window.__bootstrapError, meta: getElement("meta").textContent }));
   }
@@ -122,7 +131,9 @@ function createHarness(responses, options = {}) {
     return getElement("form-resposta").on_submit({ preventDefault() {} });
   }
   return {
-    key, posts, localData, sessionData, button, option, confidence, submit, ready,
+    key, posts, localData, sessionData, button, option, confidence, submit, ready, bootstrap,
+    meta: () => getElement("meta").textContent,
+    formHidden: () => getElement("form-resposta").hidden,
     selectedControls: () => ({
       alternativas: getElement("alternativas").children
         .map((label) => label.children[0])
@@ -323,4 +334,59 @@ test("sessao anonima alterada nao restaura selecao pendente e nao dispara POST",
   await recovered.ready();
   assert.deepEqual(recovered.selectedControls(), { alternativas: [], confianca: [] });
   assert.equal(recovered.posts.length, 0);
+});
+
+test("id inexistente nao permite fallback silencioso para ocorrencia unica", async () => {
+  const h = createHarness([], { search: "?id=ID-INVALIDO&ano=2024&dia=2&numero=133" });
+  await h.bootstrap();
+  assert.match(h.meta(), /Identificador de questão não encontrado/);
+  assert.equal(h.formHidden(), true);
+  assert.equal(h.posts.length, 0);
+});
+
+test("id existente com filtros contraditorios nao seleciona outra questao", async () => {
+  const h = createHarness([], { search: "?id=q133&ano=2025&dia=2&numero=133" });
+  await h.bootstrap();
+  assert.match(h.meta(), /não correspondem à mesma questão/);
+  assert.equal(h.formHidden(), true);
+  assert.equal(h.posts.length, 0);
+});
+
+test("sem id e sem filtros nao exibe a primeira questao arbitrariamente", async () => {
+  const h = createHarness([], { search: "" });
+  await h.bootstrap();
+  assert.match(h.meta(), /Informe o identificador ou os filtros/);
+  assert.equal(h.formHidden(), true);
+  assert.equal(h.posts.length, 0);
+});
+
+test("fallback por ocorrencia unica permanece valido na ausencia de id", async () => {
+  const h = createHarness([], { search: "?ano=2024&dia=2&caderno=cdamarelo&numero=133" });
+  await h.ready();
+  assert.equal(h.formHidden(), false);
+  assert.equal(h.posts.length, 0);
+});
+
+test("id correto e filtros consistentes permanecem validos", async () => {
+  const h = createHarness([], { search: "?id=q133&ano=2024&dia=2&numero=133" });
+  await h.ready();
+  assert.equal(h.formHidden(), false);
+});
+
+test("id direto duplicado nao seleciona arbitrariamente a primeira ocorrencia", async () => {
+  const standard = {
+    id: "q133", question_id: "enem:2024:regular_nacional:d2:q133",
+    numero_oficial: 133, ano: 2024, prova: "ENEM",
+    pagina: 15, area: "CN", fonte: "INEP", data: "q133.json",
+    occurrence: { ano: 2024, dia: 2, caderno: "cdamarelo", numero_oficial: 133 },
+  };
+  const duplicate = {
+    ...standard,
+    question_id: "enem:2025:regular_nacional:d2:q133",
+    occurrence: { ano: 2025, dia: 2, caderno: "cdamarelo", numero_oficial: 133 },
+  };
+  const h = createHarness([], { search: "?id=q133", catalog: [standard, duplicate] });
+  await h.bootstrap();
+  assert.equal(h.formHidden(), true);
+  assert.equal(h.posts.length, 0);
 });
