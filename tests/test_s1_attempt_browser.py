@@ -71,7 +71,11 @@ def test_viewport(browser, url, viewport):
         body = (
             {"error": "not_found"}
             if len(posts) == 1
-            else {"persisted": True, "correct": False, "official_status": "valid"}
+            else {
+                "persisted": True, "correct": False, "official_status": "valid",
+                "question_id": payload["question_id"],
+                "client_attempt_id": payload["client_attempt_id"],
+            }
         )
         route.fulfill(json=body)
 
