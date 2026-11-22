@@ -428,7 +428,7 @@ test("filtro numerico invalido nunca e ignorado para escolher outra questao", as
     const h = createHarness([], { search });
     await h.bootstrap();
     assert.equal(h.formHidden(), true, search);
-    assert.match(h.meta(), /Filtros numéricos inválidos/, search);
+    assert.match(h.meta(), /Filtros de ocorrência inválidos/, search);
     assert.equal(h.posts.length, 0, search);
   }
 });
@@ -445,6 +445,23 @@ test("duplicidade e conflito em parametros da URL nao escolhem a primeira varian
     await h.bootstrap();
     assert.equal(h.formHidden(), true, search);
     assert.match(h.meta(), /duplicados ou conflitantes/, search);
+    assert.equal(h.posts.length, 0, search);
+  }
+});
+
+test("filtros textuais duplicados e identificador vazio nunca escolhem questão", async () => {
+  for (const search of [
+    "?caderno=cdamarelo&caderno=cdazul&ano=2024&numero=133",
+    "?caderno=cdamarelo&caderno=cdamarelo&numero=133",
+    "?cor=amarelo&cor=azul&ano=2024&numero=133",
+    "?idioma=en&idioma=es&ano=2024&numero=133",
+    "?id=&ano=2024&dia=2&numero=133",
+    "?id=%20&ano=2024&dia=2&numero=133",
+  ]) {
+    const h = createHarness([], { search });
+    await h.bootstrap();
+    assert.equal(h.formHidden(), true, search);
+    assert.match(h.meta(), /Filtros de ocorrência inválidos/, search);
     assert.equal(h.posts.length, 0, search);
   }
 });
