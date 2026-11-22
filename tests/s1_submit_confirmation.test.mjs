@@ -565,6 +565,45 @@ test("id direto duplicado nao seleciona arbitrariamente a primeira ocorrencia", 
   assert.equal(h.posts.length, 0);
 });
 
+test("alias textual ou objeto inválido não resolve ID por substring", async () => {
+  const baseItem = {
+    id: "q133", question_id: "enem:2024:regular_nacional:d2:q133",
+    numero_oficial: 133, ano: 2024, prova: "ENEM", pagina: 15,
+    area: "CN", fonte: "INEP", imagem: "assets/q133.png", data: "data/q133.json",
+  };
+  for (const aliases of ["alias-q132-extended", { value: "q132" }, 132]) {
+    const h = createHarness([], {
+      search: "?id=q132",
+      catalog: [{ ...baseItem, aliases }],
+    });
+    await h.bootstrap();
+    assert.equal(h.formHidden(), true, JSON.stringify(aliases));
+    assert.match(h.meta(), /Identificador de questão não encontrado/);
+    assert.equal(h.posts.length, 0);
+  }
+});
+
+test("alias em lista usa somente igualdade exata e não correspondência parcial", async () => {
+  const base = {
+    id: "q133", question_id: "enem:2024:regular_nacional:d2:q133",
+    numero_oficial: 133, ano: 2024, prova: "ENEM", pagina: 15,
+    area: "CN", fonte: "INEP", imagem: "assets/q133.png", data: "data/q133.json",
+    aliases: ["alias-q133-completo"],
+  };
+  const exact = createHarness([], {
+    search: "?id=alias-q133-completo", catalog: [base],
+  });
+  await exact.ready();
+  assert.equal(exact.formHidden(), false);
+  const partial = createHarness([], {
+    search: "?id=alias-q133", catalog: [base],
+  });
+  await partial.bootstrap();
+  assert.equal(partial.formHidden(), true);
+  assert.match(partial.meta(), /Identificador de questão não encontrado/);
+  assert.equal(partial.posts.length, 0);
+});
+
 test("arquivo de alternativas nao pode pertencer a outra questao", async () => {
   const h = createHarness([], {
     questionData: {
