@@ -210,7 +210,15 @@ function idTentativa(questionId) {
   const novo = () => (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(16).slice(2));
   try {
     let s = sessionStorage.getItem(chave);
-    if (!s) { s = novo(); sessionStorage.setItem(chave, s); }
+    if (!s) {
+      // Um payload sem nonce pode corresponder a um POST anterior já gravado.
+      // Nunca criar outro nonce enquanto houver esse estado órfão.
+      if (sessionStorage.getItem(chave + "_payload") !== null) {
+        return { id: null, chave, pendenteSemId: true };
+      }
+      s = novo();
+      sessionStorage.setItem(chave, s);
+    }
     return { id: s, chave };
   } catch (_) { return { id: novo(), chave: null }; }
 }
@@ -466,6 +474,11 @@ async function iniciar() {
     }
     resultado.textContent = "Enviando ao servidor…";
     const tentativa = idTentativa(item.question_id);
+    if (tentativa.pendenteSemId) {
+      resultado.className = "erro";
+      resultado.textContent = "Existe um envio pendente sem identificador local. O registro foi bloqueado para evitar duplicação; preserve esta aba para recuperação assistida.";
+      return;
+    }
     if (!identificadorValido(tentativa.id, 8, 80)) {
       resultado.className = "erro";
       resultado.textContent = "Identificador de tentativa local inválido. O envio foi bloqueado para não duplicar nem perder um registro pendente.";
