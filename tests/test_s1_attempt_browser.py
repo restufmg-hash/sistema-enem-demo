@@ -33,6 +33,10 @@ catalog = {"items": [{
     "fonte": "INEP",
     "imagem": "imagem-ficticia.png",
     "data": "q133.json",
+    "occurrence": {
+        "ano": 2024, "dia": 2, "caderno": "cdamarelo",
+        "cor": "amarelo", "idioma": None, "numero_oficial": 133,
+    },
 }]}
 alternativas = {"options": [
     {"label": letter, "text": "Alternativa ficticia " + letter}
@@ -120,6 +124,35 @@ def test_viewport(browser, url, viewport):
             "first: localStorage.getItem(first)})", [nonce_key, first_key]
         )
         assert final == {"nonce": None, "first": "A"}, final
+
+        # Identidade explicita desconhecida: nunca selecionar outra questao.
+        page.goto(
+            url + "/questao.html?id=inexistente&ano=2024&dia=2&numero=133",
+            wait_until="networkidle",
+        )
+        page.get_by_text("Identificador de questão não encontrado", exact=False).wait_for()
+        assert page.locator("#form-resposta").is_hidden()
+        assert len(posts) == 2
+
+        # Identidade conhecida com filtros contraditorios: negar o formulario.
+        page.goto(url + "/questao.html?id=q133&ano=2025&numero=133", wait_until="networkidle")
+        page.get_by_text("não correspondem à mesma questão", exact=False).wait_for()
+        assert page.locator("#form-resposta").is_hidden()
+        assert len(posts) == 2
+
+        # Ausencia de ambos os filtros e id: sem escolha arbitraria.
+        page.goto(url + "/questao.html", wait_until="networkidle")
+        page.get_by_text("Informe o identificador ou os filtros", exact=False).wait_for()
+        assert page.locator("#form-resposta").is_hidden()
+
+        # Fallback sem id permanece possivel se a ocorrencia for inequivoca.
+        page.goto(
+            url + "/questao.html?ano=2024&dia=2&caderno=cdamarelo&numero=133",
+            wait_until="networkidle",
+        )
+        page.locator('input[name="alternativa"][value="A"]').wait_for()
+        assert page.locator("#form-resposta").is_visible()
+        assert len(posts) == 2
         assert not errors, errors
         assert not external, external  # No unrecognized / real network calls.
         print(
@@ -128,6 +161,7 @@ def test_viewport(browser, url, viewport):
             "HTTP200_ERROR_BLOCKED",
             "RETRY_NONCE_STABLE",
             "FIRST_ANSWER_AFTER_CONFIRMATION",
+            "EXPLICIT_ID_FAIL_CLOSED",
             "EXTERNAL_REQUESTS=0",
             "JS_ERRORS=0",
         )
