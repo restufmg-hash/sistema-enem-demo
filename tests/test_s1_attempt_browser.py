@@ -6,6 +6,7 @@ Todas as chamadas externas são abortadas; o endpoint de tentativas é simulado.
 """
 import json
 import threading
+import time
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -19,6 +20,20 @@ assert (ROOT / "questao.html").is_file(), "questao.html ausente"
 class QuietHandler(SimpleHTTPRequestHandler):
     def log_message(self, *args):
         pass
+
+    def do_POST(self):
+        # Endpoint local intencionalmente lento; nunca acessa Google.
+        if self.path != "/__qa_hang":
+            self.send_error(405)
+            return
+        size = int(self.headers.get("Content-Length", "0"))
+        self.server.hanging_posts.append(self.rfile.read(size))
+        time.sleep(0.7)
+        try:
+            self.send_response(503)
+            self.end_headers()
+        except (BrokenPipeError, ConnectionResetError, OSError):
+            pass
 
 
 catalog = {"items": [{
@@ -288,10 +303,64 @@ def test_viewport(browser, url, viewport):
         context.close()
 
 
+def test_timeout_local(browser, url, server):
+    # Exercita AbortController no Chromium real sem esperar 20 segundos;
+    # o servidor de teste atrasa 700 ms e a janela de QA expira em 50 ms.
+    context = browser.new_context(viewport={"width": 390, "height": 844})
+    page = context.new_page()
+    errors, external = [], []
+    page.on("pageerror", lambda exc: errors.append(str(exc)))
+
+    def local_only(route):
+        if route.request.url.startswith(url + "/"):
+            route.continue_()
+        else:
+            external.append(route.request.url)
+            route.abort()
+
+    page.route("**/*", local_only)
+    page.route("**/config.js", lambda route: route.fulfill(
+        content_type="text/javascript",
+        body=f'window.SISTEMA_ENEM_API = "{url}/__qa_hang";',
+    ))
+    page.route("**/catalogo.json", lambda route: route.fulfill(json=catalog))
+    page.route("**/data/q133.json", lambda route: route.fulfill(json=alternativas))
+    page.add_init_script("""(() => {
+        const original = window.setTimeout.bind(window);
+        window.setTimeout = (callback, ms, ...args) =>
+            original(callback, ms === 20000 ? 50 : ms, ...args);
+    })();""")
+    before = len(server.hanging_posts)
+    try:
+        page.goto(url + "/questao.html?id=q133", wait_until="networkidle")
+        page.locator('input[name="alternativa"][value="A"]').check()
+        page.locator('input[name="confianca"][value="3"]').check()
+        page.locator('button[type="submit"]').click()
+        page.get_by_text("Não foi possível confirmar a gravação", exact=False).wait_for(
+            timeout=3000)
+        assert len(server.hanging_posts) == before + 1, "POST local não iniciado"
+        assert page.locator('button[type="submit"]').is_enabled()
+        stored = page.evaluate("""(key) => [
+            sessionStorage.getItem(key),
+            sessionStorage.getItem(key + '_payload'),
+            localStorage.getItem('sistema_enem_primeira_' +
+                'enem:2024:regular_nacional:d2:q133')
+        ]""", nonce_key)
+        assert stored[0] and stored[1] and stored[2] is None, stored
+        assert not external, external
+        assert not errors, errors
+        print("S1_BROWSER_TIMEOUT_PASS CHROMIUM_ABORT_CONTROLLER "
+              "NONCE_AND_PAYLOAD_RETAINED BUTTON_ENABLED "
+              "FIRST_ANSWER_UNCHANGED EXTERNAL_REQUESTS=0 JS_ERRORS=0")
+    finally:
+        context.close()
+
+
 def main():
     server = ThreadingHTTPServer(
         ("127.0.0.1", 0), partial(QuietHandler, directory=str(ROOT))
     )
+    server.hanging_posts = []
     worker = threading.Thread(target=server.serve_forever, daemon=True)
     worker.start()
     url = "http://127.0.0.1:" + str(server.server_address[1])
@@ -304,6 +373,7 @@ def main():
                     {"width": 1280, "height": 800},
                 ]:
                     test_viewport(browser, url, viewport)
+                test_timeout_local(browser, url, server)
             finally:
                 browser.close()
     finally:
