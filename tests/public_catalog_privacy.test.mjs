@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, lstatSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { dirname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
@@ -8,6 +9,7 @@ import test from "node:test";
 // gabarito, rede, PDF, processamento editorial ou Codespaces.
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const dataRoot = resolve(root, "data");
+const assetsRoot = resolve(root, "assets");
 const catalog = JSON.parse(readFileSync(resolve(root, "catalogo.json"), "utf8"));
 
 // Normalizar snake_case, camelCase e hifens evita falsos negativos triviais.
@@ -77,6 +79,49 @@ test("auditoria recusa arquivo extra, arquivo oculto e subdiretorio", () => {
     [file("questao.json"), folder],
   ]) {
     assert.throws(() => requireDataDirectoryClosed(extras, refs));
+  }
+});
+
+
+function verificarMidiaRelatada(relative, expectedSha) {
+  assert.equal(typeof relative, "string", "Imagem sem caminho");
+  assert.match(relative, /^assets\/[A-Za-z0-9_-][A-Za-z0-9_.-]*\.png$/,
+    "Caminho de imagem fora de assets/: " + relative);
+  assert.equal(typeof expectedSha, "string", "SHA de imagem ausente: " + relative);
+  assert.match(expectedSha, /^[0-9a-fA-F]{64}$/, "SHA inválido: " + relative);
+  const full = resolve(root, relative);
+  assert.ok(full.startsWith(assetsRoot + sep), "Imagem fora de assets/: " + relative);
+  assert.ok(lstatSync(full).isFile(), "Imagem não é arquivo regular: " + relative);
+  const bytes = readFileSync(full);
+  assert.equal(bytes.subarray(0, 8).toString("hex"), "89504e470d0a1a0a",
+    "Assinatura PNG inválida: " + relative);
+  const actual = createHash("sha256").update(bytes).digest("hex");
+  assert.equal(actual, expectedSha.toLowerCase(), "SHA-256 divergente: " + relative);
+}
+
+test("imagens públicas e textos-base conferem com SHA-256 do catálogo", () => {
+  let total = 0;
+  for (const item of catalog.items) {
+    verificarMidiaRelatada(item.imagem, item.sha256_imagem);
+    total += 1;
+    if (item.imagem_texto) {
+      verificarMidiaRelatada(item.imagem_texto, item.sha256_imagem_texto);
+      total += 1;
+    } else {
+      assert.ok(!item.sha256_imagem_texto,
+        "SHA de texto-base sem mídia correspondente: " + item.id);
+    }
+  }
+  assert.ok(total >= catalog.items.length, "Nenhuma imagem verificada");
+});
+
+test("validador de mídia recusa hash divergente e caminhos externos", () => {
+  const first = catalog.items[0];
+  assert.throws(() => verificarMidiaRelatada(first.imagem, "0".repeat(64)),
+    /SHA-256 divergente/);
+  for (const invalid of ["https://example.invalid/photo.png",
+                         "assets/../private.png", "assets/photo.png?x=1"]) {
+    assert.throws(() => verificarMidiaRelatada(invalid, first.sha256_imagem));
   }
 });
 
