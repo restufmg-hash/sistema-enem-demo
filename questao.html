@@ -98,8 +98,10 @@ function normIdioma(v) {
 
 function acharItemPorId(items, id) {
   if (!id) return { item: null, matches: [] };
-  const direct = items.find((i) => i.id === id || i.question_id === id);
-  if (direct) return { item: direct, matches: [direct] };
+  const direct = items.filter((i) => i.id === id || i.question_id === id);
+  if (direct.length) {
+    return { item: direct.length === 1 ? direct[0] : null, matches: direct };
+  }
   const byAlias = items.filter((i) => (i.aliases || []).includes(id));
   if (byAlias.length === 1) return { item: byAlias[0], matches: byAlias };
   return { item: null, matches: byAlias };
@@ -113,7 +115,7 @@ function filtrarPorOcorrencia(items, occ) {
     if (occ.dia) campos.push(() => String(o.dia) === String(occ.dia));
     if (occ.caderno) campos.push(() => String(o.caderno || "") === String(occ.caderno));
     if (occ.cor) campos.push(() => String(o.cor || "") === String(occ.cor));
-    if (occ.idioma) campos.push(() => String(o.idioma || "") === String(occ.idioma));
+    if (occ.idioma) campos.push(() => normIdioma(o.idioma) === occ.idioma);
     if (occ.numero) campos.push(() => String(o.numero_oficial) === String(occ.numero));
     return campos.every((c) => c());
   });
@@ -218,9 +220,27 @@ async function iniciar() {
   const porId = acharItemPorId(items, id);
   let item = porId.item;
   let candidatos = porId.matches;
+  const filtrosInformados = Object.values(occ).some((v) =>
+    v !== undefined && v !== null && v !== ""
+  );
+
+  // Identificadores explicitos nunca podem cair em uma ocorrencia diferente.
+  // Se o ID apontar a varios aliases, limitar a busca apenas aos candidatos.
+  if (id && candidatos.length === 0) {
+    falha("Identificador de questão não encontrado no catálogo público.");
+    return;
+  }
+  if (item && filtrosInformados && filtrarPorOcorrencia([item], occ).length !== 1) {
+    falha("Identificador e filtros de ocorrência não correspondem à mesma questão.");
+    return;
+  }
+  if (!item && !id && !filtrosInformados) {
+    falha("Informe o identificador ou os filtros da questão.");
+    return;
+  }
 
   if (!item) {
-    const porOcc = filtrarPorOcorrencia(items, occ);
+    const porOcc = filtrarPorOcorrencia(id ? candidatos : items, occ);
     if (porOcc.length === 1) {
       item = porOcc[0];
       candidatos = porOcc;
