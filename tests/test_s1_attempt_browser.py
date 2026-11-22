@@ -99,8 +99,10 @@ def test_viewport(browser, url, viewport):
 
         # Novo carregamento no mesmo contexto mantém nonce, sessão e payload.
         page.reload(wait_until="networkidle")
-        page.locator('input[name="alternativa"][value="A"]').check()
-        page.locator('input[name="confianca"][value="3"]').check()
+        assert page.locator('input[name="alternativa"][value="A"]').is_checked()
+        assert page.locator('input[name="confianca"][value="3"]').is_checked()
+        page.get_by_text("Envio anterior sem confirmação", exact=False).wait_for()
+        assert len(posts) == 1, "Reload nao deve iniciar POST"
         page.locator('button[type="submit"]').click()
         page.get_by_text("Resposta registrada no servidor. Incorreta.", exact=True).wait_for()
         assert len(posts) == 2 and posts[1] == posts[0], posts
