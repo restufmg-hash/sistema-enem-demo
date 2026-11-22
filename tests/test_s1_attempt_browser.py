@@ -144,6 +144,18 @@ def test_viewport(browser, url, viewport):
         assert page.locator("#form-resposta").is_hidden()
         assert len(posts) == 2
 
+        # Numero invalido e duplicado nao podem ser silenciosamente ignorados.
+        for query in [
+            "?ano=abc&dia=2&numero=133",
+            "?id=q133&ano=0",
+            "?ano=2024&ano=2025&numero=133",
+            "?numero=133&n=134",
+        ]:
+            page.goto(url + "/questao.html" + query, wait_until="networkidle")
+            page.get_by_text("Filtros numéricos inválidos", exact=False).wait_for()
+            assert page.locator("#form-resposta").is_hidden()
+            assert len(posts) == 2
+
         # Ausencia de ambos os filtros e id: sem escolha arbitraria.
         page.goto(url + "/questao.html", wait_until="networkidle")
         page.get_by_text("Informe o identificador ou os filtros", exact=False).wait_for()
@@ -241,6 +253,7 @@ def test_viewport(browser, url, viewport):
             "RETRY_NONCE_STABLE",
             "FIRST_ANSWER_AFTER_CONFIRMATION",
             "EXPLICIT_ID_FAIL_CLOSED",
+            "INVALID_NUMERIC_FILTER_FAIL_CLOSED",
             "OPTIONS_IDENTITY_FAIL_CLOSED",
             "EXTERNAL_RESOURCE_FAIL_CLOSED",
             "INVALID_LOCAL_ID_FAIL_CLOSED",
