@@ -38,10 +38,13 @@ catalog = {"items": [{
         "cor": "amarelo", "idioma": None, "numero_oficial": 133,
     },
 }]}
-alternativas = {"options": [
-    {"label": letter, "text": "Alternativa ficticia " + letter}
-    for letter in "ABCDE"
-]}
+alternativas = {
+    "question_id": "enem:2024:regular_nacional:d2:q133",
+    "options": [
+        {"label": letter, "text": "Alternativa ficticia " + letter}
+        for letter in "ABCDE"
+    ],
+}
 question_id = catalog["items"][0]["question_id"]
 nonce_key = "sistema_enem_attempt_" + question_id
 first_key = "sistema_enem_primeira_" + question_id
@@ -153,6 +156,32 @@ def test_viewport(browser, url, viewport):
         page.locator('input[name="alternativa"][value="A"]').wait_for()
         assert page.locator("#form-resposta").is_visible()
         assert len(posts) == 2
+
+        # Resposta local alterada jamais pode misturar alternativas de outro ID.
+        page.unroute("**/q133.json")
+        data_mock = {
+            "question_id": "enem:2024:regular_nacional:d2:q132",
+            "options": alternativas["options"],
+        }
+        page.route("**/q133.json", lambda route: route.fulfill(json=data_mock))
+        page.goto(url + "/questao.html?id=q133", wait_until="networkidle")
+        page.get_by_text("Alternativas incompatíveis", exact=False).wait_for()
+        assert page.locator("#form-resposta").is_hidden()
+        assert len(posts) == 2
+
+        # Mesmo ID, mas alternativas repetidas: nao habilitar submissao.
+        data_mock = {
+            "question_id": question_id,
+            "options": [
+                {"label": letter, "text": "Alternativa ficticia"}
+                for letter in "AABDE"
+            ],
+        }
+        page.goto(url + "/questao.html?id=q133", wait_until="networkidle")
+        page.get_by_text("Alternativas incompatíveis", exact=False).wait_for()
+        assert page.locator("#form-resposta").is_hidden()
+        assert len(posts) == 2
+
         assert not errors, errors
         assert not external, external  # No unrecognized / real network calls.
         print(
@@ -162,6 +191,7 @@ def test_viewport(browser, url, viewport):
             "RETRY_NONCE_STABLE",
             "FIRST_ANSWER_AFTER_CONFIRMATION",
             "EXPLICIT_ID_FAIL_CLOSED",
+            "OPTIONS_IDENTITY_FAIL_CLOSED",
             "EXTERNAL_REQUESTS=0",
             "JS_ERRORS=0",
         )
