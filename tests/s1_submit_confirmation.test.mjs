@@ -377,6 +377,55 @@ test("sessao anonima alterada nao restaura selecao pendente e nao dispara POST",
   assert.equal(recovered.posts.length, 0);
 });
 
+
+test("filtro numerico invalido nunca e ignorado para escolher outra questao", async () => {
+  for (const search of [
+    "?ano=abc&numero=133",
+    "?ano=0&numero=133",
+    "?dia=1.5&numero=133",
+    "?numero=abc&ano=2024",
+    "?n=-1&ano=2024",
+    "?ano=2024x&numero=133",
+    "?ano=9007199254740993&numero=133",
+    "?ano=&numero=133",
+    "?id=q133&ano=abc",
+  ]) {
+    const h = createHarness([], { search });
+    await h.bootstrap();
+    assert.equal(h.formHidden(), true, search);
+    assert.match(h.meta(), /Filtros numéricos inválidos/, search);
+    assert.equal(h.posts.length, 0, search);
+  }
+});
+
+test("duplicidade e conflito em parametros da URL nao escolhem a primeira variante", async () => {
+  for (const search of [
+    "?ano=2024&ano=2025&numero=133",
+    "?numero=133&n=134&ano=2024",
+    "?numero=133&n=133&ano=2024",
+    "?id=q133&id=q132",
+    "?ano=2024&dia=2&dia=1&numero=133",
+  ]) {
+    const h = createHarness([], { search });
+    await h.bootstrap();
+    assert.equal(h.formHidden(), true, search);
+    assert.match(h.meta(), /duplicados ou conflitantes/, search);
+    assert.equal(h.posts.length, 0, search);
+  }
+});
+
+test("consulta valida por numero ou alias n permanece suportada", async () => {
+  for (const search of [
+    "?ano=2024&dia=2&numero=133",
+    "?ano=2024&dia=2&n=133",
+    "?id=q133&ano=2024&numero=133",
+  ]) {
+    const h = createHarness([], { search });
+    await h.ready();
+    assert.equal(h.formHidden(), false, search);
+  }
+});
+
 test("id inexistente nao permite fallback silencioso para ocorrencia unica", async () => {
   const h = createHarness([], { search: "?id=ID-INVALIDO&ano=2024&dia=2&numero=133" });
   await h.bootstrap();
