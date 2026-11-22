@@ -236,9 +236,12 @@ async function iniciar() {
         !Number.isSafeInteger(Number(texto));
     });
   });
+  const textuaisRepetidos = ["id", "caderno", "cor", "idioma"].some(
+    (campo) => params.getAll(campo).length > 1
+  );
   if (numericoInvalido || (params.has("numero") && params.has("n")) ||
-      params.getAll("id").length > 1) {
-    falha("Filtros numéricos inválidos, duplicados ou conflitantes na URL.");
+      textuaisRepetidos || (params.has("id") && !(params.get("id") || "").trim())) {
+    falha("Filtros de ocorrência inválidos, duplicados ou conflitantes na URL.");
     return;
   }
   const id = (params.get("id") || "").trim();
