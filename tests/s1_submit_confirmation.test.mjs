@@ -79,6 +79,13 @@ function createHarness(responses, options = {}) {
     if (!responses.length) throw new Error("Sem resposta simulada");
     const next = responses.shift();
     if (next instanceof Error) throw next;
+    if (next?.waitForAbort) {
+      return new Promise((_, reject) => {
+        assert.ok(init.signal, "POST deve ter sinal de cancelamento");
+        init.signal.addEventListener("abort", () =>
+          reject(Object.assign(new Error("Abortado"), { name: "AbortError" })));
+      });
+    }
     if (typeof next === "function") return next();
     return {
       ok: next.ok ?? true,
@@ -117,6 +124,11 @@ function createHarness(responses, options = {}) {
           removeItem() { throw new Error("Indisponível"); } }
       : store(localData),
     crypto: { randomUUID: () => "nonce-" + String(++uuid).padStart(4, "0") },
+    ...(options.testAbortDelayMs != null ? {
+      AbortController,
+      setTimeout: (cb, _ms) => setTimeout(cb, options.testAbortDelayMs),
+      clearTimeout,
+    } : {}),
     Date, Math, Number, String,
   }, { filename: "questao.html" });
 
@@ -175,6 +187,26 @@ test("JSON malformado conserva identificador e nao exibe feedback", async () => 
   await h.submit();
   assert.equal(h.posts[0].client_attempt_id, h.posts[1].client_attempt_id);
   assert.match(h.result().textContent, /Incorreta/);
+  assert.equal(h.sessionData.has(h.key), false);
+});
+
+test("POST sem resposta expira, libera o botão e preserva nonce no replay", async () => {
+  const h = createHarness([
+    { waitForAbort: true },
+    { body: { persisted: true, correct: false, official_status: "valid" } },
+  ], { testAbortDelayMs: 10 });
+  await h.submit();
+  assert.equal(h.posts.length, 1);
+  assert.equal(h.result().className, "erro");
+  assert.match(h.result().textContent, /mesmo identificador/);
+  assert.equal(h.button.disabled, false);
+  assert.equal(h.sessionData.has(h.key), true);
+  assert.equal(h.sessionData.has(h.key + "_payload"), true);
+  const original = h.posts[0];
+  await h.submit();
+  assert.equal(h.posts.length, 2);
+  assert.deepEqual(h.posts[1], original);
+  assert.equal(h.result().className, "ok");
   assert.equal(h.sessionData.has(h.key), false);
 });
 
