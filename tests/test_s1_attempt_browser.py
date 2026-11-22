@@ -83,6 +83,7 @@ def test_viewport(browser, url, viewport):
                 "persisted": True, "correct": False, "official_status": "valid",
                 "question_id": payload["question_id"],
                 "client_attempt_id": payload["client_attempt_id"],
+                "attempt_receipt": "123e4567-e89b-12d3-a456-426614174000",
             }
         )
         route.fulfill(json=body)
