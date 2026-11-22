@@ -83,6 +83,44 @@ test("auditoria recusa arquivo extra, arquivo oculto e subdiretorio", () => {
 });
 
 
+// O Pages torna acessiveis tambem os PNGs que nao aparecem no catalogo.
+// A relacao deve ser fechada: nenhuma midia publica extra ou escondida.
+function requireAssetsDirectoryClosed(entries, expected) {
+  const actual = new Set();
+  for (const entry of entries) {
+    assert.ok(entry.isFile(), "Subpasta ou link proibido em assets/: " + entry.name);
+    const relative = "assets/" + entry.name;
+    assert.match(relative, /^assets\/[A-Za-z0-9_-][A-Za-z0-9_.-]*\.png$/,
+      "Nome de arquivo de mídia inesperado: " + relative);
+    assert.ok(expected.has(relative), "Mídia pública sem catálogo: " + relative);
+    assert.ok(!actual.has(relative), "Mídia duplicada no diretório: " + relative);
+    actual.add(relative);
+  }
+  assert.deepEqual([...actual].sort(), [...expected].sort(),
+    "Mídia catalogada ausente do diretório assets/");
+}
+
+test("assets publica somente PNGs referenciados no catalogo", () => {
+  const expected = new Set(catalog.items.flatMap((item) =>
+    [item.imagem, item.imagem_texto].filter(Boolean)));
+  requireAssetsDirectoryClosed(readdirSync(assetsRoot, { withFileTypes: true }), expected);
+});
+
+test("auditoria assets recusa PNG extra, arquivo oculto e subdiretorio", () => {
+  const file = (name) => ({ name, isFile: () => true });
+  const folder = { name: "backup", isFile: () => false };
+  const expected = new Set(["assets/q133.png"]);
+  assert.doesNotThrow(() => requireAssetsDirectoryClosed([file("q133.png")], expected));
+  for (const bad of [
+    [file("q133.png"), file("gabarito.png")],
+    [file("q133.png"), file(".oculto.png")],
+    [file("q133.png"), file("arquivo.txt")],
+    [file("q133.png"), folder],
+  ]) {
+    assert.throws(() => requireAssetsDirectoryClosed(bad, expected));
+  }
+});
+
 function verificarMidiaRelatada(relative, expectedSha) {
   assert.equal(typeof relative, "string", "Imagem sem caminho");
   assert.match(relative, /^assets\/[A-Za-z0-9_-][A-Za-z0-9_.-]*\.png$/,
