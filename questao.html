@@ -102,7 +102,7 @@ function acharItemPorId(items, id) {
   if (direct.length) {
     return { item: direct.length === 1 ? direct[0] : null, matches: direct };
   }
-  const byAlias = items.filter((i) => (i.aliases || []).includes(id));
+  const byAlias = items.filter((i) => Array.isArray(i.aliases) && i.aliases.includes(id));
   if (byAlias.length === 1) return { item: byAlias[0], matches: byAlias };
   return { item: null, matches: byAlias };
 }
