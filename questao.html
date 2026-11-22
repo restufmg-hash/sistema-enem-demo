@@ -311,9 +311,23 @@ async function iniciar() {
     return;
   }
 
+  // Nao combinar alternativas de um arquivo com o question_id de outro item.
+  // A verificacao e local, sem obter ou expor qualquer gabarito.
+  const opcoes = dados && dados.options;
+  const rotulos = Array.isArray(opcoes) ? opcoes.map((o) => o && o.label) : [];
+  const dadosValidos = dados && dados.question_id === item.question_id &&
+    Array.isArray(opcoes) && opcoes.length === 5 &&
+    rotulos.every((r) => typeof r === "string" && /^[A-E]$/.test(r)) &&
+    new Set(rotulos).size === 5 &&
+    opcoes.every((o) => o && typeof o.text === "string");
+  if (!dadosValidos) {
+    falha("Alternativas incompatíveis com a identidade da questão. Registro bloqueado.");
+    return;
+  }
+
   const container = document.getElementById("alternativas");
   container.textContent = "";
-  for (const opcao of dados.options || []) {
+  for (const opcao of opcoes) {
     const label = document.createElement("label");
     label.className = "option";
     const input = document.createElement("input");
