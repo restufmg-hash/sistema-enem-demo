@@ -154,8 +154,10 @@ function reciboPersistido(corpo, questionId, attemptId) {
   if (!corpo || typeof corpo !== "object" || Array.isArray(corpo)) return false;
   if (corpo.error != null && corpo.error !== "") return false;
   if (corpo.ok === false || corpo.status === "error") return false;
-  if (corpo.question_id != null && corpo.question_id !== questionId) return false;
-  if (corpo.client_attempt_id != null && corpo.client_attempt_id !== attemptId) return false;
+  // O recibo precisa vincular explicitamente esta questao e este UUID.
+  // Afirmar persisted=true sem identidade permite falso positivo de outro envio.
+  if (corpo.question_id !== questionId) return false;
+  if (corpo.client_attempt_id !== attemptId) return false;
   return corpo.persisted === true;
 }
 
