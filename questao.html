@@ -144,6 +144,14 @@ function recursoLocalSeguro(value, pasta, extensao) {
   return new RegExp("^" + pasta + "/" + safeName + "\\." + extensao + "$").test(value);
 }
 
+// Mesma regra textual aplicada no Apps Script v15. Nunca tentar enviar um
+// identificador local corrompido: o servidor rejeitaria e o cliente ficaria
+// repetindo uma requisicao impossivel de confirmar.
+function identificadorValido(value, minLen, maxLen) {
+  return typeof value === "string" && value.length >= minLen &&
+    value.length <= maxLen && /^[A-Za-z0-9][A-Za-z0-9_-]*$/.test(value);
+}
+
 function primeiraChave(questionId) { return "sistema_enem_primeira_" + questionId; }
 
 function sessaoAnonima() {
@@ -153,7 +161,7 @@ function sessaoAnonima() {
       s = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + "-" + Math.random().toString(16).slice(2));
       localStorage.setItem("sistema_enem_anon_session", s);
     }
-    return s;
+    return identificadorValido(s, 8, 128) ? s : undefined;
   } catch (_) { return undefined; }
 }
 
@@ -442,6 +450,11 @@ async function iniciar() {
     }
     resultado.textContent = "Enviando ao servidor…";
     const tentativa = idTentativa(item.question_id);
+    if (!identificadorValido(tentativa.id, 8, 80)) {
+      resultado.className = "erro";
+      resultado.textContent = "Identificador de tentativa local inválido. O envio foi bloqueado para não duplicar nem perder um registro pendente.";
+      return;
+    }
     const payload = {
       question_id: item.question_id,
       selected_option: selecionada.value,
