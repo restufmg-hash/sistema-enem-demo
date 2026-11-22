@@ -195,6 +195,43 @@ def test_viewport(browser, url, viewport):
         assert page.locator("#form-resposta").is_hidden()
         assert len(posts) == 2
 
+        # Restaurar fixtures locais para testar IDs corrompidos no browser real.
+        page.unroute("**/catalogo.json")
+        page.route("**/catalogo.json", lambda route: route.fulfill(json=catalog))
+        page.unroute("**/data/q133.json")
+        page.route("**/data/q133.json", lambda route: route.fulfill(json=alternativas))
+
+        # Uma sessao antiga em formato de formula nao deve sair em POST.
+        page.evaluate("""() => localStorage.setItem(
+            'sistema_enem_anon_session', '=HYPERLINK(foo)'
+        )""")
+        page.goto(url + "/questao.html?id=q133", wait_until="networkidle")
+        page.locator('input[name="alternativa"][value="A"]').check()
+        page.locator('input[name="confianca"][value="3"]').check()
+        page.locator('button[type="submit"]').click()
+        page.get_by_text("sessão anônima", exact=False).wait_for()
+        assert len(posts) == 2
+
+        # Nao descartar nonce nem payload pendente quando o ID foi corrompido.
+        page.evaluate("""(nonceKey) => {
+            localStorage.setItem('sistema_enem_anon_session',
+                'offline-safe-session-12345678');
+            sessionStorage.setItem(nonceKey, '=IMPORTXML(foo)');
+            sessionStorage.setItem(nonceKey + '_payload',
+                'PAYLOAD_PENDENTE_INTACTO');
+        }""", nonce_key)
+        page.reload(wait_until="networkidle")
+        page.locator('input[name="alternativa"][value="A"]').check()
+        page.locator('input[name="confianca"][value="3"]').check()
+        page.locator('button[type="submit"]').click()
+        page.get_by_text("Identificador de tentativa local inválido", exact=False).wait_for()
+        stored = page.evaluate("""(nonceKey) => [
+            sessionStorage.getItem(nonceKey),
+            sessionStorage.getItem(nonceKey + '_payload')
+        ]""", nonce_key)
+        assert stored == ["=IMPORTXML(foo)", "PAYLOAD_PENDENTE_INTACTO"], stored
+        assert len(posts) == 2
+
         assert not errors, errors
         assert not external, external  # No unrecognized / real network calls.
         print(
@@ -206,6 +243,7 @@ def test_viewport(browser, url, viewport):
             "EXPLICIT_ID_FAIL_CLOSED",
             "OPTIONS_IDENTITY_FAIL_CLOSED",
             "EXTERNAL_RESOURCE_FAIL_CLOSED",
+            "INVALID_LOCAL_ID_FAIL_CLOSED",
             "EXTERNAL_REQUESTS=0",
             "JS_ERRORS=0",
         )
