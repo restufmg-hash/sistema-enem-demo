@@ -312,6 +312,41 @@ test("reenvio com alternativa ou confianca alterada nao reutiliza nonce com payl
   assert.equal(h.sessionData.has(h.key + "_payload"), false);
 });
 
+test("payload pendente sem nonce não cria nova tentativa nem POST", async () => {
+  for (const missing of [null, ""]) {
+    const key = "sistema_enem_attempt_enem:2024:regular_nacional:d2:q133";
+    const storedPayload = JSON.stringify({
+      selected_option: "A", confidence: 3,
+      anon_session_id: "legacy-safe-session-12345678",
+    });
+    const sessionData = new Map([[key + "_payload", storedPayload]]);
+    if (missing !== null) sessionData.set(key, missing);
+    const localData = new Map([
+      ["sistema_enem_anon_session", "legacy-safe-session-12345678"],
+    ]);
+    const h = createHarness([], { sessionData, localData });
+    await h.submit();
+    assert.equal(h.posts.length, 0, JSON.stringify({ missing }));
+    assert.equal(h.result().className, "erro");
+    assert.match(h.result().textContent, /envio pendente sem identificador local/);
+    assert.equal(sessionData.get(key + "_payload"), storedPayload);
+    assert.equal(sessionData.get(key) ?? null, missing);
+    assert.equal(localData.has("sistema_enem_primeira_enem:2024:regular_nacional:d2:q133"), false);
+  }
+});
+
+test("sem nonce e sem payload permanece permitido iniciar tentativa legítima", async () => {
+  const sessionData = new Map(), localData = new Map();
+  const h = createHarness([{ body: { persisted: true, correct: true } }], {
+    sessionData, localData,
+  });
+  await h.submit();
+  assert.equal(h.posts.length, 1);
+  assert.equal(h.result().className, "ok");
+  assert.equal(sessionData.has(h.key + "_payload"), false);
+  assert.equal(sessionData.has(h.key), false);
+});
+
 test("sem armazenamento de sessao nao cria POST com nonce instavel", async () => {
   const h = createHarness([
     { body: { persisted: true, correct: true, official_status: "valid" } },
