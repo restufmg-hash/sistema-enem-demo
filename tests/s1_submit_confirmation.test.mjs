@@ -77,6 +77,16 @@ function createHarness(responses, options = {}) {
       status: next.status ?? 200,
       json: async () => {
         if (next.invalidJson) throw new SyntaxError("Resposta inválida");
+        // O contrato real (v12-v14) sempre vincula a resposta ao envio.
+        // rawBody preserva corpos deliberadamente malformados nos testes negativos.
+        if (next.body?.persisted === true && !next.rawBody) {
+          const last = posts[posts.length - 1];
+          return {
+            question_id: last.question_id,
+            client_attempt_id: last.client_attempt_id,
+            ...next.body,
+          };
+        }
         return next.body;
       },
     };
@@ -177,6 +187,24 @@ test("persisted falso, corpo vazio e identidade divergente nao confirmam", async
   }
 });
 
+test("persisted true sem identidade explicita nao confirma, nem libera nonce", async () => {
+  const bodies = [
+    { persisted: true, correct: true },
+    { persisted: true, question_id: "enem:2024:regular_nacional:d2:q133" },
+    { persisted: true, client_attempt_id: "nonce-2" },
+    { persisted: true, question_id: null, client_attempt_id: "nonce-2" },
+    { persisted: true, question_id: "enem:2024:regular_nacional:d2:q133", client_attempt_id: null },
+  ];
+  for (const body of bodies) {
+    const h = createHarness([{ body, rawBody: true }]);
+    await h.submit();
+    assert.equal(h.posts.length, 1, JSON.stringify(body));
+    assert.equal(h.result().className, "erro", JSON.stringify(body));
+    assert.equal(h.sessionData.has(h.key), true, JSON.stringify(body));
+    assert.equal(h.localData.has("sistema_enem_primeira_enem:2024:regular_nacional:d2:q133"), false);
+  }
+});
+
 test("recibo persistido de questao anulada libera nonce e confirma registro", async () => {
   const h = createHarness([{ body: { persisted: true, official_status: "annulled", correct: null } }]);
   await h.submit();
@@ -196,7 +224,11 @@ test("duplo clique enquanto a chamada esta pendente faz apenas um POST", async (
   await new Promise((resolveTick) => setImmediate(resolveTick));
   assert.equal(h.posts.length, 1);
   assert.equal(h.button.disabled, true);
-  respond({ ok: true, status: 200, json: async () => ({ persisted: true, correct: true }) });
+  respond({ ok: true, status: 200, json: async () => ({
+    persisted: true, correct: true,
+    question_id: h.posts[0].question_id,
+    client_attempt_id: h.posts[0].client_attempt_id,
+  }) });
   await Promise.all([first, second]);
   assert.equal(h.button.disabled, false);
   assert.equal(h.posts.length, 1);
