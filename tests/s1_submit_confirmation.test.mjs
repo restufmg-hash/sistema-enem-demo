@@ -233,7 +233,7 @@ test("persisted true sem recibo opaco do servidor nao confirma", async () => {
     const h = createHarness([{
       body: {
         question_id: "enem:2024:regular_nacional:d2:q133",
-        client_attempt_id: "nonce-2",
+        client_attempt_id: "nonce-1",
         ...body,
       },
       rawBody: true,
