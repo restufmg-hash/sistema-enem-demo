@@ -312,6 +312,39 @@ async function iniciar() {
   let primeira = null;
   try { primeira = localStorage.getItem(chave); } catch (_) { primeira = null; }
 
+  // Restaurar apenas o formulario de uma tentativa local ainda nao confirmada.
+  // Isto NAO demonstra que o servidor tenha gravado nem recuperado a tentativa.
+  if (SILENCIADO.api) {
+    try {
+      const chavePendente = "sistema_enem_attempt_" + item.question_id;
+      const noncePendente = sessionStorage.getItem(chavePendente);
+      const assinatura = sessionStorage.getItem(chavePendente + "_payload");
+      if (noncePendente && assinatura) {
+        const anterior = JSON.parse(assinatura);
+        const alternativaValida = /^[A-E]$/.test(anterior.selected_option || "");
+        const confiancaValida = Number.isInteger(anterior.confidence) &&
+          anterior.confidence >= 1 && anterior.confidence <= 5;
+        const sessaoValida = typeof anterior.anon_session_id === "string" &&
+          anterior.anon_session_id === sessaoAnonima();
+        if (alternativaValida && confiancaValida && sessaoValida) {
+          for (const rotulo of container.children) {
+            const controle = rotulo.querySelector('input[name="alternativa"]');
+            if (controle && controle.value === anterior.selected_option) controle.checked = true;
+          }
+          for (const rotulo of confiancaContainer.children) {
+            const controle = rotulo.querySelector('input[name="confianca"]');
+            if (controle && Number(controle.value) === anterior.confidence) controle.checked = true;
+          }
+          resultado.style.display = "block";
+          resultado.className = "";
+          resultado.textContent = "Envio anterior sem confirmação. Sua seleção foi restaurada; tente novamente para verificar o registro no servidor.";
+        }
+      }
+    } catch (_) {
+      // Sem estado local confiavel, nao inferir gravacao ou feedback remoto.
+    }
+  }
+
   let envioPendente = false;
   document.getElementById("form-resposta").addEventListener("submit", async (evento) => {
     evento.preventDefault();
