@@ -251,9 +251,21 @@ async function iniciar() {
 
   document.title = "Sistema ENEM — Questão " + item.numero_oficial + " (" + item.ano + ")";
   const meta = document.getElementById("meta");
-  meta.innerHTML = "<strong>Questão " + item.numero_oficial + "</strong> · " + item.prova +
-    ", página " + item.pagina + " · " + item.area +
-    (item.anulada ? '<span class="badge">ANULADA pelo INEP</span>' : "");
+  // Metadados do catalogo sao conteudo, nunca codigo HTML executavel.
+  // Criar nos DOM explicitamente impede injecao de marcacao por campos JSON.
+  meta.textContent = "";
+  const tituloQuestao = document.createElement("strong");
+  tituloQuestao.textContent = "Questão " + item.numero_oficial;
+  meta.appendChild(tituloQuestao);
+  meta.appendChild(document.createTextNode(
+    " · " + item.prova + ", página " + item.pagina + " · " + item.area
+  ));
+  if (item.anulada) {
+    const selo = document.createElement("span");
+    selo.className = "badge";
+    selo.textContent = "ANULADA pelo INEP";
+    meta.appendChild(selo);
+  }
 
   const imgTexto = document.getElementById("enunciado_texto");
   if (item.imagem_texto) {
