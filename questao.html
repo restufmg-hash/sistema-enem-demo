@@ -168,6 +168,10 @@ function reciboPersistido(corpo, questionId, attemptId) {
   // Afirmar persisted=true sem identidade permite falso positivo de outro envio.
   if (corpo.question_id !== questionId) return false;
   if (corpo.client_attempt_id !== attemptId) return false;
+  // O contrato do Apps Script emite um identificador opaco do registro persistido.
+  // Um simples eco de question_id/client_attempt_id nao constitui recibo de gravação.
+  if (typeof corpo.attempt_receipt !== "string" ||
+      corpo.attempt_receipt.trim().length < 8) return false;
   return corpo.persisted === true;
 }
 
