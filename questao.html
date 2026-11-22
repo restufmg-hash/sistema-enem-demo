@@ -538,8 +538,11 @@ async function iniciar() {
       }
       try {
         if (tentativa.chave) {
-          sessionStorage.removeItem(tentativa.chave + "_payload");
+          // Remover o nonce primeiro: se a limpeza do payload falhar depois,
+          // o payload órfão bloqueia qualquer novo UUID e evita duplicação.
+          // Se a remoção do nonce falhar, manter ambos para replay idempotente.
           sessionStorage.removeItem(tentativa.chave);
+          sessionStorage.removeItem(tentativa.chave + "_payload");
         }
       } catch (_) { /* sem sessionStorage */ }
       // A primeira resposta local so e registrada apos confirmacao do servidor.
