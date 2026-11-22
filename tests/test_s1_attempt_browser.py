@@ -175,6 +175,32 @@ def test_viewport(browser, url, viewport):
             assert page.locator("#form-resposta").is_hidden()
             assert len(posts) == 2
 
+        # Um alias em string nao e uma lista: .includes() seria substring
+        # e poderia selecionar outra questao por ID aproximado.
+        page.unroute("**/catalogo.json")
+        bad_alias_catalog = {"items": [{
+            **catalog["items"][0], "aliases": "alias-q132-extended",
+        }]}
+        page.route("**/catalogo.json", lambda route: route.fulfill(
+            json=bad_alias_catalog))
+        page.goto(url + "/questao.html?id=q132", wait_until="networkidle")
+        page.get_by_text("Identificador de questão não encontrado", exact=False).wait_for()
+        assert page.locator("#form-resposta").is_hidden()
+        assert len(posts) == 2
+
+        # Alias valido em lista completa conserva a selecao explicita.
+        page.unroute("**/catalogo.json")
+        good_alias_catalog = {"items": [{
+            **catalog["items"][0], "aliases": ["alias-q133-completo"],
+        }]}
+        page.route("**/catalogo.json", lambda route: route.fulfill(
+            json=good_alias_catalog))
+        page.goto(url + "/questao.html?id=alias-q133-completo", wait_until="networkidle")
+        assert page.locator("#form-resposta").is_visible()
+        assert len(posts) == 2
+        page.unroute("**/catalogo.json")
+        page.route("**/catalogo.json", lambda route: route.fulfill(json=catalog))
+
         # Ausencia de ambos os filtros e id: sem escolha arbitraria.
         page.goto(url + "/questao.html", wait_until="networkidle")
         page.get_by_text("Informe o identificador ou os filtros", exact=False).wait_for()
@@ -290,6 +316,7 @@ def test_viewport(browser, url, viewport):
             "RETRY_NONCE_STABLE",
             "FIRST_ANSWER_AFTER_CONFIRMATION",
             "EXPLICIT_ID_FAIL_CLOSED",
+            "ALIAS_EXACT_LIST_ONLY",
             "INVALID_NUMERIC_FILTER_FAIL_CLOSED",
             "DUPLICATE_TEXTUAL_FILTER_FAIL_CLOSED",
             "OPTIONS_IDENTITY_FAIL_CLOSED",
