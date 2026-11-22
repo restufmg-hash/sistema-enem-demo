@@ -511,6 +511,13 @@ async function iniciar() {
     envioPendente = true;
     const botao = document.querySelector('#form-resposta button[type="submit"]');
     if (botao) botao.disabled = true;
+    // Requisicoes sem resposta nao podem bloquear o formulario indefinidamente.
+    // Em qualquer timeout, o nonce/payload permanecem intactos: o backend pode
+    // ter persistido antes da perda de resposta; o replay deve ser idempotente.
+    const abortController = typeof AbortController === "function"
+      ? new AbortController() : null;
+    const timeoutEnvio = abortController && typeof setTimeout === "function"
+      ? setTimeout(() => abortController.abort(), 20000) : null;
     try {
       // Application/json exigiria preflight CORS que o endpoint gratuito nao responde;
       // text/plain (simple request) e lido pelo servidor como JSON.
@@ -518,6 +525,7 @@ async function iniciar() {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify(payload),
+        ...(abortController ? { signal: abortController.signal } : {}),
       });
       if (!resposta.ok) {
         resultado.className = "erro";
@@ -553,6 +561,9 @@ async function iniciar() {
       resultado.className = "erro";
       resultado.textContent = "Não foi possível confirmar a gravação no servidor. Ao tentar novamente, será usado o mesmo identificador para evitar duplicação.";
     } finally {
+      if (timeoutEnvio !== null && typeof clearTimeout === "function") {
+        clearTimeout(timeoutEnvio);
+      }
       envioPendente = false;
       if (botao) botao.disabled = false;
     }
