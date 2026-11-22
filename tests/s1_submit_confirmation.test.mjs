@@ -54,7 +54,12 @@ function createHarness(responses, options = {}) {
   const store = (map) => ({
     getItem(k) { return map.has(k) ? map.get(k) : null; },
     setItem(k, v) { map.set(k, String(v)); },
-    removeItem(k) { map.delete(k); },
+    removeItem(k) {
+      if (map === sessionData && options.removeFailureFor === k) {
+        throw new Error("Falha simulada na remoção local");
+      }
+      map.delete(k);
+    },
   });
   const defaultItem = {
     id: "q133", question_id: questionId, numero_oficial: 133,
@@ -188,6 +193,39 @@ test("JSON malformado conserva identificador e nao exibe feedback", async () => 
   assert.equal(h.posts[0].client_attempt_id, h.posts[1].client_attempt_id);
   assert.match(h.result().textContent, /Incorreta/);
   assert.equal(h.sessionData.has(h.key), false);
+});
+
+test("falha na limpeza após recibo nunca deixa nonce solto para novo POST", async () => {
+  const receipt = { body: { persisted: true, correct: false, official_status: "valid" } };
+
+  // Se o nonce não puder ser removido, ambos os valores ainda existem:
+  // reenvio reaproveita a mesma identidade e o mesmo payload.
+  const key = "sistema_enem_attempt_enem:2024:regular_nacional:d2:q133";
+  const blockedNonce = createHarness([receipt, receipt], {
+    removeFailureFor: key,
+  });
+  await blockedNonce.submit();
+  assert.equal(blockedNonce.result().className, "ok");
+  assert.equal(blockedNonce.sessionData.has(key), true);
+  assert.equal(blockedNonce.sessionData.has(key + "_payload"), true);
+  const original = blockedNonce.posts[0];
+  await blockedNonce.submit();
+  assert.equal(blockedNonce.posts.length, 2);
+  assert.deepEqual(blockedNonce.posts[1], original);
+
+  // Se somente o payload não puder ser removido, o nonce já foi apagado.
+  // O payload órfão bloqueia novo UUID, em vez de duplicar uma gravação.
+  const blockedPayload = createHarness([receipt], {
+    removeFailureFor: key + "_payload",
+  });
+  await blockedPayload.submit();
+  assert.equal(blockedPayload.result().className, "ok");
+  assert.equal(blockedPayload.sessionData.has(key), false);
+  assert.equal(blockedPayload.sessionData.has(key + "_payload"), true);
+  await blockedPayload.submit();
+  assert.equal(blockedPayload.posts.length, 1);
+  assert.equal(blockedPayload.result().className, "erro");
+  assert.match(blockedPayload.result().textContent, /pendente sem identificador local/);
 });
 
 test("POST sem resposta expira, libera o botão e preserva nonce no replay", async () => {
